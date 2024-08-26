@@ -216,6 +216,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 				</div>
 			</div>
 		</div>
+	</div>
 
 
 	<footer id="footer">
