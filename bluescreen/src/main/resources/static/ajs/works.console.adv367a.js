@@ -1,0 +1,3 @@
+// Copyright ⓒ 1998~2022 Incruit Corporation All rights reserved
+
+jQuery(document).ready(function(){if(window.console!=undefined){if(document.referrer.indexOf("incruit.com")<0){setTimeout(console.log.bind(console,'%c%cINCRUIT WORKS','font:6em Arial;color:#EC6521;font-weight:bold','font:4em Arial;color:#000000;font-weight:bold'),0);setTimeout(console.log.bind(console,'%c인%c크루트%c가 제공하는 Applicant Tracking System - %c인크루트웍스','color:#EC6521;font-weight:bold;','color:#333;font-weight:bold;','color:#333;','color:#333;font-weight:bold;'),0);}}});
