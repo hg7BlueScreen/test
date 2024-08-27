@@ -71,62 +71,12 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							</div>
 						</li>
 
-						<li class="pc newsblog">
-							&nbsp;&nbsp;
-							<a href="https://blog.naver.com/incruit1/223264443006" target="_blank" class="sub-menu blue">소식/블로그</a>
-						</li>
-						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">도입문의</a></li>
+						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">버튼1</a></li>
 						<li class="pc">
-							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">로그인</a>
+							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">버튼2</a>
 						</li>
 					</ul>
 				</nav>
-				<!-- 모바일 메뉴 -->
-				<div id="sitemap" class="">
-					<!-- <div class="btn">
-						<a href="https://rasp4.incruit.com/admin/" class="roundBtn ">로그인</a>
-					</div> -->
-					<ul>
-						<li class="logo mobile">
-							<a class="logo-incruit" href="http://works.incruit.com/"></a>
-						</li>
-
-						<li class="drop_cont_wrap">
-							<a href="#" class="drop_cont_m"><span>솔루션소개</span></a>
-						</li>
-
-						<li class="detail_menu_drop">
-							<a href="javascript:;" class="go_ats_crm d_menu_link">
-								<span class="menu_link_e">ATS&amp;CRM</span>
-								<span class="menu_link_t">채용관리솔루션</span>
-							</a>
-							<a href="javascript:;" class="go_assess d_menu_link">
-								<span class="menu_link_e">ASSESS<em>NEW</em></span>
-								<span class="menu_link_t">인재검증솔루션</span>
-							</a>
-							<a href="javascript:;" class="go_interview d_menu_link">
-								<span class="menu_link_e">Interview</span>
-								<span class="menu_link_t">면접솔루션</span>
-							</a>
-							<a href="javascript:;" class="go_proctor d_menu_link">
-								<span class="menu_link_e">Proctor</span>
-								<span class="menu_link_t">시험감독솔루션</span>
-							</a>
-							<a href="javascript:;" class="go_referencecheck d_menu_link">
-								<span class="menu_link_e">Reference Check</span>
-								<span class="menu_link_t">평판조회솔루션</span>
-							</a>
-						</li>
-
-						<li><a href="https://blog.naver.com/incruit1/223264443006" class="t-blue-point">소식/블로그</a></li>
-					</ul>
-					<div class="bottom_btnWrap">
-						<a href="javascript:;" class="consulting roundBtn on">도입문의</a>
-						<a href="https://rasp4.incruit.com/admin/" class="roundBtn">로그인</a>
-					</div>
-				</div>
-				<!-- //모바일 메뉴 -->
-				<button type="button" class="btn-category mobile" onclick="sitemapToggle();"><span>메뉴</span></button>
 			</div>
 		</div>
 	</header>
@@ -134,7 +84,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	<input type="hidden" id="s_type" value="ats_crm">
 	<input type="hidden" id="eCode" value=""/>
 	<div id="content" class="contents">
-		<h1 class="hide">인크루트 Assess</h1>
+		<h1 class="hide">의료정보 시스템</h1>
 		<div class="innerBox" id="visual">
 			<div class="section visual">
 				<div class="cnt">
@@ -143,47 +93,35 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							수정합시다 <span class="t-blue-point">블루스크린, <br />메인페이지</span>
 						</h2>
 						<p class="section-sub-txt">
-							인크루트웍스와 함께, 더 똑똑하고 빠르게 채용하세요! <br />
-							채용 업무를 자동화하고 AI 로 최고의 인재를 찾아드립니다.
+							간편한 의료정보 검색 및 저장 서비스를 제공합니다! <br />
+							저장된 의료정보를 통한 자동 추천도 함께 즐겨보세요.
 						</p>
 					</div>
 
-					<div data-aos="fade-left" data-aos-delay="50" data-aos-duration="1300">
-						<button type="button" class="package_solution solution_btn" onclick="jQuery('#packageSt').show();jQuery('.num01').addClass('on');jQuery('body').addClass('is-popupOpen')">블루스크린 조</button>
-					</div>
-
-					<div class="flex half_wrap" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1300">
-						<button type="button" class="freetrial_btn" onclick="location.href='https://rasp4.incruit.com/console/account/join/'">
-							<span>망한다</span>
-						</button>
-						<button type="button" class="consulting inquiry_btn">
-							<span>안망한다</span>
-						</button>
-					</div>
 
 					<div class="select-tab-wrap">
-						<h2 class="select_tit"><span class="t-blue-point">채용솔루션,</span> 어디까지 사용해 보셨나요?</h2>
+						<h2 class="select_tit"><span class="t-blue-point">한눈에 보는</span> 주요 기능들</h2>
 						<span class="select_subtit">
-							<em>원하는 솔루션을 선택하시면<br class="mobile" />빠르게 내용을 확인해 볼 수 있어요.</em>
+							<em>원하는 기능을 선택하시면<br class="mobile" />빠르게 내용을 확인해 볼 수 있어요.</em>
 						</span>
 
 						<div class="select-tab-box" class="incruit-viewPoint" data-aos="fade-up" data-aos-delay="50" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
 							<ul>
 								<li class="solTab atscrm">
-									<p>ATS & CRM</p>
-									<span class="tit_explan">채용관리솔루션</span>
+									<p>폐의약품 수거함 위치</p>
+									<span class="tit_explan">지도를 통한 검색</span>
 									<div class="add_move_btn"></div>
 									<a href="index77f6.html?flag=ats_crm" class="anchor-link"></a>
 								</li>
 								<li class="solTab assess">
-									<p>ASSESS</p>
-									<span class="tit_explan">인재검증솔루션</span>
+									<p>사전</p>
+									<span class="tit_explan">질병 및 의약품 정보</span>
 									<div class="add_move_btn"></div>
 									<a href="indexac60.html?flag=assess" class="anchor-link"></a>
 								</li>
 								<li class="solTab interview">
-									<p>Interview</p>
-									<span class="tit_explan">면접솔루션</span>
+									<p>커뮤니티</p>
+									<span class="tit_explan">유저들과의 소통창</span>
 									<div class="add_move_btn"></div>
 									<a href="indexe939.html?flag=interview" class="anchor-link"></a>
 								</li>
@@ -262,7 +200,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 								</div>
 							</a>
 						</div>
+						
 					</div>
+					
 				</div>
 			</div>
 		</div>

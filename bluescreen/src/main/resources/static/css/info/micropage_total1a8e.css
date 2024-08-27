@@ -378,8 +378,8 @@
 .section .select-tab-wrap .select-tab-box {width: 100%; max-width: 1060px; padding: 0; box-sizing: border-box; margin: 30px auto 0;}
 .section .select-tab-wrap .select-tab-box ul {display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; gap: 20px;}
 .section .select-tab-wrap .select-tab-box .solTab {position: relative;height: 220px; background: #F8FBFF; border: 1px solid #C9DEFF; border-radius: 12px; padding: 30px 28px; box-sizing: border-box; box-shadow: 0px 0px 6px 1px rgba(63,128,234, .2);}
-.section .select-tab-wrap .select-tab-box .solTab.atscrm {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_ats.svg) no-repeat 90% 79%; border-width: 2px;}
-.section .select-tab-wrap .select-tab-box .solTab.assess {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_ass.svg) no-repeat 86% 76%; border-width: 2px;}
+.section .select-tab-wrap .select-tab-box .solTab.atscrm {background: #F8FBFF url(../../image/mapgrad.png) no-repeat 89% 76%; border-width: 2px; background-size: 50px 70px;}
+.section .select-tab-wrap .select-tab-box .solTab.assess {background: #F8FBFF url(../../image/bookgrad.png) no-repeat 89% 76%; border-width: 2px; background-size: 75px;}
 .section .select-tab-wrap .select-tab-box .solTab.interview {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_view.svg) no-repeat 89% 76%; border-width: 2px;}
 .section .select-tab-wrap .select-tab-box .solTab.proctor {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_proct.svg) no-repeat 89% 78%; border-width: 2px;}
 .section .select-tab-wrap .select-tab-box .solTab.check {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_check.svg) no-repeat 89% 80%; border-width: 2px;}
