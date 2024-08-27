@@ -1,20 +1,21 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <!-- Mirrored from works.incruit.com/home/index.asp?flag=interview by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Aug 2024 08:27:49 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=euc-kr" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-<meta charset="euc-kr">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="canonical" href="index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<title>ÀÎÅ©·çÆ®¿÷½º - Æí¸®ÇÑ Ã¤¿ë¼Ö·ç¼Ç</title>
-<meta name="title" content="AI·Î °ËÁõÇÏ´Â Ã¤¿ë¼Ö·ç¼Ç, ÀÎÅ©·çÆ®¿÷½º">
-<meta name="description" content="ÀÎÅ©·çÆ®¿÷½º Ã¤¿ë¼Ö·ç¼ÇÀ¸·Î ´õ ¶È¶ÈÇÏ°í ºü¸£°Ô Ã¤¿ëÇÏ¼¼¿ä! ±â¾÷Ã¤¿ë¿¡ ÃÖÀûÈ­µÈ Áö¿øÀÚ°ü¸®,Æò°¡°ü¸®,¸éÁ¢°ü¸®,ÀÎÀç°ËÁõ µî ´Ù¾çÇÑ ¼Ö·ç¼ÇÀ» Á¦°øÇÕ´Ï´Ù.">
-<meta name="keywords" content="Ã¤¿ë¼Ö·ç¼Ç, Ã¤¿ëÈ¨ÆäÀÌÁö, Áö¿øÀÚ°ü¸®, ¿Â¶óÀÎÁ¢¼ö, Á¢¼ö½Ã½ºÅÛ, Ã¤¿ëÇÁ·Î±×·¥, Ã¤¿ë»çÀÌÆ®, Ã¤¿ë°ü¸®, Ã¤¿ëÀýÂ÷, Ã¤¿ëATS, Ã¤¿ëCRM, ATS, ATS&CRM, CRM, ¸éÁ¢ÀÏÁ¤, Çù¾÷Æò°¡, ¿Â¶óÀÎÃ¤¿ë, ÀÎ¼º°Ë»ç, Àû¼º°Ë»ç, ¿Â¶óÀÎ½ÃÇè, ÀÎÀç°ËÁõ">
-<meta property="og:title" content="AI·Î °ËÁõÇÏ´Â Ã¤¿ë¼Ö·ç¼Ç, ÀÎÅ©·çÆ®¿÷½º">
-<meta property="og:description" content="ÀÎÅ©·çÆ®¿÷½º Ã¤¿ë¼Ö·ç¼ÇÀ¸·Î ´õ ¶È¶ÈÇÏ°í ºü¸£°Ô Ã¤¿ëÇÏ¼¼¿ä! ±â¾÷Ã¤¿ë¿¡ ÃÖÀûÈ­µÈ Áö¿øÀÚ°ü¸®,Æò°¡°ü¸®,¸éÁ¢°ü¸®,ÀÎÀç°ËÁõ µî ´Ù¾çÇÑ ¼Ö·ç¼ÇÀ» Á¦°øÇÕ´Ï´Ù.">
+<title>ì¸í¬ë£¨íŠ¸ì›ìŠ¤ - íŽ¸ë¦¬í•œ ì±„ìš©ì†”ë£¨ì…˜</title>
+<meta name="title" content="AIë¡œ ê²€ì¦í•˜ëŠ” ì±„ìš©ì†”ë£¨ì…˜, ì¸í¬ë£¨íŠ¸ì›ìŠ¤">
+<meta name="description" content="ì¸í¬ë£¨íŠ¸ì›ìŠ¤ ì±„ìš©ì†”ë£¨ì…˜ìœ¼ë¡œ ë” ë˜‘ë˜‘í•˜ê³  ë¹ ë¥´ê²Œ ì±„ìš©í•˜ì„¸ìš”! ê¸°ì—…ì±„ìš©ì— ìµœì í™”ëœ ì§€ì›ìžê´€ë¦¬,í‰ê°€ê´€ë¦¬,ë©´ì ‘ê´€ë¦¬,ì¸ìž¬ê²€ì¦ ë“± ë‹¤ì–‘í•œ ì†”ë£¨ì…˜ì„ ì œê³µí•©ë‹ˆë‹¤.">
+<meta name="keywords" content="ì±„ìš©ì†”ë£¨ì…˜, ì±„ìš©í™ˆíŽ˜ì´ì§€, ì§€ì›ìžê´€ë¦¬, ì˜¨ë¼ì¸ì ‘ìˆ˜, ì ‘ìˆ˜ì‹œìŠ¤í…œ, ì±„ìš©í”„ë¡œê·¸ëž¨, ì±„ìš©ì‚¬ì´íŠ¸, ì±„ìš©ê´€ë¦¬, ì±„ìš©ì ˆì°¨, ì±„ìš©ATS, ì±„ìš©CRM, ATS, ATS&CRM, CRM, ë©´ì ‘ì¼ì •, í˜‘ì—…í‰ê°€, ì˜¨ë¼ì¸ì±„ìš©, ì¸ì„±ê²€ì‚¬, ì ì„±ê²€ì‚¬, ì˜¨ë¼ì¸ì‹œí—˜, ì¸ìž¬ê²€ì¦">
+<meta property="og:title" content="AIë¡œ ê²€ì¦í•˜ëŠ” ì±„ìš©ì†”ë£¨ì…˜, ì¸í¬ë£¨íŠ¸ì›ìŠ¤">
+<meta property="og:description" content="ì¸í¬ë£¨íŠ¸ì›ìŠ¤ ì±„ìš©ì†”ë£¨ì…˜ìœ¼ë¡œ ë” ë˜‘ë˜‘í•˜ê³  ë¹ ë¥´ê²Œ ì±„ìš©í•˜ì„¸ìš”! ê¸°ì—…ì±„ìš©ì— ìµœì í™”ëœ ì§€ì›ìžê´€ë¦¬,í‰ê°€ê´€ë¦¬,ë©´ì ‘ê´€ë¦¬,ì¸ìž¬ê²€ì¦ ë“± ë‹¤ì–‘í•œ ì†”ë£¨ì…˜ì„ ì œê³µí•©ë‹ˆë‹¤.">
 <link rel="shortcut icon" href="http://works.incruit.com/favicon.ico" type="image/x-icon">
 <link type="text/css" rel="stylesheet" href="../../r.incru.it/static/css/info/common_total1a8e.css?20240805140085">
 <link type="text/css" rel="stylesheet" href="../../r.incru.it/static/css/info/sub_main1a8e.css?20240805140085" />
@@ -33,13 +34,13 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 </head>
 <body data-aos-easing="ease-in-out-back" data-aos-duration="400" data-aos-delay="0" style="" data-domain="">
 	<div id="skip" class="skip">
-		<a href="#content">º»¹® ÀÌµ¿</a>
-		<a href="#nav">¸Þ´º ÀÌµ¿</a>
+		<a href="#content">ë³¸ë¬¸ ì´ë™</a>
+		<a href="#nav">ë©”ë‰´ ì´ë™</a>
 	</div>
 	<div id="wrap" class="new_main">
 	
 	<header id="header" class="">
-	<!-- <div class="v2banner">¹è³Ê¿µ¿ª 2Â÷ ½Ã ³»¿ë Ãß°¡</div> -->
+	<!-- <div class="v2banner">ë°°ë„ˆì˜ì—­ 2ì°¨ ì‹œ ë‚´ìš© ì¶”ê°€</div> -->
 		<div class="inner">
 			<div class="logo">
 				<a class="logo-incruit" href="http://works.incruit.com/"></a>
@@ -48,29 +49,29 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 				<nav id="nav" class="overlay-menu">
 					<ul class="gnb cf">
 						<li class="pc onList on">
-							<a href="#" class="mainMenu">¼Ö·ç¼Ç¼Ò°³</a>
+							<a href="#" class="mainMenu">ì†”ë£¨ì…˜ì†Œê°œ</a>
 
 							<div class="show_onlist">
 								<div class="dropdown_inner">
 									<a href="javascript:;" class="go_ats_crm list_menuBox">
 										<span class="d-menu-t">ATS & CRM</span>
-										<span class="d-menu-t2">Ã¤¿ë°ü¸®¼Ö·ç¼Ç</span>
+										<span class="d-menu-t2">ì±„ìš©ê´€ë¦¬ì†”ë£¨ì…˜</span>
 									</a>
 									<a href="javascript:;" class="go_assess list_menuBox">
 										<span class="d-menu-t">ASSESS<em>NEW</em></span>
-										<span class="d-menu-t2">ÀÎÀç°ËÁõ¼Ö·ç¼Ç</span>
+										<span class="d-menu-t2">ì¸ìž¬ê²€ì¦ì†”ë£¨ì…˜</span>
 									</a>
 									<a href="javascript:;" class="go_interview list_menuBox">
 										<span class="d-menu-t">Interview</span>
-										<span class="d-menu-t2">¸éÁ¢¼Ö·ç¼Ç</span>
+										<span class="d-menu-t2">ë©´ì ‘ì†”ë£¨ì…˜</span>
 									</a>
 									<a href="javascript:;" class="go_proctor list_menuBox">
 										<span class="d-menu-t">Proctor</span>
-										<span class="d-menu-t2">½ÃÇè°¨µ¶¼Ö·ç¼Ç</span>
+										<span class="d-menu-t2">ì‹œí—˜ê°ë…ì†”ë£¨ì…˜</span>
 									</a>
 									<a href="javascript:;" class="go_referencecheck list_menuBox">
 										<span class="d-menu-t">Reference Check</span>
-										<span class="d-menu-t2">ÆòÆÇÁ¶È¸¼Ö·ç¼Ç</span>
+										<span class="d-menu-t2">í‰íŒì¡°íšŒì†”ë£¨ì…˜</span>
 									</a>
 								</div>
 							</div>
@@ -78,18 +79,18 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 
 						<li class="pc newsblog">
 							&nbsp;&nbsp;
-							<a href="https://blog.naver.com/incruit1/223264443006" target="_blank" class="sub-menu blue">¼Ò½Ä/ºí·Î±×</a>
+							<a href="https://blog.naver.com/incruit1/223264443006" target="_blank" class="sub-menu blue">ì†Œì‹/ë¸”ë¡œê·¸</a>
 						</li>
-						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">µµÀÔ¹®ÀÇ</a></li>
+						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">ë„ìž…ë¬¸ì˜</a></li>
 						<li class="pc">
-							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">·Î±×ÀÎ</a>
+							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">ë¡œê·¸ì¸</a>
 						</li>
 					</ul>
 				</nav>
-				<!-- ¸ð¹ÙÀÏ ¸Þ´º -->
+				<!-- ëª¨ë°”ì¼ ë©”ë‰´ -->
 				<div id="sitemap" class="">
 					<!-- <div class="btn">
-						<a href="https://rasp4.incruit.com/admin/" class="roundBtn ">·Î±×ÀÎ</a>
+						<a href="https://rasp4.incruit.com/admin/" class="roundBtn ">ë¡œê·¸ì¸</a>
 					</div> -->
 					<ul>
 						<li class="logo mobile">
@@ -97,41 +98,41 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 						</li>
 
 						<li class="drop_cont_wrap">
-							<a href="#" class="drop_cont_m"><span>¼Ö·ç¼Ç¼Ò°³</span></a>
+							<a href="#" class="drop_cont_m"><span>ì†”ë£¨ì…˜ì†Œê°œ</span></a>
 						</li>
 
 						<li class="detail_menu_drop">
 							<a href="javascript:;" class="go_ats_crm d_menu_link">
 								<span class="menu_link_e">ATS&amp;CRM</span>
-								<span class="menu_link_t">Ã¤¿ë°ü¸®¼Ö·ç¼Ç</span>
+								<span class="menu_link_t">ì±„ìš©ê´€ë¦¬ì†”ë£¨ì…˜</span>
 							</a>
 							<a href="javascript:;" class="go_assess d_menu_link">
 								<span class="menu_link_e">ASSESS<em>NEW</em></span>
-								<span class="menu_link_t">ÀÎÀç°ËÁõ¼Ö·ç¼Ç</span>
+								<span class="menu_link_t">ì¸ìž¬ê²€ì¦ì†”ë£¨ì…˜</span>
 							</a>
 							<a href="javascript:;" class="go_interview d_menu_link">
 								<span class="menu_link_e">Interview</span>
-								<span class="menu_link_t">¸éÁ¢¼Ö·ç¼Ç</span>
+								<span class="menu_link_t">ë©´ì ‘ì†”ë£¨ì…˜</span>
 							</a>
 							<a href="javascript:;" class="go_proctor d_menu_link">
 								<span class="menu_link_e">Proctor</span>
-								<span class="menu_link_t">½ÃÇè°¨µ¶¼Ö·ç¼Ç</span>
+								<span class="menu_link_t">ì‹œí—˜ê°ë…ì†”ë£¨ì…˜</span>
 							</a>
 							<a href="javascript:;" class="go_referencecheck d_menu_link">
 								<span class="menu_link_e">Reference Check</span>
-								<span class="menu_link_t">ÆòÆÇÁ¶È¸¼Ö·ç¼Ç</span>
+								<span class="menu_link_t">í‰íŒì¡°íšŒì†”ë£¨ì…˜</span>
 							</a>
 						</li>
 
-						<li><a href="https://blog.naver.com/incruit1/223264443006" class="t-blue-point">¼Ò½Ä/ºí·Î±×</a></li>
+						<li><a href="https://blog.naver.com/incruit1/223264443006" class="t-blue-point">ì†Œì‹/ë¸”ë¡œê·¸</a></li>
 					</ul>
 					<div class="bottom_btnWrap">
-						<a href="javascript:;" class="consulting roundBtn on">µµÀÔ¹®ÀÇ</a>
-						<a href="https://rasp4.incruit.com/admin/" class="roundBtn">·Î±×ÀÎ</a>
+						<a href="javascript:;" class="consulting roundBtn on">ë„ìž…ë¬¸ì˜</a>
+						<a href="https://rasp4.incruit.com/admin/" class="roundBtn">ë¡œê·¸ì¸</a>
 					</div>
 				</div>
-				<!-- //¸ð¹ÙÀÏ ¸Þ´º -->
-				<button type="button" class="btn-category mobile" onclick="sitemapToggle();"><span>¸Þ´º</span></button>
+				<!-- //ëª¨ë°”ì¼ ë©”ë‰´ -->
+				<button type="button" class="btn-category mobile" onclick="sitemapToggle();"><span>ë©”ë‰´</span></button>
 			</div>
 		</div>
 	</header>
@@ -139,28 +140,28 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	<input type="hidden" id="s_type" value="interview">
 	<input type="hidden" id="eCode" value=""/>
 	<div id="content" class="contents sub-main-wrap">
-		<h1 class="hide">ÀÎÅ©·çÆ®¿÷½º - ºñ´ë¸é ¸éÁ¢À» À§ÇÑ Interview</h1>
+		<h1 class="hide">ì¸í¬ë£¨íŠ¸ì›ìŠ¤ - ë¹„ëŒ€ë©´ ë©´ì ‘ì„ ìœ„í•œ Interview</h1>
 
 		<div class="section sub-main-visual">
 			<div class="container">
 				<div class="visual__text">
 					<h5 class="h5 text-color-1 font-weight-bold" data-aos="fade-right" data-aos-delay="100">Interview</h5>
-					<h2 class="h2 text-color-dark font-weight-bold" data-aos="fade-right" data-aos-delay="200">¸éÁ¢¼Ö·ç¼Ç</h2>
+					<h2 class="h2 text-color-dark font-weight-bold" data-aos="fade-right" data-aos-delay="200">ë©´ì ‘ì†”ë£¨ì…˜</h2>
 					<h5 class="h5 font-weight-normal" data-aos="fade-right" data-aos-delay="300">
-						¿ÀÇÁ¶óÀÎ ¹æ½Ä ±×´ë·Î Àû¿ëÇÏ¿© Áö¿ª&amp;Àå¼Ò ±¸¾Ö¾øÀÌ<br class="d-none d-xs-block"/>
-						°øÁ¤ÇÑ ºñ´ë¸é ¸éÁ¢À» ÅëÇØ ±â¾÷¿¡ ÀûÇÕÇÑ ÀÎÀç¸¦ Ã£¾Æº¸¼¼¿ä.
+						ì˜¤í”„ë¼ì¸ ë°©ì‹ ê·¸ëŒ€ë¡œ ì ìš©í•˜ì—¬ ì§€ì—­&amp;ìž¥ì†Œ êµ¬ì• ì—†ì´<br class="d-none d-xs-block"/>
+						ê³µì •í•œ ë¹„ëŒ€ë©´ ë©´ì ‘ì„ í†µí•´ ê¸°ì—…ì— ì í•©í•œ ì¸ìž¬ë¥¼ ì°¾ì•„ë³´ì„¸ìš”.
 					</h5>
 					<div class="btn-box" data-aos="fade-right" data-aos-delay="400">
 						<button type="button" class="btn size-sm freetrial" onclick="location.href='https://rasp4.incruit.com/console/account/join/'">
-							<span>¹«·á Ã¼Çè</span>
+							<span>ë¬´ë£Œ ì²´í—˜</span>
 						</button>
 						<button type="button" class="consulting btn size-sm inquiry">
-							<span>µµÀÔ ¹®ÀÇ</span>
+							<span>ë„ìž… ë¬¸ì˜</span>
 						</button>
 					</div>
 				</div>
 				<div class="visual__img" data-aos="fade-left">
-					<img src="../../r.incru.it/static/image/info/sub_main/interview/interview_visual_img1a8e.png?20240805140085" alt="¸éÁ¢¼Ö·ç¼Ç" />
+					<img src="../../r.incru.it/static/image/info/sub_main/interview/interview_visual_img1a8e.png?20240805140085" alt="ë©´ì ‘ì†”ë£¨ì…˜" />
 				</div>
 			</div>
 		</div>
@@ -168,10 +169,10 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		<div class="section-tab-wrap">
 			<div class="section-tab-list">
 				<div class="section-tab-item">
-					<a href="#interview-ai" class="link active">AI ¿µ»ó¸éÁ¢</a>
+					<a href="#interview-ai" class="link active">AI ì˜ìƒë©´ì ‘</a>
 				</div>
 				<div class="section-tab-item">
-					<a href="#interview-video" class="link">È­»ó¸éÁ¢</a>
+					<a href="#interview-video" class="link">í™”ìƒë©´ì ‘</a>
 				</div>
 			</div>
 		</div>
@@ -179,35 +180,35 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		<div class="section-tab-contents">
 			<div id="interview-ai" class="section">
 				<div class="container">
-					<h3 class="section-title" data-aos="fade-down"><span class="text-color-1">AI ¿µ»ó¸éÁ¢</span>¸¦ È®ÀÎÇØº¸¼¼¿ä.</h3>
+					<h3 class="section-title" data-aos="fade-down"><span class="text-color-1">AI ì˜ìƒë©´ì ‘</span>ë¥¼ í™•ì¸í•´ë³´ì„¸ìš”.</h3>
 
 					<div class="border-box" data-aos="fade-down" data-aos-delay="150">
 						<div class="sub-slider-wrap">
-							<h4 class="box-in-title">AI ¿µ»ó ¸éÁ¢</h4>
+							<h4 class="box-in-title">AI ì˜ìƒ ë©´ì ‘</h4>
 							<p class="box-in-description">
-								±â¾÷¿¡¼­ ¹Ì¸® ¼¼ÆÃÇÑ ¸éÁ¢Áú¹®À¸·Î ÁøÇàÇÏ¿© AI ¿µ»óºÐ¼®°ú ÇÔ²²<br class="d-none d-sm-block" />
-								ÀÀ´ä¿¡ ´ëÇÑ °á°ú¼­·Î Áö¿øÀÚ¸¦ °´°üÀûÀ¸·Î Æò°¡ ÇÒ ¼ö ÀÖ½À´Ï´Ù.
+								ê¸°ì—…ì—ì„œ ë¯¸ë¦¬ ì„¸íŒ…í•œ ë©´ì ‘ì§ˆë¬¸ìœ¼ë¡œ ì§„í–‰í•˜ì—¬ AI ì˜ìƒë¶„ì„ê³¼ í•¨ê»˜<br class="d-none d-sm-block" />
+								ì‘ë‹µì— ëŒ€í•œ ê²°ê³¼ì„œë¡œ ì§€ì›ìžë¥¼ ê°ê´€ì ìœ¼ë¡œ í‰ê°€ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 							</p>
 							<div class="box-in-tag">
-								<span class="tag">#¸éÁ¢ °¨µ¶°ü ¹× AI ¿µ»óºÐ¼®</span>
-								<span class="tag">#¸éÁ¢ Áú¹® ¼³Á¤ °¡´É</span>
-								<span class="tag">#µðÅ×ÀÏÇÑ ¸éÁ¢ ºÐ¼®</span>
-								<span class="tag">#Ç¥Á¤ ºÐ¼®À» ÅëÇÑ °á°ú Á¦°ø</span>
+								<span class="tag">#ë©´ì ‘ ê°ë…ê´€ ë° AI ì˜ìƒë¶„ì„</span>
+								<span class="tag">#ë©´ì ‘ ì§ˆë¬¸ ì„¤ì • ê°€ëŠ¥</span>
+								<span class="tag">#ë””í…Œì¼í•œ ë©´ì ‘ ë¶„ì„</span>
+								<span class="tag">#í‘œì • ë¶„ì„ì„ í†µí•œ ê²°ê³¼ ì œê³µ</span>
 							</div>
 
 							<div class="sub-slider">
 								<div class="swiper">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-											<img src="../../r.incru.it/static/image/info/sub_main/interview/interview_ai_img1_11a8e.png?20240805140085" alt="AI ¿µ»ó¸éÁ¢ ÀÌ¹ÌÁö" />
+											<img src="../../r.incru.it/static/image/info/sub_main/interview/interview_ai_img1_11a8e.png?20240805140085" alt="AI ì˜ìƒë©´ì ‘ ì´ë¯¸ì§€" />
 										</div>
 										<div class="swiper-slide">
-											<img src="../../r.incru.it/static/image/info/sub_main/interview/interview_ai_img1_11a8e.png?20240805140085" alt="AI ¿µ»ó¸éÁ¢ ÀÌ¹ÌÁö" />
+											<img src="../../r.incru.it/static/image/info/sub_main/interview/interview_ai_img1_11a8e.png?20240805140085" alt="AI ì˜ìƒë©´ì ‘ ì´ë¯¸ì§€" />
 										</div>
 									</div>
 								</div>
-								<!--button type="button" class="swiper-button prev">ÀÌÀü</button>
-								<button type="button" class="swiper-button next">´ÙÀ½</button>
+								<!--button type="button" class="swiper-button prev">ì´ì „</button>
+								<button type="button" class="swiper-button next">ë‹¤ìŒ</button>
 								<div class="swiper-pagination"></div-->
 							</div>
 						</div>
@@ -217,23 +218,23 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 
 			<div id="interview-video" class="section">
 				<div class="container">
-					<h3 class="section-title" data-aos="fade-down"><span class="text-color-1">È­»ó¸éÁ¢</span>À» È®ÀÎÇØº¸¼¼¿ä.</h3>
+					<h3 class="section-title" data-aos="fade-down"><span class="text-color-1">í™”ìƒë©´ì ‘</span>ì„ í™•ì¸í•´ë³´ì„¸ìš”.</h3>
 
 					<div class="border-box" data-aos="fade-down" data-aos-delay="150">
-						<h4 class="box-in-title">È­»ó ¸éÁ¢</h4>
+						<h4 class="box-in-title">í™”ìƒ ë©´ì ‘</h4>
 						<p class="box-in-description">
-							¿ÀÇÁ¶óÀÎ ¹æ½Ä ±×´ë·Î ¿Â¶óÀÎ¿¡¼­ PT¸éÁ¢, ¿ª·®¸éÁ¢, Åä·Ð¸éÁ¢±îÁö<br class="d-none d-sm-block" />
-							¸ðµÎ Áö¿øÇÏ¸ç Áö¿ª&middot;Àå¼Ò¿¡ ±¸¾Ö ¾øÀÌ ºñ´ë¸é ¸éÁ¢ÀÌ °¡´ÉÇÕ´Ï´Ù.
+							ì˜¤í”„ë¼ì¸ ë°©ì‹ ê·¸ëŒ€ë¡œ ì˜¨ë¼ì¸ì—ì„œ PTë©´ì ‘, ì—­ëŸ‰ë©´ì ‘, í† ë¡ ë©´ì ‘ê¹Œì§€<br class="d-none d-sm-block" />
+							ëª¨ë‘ ì§€ì›í•˜ë©° ì§€ì—­&middot;ìž¥ì†Œì— êµ¬ì•  ì—†ì´ ë¹„ëŒ€ë©´ ë©´ì ‘ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.
 						</p>
 						<div class="box-in-tag">
-							<span class="tag">#¿ÀÇÁ¶óÀÎ ¸éÁ¢°ú µ¿ÀÏÇÑ ¿Â¶óÀÎ ¸éÁ¢ È¯°æ</span>
-							<span class="tag">#´Ù¾çÇÑ ¸éÁ¢ À¯Çü ÁøÇà °¡´É</span>
-							<span class="tag"># Áö¿ª, Àå¼Ò, ½Ã°£ °ÆÁ¤ ÇØ°á</span>
+							<span class="tag">#ì˜¤í”„ë¼ì¸ ë©´ì ‘ê³¼ ë™ì¼í•œ ì˜¨ë¼ì¸ ë©´ì ‘ í™˜ê²½</span>
+							<span class="tag">#ë‹¤ì–‘í•œ ë©´ì ‘ ìœ í˜• ì§„í–‰ ê°€ëŠ¥</span>
+							<span class="tag"># ì§€ì—­, ìž¥ì†Œ, ì‹œê°„ ê±±ì • í•´ê²°</span>
 						</div>
 
 						<div class="embed-responsive-wrap">
 							<div class="embed-responsive">
-								<iframe width="1273" height="716" src="https://www.youtube.com/embed/xQCyHCopL1I" title="[ÀÎÅ©·çÆ®] È­»ó¸éÁ¢ ¼Ö·ç¼Ç È«º¸¿µ»ó" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								<iframe width="1273" height="716" src="https://www.youtube.com/embed/xQCyHCopL1I" title="[ì¸í¬ë£¨íŠ¸] í™”ìƒë©´ì ‘ ì†”ë£¨ì…˜ í™ë³´ì˜ìƒ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>
@@ -243,40 +244,40 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 
 		<div class="section sub-process">
 			<div class="container">
-				<h2 class="h2 text-color-dark font-weight-semibold" data-aos="fade-up">ºñ´ë¸é ¸éÁ¢ÀÌ Èûµå½Å°¡¿ä?</h2>
-				<h5 class="h5" data-aos="fade-down">Ã¤¿ë Àü¹®°¡°¡ ¸éÁ¢ ½ÃÀÛºÎÅÍ ¿î¿µ±îÁö ÇÔ²² ÇÕ´Ï´Ù.</h5>
+				<h2 class="h2 text-color-dark font-weight-semibold" data-aos="fade-up">ë¹„ëŒ€ë©´ ë©´ì ‘ì´ íž˜ë“œì‹ ê°€ìš”?</h2>
+				<h5 class="h5" data-aos="fade-down">ì±„ìš© ì „ë¬¸ê°€ê°€ ë©´ì ‘ ì‹œìž‘ë¶€í„° ìš´ì˜ê¹Œì§€ í•¨ê»˜ í•©ë‹ˆë‹¤.</h5>
 
 				<div class="process">
 					<div class="process__item" data-aos="zoom-in" data-aos-delay="100">
 						<div class="process__box">
 							<div class="icon">
-								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon11a8e.png?20240805140085" alt="È®¼º±â" />
+								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon11a8e.png?20240805140085" alt="í™•ì„±ê¸°" />
 							</div>
-							<p class="title">»çÀü ¾È³» ÁøÇà</p>
+							<p class="title">ì‚¬ì „ ì•ˆë‚´ ì§„í–‰</p>
 						</div>
 					</div>
 					<div class="process__item" data-aos="zoom-in" data-aos-delay="200">
 						<div class="process__box">
 							<div class="icon">
-								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon21a8e.png?20240805140085" alt="Áö¿øÀÚ" />
+								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon21a8e.png?20240805140085" alt="ì§€ì›ìž" />
 							</div>
-							<p class="title">Áö¿øÀÚ ´ë±â½Ç ¿î¿µ</p>
+							<p class="title">ì§€ì›ìž ëŒ€ê¸°ì‹¤ ìš´ì˜</p>
 						</div>
 					</div>
 					<div class="process__item" data-aos="zoom-in" data-aos-delay="300">
 						<div class="process__box">
 							<div class="icon">
-								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon31a8e.png?20240805140085" alt="¿Â¶óÀÎ ¸éÁ¢" />
+								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon31a8e.png?20240805140085" alt="ì˜¨ë¼ì¸ ë©´ì ‘" />
 							</div>
-							<p class="title">ºñ´ë¸é ¸éÁ¢ ÁøÇà</p>
+							<p class="title">ë¹„ëŒ€ë©´ ë©´ì ‘ ì§„í–‰</p>
 						</div>
 					</div>
 					<div class="process__item" data-aos="zoom-in" data-aos-delay="400">
 						<div class="process__box">
 							<div class="icon">
-								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon41a8e.png?20240805140085" alt="¸ÞÀÏ" />
+								<img src="../../r.incru.it/static/image/info/sub_main/interview/process_icon41a8e.png?20240805140085" alt="ë©”ì¼" />
 							</div>
-							<p class="title">ÃßÈÄ ÀüÇü ¾È³»</p>
+							<p class="title">ì¶”í›„ ì „í˜• ì•ˆë‚´</p>
 						</div>
 					</div>
 				</div>
@@ -286,12 +287,12 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		<div class="section sub-solution pt-110">
 			<div class="container">
 				<h3 class="section-title" data-aos="fade-up">
-					¸¹Àº ±â¾÷ÀÌ Interview¿Í<br />
-					ÇÔ²² »ç¿ëÁßÀÎ ¼Ö·ç¼ÇÀ» È®ÀÎÇØº¸¼¼¿ä.
+					ë§Žì€ ê¸°ì—…ì´ Interviewì™€<br />
+					í•¨ê»˜ ì‚¬ìš©ì¤‘ì¸ ì†”ë£¨ì…˜ì„ í™•ì¸í•´ë³´ì„¸ìš”.
 				</h3>
 				<p class="section-text" data-aos="fade-down">
-					ÀÎÀç¸¦ Á¦´ë·Î °ËÁõÇÏ°í Ã¤¿ë ¼º°ø·üÀ» ³ôÀÎ<br class="d-sm-none" />
-					±â¾÷µéÀÇ ÈÄ±â¸¦ È®ÀÎÇØ º¸¼¼¿ä.
+					ì¸ìž¬ë¥¼ ì œëŒ€ë¡œ ê²€ì¦í•˜ê³  ì±„ìš© ì„±ê³µë¥ ì„ ë†’ì¸<br class="d-sm-none" />
+					ê¸°ì—…ë“¤ì˜ í›„ê¸°ë¥¼ í™•ì¸í•´ ë³´ì„¸ìš”.
 				</p>
 
 				<div class="solution-list">
@@ -301,9 +302,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 						</div>
 						<div class="txt-bx">
 							<p class="title">ATS&CRM</p>
-							<p class="text">Ã¤¿ë°ü¸®¼Ö·ç¼Ç</p>
+							<p class="text">ì±„ìš©ê´€ë¦¬ì†”ë£¨ì…˜</p>
 						</div>
-						<button type="button" class="go_ats_crm details_view"><span>ÀÚ¼¼È÷º¸±â</span></button>
+						<button type="button" class="go_ats_crm details_view"><span>ìžì„¸ížˆë³´ê¸°</span></button>
 					</div>
 					<div class="solution-list__item" data-aos="flip-up" data-aos-delay="300">
 						<div class="icon-bx">
@@ -311,9 +312,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 						</div>
 						<div class="txt-bx">
 							<p class="title">ASSESS</p>
-							<p class="text">°ËÁõµµ±¸¼Ö·ç¼Ç</p>
+							<p class="text">ê²€ì¦ë„êµ¬ì†”ë£¨ì…˜</p>
 						</div>
-						<button type="button" class="go_assess details_view"><span>ÀÚ¼¼È÷º¸±â</span></button>
+						<button type="button" class="go_assess details_view"><span>ìžì„¸ížˆë³´ê¸°</span></button>
 					</div>
 				</div>
 			</div>
@@ -322,18 +323,18 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		<div class="section sub-experience">
 			<div class="container">
 				<h3 class="section-title" data-aos="fade-up">
-					Áö±Ý ¹Ù·Î ÀÎÅ©·çÆ®¿÷½º¿Í ÇÔ²²<br />
-					Ã¤¿ë¼Ö·ç¼ÇÀ» °æÇèÇØ º¸¼¼¿ä.
+					ì§€ê¸ˆ ë°”ë¡œ ì¸í¬ë£¨íŠ¸ì›ìŠ¤ì™€ í•¨ê»˜<br />
+					ì±„ìš©ì†”ë£¨ì…˜ì„ ê²½í—˜í•´ ë³´ì„¸ìš”.
 				</h3>
 				<p class="section-text" data-aos="fade-down">
-					Áö´ÉÇü AI ·Î Áö¿øÀÚ °ËÁõ ¹× Æò°¡,<br class="d-sm-none" />
-					Æí°ß ¾ø´Â Ã¤¿ë ÇÁ·Î¼¼½º,<br class="d-md-none" />
-					Á¤È®ÇÏ°í È¿À²ÀûÀÎ Ã¤¿ë ¹× ºñ¿ë Àý°¨
+					ì§€ëŠ¥í˜• AI ë¡œ ì§€ì›ìž ê²€ì¦ ë° í‰ê°€,<br class="d-sm-none" />
+					íŽ¸ê²¬ ì—†ëŠ” ì±„ìš© í”„ë¡œì„¸ìŠ¤,<br class="d-md-none" />
+					ì •í™•í•˜ê³  íš¨ìœ¨ì ì¸ ì±„ìš© ë° ë¹„ìš© ì ˆê°
 				</p>
 
 				<div class="btn-box" data-aos="fade-down" data-aos-delay="150">
-					<button type="button" class="btn freetrial" onclick="location.href='https://rasp4.incruit.com/console/account/join/'"><span>¹«·á Ã¼Çè</span></button>
-					<button type="button" class="consulting btn inquiry"><span>µµÀÔ ¹®ÀÇ</span></button>
+					<button type="button" class="btn freetrial" onclick="location.href='https://rasp4.incruit.com/console/account/join/'"><span>ë¬´ë£Œ ì²´í—˜</span></button>
+					<button type="button" class="consulting btn inquiry"><span>ë„ìž… ë¬¸ì˜</span></button>
 				</div>
 			</div>
 		</div>
@@ -342,43 +343,43 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	<footer id="footer">
 		<div class="inner">
 			<div class="f-link">
-				<a href="http://www.incruit.com/">ÀÎÅ©·çÆ®</a>
-				<a href="http://www.incruit.com/docs/terms.asp">ÀÌ¿ë¾à°ü</a>
-				<a href="http://www.incruit.com/docs/privacy.asp">°³ÀÎÁ¤º¸ Ã³¸®¹æÄ§</a>
-				<a href="http://info.incruit.com/introduce/contact.asp">Á¦ÈÞ¹®ÀÇ</a>
+				<a href="http://www.incruit.com/">ì¸í¬ë£¨íŠ¸</a>
+				<a href="http://www.incruit.com/docs/terms.asp">ì´ìš©ì•½ê´€</a>
+				<a href="http://www.incruit.com/docs/privacy.asp">ê°œì¸ì •ë³´ ì²˜ë¦¬ë°©ì¹¨</a>
+				<a href="http://info.incruit.com/introduce/contact.asp">ì œíœ´ë¬¸ì˜</a>
 			</div>
 			<div class="snsbox">
-				<a href="http://www.facebook.com/incruit/"><img src="http://r.incru.it/static/image/info/common/sns_facebook.svg?20240805140085" alt="ÆäÀÌ½ººÏ" title="ÆäÀÌ½ººÏ" /></a>
-				<a href="http://blog.naver.com/incruit1"><img src="http://r.incru.it/static/image/info/common/sns_blog.svg?20240805140085" alt="ºí·Î±×" title="ºí·Î±×" /></a>
+				<a href="http://www.facebook.com/incruit/"><img src="http://r.incru.it/static/image/info/common/sns_facebook.svg?20240805140085" alt="íŽ˜ì´ìŠ¤ë¶" title="íŽ˜ì´ìŠ¤ë¶" /></a>
+				<a href="http://blog.naver.com/incruit1"><img src="http://r.incru.it/static/image/info/common/sns_blog.svg?20240805140085" alt="ë¸”ë¡œê·¸" title="ë¸”ë¡œê·¸" /></a>
 			</div>
 			<div class="copywrap">
 				<p class="text">
 					<span class="pc-block">
 						<span class="m-block">
-							<span>(04507) ¼­¿ïÆ¯º°½Ã Áß±¸ Áß¸²·Î 49 (Áß¸²µ¿ 128-104)</span>
+							<span>(04507) ì„œìš¸íŠ¹ë³„ì‹œ ì¤‘êµ¬ ì¤‘ë¦¼ë¡œ 49 (ì¤‘ë¦¼ë™ 128-104)</span>
 						</span>
 						<span class="m-block">
-							<span>´ëÇ¥ÀÌ»ç : ¼­¹Ì¿µ</span>
-							<span>°³ÀÎÁ¤º¸ º¸È£Ã¥ÀÓÀÚ : ±èÁø¼ö</span>
+							<span>ëŒ€í‘œì´ì‚¬ : ì„œë¯¸ì˜</span>
+							<span>ê°œì¸ì •ë³´ ë³´í˜¸ì±…ìž„ìž : ê¹€ì§„ìˆ˜</span>
 						</span>
 					</span>
 
-					<span class="pc-first">»ç¾÷ÀÚµî·Ï : 320-87-01210</span>
-					<span>Åë½ÅÆÇ¸Å¾÷ ½Å°í : Á¦2021-¼­¿ïÁß±¸-2510È£</span>
+					<span class="pc-first">ì‚¬ì—…ìžë“±ë¡ : 320-87-01210</span>
+					<span>í†µì‹ íŒë§¤ì—… ì‹ ê³  : ì œ2021-ì„œìš¸ì¤‘êµ¬-2510í˜¸</span>
 					<span class="m-block">
-						<span>Á÷¾÷Á¤º¸Á¦°ø»ç¾÷ ½Å°í : ¼­¿ïÃ» Á¦2018-20È£</span>
+						<span>ì§ì—…ì •ë³´ì œê³µì‚¬ì—… ì‹ ê³  : ì„œìš¸ì²­ ì œ2018-20í˜¸</span>
 					</span>
 				</p>
-				<p class="copy">Copyright¨Ï1988~2024 Incruit Corporation All rights reserved.</p>
+				<p class="copy">Copyrightâ“’1988~2024 Incruit Corporation All rights reserved.</p>
 			</div>
 		</div>
 	</footer>
 
 	<div class="fixed-wrap">
 		<div class="ask-button-wrap">
-			<button type="button" class="consulting ask-button" title="¹®ÀÇÇÏ±â">¹®ÀÇ</button>
+			<button type="button" class="consulting ask-button" title="ë¬¸ì˜í•˜ê¸°">ë¬¸ì˜</button>
 		</div>
-		<button class="btn_new_top" style="display: block" onclick="topClick()"><em>»ó´ÜÀ¸·Î ÀÌµ¿</em></button>
+		<button class="btn_new_top" style="display: block" onclick="topClick()"><em>ìƒë‹¨ìœ¼ë¡œ ì´ë™</em></button>
 	</div>
 
 	</div>
