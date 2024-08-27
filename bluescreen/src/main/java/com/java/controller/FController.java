@@ -10,6 +10,14 @@ public class FController {
 	public String index() {
 		return "index";	
 	}
+	@RequestMapping("/index1")
+	public String index1() {
+		return "index1";	
+	}
+	@RequestMapping("/adminpage")
+	public String adminpage() {
+		return "adminpage";	
+	}
 	@RequestMapping("/index_2")
 	public String index_2() {
 		return "index_2";	
