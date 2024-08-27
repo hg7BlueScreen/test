@@ -237,23 +237,18 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		<div class="inner">
 			<div class="copywrap">
 				<p class="text">
+					<span class="m-block">
+						<span class="w-block"><a href="">개인정보 처리방침</a></span>						
+						<span class="w-block"><a href="">이용약관</a></span>						
+					</span>
 					<span class="pc-block">
 						<span class="m-block">
-							<span>(04507) 서울특별시 중구 중림로 49 (중림동 128-104)</span>
-						</span>
-						<span class="m-block">
-							<span>대표이사 : 서미영</span>
-							<span>개인정보 보호책임자 : 김진수</span>
+							<span>ADR : 08378 서울 구로구 디지털로34길 27 (구로동) 1106-7호</span>
 						</span>
 					</span>
-
-					<span class="pc-first">사업자등록 : 320-87-01210</span>
-					<span>통신판매업 신고 : 제2021-서울중구-2510호</span>
-					<span class="m-block">
-						<span>직업정보제공사업 신고 : 서울청 제2018-20호</span>
-					</span>
+					<span class="pc-first">TEL : 02-6959-3647</span>
 				</p>
-				<p class="copy">Copyrightⓒ1988~2024 Incruit Corporation All rights reserved.</p>
+				<p class="copy">Copyrightⓒ한국직업전문학교. All Rights Reserved.</p>
 			</div>
 		</div>
 	</footer>

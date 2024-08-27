@@ -334,7 +334,7 @@ html, body {scroll-behavior: smooth;}
 	#footer .copywrap p span.pc-first{padding-left:0;margin-left:0;}
 	#footer .copywrap p span.pc-block:after, 
 	#footer .copywrap p span.m-block:after	{display:none;}
-
+	#footer .copywrap p span.w-block{font-size:50px; font-weight: bold;}
 	.fixed-wrap .ask-button-wrap {right: 16px; bottom: 73px;}
 	.fixed-wrap .ask-button-wrap .ask-button {width: 46px; height: 46px; background-size: 21px auto;}
 	.fixed-wrap button.btn_new_top {width: 46px; height: 46px; right: 16px; bottom:16px !important;background-size: 15px auto;}
