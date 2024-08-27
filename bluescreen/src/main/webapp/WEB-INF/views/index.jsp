@@ -157,46 +157,46 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 					<div class="right">
 						<div class="wrap">
 							<a>
-								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<i style="background-image:url(/image/graph.png);display:block;height:180px; opacity: 0.73"></i>
 								<div class="text">
-									<span class="cate" data-platform-name="디지털산업혁신">디지털산업혁신</span>
-									<p>지역 산업 생태계 분석 사례 – 경기도 화성시</p>
+									<span class="cate" data-platform-name="현황">현황</span>
+									<p>이미지 차트 삽입, 클릭 시 공지사항 중 차트페이지로 이동</p>
 								</div>
 							</a>
 						</div>
 						<div class="wrap">
 							<a href="datastory/traffic/seoul.html">
-								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<i style="background-image:url(/image/eggmale.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
-									<span class="cate" data-platform-name="교통">교통</span>
-									<p>데이터로 보는 서울시 대중교통 이용</p>
+									<span class="cate" data-platform-name="사례">사례</span>
+									<p>유튜브 영상 중 임산한 수컷 물고기 혹은 사례 삽입, 링크 추가</p>
 								</div>
 							</a>
 						</div>
 						<div class="wrap">
 							<a href="datastory/new/story_57.html">
-								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<i style="background-image:url(/image/newsimage.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
-									<span class="cate" data-platform-name="스마트치안">스마트치안</span>
-									<p>데이터로 보는 서울의 119 출동</p>
+									<span class="cate" data-platform-name="뉴스">뉴스</span>
+									<p>이런 것도 증상? 심근경색 전조증상 남녀, 다르다!</p>
 								</div>
 							</a>
 						</div>
 						<div class="wrap">
 							<a href="datastory/new/story_33.html">
-								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<i style="background-image:url(/image/notice.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
-									<span class="cate" data-platform-name="지역경제">지역경제</span>
-									<p>코로나19 확산으로 인한 소비감소 및 긴급재난지원금 효과분석</p>
+									<span class="cate" data-platform-name="공지사항">공지사항</span>
+									<p>클릭 시 공지사항 페이지로 이동하도록</p>
 								</div>
 							</a>
 						</div>
 						<div class="wrap">
 							<a href="datastory/new/story_32.html">
-								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<i style="background-image:url(/image/wastedrugs.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
-									<span class="cate" data-platform-name="지역경제">지역경제</span>
-									<p>지역화폐 효과성 제고 방안</p>
+									<span class="cate" data-platform-name="생황팁">생활팁</span>
+									<p>올바른 폐의약품 폐기방법 관련 FAQ 링크로 보냄</p>
 								</div>
 							</a>
 						</div>
@@ -237,18 +237,23 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		<div class="inner">
 			<div class="copywrap">
 				<p class="text">
-					<span class="m-block">
-						<span class="w-block"><a href="">개인정보 처리방침</a></span>						
-						<span class="w-block"><a href="">이용약관</a></span>						
-					</span>
 					<span class="pc-block">
 						<span class="m-block">
-							<span>ADR : 08378 서울 구로구 디지털로34길 27 (구로동) 1106-7호</span>
+							<span>(04507) 서울특별시 중구 중림로 49 (중림동 128-104)</span>
+						</span>
+						<span class="m-block">
+							<span>대표이사 : 서미영</span>
+							<span>개인정보 보호책임자 : 김진수</span>
 						</span>
 					</span>
-					<span class="pc-first">TEL : 02-6959-3647</span>
+
+					<span class="pc-first">사업자등록 : 320-87-01210</span>
+					<span>통신판매업 신고 : 제2021-서울중구-2510호</span>
+					<span class="m-block">
+						<span>직업정보제공사업 신고 : 서울청 제2018-20호</span>
+					</span>
 				</p>
-				<p class="copy">Copyrightⓒ한국직업전문학교. All Rights Reserved.</p>
+				<p class="copy">Copyrightⓒ1988~2024 Incruit Corporation All rights reserved.</p>
 			</div>
 		</div>
 	</footer>
