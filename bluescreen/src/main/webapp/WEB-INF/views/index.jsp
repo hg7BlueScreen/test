@@ -20,7 +20,7 @@
 
 <link rel="stylesheet" href="/npm/swiper%4011/swiper-bundle.min.css" />
 <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/main_new.css">
+<link rel="stylesheet" href="/css/main_new.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ31PFFV4W"></script>
 <script type="text/javascript">
 <!--
@@ -37,49 +37,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	</div>
 	<div id="wrap" class="new_main">
 	
-	<header id="header" class="">
-	<!-- <div class="v2banner">배너영역 2차 시 내용 추가</div> -->
-		<div class="inner">
-			<div class="logo">
-				<a class="logo-incruit" href="/image/팀로고.png"></a>
-			</div>
-			<div class="overlay">
-				<nav id="nav" class="overlay-menu">
-					<ul class="gnb cf">
-						<li class="pc onList on">
-							<a href="#" class="mainMenu">메인메뉴</a>
-
-							<div class="show_onlist">
-								<div class="dropdown_inner">
-									<a href="javascript:;" class="go_ats_crm list_menuBox">
-										<span class="d-menu-t">MAP</span>
-										<span class="d-menu-t2">폐의약품 수거함 검색</span>
-									</a>
-									<a href="javascript:;" class="go_assess list_menuBox">
-										<span class="d-menu-t">DICTIONARY</span>
-										<span class="d-menu-t2">의약품 및 질병 사전</span>
-									</a>
-									<a href="javascript:;" class="go_interview list_menuBox">
-										<span class="d-menu-t">MYPAGE</span>
-										<span class="d-menu-t2">개인 정보 및 의료 정보</span>
-									</a>
-									<a href="javascript:;" class="go_proctor list_menuBox">
-										<span class="d-menu-t">ECOPOINT</span>
-										<span class="d-menu-t2">탄소 중립 포인트제</span>
-									</a>
-								</div>
-							</div>
-						</li>
-
-						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">로그아웃</a></li>
-						<li class="pc">
-							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">로그인</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
+	<%@ include file="header.jsp" %>
 
 	<input type="hidden" id="s_type" value="ats_crm">
 	<input type="hidden" id="eCode" value=""/>
@@ -231,32 +189,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	<div class="newLayer_body newType" id="packageSt" style="display: none;"></div>
 	<div class="newLayer_body newType fullLayer" id="packageSt_1" style="display: none;"></div>
 	
-
+<%@ include file="footer.jsp" %>
 		
-		<footer id="footer">
-		<div class="inner">
-			<div class="copywrap">
-				<p class="text">
-					<span class="pc-block">
-						<span class="m-block">
-							<span>(04507) 서울특별시 중구 중림로 49 (중림동 128-104)</span>
-						</span>
-						<span class="m-block">
-							<span>대표이사 : 서미영</span>
-							<span>개인정보 보호책임자 : 김진수</span>
-						</span>
-					</span>
 
-					<span class="pc-first">사업자등록 : 320-87-01210</span>
-					<span>통신판매업 신고 : 제2021-서울중구-2510호</span>
-					<span class="m-block">
-						<span>직업정보제공사업 신고 : 서울청 제2018-20호</span>
-					</span>
-				</p>
-				<p class="copy">Copyrightⓒ1988~2024 Incruit Corporation All rights reserved.</p>
-			</div>
-		</div>
-	</footer>
 <script type="text/javascript">
 <!--
 jQuery(document).ready(function(){if(jQuery.isFunction(window._gReadyScript)) _gReadyScript();AOS.init({easing: 'ease-in-out-back',once:'true'});});
