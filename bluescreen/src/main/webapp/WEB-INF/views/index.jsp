@@ -10,12 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="canonical" href="index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<title>인크루트웍스 - 편리한 채용솔루션</title>
-<meta name="title" content="AI로 검증하는 채용솔루션, 인크루트웍스">
-<meta name="description" content="인크루트웍스 채용솔루션으로 더 똑똑하고 빠르게 채용하세요! 기업채용에 최적화된 지원자관리,평가관리,면접관리,인재검증 등 다양한 솔루션을 제공합니다.">
-<meta name="keywords" content="채용솔루션, 채용홈페이지, 지원자관리, 온라인접수, 접수시스템, 채용프로그램, 채용사이트, 채용관리, 채용절차, 채용ATS, 채용CRM, ATS, ATS&CRM, CRM, 면접일정, 협업평가, 온라인채용, 인성검사, 적성검사, 온라인시험, 인재검증">
-<meta property="og:title" content="AI로 검증하는 채용솔루션, 인크루트웍스">
-<meta property="og:description" content="인크루트웍스 채용솔루션으로 더 똑똑하고 빠르게 채용하세요! 기업채용에 최적화된 지원자관리,평가관리,면접관리,인재검증 등 다양한 솔루션을 제공합니다.">
+<title>블루스크린 메인페이지</title>
 <link rel="shortcut icon" href="http://works.incruit.com/favicon.ico" type="image/x-icon">
 <link type="text/css" rel="stylesheet" href="/css/info/common_total1a8e.css?20240805140085">
 <link type="text/css" rel="stylesheet" href="/css/info/sub_main1a8e.css?20240805140085" />
@@ -24,7 +19,8 @@
 <link type="text/css" rel="stylesheet" href="/css/info/micropage_total1a8e.css?20240805140085" />
 
 <link rel="stylesheet" href="/npm/swiper%4011/swiper-bundle.min.css" />
-
+<link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/main_new.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ31PFFV4W"></script>
 <script type="text/javascript">
 <!--
@@ -217,6 +213,64 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 			</div>
 		</div>
 	</div>
+	<div class="section fp-section" id="slide4">
+			<div class="story-wrap clearfix">
+				<div class="content">
+					<div class="left">
+						<h2>데이터 스토리</h2>
+						<p>플랫폼에서 제공하는 데이터를 활용한 흥미로운<br> 시각화 컨텐츠를 제공합니다.</p>
+						<a href="datastory.html" class="link-line" title="데이터 스토리 페이지로 연결"><span>전체보기</span></a>
+					</div>
+					<div class="right">
+						<div class="wrap">
+							<a>
+								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<div class="text">
+									<span class="cate" data-platform-name="디지털산업혁신">디지털산업혁신</span>
+									<p>지역 산업 생태계 분석 사례 – 경기도 화성시</p>
+								</div>
+							</a>
+						</div>
+						<div class="wrap">
+							<a href="datastory/traffic/seoul.html">
+								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<div class="text">
+									<span class="cate" data-platform-name="교통">교통</span>
+									<p>데이터로 보는 서울시 대중교통 이용</p>
+								</div>
+							</a>
+						</div>
+						<div class="wrap">
+							<a href="datastory/new/story_57.html">
+								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<div class="text">
+									<span class="cate" data-platform-name="스마트치안">스마트치안</span>
+									<p>데이터로 보는 서울의 119 출동</p>
+								</div>
+							</a>
+						</div>
+						<div class="wrap">
+							<a href="datastory/new/story_33.html">
+								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<div class="text">
+									<span class="cate" data-platform-name="지역경제">지역경제</span>
+									<p>코로나19 확산으로 인한 소비감소 및 긴급재난지원금 효과분석</p>
+								</div>
+							</a>
+						</div>
+						<div class="wrap">
+							<a href="datastory/new/story_32.html">
+								<i style="background-image:url(/image/img_thumb.png);display:block;height:180px;"></i>
+								<div class="text">
+									<span class="cate" data-platform-name="지역경제">지역경제</span>
+									<p>지역화폐 효과성 제고 방안</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 	<footer id="footer">
