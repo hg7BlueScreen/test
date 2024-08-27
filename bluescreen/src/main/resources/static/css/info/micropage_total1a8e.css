@@ -11,10 +11,10 @@
 /* 인크루트 뷰 소개 */
 .section.visual {max-width:100%;padding-top:75px; background: linear-gradient(#fff, #DEECFF); position: relative;}
 
-.section.visual::after {content: ""; background: url(http://r.incru.it/static/image/info/ac/micropage/2024/bg_incruit_line.svg) no-repeat; position: fixed; top: 68%; left: 0; width: 100%; height: 135px; z-index: 0;}
+.section.visual::after {content: ""; position: fixed; top: 68%; left: 0; width: 100%; height: 135px; z-index: 0;}
 
 .section.visual .cnt {position:relative; z-index: 1;}
-.section.visual .cnt .bgArea {margin-top:58px; width:752px; height:436px; background:url(../../image/info/ac/micropage/ver_2/visual_pc3857.gif?2210071732) 0 0  no-repeat;}
+.section.visual .cnt .bgArea {margin-top:58px; width:752px; height:436px;}
 .section.visual .cnt .vs_titleAaer {float:right; width:482px; line-height:1.2;color:#010101;}
 .section.visual .cnt .vs_titleAaer .top_txt {padding-top: 18.0476%; /*font-size: 30px;*/ font-size: 25px; font-weight: 200;line-height: 1.2; letter-spacing: -0.06rem;}
 .section.visual .cnt .vs_titleAaer .top_txt span {font-weight:300;}

@@ -208,12 +208,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 								</li> -->
 							</ul>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="section fp-section" id="slide4">
+						<div class="section fp-section" id="slide4">
 			<div class="story-wrap clearfix">
 				<div class="content">
 					<div class="left">
@@ -271,20 +266,35 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 				</div>
 			</div>
 		</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
 
 
-	<footer id="footer">
+	
+
+	<div class="fixed-wrap">
+		<div class="ask-button-wrap">
+			<button type="button" class="consulting ask-button" title="문의하기">문의</button>
+		</div>
+		<button class="btn_new_top" style="display: block" onclick="topClick()"><em>상단으로 이동</em></button>
+	</div>
+
+	</div>
+	<div class="newLayer_body newType" id="packageSt" style="display: none;"></div>
+	<div class="newLayer_body newType fullLayer" id="packageSt_1" style="display: none;"></div>
+	
+
+		
+		<footer id="footer">
 		<div class="inner">
-			<div class="f-link">
-				<a href="http://www.incruit.com/">인크루트</a>
-				<a href="http://www.incruit.com/docs/terms.asp">이용약관</a>
-				<a href="http://www.incruit.com/docs/privacy.asp">개인정보 처리방침</a>
-				<a href="http://info.incruit.com/introduce/contact.asp">제휴문의</a>
-			</div>
-			<div class="snsbox">
-				<a href="http://www.facebook.com/incruit/"><img src="http://r.incru.it/static/image/info/common/sns_facebook.svg?20240805140085" alt="페이스북" title="페이스북" /></a>
-				<a href="http://blog.naver.com/incruit1"><img src="http://r.incru.it/static/image/info/common/sns_blog.svg?20240805140085" alt="블로그" title="블로그" /></a>
-			</div>
 			<div class="copywrap">
 				<p class="text">
 					<span class="pc-block">
@@ -307,18 +317,6 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 			</div>
 		</div>
 	</footer>
-
-	<div class="fixed-wrap">
-		<div class="ask-button-wrap">
-			<button type="button" class="consulting ask-button" title="문의하기">문의</button>
-		</div>
-		<button class="btn_new_top" style="display: block" onclick="topClick()"><em>상단으로 이동</em></button>
-	</div>
-
-	</div>
-	<div class="newLayer_body newType" id="packageSt" style="display: none;"></div>
-	<div class="newLayer_body newType fullLayer" id="packageSt_1" style="display: none;"></div>
-
 <script type="text/javascript">
 <!--
 jQuery(document).ready(function(){if(jQuery.isFunction(window._gReadyScript)) _gReadyScript();AOS.init({easing: 'ease-in-out-back',once:'true'});});
