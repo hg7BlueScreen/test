@@ -71,9 +71,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							</div>
 						</li>
 
-						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">버튼1</a></li>
+						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">로그아웃</a></li>
 						<li class="pc">
-							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">버튼2</a>
+							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">로그인</a>
 						</li>
 					</ul>
 				</nav>
