@@ -11,7 +11,7 @@
 <link rel="canonical" href="index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <title>블루스크린 메인페이지</title>
-<link rel="shortcut icon" href="http://works.incruit.com/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/image/team.png" type="image/x-icon">
 <link type="text/css" rel="stylesheet" href="/css/info/common_total1a8e.css?20240805140085">
 <link type="text/css" rel="stylesheet" href="/css/info/sub_main1a8e.css?20240805140085" />
 <link rel="stylesheet" href="/js/aos/aos.css" />
@@ -158,20 +158,14 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 								</div>
 							</a>
 						</div>
-						
 					</div>
-					
 				</div>
 			</div>
 		</div>
 					</div>
-					
 				</div>
-				
 			</div>
-			
 		</div>
-		
 	</div>
 	
 
