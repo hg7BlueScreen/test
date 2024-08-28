@@ -313,7 +313,7 @@
   padding-left: 2rem;
 }
 .details .recent_project table tbody tr td:last-child {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
 }
 
 .details .badge {

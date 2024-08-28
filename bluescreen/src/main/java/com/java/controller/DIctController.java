@@ -11,7 +11,9 @@ public class DIctController {
 		return "dictionary";
 	}
 	
-	
-	
+	@RequestMapping("/admin_report")
+	public String adreport() {
+		return "admin_report";
+	}
 	
 }
