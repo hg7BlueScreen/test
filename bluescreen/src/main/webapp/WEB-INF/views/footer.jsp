@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<link type="text/css" rel="stylesheet" href="/css/info/common_total1a8e.css?20240805140085">
-<link type="text/css" rel="stylesheet" href="/css/info/sub_main1a8e.css?20240805140085" />
-<link rel="stylesheet" href="/js/aos/aos.css" />
 
-<link type="text/css" rel="stylesheet" href="/css/info/micropage_total1a8e.css?20240805140085" />
-
-<link rel="stylesheet" href="/npm/swiper%4011/swiper-bundle.min.css" />
-<link rel="stylesheet" href="/css/layout.css">
-<link rel="stylesheet" href="/css/main_new.css">
 	<footer id="footer">
 		<div class="inner">
 			<div class="copywrap">

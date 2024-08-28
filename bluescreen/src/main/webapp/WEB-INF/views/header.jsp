@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link type="text/css" rel="stylesheet" href="/css/info/common_total1a8e.css?20240805140085">
+  <link type="text/css" rel="stylesheet" href="/css/info/common_total1a8e.css?20240805140085">
 <link type="text/css" rel="stylesheet" href="/css/info/sub_main1a8e.css?20240805140085" />
 <link rel="stylesheet" href="/js/aos/aos.css" />
 
@@ -14,7 +14,7 @@
 	<!-- <div class="v2banner">배너영역 2차 시 내용 추가</div> -->
 		<div class="inner">
 			<div class="logo">
-				<a class="logo-incruit" href="/"></a>
+				<a class="logo-incruit" href="/image/팀로고.png"></a>
 			</div>
 			<div class="overlay">
 				<nav id="nav" class="overlay-menu">
