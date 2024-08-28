@@ -50,7 +50,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="admin_report">
           <i class='bx bx-error-circle'></i>
           <span class="links_name">
             신고관리
