@@ -12,36 +12,16 @@ ul, ol{ list-style-type: none; }
 
 /* section */
 section{
-	width: 100%; height: 1000px;
+	width: 100%; height: 700px;
 }
 
 /* 서브 이미지 */
 
 /* 상단 현재 진행 */
-#locationN {
-	width: 1000px;
-	box-sizing: border-box;
-	padding-top:38px;
-	margin: 0 auto;
-}
-#locationN>ul {
-	float: right;
-}
-#locationN>ul>li {
-	float: left;
-	font-size: 13px;
-	color:rgb(92, 92, 92);
-	font-weight: 700;
-	line-height: 1.2;
-	padding: 0px 13px 0px 10px;
-	background: url("../images/join/bg_location_li.png") right no-repeat;
-}
-#locationN>ul>li:nth-child(3) {
-	padding-right: 0px;
-	background: none;
-}
+
 
 /* 회원가입 title */
+#body{margin-top:100px;}
 #sub_top_area {
 	width: 1000px; height: 127px;
 	box-sizing: border-box;
@@ -66,7 +46,7 @@ section{
 }
 #join_step_div>ul>li {
 	float: left;
-	width: 330px;
+	width: 248px;
 	text-align: center;
 	box-sizing: border-box;
 	padding-top: 20px;
@@ -83,7 +63,7 @@ section{
 	font-size: 20px;
 	font-weight: 700;	
 }
-#join_step_div>ul>li:nth-child(3) {
+#join_step_div>ul>li:nth-child(4) {
 	background-color: rgb(0, 128, 192);
 	color: #fff;
 }

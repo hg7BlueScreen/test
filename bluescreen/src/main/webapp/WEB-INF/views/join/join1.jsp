@@ -4,14 +4,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/style_header.css">
 		<link rel="stylesheet" type="text/css" href="/css/info/style_join01_terms.css">
-		<link rel="stylesheet" type="text/css" href="css/style_footer.css">
 		<title>회원가입 - 약관동의</title>
 	</head>
-	<body>
+	<body id="body">
 		<header>
-
+	<%@ include file="../header.jsp" %>		
 		</header>
 		
 		
@@ -19,15 +17,9 @@
 		
 		
 		<section>
-			<form name="agree" method="get" action="join/join2.jsp">
+			<form name="agree" method="get" action="join2.jsp">
 				<div id="subBanner"></div>
-				<div id="locationN">
-					<ul>
-						<li>HOME</li>
-						<li>회원가입</li>
-						<li>약관동의</li>
-					</ul>
-				</div>
+				
 				
 				<div id="sub_top_area">
 					<h3>회원가입</h3>
@@ -41,10 +33,14 @@
 						</li>
 						<li>
 							<span>STEP.2</span>
-							<p>회원정보</p>
+							<p>회원 기본 정보</p>
 						</li>
 						<li>
 							<span>STEP.3</span>
+							<p>회원 의료 정보</p>
+						</li>
+						<li>
+							<span>STEP.4</span>
 							<p>회원가입완료</p>
 						</li>
 					</ul>
@@ -162,8 +158,8 @@
 				</div>
 				
 				<div id="terms_button">
-					<input type="reset" value="취소하기" />
-					<input type="submit" value="가입하기" />
+					<input type="reset" value="취소" />
+					<input type="submit" value="다음" />
 				</div>
 				
 			</form>
@@ -177,7 +173,7 @@
 		
 		<footer>
 			
-			<%@ include file="footer.jsp" %>		
+			<%@ include file="../footer.jsp" %>		
 		
 		</footer>
 	</body>

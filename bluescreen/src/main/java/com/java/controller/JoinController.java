@@ -18,4 +18,8 @@ public class JoinController {
 	public String join3() {
 		return "join/join3";
 	}
+	@RequestMapping("/join4")
+	public String join4() {
+		return "join/join4";
+	}
 }

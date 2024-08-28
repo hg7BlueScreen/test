@@ -14,42 +14,23 @@ ul, ol{ list-style-type: none; }
 
 /* section */
 section{
-	width: 100%; height: 1900px;
+	width: 100%; height: 1200px;
 }
 
 /* 서브 이미지 */
 
 
 /* 상단 현재 진행 */
-#locationN {
-	width: 1000px;
-	box-sizing: border-box;
-	padding-top:38px;
-	margin: 0 auto;
-}
-#locationN>ul {
-	float: right;
-}
-#locationN>ul>li {
-	float: left;
-	font-size: 13px;
-	color:rgb(92, 92, 92);
-	font-weight: 700;
-	line-height: 1.2;
-	padding: 0px 13px 0px 10px;
-	background: url("../images/join/bg_location_li.png") right no-repeat;
-}
-#locationN>ul>li:nth-child(3) {
-	padding-right: 0px;
-	background: none;
-}
+
 
 /* 회원가입 title */
+#body{margin-top:100px;}
 #sub_top_area {
 	width: 1000px; height: 127px;
 	box-sizing: border-box;
 	padding: 40px 0px 20px;
 	margin: 0 auto;
+	
 }
 #sub_top_area>h3 {
 	font-size: 40px;
@@ -69,7 +50,7 @@ section{
 }
 #join_step_div>ul>li {
 	float: left;
-	width: 330px;
+	width: 248px;
 	text-align: center;
 	box-sizing: border-box;
 	padding-top: 20px;
@@ -206,6 +187,35 @@ dd span {
 	display: block;
 	margin-top: 5px;
 }
+#join_nickname_dl dt{
+	height: 70px;
+}
+#join_nickname_dl dd{
+	height: 70px;
+}
+#join_nickname_dl dt div {
+	top: 33px;
+}
+#join_nickname_dl dt label {
+	padding-top: 35px;
+}
+#join_nickname_dl input[type="text"] {
+	width: 276px;
+}
+#join_nickname_dl input[type="button"] {
+	width: 80px; height: 30px;
+	background-color: #6f6f6f;
+	padding: 0px 10px;
+	border: none;
+	line-height: 5px;
+	color: #fff;
+	font-weight: 700;
+	font-size:12px;
+}
+#join_nickname_dl span {
+	display: block;
+	margin-top: 5px;
+}
 
 #join_pw1_dl dt{
 	height: 87px;
@@ -319,7 +329,7 @@ dd span {
 	
 input[type="radio"]:not(old) {
 	width:24px;
-	opacity: 0;
+	opacity: 100;
 }
 input[type="radio"]:not(old) + label {
 	/*display:inline-block;*/
@@ -337,7 +347,7 @@ input[type="radio"]:not(old):checked + label {
 }
 input[type="checkbox"]:not(old) {
 	width:24px;
-	opacity: 0;
+	opacity: 100;
 }
 input[type="checkbox"]:not(old) + label {
 	/*display:inline-block;*/
@@ -531,7 +541,7 @@ input[type="checkbox"]:not(old):checked + label {
 }
 #info_input_button input:nth-child(2) {
 	color: rgb(255, 255, 255);
-	background: rgb(138, 141, 143);
+	background: rgb(0, 128, 192);
 }
 
 

@@ -3,7 +3,7 @@
 
 /* reset */
 *,*::before,*::after {box-sizing: border-box;}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {font-family: "MinSansVF", "Min Sans", sans-serif;margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;font-style: inherit;font-size: 100%;vertical-align: baseline;letter-spacing:-0.075em;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {font-family: "MinSansVF", "Min Sans", sans-serif;margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;font-style: inherit;font-size: 100%;vertical-align: baseline;letter-spacing:-0.075em;}
 html {-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust: none;height:100%;}
 body, p {margin:0;}
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display:block}
@@ -18,7 +18,6 @@ button, html input[type=button], input[type=reset], input[type=submit] {-webkit-
 button[disabled], html input[disabled] {cursor:default}
 button::-moz-focus-inner, input::-moz-focus-inner {padding:0;border:0}
 input {line-height:normal}
-label {display:inline-block;max-width:100%;}
 legend {padding:0;	border:0}
 textarea {	overflow:auto}
 table {width:100%;max-width:100%;border-spacing:0;border-collapse:collapse}
@@ -39,7 +38,7 @@ a .material-icons {vertical-align: middle;}
 *:focus {outline: 0}
 a.none-underline{text-decoration:none}
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {font-family: "MinSansVF", "Min Sans", sans-serif;line-height: normal}
+h1, h2, h3, h5, h6, .h1, .h2, .h3 {font-family: "MinSansVF", "Min Sans", sans-serif;line-height: normal}
 
 .is-popupOpen {overflow: hidden;}
 .skip { overflow: hidden; position: absolute; left: -500em; }

@@ -55,7 +55,7 @@
 .section.contactUs .cnt .title {padding-top:56px;line-height:1}
 .request-list {margin-top:30px;border-top:2px solid  #000000;}
 .request-list li {position:relative; padding:17px 0;border-bottom:1px solid  #929292;}
-.request-list li label {float:left;display:block;position:relative; padding-left:39px;line-height:36px;font-size:18px;color:#686868; box-sizing:border-box;}
+.request-list li {float:left;display:block;position:relative; padding-left:39px;line-height:36px;font-size:18px;color:#686868; box-sizing:border-box;}
 .request-list li .input {float:left;width:86.25%;font-size:20px;color:#333333; height:36px; line-height:36px; font-weight:400; padding:0; border:0; background:transparent; box-sizing:border-box;}
 .request-list li:after {clear:both;content:'';display:block}
 .request-list li .essential {width:13.75%;}
@@ -76,17 +76,17 @@
 .radiolist {float: left; width: 86.25%; height:36px;}
 .radiolist li {border:0;padding:0; display:block; float:left; margin-right:6.81%}
 .radiolist:after {clear:both; display:block; content:'';}
-.radiolist li label {font-size:18px;padding-left:24px;}
+.radiolist li {font-size:18px;padding-left:24px;}
 
 /* 라디오 체크 커스텀 */
-.cut_chk label{display:inline-block;*display:inline;*zoom:1;cursor:pointer;font-weight:normal;font-size:20px;line-height:22px;letter-spacing:-0.075em;padding:0 0 0 35px;background:url(../../image/info/ai/online/micro/check_def.gif) no-repeat left 0; font-weight:400;color:#666666;}
+/* .cut_chk label{display:inline-block;*display:inline;*zoom:1;cursor:pointer;font-weight:normal;font-size:20px;line-height:22px;letter-spacing:-0.075em;padding:0 0 0 35px;background:url(../../image/info/ai/online/micro/check_def.gif) no-repeat left 0; font-weight:400;color:#666666;}
 .cut_chk.on label{color:#222222; background:url(../../image/info/ai/online/micro/check_def_on.gif) no-repeat left 0;color:#333333;}
 .cut_chk label input {position:absolute;left:-9999px;width:0;height:0;overflow:hidden;}
 
 .cut_ra label{display:inline-block;*display:inline;*zoom:1;cursor:pointer;font-weight:normal;font-size:20px;line-height:22px;letter-spacing:-0.075em;padding:0 0 0 24px;background:url(../../image/info/ai/online/micro/ra_def.gif) no-repeat left 50%; font-weight:400;color:#666666;}
 .cut_ra label.on{color:#222222; background:url(../../image/info/ai/online/micro/ra_def_on.gif) no-repeat left 50%;color:#333333;}
 .cut_ra label input {position:absolute;left:-9999px;width:0;height:0;overflow:hidden;}
-
+ */
 /* 푸터 예외 처리 */
 #footer {margin-top:0;}
 
@@ -815,7 +815,7 @@
 	.radiolist {width: 90%; height:auto;}
 	.radiolist li {border:0;padding:0; display:inline-block; margin-right:6.81%}
 	.radiolist li:last-child {margin:0 0 0 -10px;}
-	.radiolist li label {font-size:18px;padding-left:24px;}
+	.radiolist li {font-size:18px;padding-left:24px;}
 	
 	/* 팝업 */
 	.exPopup {padding-left:5.61%; padding-right:5.61%;}
