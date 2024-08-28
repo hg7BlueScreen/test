@@ -1,16 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
- 
-	<style>
-		
-	</style>
+  <title>사전 페이지</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	function doSelect(){
+		if($("#category").val() == "질병"){
+			str = "";
+			str += '<table><colgroup><col width="15%"><col width="15%"><col width="70%"></colgroup><tr><th>번호</th><th>질병코드</th><th>질병명</th></tr>';
+/* 			str += '<tr>';
+	        str += '<td><span class="table-notice">NOTICE</span></td>';
+	        str += '<td class="table-title">신종코로나바이러스 예방관련 운영 안내</td>';
+	        str += '<td>2020-02-28</td>';
+	      	str += '</tr>'; */
+			$("#tableLocate").html(str);
+		}else if($("#category").val() == "의약품"){
+			str = "";
+			str += '<table><colgroup><col width="10%"><col width="25%"><col width="25%"><col width="30%"><col width="10%"></colgroup><tr><th>번호</th><th>품목기준코드</th><th>업체명</th><th>제품명</th><th>사진여부</th></tr>';
+			$("#tableLocate").html(str);
+		}else{			
+			$("#tableLocate").html("");
+		}
+	}
+</script>
 </head>      
 <body>
 	<%@include file = "header.jsp" %>
@@ -20,13 +37,13 @@
   <link rel="stylesheet" href="/css/lista.css">
   <section style = "height:400px; margin:150px">
 	
-    <h1 style = "margin-top: 40px; margin-bottom: 50px; font-size: 40px;">NOTICE</h1>
+    <h1 style = "margin-top: 40px; margin-bottom: 50px; font-size: 40px;">질병 및 의약품 사전</h1>
     <div class="wrapper">
-      <form action="/search" name="search" method="post">
-        <select name="category" id="category" style = "position: absolute; top: 50%; left: 50%; width: 80px; height: 40px; margin-left: -185px; margin-top: -20px; padding: 5px; border: 1px solid #666666; font-family: inherit; background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
-          <option value="0">전체</option>
-          <option value="title">제목</option>
-          <option value="content">내용</option>
+      <form action="" name="search" method="post">
+        <select name="category" id="category" onchange = "doSelect()" style = "position: absolute; top: 50%; left: 50%; width: 80px; height: 40px; margin-left: -185px; margin-top: -20px; padding: 5px; border: 1px solid #666666; font-family: inherit; background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
+          <option value="0">선택</option>
+          <option value="질병">질병</option>
+          <option value="의약품">의약품</option>
         </select>
 
         <div class="title">
@@ -37,80 +54,13 @@
       </form>
     </div>
     
-    <table>
-      <colgroup>
-        <col width="18%">
-        <col width="60%">
-        <col width="18%">
-      </colgroup>
-      <tr>
-        <th>No.</th>
-        <th>제목</th>
-        <th>작성일</th>
-      </tr>
-      <tr>
-        <td><span class="table-notice">NOTICE</span></td>
-        <td class="table-title">신종코로나바이러스 예방관련 운영 안내</td>
-        <td>2020-02-28</td>
-      </tr>
-      <tr>
-        <td><span class="table-notice">NOTICE</span></td>
-        <td class="table-title">[2020년3월] 시설 정비 공사 안내</td>
-        <td>2020-02-28</td>
-      </tr>
-      <tr>
-        <td><span class="table-notice">NOTICE</span></td>
-        <td class="table-title">[키즈잼] 2020년 이용 시간 & 이용 요금 변경 안내</td>
-        <td>2019-12-11</td>
-      </tr>
-      <tr>
-        <td><span class="table-notice">NOTICE</span></td>
-        <td class="table-title">[키즈잼] 2020년 1분기 정기 휴관일 안내</td>
-        <td>2019-12-11</td>
-      </tr>
-      <tr>
-        <td><span class="table-notice">NOTICE</span></td>
-        <td class="table-title">홈페이지 개인정보 보안 강화</td>
-        <td>2018-11-14</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td class="table-title">[키즈잼] 3월 프로그램 안내</td>
-        <td>2020-02-18</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td class="table-title">[키즈잼] 2월 프로그램 안내</td>
-        <td>2020-01-17</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td class="table-title">마이다스 멤버쉽 안내</td>
-        <td>2019-05-08</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td class="table-title">[마이다스 호텔&리조트] 제23회 경기건축문화 금상 수상</td>
-        <td>2018-10-10</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td class="table-title">카카오플러스 친구 오픈</td>
-        <td>2018-07-11</td>
-      </tr>
-    </table>
+    <div id = "tableLocate">
+    
+    </div>
+	<div style = "margin-bottom: 50px">
+		<br>
+	</div>
 
-    <ul class="page-num">
-      <li class="first"></li>
-      <li class="prev"></li>
-      <li class="num">
-        <div>1</div>
-      </li>
-      <li class="next"></li>
-      <li class="last"></li>
-    </ul>
-
-    <div class="write">쓰기</div>
   </section>
 		<%@include file = "footer.jsp" %>
 </body>
