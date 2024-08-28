@@ -14,7 +14,7 @@
 	<!-- <div class="v2banner">배너영역 2차 시 내용 추가</div> -->
 		<div class="inner">
 			<div class="logo">
-				<a class="logo-incruit" href="/image/팀로고.png"></a>
+				<a class="logo-incruit" href="/"></a>
 			</div>
 			<div class="overlay">
 				<nav id="nav" class="overlay-menu">

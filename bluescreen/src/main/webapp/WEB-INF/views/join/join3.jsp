@@ -16,7 +16,7 @@
 		
 		
 		<section>
-			<form name="agree" method="get" action="/join/join4.jsp">
+			<form name="agree" method="get" action="/join4">
 				<div id="subBanner"></div>
 				
 				
@@ -57,7 +57,7 @@
 							<label for="id">앓고있는 질환</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/>
+							<input type="button" value="검색"/><br>
 							<input type="text" id="b_search" name="b_search" minlength="4" maxlength="16"  />
 						</dd>
 					</dl>
@@ -67,7 +67,7 @@
 							<label for="id">과거 질환</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/>
+							<input type="button" value="검색"/><br>
 							<input type="text" id="b_search" name="b_search" minlength="4" maxlength="16" />
 							
 						</dd>
@@ -78,7 +78,7 @@
 							<label for="id">가족의 유전성 질환</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/>
+							<input type="button" value="검색"/><br>
 							<input type="text" id="b_search" name="b_search" minlength="4" maxlength="16" />
 						</dd>
 					</dl>
@@ -89,7 +89,7 @@
 							<label for="n_id">복용중인 약</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/>
+							<input type="button" value="검색"/><br>
 							<input type="text" id="m_search" name="m_search" minlength="4" maxlength="16" />
 						</dd>
 					</dl>

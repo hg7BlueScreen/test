@@ -17,7 +17,7 @@
 		
 		
 		<section>
-			<form name="agree" method="get" action="join2.jsp">
+			<form name="agree" method="get" action="join2">
 				<div id="subBanner"></div>
 				
 				
