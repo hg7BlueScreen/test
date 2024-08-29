@@ -132,11 +132,11 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							</a>
 						</div>
 						<div class="wrap">
-							<a href="datastory/new/story_57.html">
-								<i style="background-image:url(/image/newsimage.png);display:block;height:180px; opacity: 0.73;"></i>
+							<a href="${scrap.url }">
+								<i style="background-image:url(${scrap.imgUrl});display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
 									<span class="cate" data-platform-name="뉴스">뉴스</span>
-									<p>이런 것도 증상? 심근경색 전조증상 남녀, 다르다!</p>
+									<p>${scrap.title }</p>
 								</div>
 							</a>
 						</div>
