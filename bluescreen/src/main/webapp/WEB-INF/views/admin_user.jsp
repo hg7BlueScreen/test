@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Admin & Dashboard</title>
+  <title>Admin Report Page</title>
   <link rel="stylesheet" href="/css/main.css">
   <!-- box icon -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -14,8 +15,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
   <link href = "https://fonts.google.com/specimen/IBM+Plex+Sans+KR?subset=korean&script=Kore" rel="stylesheet" type = "text/css">
-  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <style>
   	.links_name {
@@ -23,23 +22,39 @@
   font-weight: 400;
   font-style: normal;
 }
-
+  .scroll {
+  overflow: hidden;
+}
+	
+	td{
+		font-family: "IBM Plex Sans KR", sans-serif;
+  		font-weight: 400;
+  		font-style: normal;	
+	}
+	button{
+		border-radius: 20px; border: 2px solid #ffffff; cursor: pointer;
+		font-family: "IBM Plex Sans KR", sans-serif;
+  		font-weight: 400;
+  		font-style: normal;
+  		color: #ffffff;
+  		background-color: #5ca08f;
+	}
+	button:hover {opacity: 50;}
+	#user_info{border-radius: 12px;}
+	#user_info:hover {border-radius: 2px; border: 2px solid #3F80EA; cursor: pointer;}
   </style>
 </head>
 <body>
-
-
-
   <div class="sidebar">
     <div class="logo_details">
-      <i class='bx bx-code-alt'></i>
+      <img src = "/image/team.png" width = "50px">
       <div class="logo_name">
-        Waste Drugs
+        &nbsp;&nbsp;Waste Drugs
       </div>
     </div>
     <ul>
       <li>
-        <a href="#">
+        <a href="adminpage">
           <i class='bx bx-bar-chart'></i>
           <span class="links_name">
             통계
@@ -66,56 +81,68 @@
   </div>
   <!-- End Sideber -->
   <section class="home_section">
-
     
     <div class="details">
       <div class="recent_project">
         <div class="card_header">
-          <h2>WDH - Waste Drugs Here</h2>
+          <h2><span class = "links_name">유저 검색</span></h2>
         </div>
- 			<canvas id = "myChart"></canvas>
+        <table>
+        <colgroup>
+        	<col width = "7%">
+        	<col width = "10%">
+        	<col width = "15%">
+        	<col width = "68%">
+        </colgroup>
+			
+				 <tr>
+				 <td><span class = "links_name">유저 이름</span></td>
+				 <td><input type = "text" name = "user_sinfo" ></td>
+				 <td><button type = "button" onclick = "sBtn()" style = "width:80px;"><span class = "links_name">검색</span></button></td>
+				 <td></td>
+            </tr>
+			     
+        </table>
+        <table>
+        <colgroup>
+        	<col width = "10%">
+        	<col width = "25%">
+        	<col width = "25%">
+        	<col width = "20%">
+        	<col width = "20%">
+        </colgroup>
+          <thead>
+            <tr>
+              <td>번호</td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;닉네임</td>
+              <td>아이디</td>
+              <td>누적 경고</td>
+              <td>가입일</td>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- 반복 시작 -->
+          <c:forEach var = "u" begin = "1" end = "30" step = "1">
+            <tr id = "user_info">
+            <td>${u }</td>
+              <td>trafficlight0131</td>
+              <td>trafficlight0131</td>
+              <td>0</td>
+                <!-- <span class="badge bg_worning">
+                  Meduim
+                </span> -->
+              <td>2024/08/28</td>
+            </tr>
+          </c:forEach>
+            
+            <!-- 반복 끝 -->
+          </tbody>
+        </table>
       </div>
       </div>
-      
+  
   </section>
-<script>
-  const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(32, 151, 56, 0.31)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(156, 86, 33, 0.36)'
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(32, 151, 56, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(156, 86, 33, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
   <script>
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");

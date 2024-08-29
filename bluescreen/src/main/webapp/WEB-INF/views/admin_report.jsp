@@ -37,8 +37,8 @@
   		font-weight: 400;
   		font-style: normal;
   		color: #ffffff;
+  		background-color: #5ca08f;
 	}
-	button:hover {opacity: 50;}
 	#user_info{border-radius: 12px;}
 	#user_info:hover {border-radius: 2px; border: 2px solid #3F80EA; cursor: pointer;}
   </style>
@@ -61,7 +61,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="admin_user">
           <i class='bx bx-user'></i>
           <span class="links_name">
             회원정보
@@ -69,18 +69,10 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="admin_report">
           <i class='bx bx-error-circle'></i>
           <span class="links_name">
             신고관리
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-server' ></i>
-          <span class="links_name">
-            서버관리
           </span>
         </a>
       </li>
@@ -130,57 +122,6 @@
       </div>
       </div>
     
-    <div class="details">
-      <div class="recent_project">
-        <div class="card_header">
-          <h2><span class = "links_name">유저 검색</span></h2>
-        </div>
-        <table>
-        <colgroup>
-        	<col width = "7%">
-        	<col width = "10%">
-        	<col width = "15%">
-        	<col width = "68%">
-        </colgroup>
-			
-				 <tr>
-				 <td><span class = "links_name">유저 이름</span></td>
-				 <td><input type = "text" name = "user_sinfo" ></td>
-				 <td><button type = "button" onclick = "sBtn()" style = "width:80px;"><span class = "links_name">검색</span></button></td>
-				 <td></td>
-            </tr>
-			     
-        </table>
-        <table>
-        <colgroup>
-        	<col width = "20%">
-        	<col width = "20%">
-        	<col width = "20%">
-        	<col width = "40%">
-        </colgroup>
-          <thead>
-            <tr>
-              <td>닉네임</td>
-              <td>&nbsp;&nbsp;&nbsp;아이디</td>
-              <td>누적 경고</td>
-              <td>가입일</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id = "user_info">
-              <td>trafficlight0131</td>
-              <td>trafficlight0131</td>
-              <td>0</td>
-                <!-- <span class="badge bg_worning">
-                  Meduim
-                </span> -->
-              <td>2024/08/28</td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </div>
-      </div>
       
       <div class="details">
       <div class="recent_project">

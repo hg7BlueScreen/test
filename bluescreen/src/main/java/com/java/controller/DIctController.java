@@ -16,4 +16,9 @@ public class DIctController {
 		return "admin_report";
 	}
 	
+	@RequestMapping("/admin_user")
+	public String admin_user() {
+		return "admin_user";
+	}
+	
 }
