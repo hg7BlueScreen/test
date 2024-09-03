@@ -21,10 +21,10 @@ public class DiseaseServiceImpl implements DiseaseService {
 	MedicineMapper mMapper;
 
 	@Override
-	public HashMap<String, Object> selectAllDisease(Page pageDto, String textBox) {
-		pageDto = pageMethodDisease(pageDto, textBox);
+	public HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail) {
+		pageDto = pageMethodDisease(pageDto, textBox, categoryDetail);
 		HashMap<String, Object> map = new HashMap<>();
-		ArrayList<Disease> list = dMapper.selectAll(pageDto, textBox);
+		ArrayList<Disease> list = dMapper.selectAll(pageDto, textBox, categoryDetail);
 		map.put("pageDto", pageDto);
 		map.put("list", list);
 		return map;
@@ -32,9 +32,9 @@ public class DiseaseServiceImpl implements DiseaseService {
 
 	
 
-	private Page pageMethodDisease(Page pageDto, String textBox) {
+	private Page pageMethodDisease(Page pageDto, String textBox, String categoryDetail) {
 		// 전체 게시글 수 저장
-		pageDto.setListCount(dMapper.selectListCount(textBox));
+		pageDto.setListCount(dMapper.selectListCount(textBox, categoryDetail));
 		// 최대 넘버링 페이지
 		pageDto.setMaxPage((int) Math.ceil((double) pageDto.getListCount() / 20));
 		// 시작 넘버링페이지

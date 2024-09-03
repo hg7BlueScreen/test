@@ -9,9 +9,25 @@
 <title>사전 페이지</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
+	$(function(){
+		if($("#category").val() == "none"){
+			$("#categoryDetail").html('<option value = "none"></option>');
+		}else if($("#category").val() == "disease"){
+			let optionHtml = "";
+			optionHtml += '<option value = "sickCd">질병코드</option>';
+			optionHtml += '<option value = "sickNm">질병명</option>';
+			$("#categoryDetail").html(optionHtml);
+		}else if($("#category").val() == "medicine"){
+			let optionHtml = "";
+			optionHtml += '<option value = "entpName">회사명</option>';
+			optionHtml += '<option value = "itemName">제품명</option>';
+			optionHtml += '<option value = "efcyQesitm">효능</option>';
+			optionHtml += '<option value = "atpn">주의사항</option>';
+			$("#categoryDetail").html(optionHtml);
+		}
+	})
 	
-	
-	function doSelect() {
+	function doSelectBig() {
 		if ($("#category").val() == "disease") {
 			location.href = "dict?category=disease"
 					
@@ -25,7 +41,7 @@
 	}
 	
 	function searchBtn(){
-		location.href = "dict?category=${category}&textBox="+$("#textBox").val()
+		location.href = "dict?category=${category}&textBox="+$("#textBox").val()+"&categoryDetail="+$("#categoryDetail").val()
 	}
 </script>
 <style type="text/css">
@@ -76,6 +92,26 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #fff;
+}
+
+.num {
+   background-color: #ffffff;
+
+   transition-property: width, background-color, color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+   transition-duration: 0.1s, 0.1s; /* width와 bg-color가 2초동안 변화 */
+}
+.num:hover { /* 마우스를 올리면 transition발동해서 적용될 상태 */
+	background-color: #cccccc; 
+}
+
+.medicineTr {
+   background-color: #ffffff;
+
+   transition-property: width, background-color, color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+   transition-duration: 0.1s, 0.1s; /* width와 bg-color가 2초동안 변화 */
+}
+.medicineTr:hover { /* 마우스를 올리면 transition발동해서 적용될 상태 */
+	background-color: #cccccc; 
 }
 </style>
 <script type="text/javascript">
@@ -178,21 +214,25 @@
 	<link rel="stylesheet" href="/css/lista.css">
 	<section style="height: 600px; margin: 150px">
 
-		<h1 style="margin-top: 40px; margin-bottom: 50px; font-size: 40px; margin-right: 40px;">질병
+		<h1 style="margin-top: 40px; margin-bottom: 50px; font-size: 40px; left: 50%;">질병
 			및 의약품 사전</h1>
 		<div class="wrapper">
 			<form action="" name="search" method="post">
-				<select name="category" id="category" onchange="doSelect()"
-					style="position: absolute; top: 50%; left: 50%; width: 80px; height: 38px; margin-left: -185px; margin-top: -20px; padding: 5px; border: 1px solid #666666; font-family: inherit; background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
+				<select name="category" id="category" onchange="doSelectBig()"
+					style="position: absolute; top: 50%; left: 46.9%; width: 80px; height: 38px; margin-left: -180px; margin-top: -20px; padding: 5px; border: 1px solid #666666; font-family: inherit; background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
 					<option value="disease" <c:if test="${category == 'disease' }">selected</c:if>>질병</option>
 					<option value="medicine" <c:if test="${category == 'medicine' }">selected</c:if>>의약품</option>
 				</select>
+				<select name="categoryDetail" id="categoryDetail"
+					style="position: absolute; top: 50%; left: 52.5%; width: 120px; height: 38px; /* margin-left: -185px; */ margin-top: -20px; padding: 5px; border: 1px solid #666666; font-family: inherit; background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
+					<option value="none" <%-- <c:if test="${category == 'disease' }">selected</c:if> --%>></option>
+				</select>
 
-				<div class="title">
+				<div class="title" style = "left: 55%">
 					<input type="text" size="16" id="textBox">
 				</div>
 
-				<button type="button" onclick = "searchBtn()" style = "height: 38px;">
+				<button type="button" onclick = "searchBtn()" style = "height: 38px; left: 55%">
 					<i class="fas fa-search"></i>
 				</button>
 			</form>
@@ -256,7 +296,7 @@
 					</tr>
 					<tbody id = "tbody">
 						<c:forEach var = "m" items = "${list }">
-							<tr onclick = "modalUp(${m.mno})">
+							<tr onclick = "modalUp(${m.mno})" class = "medicineTr">
 								<td>${m.mno }</td>
 								<td>${m.itemSeq }</td>
 								<td>${m.entpName }</td>
@@ -278,7 +318,7 @@
 			
 			<!-- 시작페이지 이동 시작 -->
 			<c:if test="${pageDto.page != 1 }">
-				<a href = "dict?category=${category }&page=1&textBox=${textBox}"><li class="first"></li></a>
+				<a href = "dict?category=${category }&page=1&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="first"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == 1 }">
 				<li class="first"></li>
@@ -286,7 +326,7 @@
 			<!-- 시작페이지 이동 끝 -->
 			<!-- 이전 페이지 이동 시작 -->
 			<c:if test="${pageDto.page != 1 }">
-				<a href = "dict?category=${category }&page=${pageDto.page - 1}&textBox=${textBox}"><li class="prev"></li></a>
+				<a href = "dict?category=${category }&page=${pageDto.page - 1}&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="prev"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == 1 }">
 				<li class="prev"></li>
@@ -295,11 +335,11 @@
 				<c:forEach begin = "${pageDto.startPage }" end = "${pageDto.endPage }" step = "1" var = "pNum">
 					<c:if test="${pNum <= pageDto.maxPage }">
 						<c:if test="${pageDto.page == pNum }">
-						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}"><div style = "margin-top:5px;">
+						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}&categoryDetail=${categoryDetail}"><div style = "margin-top:5px;">
 							<strong>${pNum }</strong>
 						</c:if>
 						<c:if test="${pageDto.page != pNum }">
-						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}"><div style = "margin-top:5px;">
+						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}&categoryDetail=${categoryDetail}"><div style = "margin-top:5px;">
 							${pNum }
 						</c:if>
 						</div></a></li>
@@ -307,7 +347,7 @@
 				</c:forEach>
 			<!-- 다음 페이지 이동 시작 -->
 			<c:if test="${pageDto.page != pageDto.maxPage }">
-				<a href = "dict?category=${category }&page=${pageDto.page + 1}&textBox=${textBox}"><li class="next"></li></a>
+				<a href = "dict?category=${category }&page=${pageDto.page + 1}&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="next"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == pageDto.maxPage }">
 				<li class="next"></li>
@@ -315,7 +355,7 @@
 			<!-- 다음 페이지 이동 끝 -->
 			<!-- 마지막 페이지 이동 시작 -->
 			<c:if test="${pageDto.page != pageDto.maxPage }">
-				<a href = "dict?category=${category }&page=${pageDto.maxPage}&textBox=${textBox}"><li class="last"></li></a>
+				<a href = "dict?category=${category }&page=${pageDto.maxPage}&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="last"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == pageDto.maxPage }">
 				<li class="last"></li>

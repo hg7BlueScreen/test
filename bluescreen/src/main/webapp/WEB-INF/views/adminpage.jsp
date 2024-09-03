@@ -32,7 +32,7 @@
 
   <div class="sidebar">
     <div class="logo_details">
-      <i class='bx bx-code-alt'></i>
+      <img src = "/image/team.png" width = "50px">
       <div class="logo_name">
         Waste Drugs
       </div>

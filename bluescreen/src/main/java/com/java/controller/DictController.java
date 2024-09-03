@@ -23,20 +23,24 @@ public class DictController {
 	@Autowired MedicineService mservice;
 	
 	@RequestMapping("/dict")
-	public String dict(Page pageDto, Model model, String category, String textBox) {
+	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail) {
+		System.out.println(categoryDetail);
+		System.out.println(textBox);
 		if(category != null) {
 			if(category.equals("disease")) {
-				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox);
+				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox, categoryDetail);
 				model.addAttribute("list", map.get("list"));
 				model.addAttribute("category", category);
 				model.addAttribute("pageDto",pageDto);
 				model.addAttribute("textBox",textBox);
+				model.addAttribute("categoryDetail",categoryDetail);
 			}else if(category.equals("medicine")) {
-				HashMap<String, Object> map = mservice.selectAllMedicine(pageDto, textBox);
+				HashMap<String, Object> map = mservice.selectAllMedicine(pageDto, textBox, categoryDetail);
 				model.addAttribute("list", map.get("list"));
 				model.addAttribute("category", category);
 				model.addAttribute("pageDto",pageDto);
 				model.addAttribute("textBox",textBox);
+				model.addAttribute("categoryDetail",categoryDetail);
 			}
 		}
 		return "dictionary";

@@ -48,7 +48,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 				<div class="cnt">
 					<div>
 						<h2 class="section-top-tit">
-							수정합시다 <span class="t-blue-point">블루스크린, <br />메인페이지</span>
+							의료정보 제공 시스템 <!-- <span class="t-blue-point">블루스크린, <br />메인페이지</span> -->
 						</h2>
 						<p class="section-sub-txt">
 							간편한 의료정보 검색 및 저장 서비스를 제공합니다! <br />
@@ -75,7 +75,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 									<p>사전</p>
 									<span class="tit_explan">질병 및 의약품 정보</span>
 									<div class="add_move_btn"></div>
-									<a href="indexac60.html?flag=assess" class="anchor-link"></a>
+									<a href="dict?category=disease" class="anchor-link"></a>
 								</li>
 								<li class="solTab interview">
 									<p>커뮤니티</p>
@@ -110,7 +110,6 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 					<div class="left">
 						<h2>데이터 스토리</h2>
 						<p>플랫폼에서 제공하는 데이터를 활용한 흥미로운<br> 시각화 컨텐츠를 제공합니다.</p>
-						<a href="datastory.html" class="link-line" title="데이터 스토리 페이지로 연결"><span>전체보기</span></a>
 					</div>
 					<div class="right">
 						<div class="wrap">
@@ -123,11 +122,11 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							</a>
 						</div>
 						<div class="wrap">
-							<a href="datastory/traffic/seoul.html">
+							<a href="https://www.youtube.com/watch?v=M9ITliT-2UE">
 								<i style="background-image:url(/image/eggmale.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
 									<span class="cate" data-platform-name="사례">사례</span>
-									<p>유튜브 영상 중 임산한 수컷 물고기 혹은 사례 삽입, 링크 추가</p>
+									<p>먹다남은 약 함부로 버리면 안되는 이유</p>
 								</div>
 							</a>
 						</div>

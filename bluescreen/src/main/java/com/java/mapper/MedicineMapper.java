@@ -10,9 +10,9 @@ import com.java.dto.Page;
 @Mapper
 public interface MedicineMapper {
 
-	ArrayList<Medicine> selectAll(Page pageDto, String textBox);
+	ArrayList<Medicine> selectAll(Page pageDto, String textBox, String categoryDetail);
 
-	int selectListCount(String textBox);
+	int selectListCount(String textBox, String categoryDetail);
 
 	Medicine selectOneMedicine(int mno);
 

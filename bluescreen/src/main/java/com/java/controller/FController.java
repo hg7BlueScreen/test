@@ -27,7 +27,6 @@ public class FController {
 			Elements elements = doc.select("ul[class=type2]").select("li");
 			// System.out.println(elements);
 			ArrayList<Scrap> scraps = new ArrayList<>();
-			System.out.println(elements);
 			for (Element element : elements) {
 				Scrap scrap = new Scrap();
 
@@ -49,7 +48,6 @@ public class FController {
 				}
 			}
 			int number = (int)Math.round(Math.random()*10);
-			System.out.println(scraps.get(number));
 			model.addAttribute("scrap",scraps.get(number));
 
 		} catch (IOException e) {

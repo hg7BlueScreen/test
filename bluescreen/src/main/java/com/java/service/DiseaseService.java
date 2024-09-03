@@ -7,7 +7,7 @@ import com.java.dto.Page;
 
 public interface DiseaseService {
 
-	HashMap<String, Object> selectAllDisease(Page pageDto, String textBox);
+	HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail);
 
 	
 

@@ -7,7 +7,14 @@
 	<select id="selectListCount" resultType="int">
 		select count(*) from disease
 		<if test="textBox != null and !textBox.equals('')">
-			where sicknm like '%'|| #{textBox} ||'%'
+			<if test="categoryDetail != null and !categoryDetail.equals('')">
+				<if test="categoryDetail == 'sickCd'">
+					where sickCd like '%'|| #{textBox} ||'%'
+				</if>
+				<if test="categoryDetail == 'sickNm'">
+					where sickNm like '%'|| #{textBox} ||'%'
+				</if>
+			</if>
 		</if>
 	</select>
 	
@@ -16,7 +23,16 @@
 			select * from (select rownum rnum, a.* from (select * from disease 
 			
 		]]>
-		<if test="textBox != null and !textBox.equals('')"> where sicknm like '%'|| #{textBox} ||'%'</if>
+		<if test="textBox != null and !textBox.equals('')">
+			<if test="categoryDetail != null and !categoryDetail.equals('')">
+				<if test="categoryDetail == 'sickCd'">
+					where sickCd like '%'|| #{textBox} ||'%'
+				</if>
+				<if test="categoryDetail == 'sickNm'">
+					where sickNm like '%'|| #{textBox} ||'%'
+				</if>
+			</if>
+		</if>
 		<![CDATA[ 
 			order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 		]]>

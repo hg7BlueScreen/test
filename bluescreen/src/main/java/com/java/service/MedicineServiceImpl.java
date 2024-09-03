@@ -22,18 +22,18 @@ public class MedicineServiceImpl implements MedicineService {
 	}
 	
 	@Override
-	public HashMap<String, Object> selectAllMedicine(Page pageDto, String textBox) {
-		pageDto = pageMethodMedicine(pageDto, textBox);
+	public HashMap<String, Object> selectAllMedicine(Page pageDto, String textBox, String categoryDetail) {
+		pageDto = pageMethodMedicine(pageDto, textBox, categoryDetail);
 		HashMap<String, Object> map = new HashMap<>();
-		ArrayList<Medicine> list = mMapper.selectAll(pageDto, textBox);
+		ArrayList<Medicine> list = mMapper.selectAll(pageDto, textBox, categoryDetail);
 		map.put("pageDto", pageDto);
 		map.put("list", list);
 		return map;
 	}
 	
-	private Page pageMethodMedicine(Page pageDto, String textBox) {
+	private Page pageMethodMedicine(Page pageDto, String textBox, String categoryDetail) {
 		// 전체 게시글 수 저장
-		pageDto.setListCount(mMapper.selectListCount(textBox));
+		pageDto.setListCount(mMapper.selectListCount(textBox, categoryDetail));
 		// 최대 넘버링 페이지
 		pageDto.setMaxPage((int) Math.ceil((double) pageDto.getListCount() / 20));
 		// 시작 넘버링페이지

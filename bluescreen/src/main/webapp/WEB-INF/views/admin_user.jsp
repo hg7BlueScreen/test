@@ -37,7 +37,7 @@
   		font-weight: 400;
   		font-style: normal;
   		color: #ffffff;
-  		background-color: #5ca08f;
+  		background-color: #3f80ea;
 	}
 	button:hover {opacity: 50;}
 	#user_info{border-radius: 12px;}

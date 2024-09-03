@@ -114,7 +114,7 @@
                 <!-- <span class="badge bg_worning">
                   Meduim
                 </span> -->
-              <td><button type = "button" style = "width: 80px; background-color: #5ca08f; border: 1px white;">적용</button></td>
+              <td><button type = "button" style = "width: 80px; background-color: #3f80ea; border: 1px white;">적용</button></td>
             </tr>
             
           </tbody>
@@ -156,8 +156,8 @@
                 </span> -->
               <td>부적절한 글 게시</td>
               <td>
-              <button type = "button" style = "width: 80px; background-color: #5ca08f; border: 1px white;">삭제</button>
-              <button type = "button" style = "width: 80px; background-color: #5ca08f; border: 1px white;">이동</button>
+              <button type = "button" style = "width: 80px; background-color: #3f80ea; border: 1px white;">삭제</button>
+              <button type = "button" style = "width: 80px; background-color: #3f80ea; border: 1px white;">이동</button>
               </td>
             </tr>
             
