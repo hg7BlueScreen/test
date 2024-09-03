@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.mapper.MedicineMapper">
+	
+	<select id="selectListCount" resultType="int">
+		select count(*) from medicine
+		<if test="textBox != null and !textBox.equals('')">
+			where itemname like '%'|| #{textBox} ||'%'
+		</if>
+	</select>
+	
+	<select id="selectAll" resultType="com.java.dto.Medicine">
+		<![CDATA[ 
+			select * from (select rownum rnum, a.* from (select * from medicine 
+		]]>
+		<if test="textBox != null and !textBox.equals('')"> where itemname like '%'|| #{textBox} ||'%'</if>
+		<![CDATA[ 
+			order by mno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+		]]>
+	</select>
+	
+	<select id="selectOneMedicine" resultType="com.java.dto.Medicine">
+		select * from medicine where mno = #{mno}
+	</select>
+	
+</mapper>
