@@ -62,7 +62,7 @@ section{
 	font-weight: 700;	
 }
 #join_step_div>ul>li:nth-child(2) {
-	background-color: rgb(0, 128, 192);
+	background-color: rgb(0, 128, 255);
 	color: #fff;
 }
 
@@ -535,7 +535,7 @@ input[type="checkbox"]:not(old):checked + label {
 }
 #info_input_button input:nth-child(2) {
 	color: rgb(255, 255, 255);
-	background: rgb(0, 128, 192);
+	background: rgb(0, 128, 255);
 }
 
 

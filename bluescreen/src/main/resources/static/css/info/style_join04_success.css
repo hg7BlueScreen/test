@@ -64,7 +64,7 @@ section{
 	font-weight: 700;	
 }
 #join_step_div>ul>li:nth-child(4) {
-	background-color: rgb(0, 128, 192);
+	background-color: rgb(0, 128, 255);
 	color: #fff;
 }
 
