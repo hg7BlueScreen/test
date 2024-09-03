@@ -172,9 +172,6 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	
 
 	<div class="fixed-wrap">
-		<div class="ask-button-wrap">
-			<button type="button" class="consulting ask-button" title="문의하기">문의</button>
-		</div>
 		<button class="btn_new_top" style="display: block" onclick="topClick()"><em>상단으로 이동</em></button>
 	</div>
 
