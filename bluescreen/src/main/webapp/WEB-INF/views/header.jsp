@@ -28,7 +28,7 @@
 										<span class="d-menu-t">MAP</span>
 										<span class="d-menu-t2">폐의약품 수거함 검색</span>
 									</a>
-									<a href="javascript:;" class="go_assess list_menuBox">
+									<a href="dict?category=disease" class="go_assess list_menuBox">
 										<span class="d-menu-t">DICTIONARY</span>
 										<span class="d-menu-t2">의약품 및 질병 사전</span>
 									</a>

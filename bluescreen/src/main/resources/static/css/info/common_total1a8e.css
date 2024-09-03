@@ -92,7 +92,7 @@ html, body {scroll-behavior: smooth;}
 .gnb li.onList {margin: 0;}
 .gnb li.onList a{position: relative;color: #121212; letter-spacing: -0.05em; padding-right: 24px;text-decoration: none;}
 .gnb li.onList .mainMenu::after {content: ""; position: absolute;top: 50%;transform: translateY(-50%); right: 0; width: 12px; height: 7px; background: url(../../image/info/ac/micropage/2024/menu_down_btn.png) no-repeat;}
-.gnb li.onList.on .mainMenu::before {content: ""; position: absolute; top: 7px; right: 15px; width: 6px; height: 6px; background: #2AC9A4; border-radius: 20px;}
+/* .gnb li.onList.on .mainMenu::before {content: ""; position: absolute; top: 7px; right: 15px; width: 6px; height: 6px; background: #2AC9A4; border-radius: 20px;} */ /* 헤더 메인메뉴 버튼 우측 상단 신규 메뉴 표시 */
 .gnb li.newsblog {display: flex;align-items: center;margin: 0;}
 .gnb li.newsblog .sub-menu {font-size: 16px; font-weight: 400; color: #121212; letter-spacing: -0.05em; padding: 0; position: relative; width: 123px; box-sizing: border-box;}
 .gnb li.newsblog .sub-menu:hover {font-weight: bold;}
