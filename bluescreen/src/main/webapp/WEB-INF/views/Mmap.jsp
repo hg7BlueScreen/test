@@ -11,7 +11,7 @@
 		
 	</head>
 	<body>
-	<%-- <%@ include file = "header.jsp" %> --%>
+	<%@ include file = "header.jsp" %>
 <div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
@@ -20,18 +20,18 @@
             <div>
                 <form onsubmit="searchPlaces(); return false;">    <!-- 키워드로 장소를 검색 -->
                    <h1 id="su">유형&nbsp;:&nbsp; 
-						<select name="box" id="box" style="width:130px;font-size:25px;">
+						<select name="box" id="box" onchange="boxbtn()" style="width:130px;font-size:20px;">
 							<option value="우체통">우체통</option>
 							<option value="수거함">수거함</option>
 						</select><br>
 						지역&nbsp;:&nbsp; 
-						<select name="box" id = "city" onchange="cbtn()" style="width:100px;font-size:25px;">
+						<select name="box" id = "city" onchange="cbtn()" style="width:100px;font-size:20px;">
 							<option value="" >시</option>
 							<option value="서울" >서울</option>
 							<option value="세종" >세종</option>
 							<option value="인천">인천</option>
 						</select>
-						<select name="box" id="gu" onchange="sbtn()" style="width:200px;font-size:25px;">
+						<select name="box" id="gu" onchange="sbtn()" style="width:150px;font-size:20px;">
 							<option value="">구</option>
 						</select>
 					</h1>
@@ -65,26 +65,74 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 var pBoxImg = "/image/p_box.png"; //우체통 이미지
 var mBoxImg = "/image/m_box.png"; //수거함 이미지
 var userImg = ""; //유저 이미지
-
-function cbtn(){
-	let seoul = ["강남","강동","강북","강서","관악","광진","구로","금천","노원","도봉","동대문","동작",
-		"마포","서대문", "서초","성동","성북","송파","양천","영등포","용산","은평","종로","중","중랑"]
-	let incheon = ["강화","검단","계양","남동","미추홀","부평","서","연수","영종","옹진","제물포"]
-	let sejong = ["특별자치시"];
-	let str = "";
-	if($("#city").val()=="서울"){
+let seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구",
+	"마포구","서대문구", "서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구"]
+let seoulM = ["강동구","관악구","동대문구","동작구","마포구","서대문구","서초구","송파구","양천구","용산구","은평구"]
+let incheon = ["강화군","계양구","남동구","미추홀구","부평구","서구","연수구","옹진군"]
+let incheonM = ["강화군","계양구","남동구","미추홀구","부평구","서구","연수구"]
+let sejong = ["특별자치시"];
+let str = '';
+function boxbtn(){
+	str='';
+	if($("#box").val()=="우체통"){
+		if($("#city").val()=="서울"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<seoul.length;i++){
+			str += '<option value="'+seoul[i]+'">'+seoul[i]+'</option>'
+			}
+		}$("#gu").html(str);
+		if($("#city").val()=="인천"){
+			
+			str += '<option value="">구</option>'
+			for(let i=0;i<incheon.length;i++){
+				str += '<option value="'+incheon[i]+'">'+incheon[i]+'</option>'
+			}
+		}	$("#gu").html(str);
 		
+		if($("#city").val()=="세종"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<sejong.length;i++){
+				str += '<option value="'+sejong[i]+'">'+sejong[i]+'</option>'
+			}
+		}	$("#gu").html(str);
+	}else if($("#box").val()=="수거함"){
+		if($("#city").val()=="서울"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<seoulM.length;i++){
+			str += '<option value="'+seoulM[i]+'">'+seoulM[i]+'</option>'
+			}
+		}$("#gu").html(str);
+		if($("#city").val()=="인천"){
+			
+			str += '<option value="">구</option>'
+			for(let i=0;i<incheonM.length;i++){
+				str += '<option value="'+incheonM[i]+'">'+incheonM[i]+'</option>'
+			}
+		}	$("#gu").html(str);
+		
+		if($("#city").val()=="세종"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<sejong.length;i++){
+				str += '<option value="'+sejong[i]+'">'+sejong[i]+'</option>'
+			}
+		}	$("#gu").html(str);
+	}
+}
+function cbtn(){
+	str = "";
+	if($("#city").val()=="서울"){
 		str += '<option value="">구</option>'
 		for(let i=0;i<seoul.length;i++){
-		str += '<option value="'+seoul[i]+'">'+seoul[i]+'구</option>'
+		str += '<option value="'+seoul[i]+'">'+seoul[i]+'</option>'
 		}
+		
 	}	$("#gu").html(str);
 	
 	if($("#city").val()=="인천"){
 		
 		str += '<option value="">구</option>'
 		for(let i=0;i<incheon.length;i++){
-			str += '<option value="'+incheon[i]+'">'+incheon[i]+'구</option>'
+			str += '<option value="'+incheon[i]+'">'+incheon[i]+'</option>'
 		}
 	}	$("#gu").html(str);
 	

@@ -24,7 +24,7 @@
 
 							<div class="show_onlist">
 								<div class="dropdown_inner">
-									<a href="javascript:;" class="go_ats_crm list_menuBox">
+									<a href="Mmap" class="go_ats_crm list_menuBox">
 										<span class="d-menu-t">MAP</span>
 										<span class="d-menu-t2">폐의약품 수거함 검색</span>
 									</a>
