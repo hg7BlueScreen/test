@@ -183,6 +183,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		
 
 <script type="text/javascript">
+<!--
+jQuery(document).ready(function(){if(jQuery.isFunction(window._gReadyScript)) _gReadyScript();AOS.init({easing: 'ease-in-out-back',once:'true'});});
+-->
 </script>
 
 </body>
