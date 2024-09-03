@@ -183,10 +183,8 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 		
 
 <script type="text/javascript">
-<!--
-jQuery(document).ready(function(){if(jQuery.isFunction(window._gReadyScript)) _gReadyScript();AOS.init({easing: 'ease-in-out-back',once:'true'});});
--->
-</script><script type="text/javascript" src="../../r.incru.it/static/js/aos/aos367a.js?20240821162485"></script><script type="text/javascript" src="../../fastly.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.js?20240821162485"></script><script type="text/javascript" src="../../r.incru.it/ajs/product/ats_crm_v2367a.js?20240821162485"></script><script type="text/javascript" src="../../r.incru.it/ajs/product/micro_v2367a.js?20240821162485"></script><script defer src="../../r.incru.it/ajs/works.console.adv367a.js?20240821162485"></script>
+</script>
+
 </body>
 
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDLR8CQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

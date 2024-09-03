@@ -120,29 +120,49 @@ function boxbtn(){
 }
 function cbtn(){
 	str = "";
-	if($("#city").val()=="서울"){
-		str += '<option value="">구</option>'
-		for(let i=0;i<seoul.length;i++){
-		str += '<option value="'+seoul[i]+'">'+seoul[i]+'</option>'
-		}
+	if($("#box").val()=="우체통"){
+		if($("#city").val()=="서울"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<seoul.length;i++){
+			str += '<option value="'+seoul[i]+'">'+seoul[i]+'</option>'
+			}
+		}$("#gu").html(str);
+		if($("#city").val()=="인천"){
+			
+			str += '<option value="">구</option>'
+			for(let i=0;i<incheon.length;i++){
+				str += '<option value="'+incheon[i]+'">'+incheon[i]+'</option>'
+			}
+		}	$("#gu").html(str);
 		
-	}	$("#gu").html(str);
-	
-	if($("#city").val()=="인천"){
+		if($("#city").val()=="세종"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<sejong.length;i++){
+				str += '<option value="'+sejong[i]+'">'+sejong[i]+'</option>'
+			}
+		}	$("#gu").html(str);
+	}else if($("#box").val()=="수거함"){
+		if($("#city").val()=="서울"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<seoulM.length;i++){
+			str += '<option value="'+seoulM[i]+'">'+seoulM[i]+'</option>'
+			}
+		}$("#gu").html(str);
+		if($("#city").val()=="인천"){
+			
+			str += '<option value="">구</option>'
+			for(let i=0;i<incheonM.length;i++){
+				str += '<option value="'+incheonM[i]+'">'+incheonM[i]+'</option>'
+			}
+		}	$("#gu").html(str);
 		
-		str += '<option value="">구</option>'
-		for(let i=0;i<incheon.length;i++){
-			str += '<option value="'+incheon[i]+'">'+incheon[i]+'</option>'
-		}
-	}	$("#gu").html(str);
-	
-	if($("#city").val()=="세종"){
-		
-		str += '<option value="">구</option>'
-		for(let i=0;i<sejong.length;i++){
-			str += '<option value="'+sejong[i]+'">'+sejong[i]+'</option>'
-		}
-	}	$("#gu").html(str);
+		if($("#city").val()=="세종"){
+			str += '<option value="">구</option>'
+			for(let i=0;i<sejong.length;i++){
+				str += '<option value="'+sejong[i]+'">'+sejong[i]+'</option>'
+			}
+		}	$("#gu").html(str);
+	}
 } 
 function sbtn(){
 	if($("#box").val()=="우체통"){
