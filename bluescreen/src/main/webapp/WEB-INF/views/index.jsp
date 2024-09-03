@@ -69,7 +69,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 									<p>폐의약품 수거함 위치</p>
 									<span class="tit_explan">지도를 통한 검색</span>
 									<div class="add_move_btn"></div>
-									<a href="index77f6.html?flag=ats_crm" class="anchor-link"></a>
+									<a href="Mmap" class="anchor-link"></a>
 								</li>
 								<li class="solTab assess">
 									<p>사전</p>
