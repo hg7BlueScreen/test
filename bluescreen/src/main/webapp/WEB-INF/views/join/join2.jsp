@@ -14,7 +14,7 @@
 		
 		
 		<section>
-			<form name="agree" method="get" action="/join3">
+			<form name="agree" method="get" action="join3">
 				<div id="subBanner"></div>
 			
 				
