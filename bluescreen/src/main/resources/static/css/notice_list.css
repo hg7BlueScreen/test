@@ -49,6 +49,18 @@ form > div {
   display: inline-block;
   border: 1px solid #666666;
 }
+#textBox {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 200px;
+  height: 38px;
+  margin-left: -100px;
+  margin-top: -20px;
+
+  display: inline-block;
+  border: 1px solid #666666;
+}
 
 input {
   position: relative;

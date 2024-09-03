@@ -34,7 +34,7 @@
 					where entpName like '%'|| #{textBox} ||'%'
 				</if>
 				<if test="categoryDetail == 'itemName'">
-					where entpName like '%'|| #{textBox} ||'%'
+					where itemName like '%'|| #{textBox} ||'%'
 				</if>
 				<if test="categoryDetail == 'efcyQesitm'">
 					where efcyQesitm like '%'|| #{textBox} ||'%'

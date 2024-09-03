@@ -14,15 +14,15 @@
 			$("#categoryDetail").html('<option value = "none"></option>');
 		}else if($("#category").val() == "disease"){
 			let optionHtml = "";
-			optionHtml += '<option value = "sickCd">질병코드</option>';
-			optionHtml += '<option value = "sickNm">질병명</option>';
+			optionHtml += '<option value = "sickCd" <c:if test="${categoryDetail == \'sickCd\' }">selected</c:if>>질병코드</option>';
+			optionHtml += '<option value = "sickNm" <c:if test="${categoryDetail == \'sickNm\' }">selected</c:if>>질병명</option>';
 			$("#categoryDetail").html(optionHtml);
 		}else if($("#category").val() == "medicine"){
 			let optionHtml = "";
-			optionHtml += '<option value = "entpName">회사명</option>';
-			optionHtml += '<option value = "itemName">제품명</option>';
-			optionHtml += '<option value = "efcyQesitm">효능</option>';
-			optionHtml += '<option value = "atpn">주의사항</option>';
+			optionHtml += '<option value = "entpName" <c:if test="${categoryDetail == \'entpName\' }">selected</c:if>>회사명</option>';
+			optionHtml += '<option value = "itemName" <c:if test="${categoryDetail == \'itemName\' }">selected</c:if>>제품명</option>';
+			optionHtml += '<option value = "efcyQesitm" <c:if test="${categoryDetail == \'efcyQesitm\' }">selected</c:if>>효능</option>';
+			optionHtml += '<option value = "atpn" <c:if test="${categoryDetail == \'atpn\' }">selected</c:if>>주의사항</option>';
 			$("#categoryDetail").html(optionHtml);
 		}
 	})
@@ -41,8 +41,15 @@
 	}
 	
 	function searchBtn(){
-		location.href = "dict?category=${category}&textBox="+$("#textBox").val()+"&categoryDetail="+$("#categoryDetail").val()
+		location.href = "dict?category=${category}&textBox="+$("#textBox").val()+"&categoryDetail="+$("#categoryDetail").val();
 	}
+	
+	function enterKey(){
+		if (event.keyCode === 13) {
+			location.href = "dict?category=${category}&textBox="+$("#textBox").val()+"&categoryDetail="+$("#categoryDetail").val();
+		}
+	}
+	
 </script>
 <style type="text/css">
 	.dialog {
@@ -217,7 +224,6 @@
 		<h1 style="margin-top: 40px; margin-bottom: 50px; font-size: 40px; left: 50%;">질병
 			및 의약품 사전</h1>
 		<div class="wrapper">
-			<form action="" name="search" method="post">
 				<select name="category" id="category" onchange="doSelectBig()"
 					style="position: absolute; top: 50%; left: 46.9%; width: 80px; height: 38px; margin-left: -180px; margin-top: -20px; padding: 5px; border: 1px solid #666666; font-family: inherit; background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
 					<option value="disease" <c:if test="${category == 'disease' }">selected</c:if>>질병</option>
@@ -229,13 +235,12 @@
 				</select>
 
 				<div class="title" style = "left: 55%">
-					<input type="text" size="16" id="textBox">
+					<input type="text" size="16" id="textBox" onkeydown="enterKey()" value = "${textBox }">
 				</div>
 
 				<button type="button" onclick = "searchBtn()" style = "height: 38px; left: 55%">
 					<i class="fas fa-search"></i>
 				</button>
-			</form>
 		</div>
 		
 		<!-- <button id="modal-btn" style = "width: 150px;">자바스크립트 모달창</button> -->
