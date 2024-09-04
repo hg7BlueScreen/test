@@ -21,12 +21,14 @@ public class DiseaseServiceImpl implements DiseaseService {
 	MedicineMapper mMapper;
 
 	@Override
-	public HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail) {
+	public HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail, int uno) {
 		pageDto = pageMethodDisease(pageDto, textBox, categoryDetail);
 		HashMap<String, Object> map = new HashMap<>();
 		ArrayList<Disease> list = dMapper.selectAll(pageDto, textBox, categoryDetail);
+		ArrayList<Integer> bookMarkList = dMapper.getAllBookMark(uno);
 		map.put("pageDto", pageDto);
 		map.put("list", list);
+		map.put("bookMarkList", bookMarkList);
 		return map;
 	}
 
@@ -47,6 +49,19 @@ public class DiseaseServiceImpl implements DiseaseService {
 		pageDto.setEndRow(pageDto.getStartRow() + 20 - 1);
 
 		return pageDto;
+	}
+
+
+
+	@Override
+	public void enableBookMarkDisease(int uno, int dno) {
+		dMapper.enableBookMarkDisease(uno, dno);
+	}
+
+
+	@Override
+	public void disableBookMarkDisease(int uno, int dno) {
+		dMapper.disableBookMarkDisease(uno, dno);
 	}
 
 	

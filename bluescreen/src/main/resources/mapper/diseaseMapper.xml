@@ -38,5 +38,17 @@
 		]]>
 	</select>
 	
+	<select id="getAllBookMark" resultType="Integer">
+		select dno from disease_user where uno = #{uno}
+	</select>
+	
+	<insert id="enableBookMarkDisease">
+		insert into disease_user values(null, null, #{dno}, #{uno}, 1)
+	</insert>
+	
+	<delete id="disableBookMarkDisease">
+		delete from disease_user where uno = #{uno} and dno = #{dno}	
+	</delete>
+	
 	
 </mapper>

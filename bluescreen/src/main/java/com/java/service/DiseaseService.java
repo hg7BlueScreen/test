@@ -7,7 +7,12 @@ import com.java.dto.Page;
 
 public interface DiseaseService {
 
-	HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail);
+	HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail, int uno);
+
+	void enableBookMarkDisease(int uno, int dno);
+
+	void disableBookMarkDisease(int uno, int dno);
+
 
 	
 

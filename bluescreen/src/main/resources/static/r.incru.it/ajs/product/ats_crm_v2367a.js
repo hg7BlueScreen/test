@@ -1,13 +1,13 @@
-const IeCheck=function(){const agent=navigator.userAgent.toLowerCase();if((navigator.appName=='Netscape'&&navigator.userAgent.search('Trident')!=-1)||(agent.indexOf("msie")!=-1)){alert('Internet Explorer´Â È£È¯µÇÁö ¾Ê´Â ºê¶ó¿ìÀú ÀÔ´Ï´Ù.');}};
+const IeCheck=function(){const agent=navigator.userAgent.toLowerCase();if((navigator.appName=='Netscape'&&navigator.userAgent.search('Trident')!=-1)||(agent.indexOf("msie")!=-1)){alert('Internet Explorerï¿½ï¿½ È£È¯ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.');}};
 //IeCheck();
 
-//ÀÌ¸ÞÀÏ Á¤±Ô½Ä Ã¼Å©
+//ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô½ï¿½ Ã¼Å©
 String.prototype.isEmail = function() {
 	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(String(this).toLowerCase());
 }
 
-//ÇÚµåÆù¹øÈ£ Á¤±Ô½Ä Ã¼Å©
+//ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½Ô½ï¿½ Ã¼Å©
 String.prototype.isPhone = function() {
 	const re = /^[0-9;\-]*$/;
 	return re.test(String(this));
@@ -18,8 +18,8 @@ jQuery(document).ready(()=>{
 
 	if(window.location.search.indexOf("showlayer=y") > 0 ){
 		Consulting_Pop();
-		jQuery("html").addClass('noFlow'); //overflow:hidden Ãß°¡
-		jQuery("#packageSt").show(); //ÆË¾÷ ¶ç¿ì±â
+		jQuery("html").addClass('noFlow'); //overflow:hidden ï¿½ß°ï¿½
+		jQuery("#packageSt").show(); //ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 
 	if (jQuery('.sub-slider').length > 0) {
@@ -41,13 +41,13 @@ jQuery(document).ready(()=>{
 		}
 
 
-		jQuery("body").addClass('is-popupOpen'); //overflow:hidden Ãß°¡
-		jQuery("#packageSt").show(); //ÆË¾÷ ¶ç¿ì±â
+		jQuery("body").addClass('is-popupOpen'); //overflow:hidden ï¿½ß°ï¿½
+		jQuery("#packageSt").show(); //ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½
 	})
 	.on("click", ".package_solution", function() {
 		Solution_Pop_01();
-		jQuery("body").addClass('is-popupOpen'); //overflow:hidden Ãß°¡
-		jQuery("#packageSt").show(); //ÆË¾÷ ¶ç¿ì±â
+		jQuery("body").addClass('is-popupOpen'); //overflow:hidden ï¿½ß°ï¿½
+		jQuery("#packageSt").show(); //ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½
 	})
     .on("click", ".newLayer_body .layer_closeBtn", ()=> {
         closeLayer();
@@ -130,7 +130,7 @@ jQuery(document).ready(()=>{
 
 	productInit();
 });
-//¸Þ´º ´Ù¿î Åä±Û - Å¬¸¯Çü½Ä
+//ï¿½Þ´ï¿½ ï¿½Ù¿ï¿½ ï¿½ï¿½ï¿½ - Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 // jQuery(document).ready(function(){
 // 	jQuery(".onList").click(function(){
 // 	jQuery(".show_onlist").toggleClass("on");
@@ -190,12 +190,12 @@ var swiperSw1 = new Swiper('.mySwiper.sw1', {
 	},
 	pagination: {
 		el: '.swiper-pagination1',
-		clickable: true, //¹öÆ° Å¬¸¯ ¿©ºÎ
+		clickable: true, //ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		type: 'bullets',
 	},
 });
 
-//ÆäÀÌÁö³×ÀÌ¼Ç fractionÃß°¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ fractionï¿½ß°ï¿½
 var pagingSwiper = new Swiper('.mySwiper.sw1', {
 	loop: true,
 
@@ -225,12 +225,12 @@ var swiperSw2 = new Swiper('.mySwiper.sw2', {
 	},
 	pagination: {
 		el: '.swiper-pagination2',
-		clickable: true, //¹öÆ° Å¬¸¯ ¿©ºÎ
+		clickable: true, //ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		type: 'bullets',
 	},
 });
 
-//ÆäÀÌÁö³×ÀÌ¼Ç fractionÃß°¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ fractionï¿½ß°ï¿½
 var pagingSwiper = new Swiper('.mySwiper.sw2', {
 	loop: true,
 
@@ -260,12 +260,12 @@ var swiperSw3 = new Swiper('.mySwiper.sw3', {
 	},
 	pagination: {
 		el: '.swiper-pagination3',
-		clickable: true, //¹öÆ° Å¬¸¯ ¿©ºÎ
+		clickable: true, //ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		type: 'bullets',
 	},
 });
 
-//ÆäÀÌÁö³×ÀÌ¼Ç fractionÃß°¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ fractionï¿½ß°ï¿½
 var pagingSwiper = new Swiper('.mySwiper.sw3', {
 	loop: true,
 
@@ -296,12 +296,12 @@ var swiperSw4 = new Swiper('.mySwiper.sw4', {
 	},
 	pagination: {
 		el: '.swiper-pagination4',
-		clickable: true, //¹öÆ° Å¬¸¯ ¿©ºÎ
+		clickable: true, //ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		type: 'bullets',
 	},
 });
 
-//ÆäÀÌÁö³×ÀÌ¼Ç fractionÃß°¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ fractionï¿½ß°ï¿½
 var pagingSwiper = new Swiper('.mySwiper.sw4', {
 	loop: true,
 
@@ -331,12 +331,12 @@ var swiperSw5 = new Swiper('.mySwiper.sw5', {
 	},
 	pagination: {
 		el: '.swiper-pagination5',
-		clickable: true, //¹öÆ° Å¬¸¯ ¿©ºÎ
+		clickable: true, //ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		type: 'bullets',
 	},
 });
 
-//ÆäÀÌÁö³×ÀÌ¼Ç fractionÃß°¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ fractionï¿½ß°ï¿½
 var pagingSwiper = new Swiper('.mySwiper.sw5', {
 	loop: true,
 
@@ -356,7 +356,7 @@ var pagingSwiper = new Swiper('.mySwiper.sw5', {
 	},
 });
 
-//section3 ·Î°í ½½¶óÀÌµå
+//section3 ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½
 var swiper = new Swiper('.mySwiper.corpLogo', {
 	loop: true,
 	cssMode: true,
@@ -374,69 +374,69 @@ var swiper = new Swiper('.mySwiper.corpLogo', {
 });
 
 window.onload = function() {
-	// URLÀÇ ¾ÞÄ¿¸¦ °¡Á®¿É´Ï´Ù.
+	// URLï¿½ï¿½ ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É´Ï´ï¿½.
 	var hash = window.location.hash;
-	// ¾ÞÄ¿°¡ Á¸ÀçÇÏ´Â °æ¿ì ÇØ´ç ¾ÞÄ¿·Î ÀÚµ¿À¸·Î ÀÌµ¿ÇÕ´Ï´Ù.
+	// ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Õ´Ï´ï¿½.
 	if (hash) {
 	var element = document.querySelector(hash);
 	if (element) {
-		element.scrollIntoView({ behavior: 'smooth' }); // ½ºÅ©·Ñ ºÎµå·´°Ô ÀÌµ¿
+		element.scrollIntoView({ behavior: 'smooth' }); // ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Îµå·´ï¿½ï¿½ ï¿½Ìµï¿½
 	}
 	}
 };
 
-//»ó´Ü¹öÆ° Á¶ÀÛ
+//ï¿½ï¿½Ü¹ï¿½Æ° ï¿½ï¿½ï¿½ï¿½
 function topClick() {
 	jQuery('html, body').stop().animate({ scrollTop: 0 }, 100);
 }
 
-/* AI ÀÎ¼º°Ë»ç(AI PnA) ÃøÁ¤¹æ½Ä ¹× ¿ä¼Ò ·¹ÀÌ¾î  */
+/* AI ï¿½Î¼ï¿½ï¿½Ë»ï¿½(AI PnA) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½  */
 const viewTestType=()=>{
 let img_url = jQuery("#img_url").val();
 let css_ver = jQuery("#css_ver").val();
 
 jQuery("#packageSt_1").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="$('#measure').hide(); $('body').removeClass('is-popupOpen');$('.measure_step').removeClass('on');jQuery('#packageSt_1').hide();" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="$('#measure').hide(); $('body').removeClass('is-popupOpen');$('.measure_step').removeClass('on');jQuery('#packageSt_1').hide();" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 
 	<div class="measure_step measure">
 		<div class="newLayer_header">
-			<h3>AI ÀÎ¼º°Ë»ç(AI PnA) ÃøÁ¤¹æ½Ä ¹× ¿ä¼Ò</h3>
+			<h3>AI ï¿½Î¼ï¿½ï¿½Ë»ï¿½(AI PnA) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½</h3>
 		</div>
 		<div class="assessLayer_content">
 			<div class="scroll-inner2 scroll-shape">
 
 				<div class="measure-layer-wrap">
 					<div class="ms_divide left">
-						<p class="measure-tit font-weight-medium">ÃøÁ¤¹æ½Ä : <span class="text-color-1">4°¡Áö ¹æ½Ä</span></p>
-						<p class="measure-num-way font-weight-medium">1. Normative ¹æ½Ä
-							<span class="measure-way-txt font-weight-normal">°¢ ¹®Ç×À» ¡®µ¿ÀÇÇÏÁö ¾ÊÀ½£§¿¡¼­ºÎÅÍ ¡®µ¿ÀÇÇÔ£§±îÁöÀÇ :Liker 6Á¡ Ã´µµ·Î ÀÀ´ä ÇÏ´Â Normative ¹æ½Ä</span>
+						<p class="measure-tit font-weight-medium">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : <span class="text-color-1">4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½</span></p>
+						<p class="measure-num-way font-weight-medium">1. Normative ï¿½ï¿½ï¿½
+							<span class="measure-way-txt font-weight-normal">ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :Liker 6ï¿½ï¿½ Ã´ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ Normative ï¿½ï¿½ï¿½</span>
 						</p>
 
-						<p class="measure-num-way font-weight-medium">2. Ipsative ¹æ½Ä
-							<span class="measure-way-txt font-weight-normal">Áö¿øÀÚÀÇ ÀÀ´ä ½Å·Úµµ¸¦ Æò°¡ÇÏ°í »çÈ¸Àû ¹Ù¶÷Á÷¼º¿¡ ÀÇÇÑ ¹ÝÀÀ ¿Ö°îÀ» ÅëÁ¦ÇÏ´Â Ipsative(°­Á¦ ¼±ÅÃ) ¹æ½Ä</span>
+						<p class="measure-num-way font-weight-medium">2. Ipsative ï¿½ï¿½ï¿½
+							<span class="measure-way-txt font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å·Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ipsative(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½</span>
 						</p>
 
-						<p class="measure-num-way font-weight-medium">3. »óÈ²°Ë»ç ¹æ½Ä
-							<span class="measure-way-txt font-weight-normal">Æ¯Á¤ »óÈ²¿¡¼­ ÀÀ´äÀÚÀÇ Çàµ¿ ÆÐÅÏÀ» ºÐ¼®ÇÏ¿© Á÷¹« ÀûÇÕ¼º, ¸®´õ½Ê, ÀÇ»ç °áÁ¤ ´É·Â µîÀÇ Á÷¹« °ü·Ã Æ¯¼ºÀ» ÃøÁ¤ÇÏ´Â »óÈ²°Ë»ç ¹æ½Ä(ÀÀ½ÃÀÚº° ¸ÂÃã ¹®Ç×)</span>
+						<p class="measure-num-way font-weight-medium">3. ï¿½ï¿½È²ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½
+							<span class="measure-way-txt font-weight-normal">Æ¯ï¿½ï¿½ ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¼ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ¼ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ç»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½È²ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)</span>
 						</p>
 
-						<p class="measure-num-way font-weight-medium">4. Åõ»ç°Ë»ç ¹æ½Ä
-							<span class="measure-way-txt font-weight-normal">(¹Ý»ý»êÀû Çàµ¿ Á¡¼ö°¡ ³ôÀº ÀÀ½ÃÀÚ ´ë»ó) °á°ú¸¦ Double-check ÇÒ ¼ö ÀÖ´Â Åõ»ç°Ë»ç¸¦ ÅëÇØ Á¶Á÷ÀÇ »ý»ê¼º°ú °ÇÀü¼ºÀ» À§ÇùÇÒ ¼ö ÀÖ´Â ¸®½ºÅ© ¼öÁØ ¿¹Ãø (ÀÀ½ÃÀÚº° ¸ÂÃã ¹®Ç×)</span>
+						<p class="measure-num-way font-weight-medium">4. ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½
+							<span class="measure-way-txt font-weight-normal">(ï¿½Ý»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ Double-check ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½Ë»ç¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ê¼ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)</span>
 						</p>
 					</div>
 
 					<div class="ms_divide right">
-						<p class="measure-tit font-weight-medium">ÃøÁ¤¿ä¼Ò : <span class="text-color-1">¿ª·® (ÀÎÀç»ó/Á¶Á÷ÇÙ½É), <br class="d-sm-none" />8°³ ¹Ý»ý»êÀû (CWB) Çàµ¿</span></p>
-						<span class="measure-list font-weight-normal">±¹³»¡¤¿Ü 100°³ ±â¾÷ÀÇ ÀÎÀç»ó, ÇÙ½É°¡Ä¡, ÇÊ¿ä¿ª·®À» ºÐ¼®ÇÏ¿© µµÃâÇÑ 15°³ÀÇ ´ëÇ¥¿ª·® Áß ±â¾÷ÀÌ ÃøÁ¤ÇÏ°íÀÚ ÇÏ´Â 5°³ ¿ª·®À» ¼±ÅÃÇÏ¿© ÃøÁ¤ÇÏ¿© Á¶Á÷ÀÌ ÇÊ¿ä·Î ÇÏ´Â ¿ª·®À» º¸À¯ÇÑ Áö¿øÀÚ È®ÀÎ</span>
+						<p class="measure-tit font-weight-medium">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : <span class="text-color-1">ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½Ù½ï¿½), <br class="d-sm-none" />8ï¿½ï¿½ ï¿½Ý»ï¿½ï¿½ï¿½ï¿½ï¿½ (CWB) ï¿½àµ¿</span></p>
+						<span class="measure-list font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ù½É°ï¿½Ä¡, ï¿½Ê¿ä¿ªï¿½ï¿½ï¿½ï¿½ ï¿½Ð¼ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 15ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ 5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½</span>
 
-						<span class="measure-list font-weight-normal">Á¶Á÷ÀÇ »ý»ê¼º°ú °ÇÀü¼ºÀ» À§ÇùÇÒ ¼ö ÀÖ´Â ¹Ý»ý»êÀû Çàµ¿À» º¸ÀÌ´Â Áö¿øÀÚ Çàµ¿ ¼öÁØ ¿¹Ãø</span>
+						<span class="measure-list font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ê¼ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ý»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 					</div>
 				</div>
 
 			</div>
 			<div class="packageSt_popup_btn flex">
-				<button type="button" class="check" onclick="$('#measure').hide(); $('body').removeClass('is-popupOpen');$('.measure_step').removeClass('on');jQuery('#packageSt_1').hide();">È®ÀÎ</button>
+				<button type="button" class="check" onclick="$('#measure').hide(); $('body').removeClass('is-popupOpen');$('.measure_step').removeClass('on');jQuery('#packageSt_1').hide();">È®ï¿½ï¿½</button>
 			</div>
 		</div>
 	</div>
@@ -444,20 +444,20 @@ jQuery("#packageSt_1").empty().append(`
 `).show();
 };
 
-/* ¿ª·® Ä¿½ºÅÍ¸¶ÀÌÂ¡ ·¹ÀÌ¾î  */
+/* ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½Ì¾ï¿½  */
 const viewCapability=()=>{
 let img_url = jQuery("#img_url").val();
 let css_ver = jQuery("#css_ver").val();
 
 jQuery("#packageSt_1").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="$('#ability').hide(); $('body').removeClass('is-popupOpen');$('.ability_step').removeClass('on');jQuery('#packageSt_1').hide();" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="$('#ability').hide(); $('body').removeClass('is-popupOpen');$('.ability_step').removeClass('on');jQuery('#packageSt_1').hide();" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 	<div class="ability_step ability on">
 		<div class="newLayer_header">
-			<h3>¿ª·® Ä¿½ºÅÍ¸¶ÀÌÂ¡ ¼³¸í</h3>
+			<h3>ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½</h3>
 			<p class="assessLayer-tit">
-				ÀÎÅ©·çÆ®¿÷½º°¡ Á¦°øÇÏ´Â 15°³ ±âº» ¿ª·® Áß Á¶Á÷ÀÌ ÃøÁ¤ÇÏ±â¸¦ Èñ¸ÁÇÏ´Â ¿ª·® 5°³¸¦ ¼±ÅÃÇÏ¿© È°¿ëÇÏ°Å³ª,<br>
-				ÀÌ ¿ÜÀÇ ¿ª·®À» Æò°¡ÇÏ±â¸¦ Èñ¸ÁÇÒ °æ¿ì, ¼º°Ý Àûµµ¸¦ È°¿ëÇÏ¿© ¿ª·®À» »õ·Ó°Ô ¸¸µé¾î Á¶Á÷¿¡°Ô ÇÊ¿äÇÑ ¿ª·® ÃøÁ¤ °¡´É
+				ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ 15ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±â¸¦ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ È°ï¿½ï¿½ï¿½Ï°Å³ï¿½,<br>
+				ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			</p>
 		</div>
 		<div class="assessLayer_content">
@@ -467,65 +467,65 @@ jQuery("#packageSt_1").empty().append(`
 			<div class="modelling_step_wrap scroll-shape-y">
 				<div class="model_step step1">
 					<div class="model_tit_box">
-						<p class="model_tit">¿ª·®¸ðµ¨¸µ</p>
+						<p class="model_tit">ï¿½ï¿½ï¿½ï¿½ï¿½ðµ¨¸ï¿½</p>
 						<div class="model_txt_ct">
-							<span class="model_txt">±¹³»¿Ü 100°³ ±â¾÷ÀÇ ÀÎÀç»ó, ÇÙ½É°¡Ä¡, ÇÊ¿ä¿ª·®À» ºÐ¼®ÇÏ¿© 15°³ÀÇ ¿ª·®À» µµÃâÇÔ</span>
+							<span class="model_txt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ù½É°ï¿½Ä¡, ï¿½Ê¿ä¿ªï¿½ï¿½ï¿½ï¿½ ï¿½Ð¼ï¿½ï¿½Ï¿ï¿½ 15ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 						</div>
 					</div>
 					<div class="step_inner">
 						<div class="ability_catalog">
-							<span>¿ª·®1<br>¿ª·®2<br>¿ª·®3<br>¿ª·®4<br>¿ª·®5<br>¿ª·®6<br>¿ª·®7<br>¿ª·®8</span>
+							<span>ï¿½ï¿½ï¿½ï¿½1<br>ï¿½ï¿½ï¿½ï¿½2<br>ï¿½ï¿½ï¿½ï¿½3<br>ï¿½ï¿½ï¿½ï¿½4<br>ï¿½ï¿½ï¿½ï¿½5<br>ï¿½ï¿½ï¿½ï¿½6<br>ï¿½ï¿½ï¿½ï¿½7<br>ï¿½ï¿½ï¿½ï¿½8</span>
 						</div>
 						<div class="ability_catalog">
-							<span>¿ª·®9<br>¿ª·®10<br>¿ª·®11<br>¿ª·®12<br>¿ª·®13<br>¿ª·®14<br>¿ª·®15</span>
+							<span>ï¿½ï¿½ï¿½ï¿½9<br>ï¿½ï¿½ï¿½ï¿½10<br>ï¿½ï¿½ï¿½ï¿½11<br>ï¿½ï¿½ï¿½ï¿½12<br>ï¿½ï¿½ï¿½ï¿½13<br>ï¿½ï¿½ï¿½ï¿½14<br>ï¿½ï¿½ï¿½ï¿½15</span>
 						</div>
 					</div>
 				</div>
 				<div class="model_step step2">
 					<div class="model_tit_box">
-						<p class="model_tit">1´Ü°è</p>
+						<p class="model_tit">1ï¿½Ü°ï¿½</p>
 						<div class="model_txt_ct">
-							<span class="model_txt">15°³ ¿ª·® Áß ±¹³»¿Ü 100´ë ±â¾÷¿¡¼­ »ç¿ë ºóµµ°¡ ³ôÀº ¿ª·® 5°³¸¦ È°¿ë</span>
+							<span class="model_txt">15ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½óµµ°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½</span>
 						</div>
 					</div>
 					<div class="step_inner">
 						<div class="ability_catalog">
-							<span>¿ª·®2<br>¿ª·®3<br>¿ª·®9</span>
+							<span>ï¿½ï¿½ï¿½ï¿½2<br>ï¿½ï¿½ï¿½ï¿½3<br>ï¿½ï¿½ï¿½ï¿½9</span>
 						</div>
 						<div class="ability_catalog">
-							<span>¿ª·®11<br>¿ª·®15</span>
+							<span>ï¿½ï¿½ï¿½ï¿½11<br>ï¿½ï¿½ï¿½ï¿½15</span>
 						</div>
 					</div>
 				</div>
 				<div class="model_step step3">
 					<div class="model_tit_box">
-						<p class="model_tit">2´Ü°è</p>
+						<p class="model_tit">2ï¿½Ü°ï¿½</p>
 						<div class="model_txt_ct">
-							<span class="model_txt">15°³ ¿ª·® Áß Á¶Á÷¿¡ ÇÊ¿äÇÑ <br>¿ª·® 5°³¸¦ ¼±ÅÃÇÏ¿© È°¿ë</span>
+							<span class="model_txt">15ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ <br>ï¿½ï¿½ï¿½ï¿½ 5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ È°ï¿½ï¿½</span>
 						</div>
 					</div>
 					<div class="step_inner">
 						<div class="ability_catalog">
-							<span><em class="text-color-1">¿ª·®1</em><br>¿ª·®2<br>¿ª·®3<br>¿ª·®4<br>¿ª·®5<br><em class="text-color-1">¿ª·®6</em><br>¿ª·®7<br><em class="text-color-1">¿ª·®8</em></span>
+							<span><em class="text-color-1">ï¿½ï¿½ï¿½ï¿½1</em><br>ï¿½ï¿½ï¿½ï¿½2<br>ï¿½ï¿½ï¿½ï¿½3<br>ï¿½ï¿½ï¿½ï¿½4<br>ï¿½ï¿½ï¿½ï¿½5<br><em class="text-color-1">ï¿½ï¿½ï¿½ï¿½6</em><br>ï¿½ï¿½ï¿½ï¿½7<br><em class="text-color-1">ï¿½ï¿½ï¿½ï¿½8</em></span>
 						</div>
 						<div class="ability_catalog">
-							<span>¿ª·®9<br>¿ª·®10<br><em class="text-color-1">¿ª·®11</em><br>¿ª·®12<br>¿ª·®13<br><em class="text-color-1">¿ª·®14</em><br>¿ª·®15</span>
+							<span>ï¿½ï¿½ï¿½ï¿½9<br>ï¿½ï¿½ï¿½ï¿½10<br><em class="text-color-1">ï¿½ï¿½ï¿½ï¿½11</em><br>ï¿½ï¿½ï¿½ï¿½12<br>ï¿½ï¿½ï¿½ï¿½13<br><em class="text-color-1">ï¿½ï¿½ï¿½ï¿½14</em><br>ï¿½ï¿½ï¿½ï¿½15</span>
 						</div>
 					</div>
 				</div>
 				<div class="model_step step4">
 					<div class="model_tit_box">
-						<p class="model_tit">3´Ü°è</p>
+						<p class="model_tit">3ï¿½Ü°ï¿½</p>
 						<div class="model_txt_ct">
-							<span class="model_txt">15°³ ¿ª·® ¿Ü ¿ª·®À» ÃøÁ¤ÇÏ±â ¿øÇÒ °æ¿ì, ¼º°ÝÃ´µµ·Î ¿ª·®À» Ãß°¡·Î ¸¸µé¾î È°¿ë</span>
+							<span class="model_txt">15ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½</span>
 						</div>
 					</div>
 					<div class="step_inner2">
-						<p class="inner2_txt">¹ßÀüÀ» À§ÇÑ °¥µî</p>
+						<p class="inner2_txt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</p>
 						<div class="inner2_imgBox">
-							<p>43°³ ¼º°ÝÃ´µµ¸¦ È°¿ë</p>
+							<p>43ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½</p>
 							<div class="personal_img">
-								<img src="${img_url}/static/image/info/sub_main/assess/personal_img.png?${css_ver}" alt="¼º°ÝÃ´µµ ÀÌ¹ÌÁö">
+								<img src="${img_url}/static/image/info/sub_main/assess/personal_img.png?${css_ver}" alt="ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½">
 							</div>
 						</div>
 					</div>
@@ -533,7 +533,7 @@ jQuery("#packageSt_1").empty().append(`
 			</div>
 
 			<div class="packageSt_popup_btn flex">
-				<button type="button" class="check" onclick="$('#ability').hide(); $('body').removeClass('is-popupOpen');$('.ability_step').removeClass('on');jQuery('#packageSt_1').hide();">È®ÀÎ</button>
+				<button type="button" class="check" onclick="$('#ability').hide(); $('body').removeClass('is-popupOpen');$('.ability_step').removeClass('on');jQuery('#packageSt_1').hide();">È®ï¿½ï¿½</button>
 			</div>
 		</div>
 	</div>
@@ -541,19 +541,19 @@ jQuery("#packageSt_1").empty().append(`
 `).show();
 };
 
-/* ¿ì¸® ±â¾÷¿¡ ÀûÇÕÇÑ °Ë»ç Ã£±â TIP  */
+/* ï¿½ì¸® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ Ã£ï¿½ï¿½ TIP  */
 const viewCompanyTip=()=>{
 let img_url = jQuery("#img_url").val();
 let css_ver = jQuery("#css_ver").val();
 
 jQuery("#packageSt_1").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="$('#findTip').hide(); $('body').removeClass('is-popupOpen');$('.findtip_step').removeClass('on');jQuery('#packageSt_1').hide();" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="$('#findTip').hide(); $('body').removeClass('is-popupOpen');$('.findtip_step').removeClass('on');jQuery('#packageSt_1').hide();" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 	<div class="findtip_step findtip on">
 		<div class="newLayer_header">
-			<h3>¿ì¸® ±â¾÷¿¡ ÀûÇÕÇÑ °Ë»ç Ã£±â TIP</h3>
+			<h3>ï¿½ì¸® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ Ã£ï¿½ï¿½ TIP</h3>
 			<p class="assessLayer-tit">
-				Àá±ñ! ½º¸¶Æ®ÇÑ ÀÎÀç, Á¶Á÷°ú Á÷¹«¿¡ Àß ÀûÀÀÇÒ ¼ö ÀÖ´Â ÀÎÀç¸¦ ÇÑ ¹ø¿¡ ¼±¹ßÇÏ°í ½Í´Ù¸é¹®Á¦ÇØ°á·Â°ÔÀÓ(PSG)¿Í AI ÀÎ¼º°Ë»ç (AI PnA)°¡ °áÇÕµÈ <span class="text-color-1">¸ÞÅ¸°Ë»ç</span>¸¦ ÀÌ¿ëÇØ º¸¼¼¿ä.
+				ï¿½ï¿½ï¿½! ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Í´Ù¸é¹®ï¿½ï¿½ï¿½Ø°ï¿½Â°ï¿½ï¿½ï¿½(PSG)ï¿½ï¿½ AI ï¿½Î¼ï¿½ï¿½Ë»ï¿½ (AI PnA)ï¿½ï¿½ ï¿½ï¿½ï¿½Õµï¿½ <span class="text-color-1">ï¿½ï¿½Å¸ï¿½Ë»ï¿½</span>ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 			</p>
 		</div>
 		<div class="assessLayer_content">
@@ -567,11 +567,11 @@ jQuery("#packageSt_1").empty().append(`
 					<div class="layer-tabmenu__list">
 						<div class="tabmenu-list-wrap">
 							<ul class="tabs tabmenu-list-swip">
-								<li class="tab-link on" data-tab="tab-1">¹®Á¦ÇØ°á°ÔÀÓ (PSG)</li>
-								<li class="tab-link" data-tab="tab-2">AI ÀÎ¼º°Ë»ç (AI PnA)</li>
-								<li class="tab-link" data-tab="tab-3">¹Ý»ý»êÀûÇàµ¿°Ë»ç (CWB)</li>
-								<li class="tab-link" data-tab="tab-4">ÀÎ¼º°Ë»ç (PnA)</li>
-								<li class="tab-link" data-tab="tab-5">Àû¼º°Ë»ç (GCA)</li>
+								<li class="tab-link on" data-tab="tab-1">ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½ï¿½ (PSG)</li>
+								<li class="tab-link" data-tab="tab-2">AI ï¿½Î¼ï¿½ï¿½Ë»ï¿½ (AI PnA)</li>
+								<li class="tab-link" data-tab="tab-3">ï¿½Ý»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½àµ¿ï¿½Ë»ï¿½ (CWB)</li>
+								<li class="tab-link" data-tab="tab-4">ï¿½Î¼ï¿½ï¿½Ë»ï¿½ (PnA)</li>
+								<li class="tab-link" data-tab="tab-5">ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ (GCA)</li>
 							</ul>
 						</div>
 
@@ -579,128 +579,128 @@ jQuery("#packageSt_1").empty().append(`
 							<div class="tab_cont_qnatest">
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">½º¸¶Æ®ÇÑ ÀÎÀç</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ¹æ½ÄÀ¸·Î ÃøÁ¤ÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">¿Â¶óÀÎ</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½Â¶ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">±àÁ¤Àû / »õ·Î¿ò</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / ï¿½ï¿½ï¿½Î¿ï¿½</span>
 									</div>
 								</div>
 							</div>
-							<div class="layer-tabmenu-result">¹®Á¦ÇØ°á·Â°ÔÀÓ (PSG) ÃÖÀû</div>
+							<div class="layer-tabmenu-result">ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½Â°ï¿½ï¿½ï¿½ (PSG) ï¿½ï¿½ï¿½ï¿½</div>
 						</div>
 						<div id="tab-2" class="tab-content">
 							<div class="tab_cont_qnatest">
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">½º¸¶Æ®ÇÑ ÀÎÀç</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ¹æ½ÄÀ¸·Î ÃøÁ¤ÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">¿Â¶óÀÎ / ¿ÀÇÁ¶óÀÎ</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½Â¶ï¿½ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">ÀÍ¼÷ÇÔ</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½Í¼ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 							</div>
-							<div class="layer-tabmenu-result">Àû¼º°Ë»ç (GCA) ÃÖÀû</div>
+							<div class="layer-tabmenu-result">ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ (GCA) ï¿½ï¿½ï¿½ï¿½</div>
 						</div>
 						<div id="tab-3" class="tab-content">
 							<div class="tab_cont_qnatest">
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">Á¶Á÷°ú Á÷¹«¿¡ Àß ÀûÀÀÇÏ´Â ÀÎÀç</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ¹æ½ÄÀ¸·Î ÃøÁ¤ÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">¿Â¶óÀÎ</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½Â¶ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">ºÎÀûÇÕ Áö¿øÀÚ º¯º°¿ë(Screen-out)</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Screen-out)</span>
 									</div>
 								</div>
 							</div>
-							<div class="layer-tabmenu-result">¹Ý»ý»êÀûÇàµ¿°Ë»ç (CWB) ÃÖÀû</div>
+							<div class="layer-tabmenu-result">ï¿½Ý»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½àµ¿ï¿½Ë»ï¿½ (CWB) ï¿½ï¿½ï¿½ï¿½</div>
 						</div>
 						<div id="tab-4" class="tab-content">
 							<div class="tab_cont_qnatest long">
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">Á¶Á÷°ú Á÷¹«¿¡ Àß ÀûÀÀÇÏ´Â ÀÎÀç</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ¹æ½ÄÀ¸·Î ÃøÁ¤ÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">¿Â¶óÀÎ</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½Â¶ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">ÀûÇÕ Áö¿øÀÚ ¼±º°¿ë(Select-in)</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Select-in)</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">YES (±â¾÷ ¸ÂÃãÇü)</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">YES (ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</span>
 									</div>
 								</div>
 							</div>
-							<div class="layer-tabmenu-result">AI ÀÎ¼º°Ë»ç (AI PnA) ÃÖÀû</div>
+							<div class="layer-tabmenu-result">AI ï¿½Î¼ï¿½ï¿½Ë»ï¿½ (AI PnA) ï¿½ï¿½ï¿½ï¿½</div>
 						</div>
 						<div id="tab-5" class="tab-content">
 							<div class="tab_cont_qnatest long">
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">Á¶Á÷°ú Á÷¹«¿¡ Àß ÀûÀÀÇÏ´Â ÀÎÀç</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">¾î¶² ¹æ½ÄÀ¸·Î ÃøÁ¤ÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">¿Â¶óÀÎ / ¿ÀÇÁ¶óÀÎ</span>
+										<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½Â¶ï¿½ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">ÀûÇÕ Áö¿øÀÚ ¼±º°¿ë(Select-in)</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Select-in)</span>
 									</div>
 								</div>
 								<div class="findtip_box">
 									<div>
-										<span class="tip_box_q font-weight-normal">Áö¿øÀÚ¿¡°Ô ¾î¶² °æÇèÀ» Á¦°øÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-										<span class="tip_box_a font-weight-normal text-color-1">NO (Ç¥ÁØÇü)</span>
+										<span class="tip_box_q font-weight-normal">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+										<span class="tip_box_a font-weight-normal text-color-1">NO (Ç¥ï¿½ï¿½ï¿½ï¿½)</span>
 									</div>
 								</div>
 							</div>
-							<div class="layer-tabmenu-result">ÀÎ¼º°Ë»ç (PnA) ÃÖÀû</div>
+							<div class="layer-tabmenu-result">ï¿½Î¼ï¿½ï¿½Ë»ï¿½ (PnA) ï¿½ï¿½ï¿½ï¿½</div>
 						</div>
 					</div>
 				</div>
@@ -709,14 +709,14 @@ jQuery("#packageSt_1").empty().append(`
 				<div class="findtip_line_wrap step1">
 					<div class="findtip_box left">
 						<div class="tip_box">
-							<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-							<span class="tip_box_a font-weight-normal text-color-1">½º¸¶Æ®ÇÑ ÀÎÀç</span>
+							<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+							<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 						</div>
 					</div>
 					<div class="findtip_box right">
 						<div class="tip_box">
-							<span class="tip_box_q font-weight-normal">¾î¶² ÀÎÀç¸¦ ¼±¹ßÇÏ°í ½ÍÀ¸½Å°¡¿ä?</span>
-							<span class="tip_box_a font-weight-normal text-color-1">Á¶Á÷°ú Á÷¹«¿¡ Àß ÀûÀÀÇÏ´Â ÀÎÀç</span>
+							<span class="tip_box_q font-weight-normal">ï¿½î¶² ï¿½ï¿½ï¿½ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</span>
+							<span class="tip_box_a font-weight-normal text-color-1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 						</div>
 					</div>
 				</div>
@@ -726,7 +726,7 @@ jQuery("#packageSt_1").empty().append(`
 		</div>
 	</div>
 	<div class="packageSt_popup_btn flex">
-		<button type="button" class="check" onclick="$('#findTip').hide(); $('body').removeClass('is-popupOpen');$('.findtip_step').removeClass('on');jQuery('#packageSt_1').hide();">È®ÀÎ</button>
+		<button type="button" class="check" onclick="$('#findTip').hide(); $('body').removeClass('is-popupOpen');$('.findtip_step').removeClass('on');jQuery('#packageSt_1').hide();">È®ï¿½ï¿½</button>
 	</div>
 
 </div>
@@ -748,7 +748,7 @@ const Solution_Refult_View=()=>{
 	});
 
 	if (chkVal == ""){
-		alert("ÃßÃµ ÆÐÅ°Áö ¼Ö·ç¼ÇÀ» ¼±ÅÃÇØÁÖ¼¼¿ä.");
+		alert("ï¿½ï¿½Ãµ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		return false;
 	}
 
@@ -765,65 +765,65 @@ const Solution_Refult_View_1=(uniqueChk)=>{
 		if (uniqueChk.indexOf("1") >= 0){
 			strHTML += `<div class="resultBox tp1">
 							<p class="result_tit_e">ATS&amp;CRM</p>
-							<p class="result_tit">Ã¤¿ë°ü¸®¼Ö·ç¼Ç</p>
+							<p class="result_tit">Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½</p>
 							<span class="result_txt">
-								Ã¤¿ëÈ¨ÆäÀÌÁö Á¦ÀÛºÎÅÍ °ø°í, Áö¿øÀÚ/ÈÄº¸ÀÚ °ü¸®,<br>
-								¸éÁ¢ÀÏÁ¤, ÇÕ°Ý °ü¸® µî Ã¤¿ë Àü °úÁ¤ ¾÷¹«¸¦ ÀÚµ¿È­ÇÏ¿©<br>
-								º¸´Ù ´õ È¿À²ÀûÀ¸·Î °ü¸®ÇØÁÖ´Â ¼Ö·ç¼ÇÀÔ´Ï´Ù.
+								Ã¤ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½Äºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½,<br>
+								ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Õ°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¤ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½È­ï¿½Ï¿ï¿½<br>
+								ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 							</span>
-							<button type="button" class="go_ats_crm layer_detail">ÀÚ¼¼È÷ º¸±â</button>
+							<button type="button" class="go_ats_crm layer_detail">ï¿½Ú¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</button>
 						</div>`;
 		}
 
 		if (uniqueChk.indexOf("2") >= 0){
 			strHTML += `<div class="resultBox tp2">
 							<p class="result_tit_e">ASSESS</p>
-							<p class="result_tit">ÀÎÀç°ËÁõ¼Ö·ç¼Ç</p>
+							<p class="result_tit">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½</p>
 							<span class="result_txt">
-								ÃÖ½ÅÀÌ·Ð°ú ±â¼úÀÌ Àû¿ëµÈ ÀÎ¼º°Ë»ç¿¡¼­ºÎÅÍ Àû¼º°Ë»ç±îÁö<br>
-								°¡´ÉÇÏ¸ç AI±â¼ú·Î º¸´Ù ´õ Á¤È®ÇÑ °ËÁõ±îÁö °¡´ÉÇÑ<br>
-								¿©·¯°¡Áö Ã¤¿ë°ËÁõµµ±¸ ¼Ö·ç¼Ç ÀÔ´Ï´Ù.
+								ï¿½Ö½ï¿½ï¿½Ì·Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½Ë»ç¿¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½<br>
+								ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ AIï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+								ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.
 							</span>
-							<button type="button" class="go_assess layer_detail">ÀÚ¼¼È÷ º¸±â</button>
+							<button type="button" class="go_assess layer_detail">ï¿½Ú¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</button>
 						</div>`;
 		}
 
 		if (uniqueChk.indexOf("3") >= 0){
 			strHTML += `<div class="resultBox tp5">
 							<p class="result_tit_e">Interview</p>
-							<p class="result_tit">¸éÁ¢¼Ö·ç¼Ç</p>
+							<p class="result_tit">ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½</p>
 							<span class="result_txt">
-								Áö¿ª&amp;Àå¼Ò ±¸¾Ö¾øÀÌ ¿ÀÇÁ¶óÀÎ ¹æ½Ä ±×´ë·Î Àû¿ëÇÏ¿©<br>
-								¿Â¶óÀÎ¿¡¼­µµ È®½ÇÇÑ ¸éÁ¢À» ÁøÇàÇÏ¿© ±â¾÷¿¡ ÀûÇÕÇÑ ÀÎÀç¸¦ <br>
-								Ã£À» ¼ö ÀÖµµ·Ï µ½´Â ºñ´ë¸é ¸éÁ¢ ¼Ö·ç¼ÇÀÔ´Ï´Ù.
+								ï¿½ï¿½ï¿½ï¿½&amp;ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½<br>
+								ï¿½Â¶ï¿½ï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ç¸¦ <br>
+								Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 							</span>
-							<button type="button" class="go_interview layer_detail">ÀÚ¼¼È÷ º¸±â</button>
+							<button type="button" class="go_interview layer_detail">ï¿½Ú¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</button>
 						</div>`;
 		}
 
 		if (uniqueChk.indexOf("4") >= 0){
 			strHTML += `<div class="resultBox tp3">
 							<p class="result_tit_e">Proctor</p>
-							<p class="result_tit">½ÃÇè°¨µ¶¼Ö·ç¼Ç</p>
+							<p class="result_tit">ï¿½ï¿½ï¿½è°¨ï¿½ï¿½ï¿½Ö·ï¿½ï¿½</p>
 							<span class="result_txt">
-								´Ù¾çÇÑ À¯ÇüÀÇ ¿Â¶óÀÎ ½ÃÇè(IBT)À» °£ÆíÇÏ°Ô ¸¸µé°í<br>
-								ºÎÁ¤ÇàÀ§ ¹æÁö¸¦ À§ÇÑ½ÃÇè °¨µ¶ ¹× °á°ú±îÁö ºÐ¼®ÇØ ÁÖ´Â<br>
-								¼Ö·ç¼Ç ÀÔ´Ï´Ù.
+								ï¿½Ù¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(IBT)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+								ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¼ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½<br>
+								ï¿½Ö·ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.
 							</span>
-							<button type="button" class="go_proctor layer_detail">ÀÚ¼¼È÷ º¸±â</button>
+							<button type="button" class="go_proctor layer_detail">ï¿½Ú¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</button>
 						</div>`;
 		}
 
 		if (uniqueChk.indexOf("5") >= 0){
 			strHTML += `<div class="resultBox tp4">
 							<p class="result_tit_e">Reference Check</p>
-							<p class="result_tit">ÆòÆÇÁ¶È¸¼Ö·ç¼Ç</p>
+							<p class="result_tit">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½Ö·ï¿½ï¿½</p>
 							<span class="result_txt">
-								Ã¼°èÀûÀÎ ÆòÆÇ Áú¹® µî·Ï ¹× ¸ð¹ÙÀÏ Áö¿øÀ» ÅëÇÑ ³ôÀº<br>
-								ÀÀ´ä·ü·Î Áö¿øÀÚ/´ë»óÀÚÀÇ Á¦´ë·Î µÈ °ËÁõÀ» ÅëÇÑ ÆòÆÇÁ¶È¸¸¦<br>
-								È®ÀÎÇÒ ¼ö ÀÖ´Â ¼Ö·ç¼ÇÀÔ´Ï´Ù.
+								Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½<br>
+								ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½<br>
+								È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 							</span>
-							<button type="button" class="go_referencecheck layer_detail">ÀÚ¼¼È÷ º¸±â</button>
+							<button type="button" class="go_referencecheck layer_detail">ï¿½Ú¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</button>
 						</div>`;
 		}
 		return strHTML;
@@ -831,13 +831,13 @@ const Solution_Refult_View_1=(uniqueChk)=>{
 
 jQuery("#packageSt").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 	<div class="packageSt_step num02 on">
 		<div class="newLayer_header">
-			<h3>ÃßÃµ ÆÐÅ°Áö ¼Ö·ç¼Ç °á°ú</h3>
+			<h3>ï¿½ï¿½Ãµ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½</h3>
 			<p class="packageLayer-tit">
-				¹®Á¦Á¡À» ÇØ°áÇÒ ¼ö ÀÖ´Â ÃÖÀûÈ­µÈ <span class="t-blue-point">ÃßÃµ ÆÐÅ°Áö ¼Ö·ç¼Ç °á°ú</span> ÀÔ´Ï´Ù.<br class="pc">
-				<span class="t-blue-point">ÇÊ¿äÇÑ ¼Ö·ç¼ÇÀ¸·Î¸¸ ¹­¿©Áø ÆÐÅ°Áö ¼Ö·ç¼Ç</span>À» ÅëÇØ º¸´Ù ´õ Àú·ÅÇÏ°í ¸¸Á·½º·¯¿î Ã¤¿ë ¾÷¹« °æÇèÀ» ¸¸³ªº¸¼¼¿ä.
+				ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ <span class="t-blue-point">ï¿½ï¿½Ãµ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½</span> ï¿½Ô´Ï´ï¿½.<br class="pc">
+				<span class="t-blue-point">ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½</span>ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 			</p>
 		</div>
 		<div class="packageLayer_content">
@@ -848,8 +848,8 @@ jQuery("#packageSt").empty().append(`
 			</div>
 
 			<div class="packageSt_popup_btn flex">
-				<button type="button" class="view_close" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');">´Ý±â</button>
-				<button type="button" class="view_blue_btn" onclick="Solution_Pop_02('${uniqueChk}');">ÆÐÅ°Áö¼Ö·ç¼Ç ½ÅÃ»</button>
+				<button type="button" class="view_close" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');">ï¿½Ý±ï¿½</button>
+				<button type="button" class="view_blue_btn" onclick="Solution_Pop_02('${uniqueChk}');">ï¿½ï¿½Å°ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½Ã»</button>
 			</div>
 		</div>
 	</div>
@@ -857,7 +857,7 @@ jQuery("#packageSt").empty().append(`
 `);
 };
 
-/* ÆÐÅ°Áö ¼Ö·ç¼Ç ÃßÃµ ¹Þ±â 2  */
+/* ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½Ãµ ï¿½Þ±ï¿½ 2  */
 const Solution_Pop_02=(uniqueChk)=>{
 
 let solution_title = "";
@@ -865,48 +865,48 @@ console.log(uniqueChk);
 
 if (uniqueChk.indexOf("1") >= 0){
 	if (solution_title == ""){
-		solution_title += `ATS&CRM Ã¤¿ë°ü¸®¼Ö·ç¼Ç`;
+		solution_title += `ATS&CRM Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	} else {
-		solution_title += `,<br class="mobile"> ATS&CRM Ã¤¿ë°ü¸®¼Ö·ç¼Ç`;
+		solution_title += `,<br class="mobile"> ATS&CRM Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	}
 }
 if (uniqueChk.indexOf("2") >= 0){
 	if (solution_title == ""){
-		solution_title += `ASSESS ÀÎÀç°ËÁõ¼Ö·ç¼Ç`;
+		solution_title += `ASSESS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	} else {
-		solution_title += `,<br class="mobile"> ASSESS ÀÎÀç°ËÁõ¼Ö·ç¼Ç`;
+		solution_title += `,<br class="mobile"> ASSESS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	}
 }
 if (uniqueChk.indexOf("3") >= 0){
 	if (solution_title == ""){
-		solution_title += `Interview ¸éÁ¢¼Ö·ç¼Ç`;
+		solution_title += `Interview ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	} else {
-		solution_title += `,<br class="mobile"> Interview ¸éÁ¢¼Ö·ç¼Ç`;
+		solution_title += `,<br class="mobile"> Interview ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	}
 }
 if (uniqueChk.indexOf("4") >= 0){
 	if (solution_title == ""){
-		solution_title += `Proctor ½ÃÇè°¨µ¶¼Ö·ç¼Ç`;
+		solution_title += `Proctor ï¿½ï¿½ï¿½è°¨ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	} else {
-		solution_title += `,<br class="mobile"> Proctor ½ÃÇè°¨µ¶¼Ö·ç¼Ç`;
+		solution_title += `,<br class="mobile"> Proctor ï¿½ï¿½ï¿½è°¨ï¿½ï¿½ï¿½Ö·ï¿½ï¿½`;
 	}
 }
 if (uniqueChk.indexOf("5") >= 0){
 	if (solution_title == ""){
-		solution_title += `Reference Check ÆòÆÇÁ¶È¸¼Ö·ç¼Ç`;
+		solution_title += `Reference Check ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½Ö·ï¿½ï¿½`;
 	} else {
-		solution_title += `,<br class="mobile"> Reference Check ÆòÆÇÁ¶È¸¼Ö·ç¼Ç`;
+		solution_title += `,<br class="mobile"> Reference Check ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ï¿½Ö·ï¿½ï¿½`;
 	}
 }
 
 jQuery("#packageSt").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 	<div class="packageSt_step num03 on">
 		<div class="newLayer_header">
-			<h3>ÆÐÅ°Áö ¼Ö·ç¼Ç ½ÅÃ» ¹× ¹®ÀÇ</h3>
+			<h3>ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</h3>
 			<p class="caution_txt">
-				¡Ø ÇÊ¿äÇÑ ¼Ö·ç¼ÇÀ¸·Î¸¸ ¹­¿©Áø ÃßÃµ ÆÐÅ°Áö ¼Ö·ç¼Ç ½ÅÃ» &amp; ¹®ÀÇ È­¸éÀ¸·Î, ÀÛ¼º ½Ã ´äº¯Àº ÆÐÅ°Áö ¼Ö·ç¼Ç ±âÁØ¿¡ ¸ÂÃç ÁøÇàµË´Ï´Ù.
+				ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½Ã» &amp; ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Û¼ï¿½ ï¿½ï¿½ ï¿½äº¯ï¿½ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ë´Ï´ï¿½.
 			</p>
 		</div>
 		<div class="packageLayer_content">
@@ -917,32 +917,32 @@ jQuery("#packageSt").empty().append(`
 
 					<div class="proposal_ipt_wrap">
 						<div class="pp_ipt_mb">
-							<label for="exampleForControlInput" class="c-label">½ÅÃ» ¼Ö·ç¼Ç<span class="t-star">*</span></label>
+							<label for="exampleForControlInput" class="c-label">ï¿½ï¿½Ã» ï¿½Ö·ï¿½ï¿½<span class="t-star">*</span></label>
 							<div id="request_solution_title" class="c-fakeinput">${solution_title}</div>
 						</div>
 
 						<div class="pp_ipt_mb2">
-							<p class="c-label">¿äÃ»»çÇ×<span class="t-star">*</span></p>
+							<p class="c-label">ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½<span class="t-star">*</span></p>
 							<div class="wish pp_ipt_flex">
 								<div class="check__line">
 									<input type="checkbox" id="consulting_3" name="consulting" value="03" checked>
 									<label for="consulting_3">
 										<span class="chk"></span>
-										<span class="suggest_txt">¹«·áÃ¼Çè ½ÅÃ»</span>
+										<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½Ã»</span>
 									</label>
 								</div>
 								<div class="check__line">
 									<input type="checkbox" id="consulting_1" name="consulting" value="01">
 									<label for="consulting_1">
 										<span class="chk"></span>
-										<span class="suggest_txt">µµÀÔ¹®ÀÇ</span>
+										<span class="suggest_txt">ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½</span>
 									</label>
 								</div>
 								<div class="check__line">
 									<input type="checkbox" id="consulting_2" name="consulting" value="02">
 									<label for="consulting_2">
 										<span class="chk"></span>
-										<span class="suggest_txt">¼­ºñ½º¼Ò°³¼­ ½ÅÃ»</span>
+										<span class="suggest_txt">ï¿½ï¿½ï¿½ñ½º¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»</span>
 									</label>
 								</div>
 							</div>
@@ -950,57 +950,57 @@ jQuery("#packageSt").empty().append(`
 
 						<div class="info pp_ipt_mb pp_ipt_flex">
 							<div class="leftIpt">
-								<label for="exampleForControlInput" class="c-label">È¸»ç¸í<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="company_nm" id="company_nm" maxlength="50" placeholder="È¸»ç¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">È¸ï¿½ï¿½ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="company_nm" id="company_nm" maxlength="50" placeholder="È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 							<div class="rightIpt">
-								<label for="exampleForControlInput" class="c-label">ºÎ¼­¸í<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="department" id="department" maxlength="25" placeholder="ºÎ¼­¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½Î¼ï¿½ï¿½ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="department" id="department" maxlength="25" placeholder="ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 						</div>
 
 						<div class="info pp_ipt_mb pp_ipt_flex">
 							<div class="leftIpt">
-								<label for="exampleForControlInput" class="c-label">ÀÌ¸§<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="mem_nm" id="mem_nm" maxlength="50" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½Ì¸ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="mem_nm" id="mem_nm" maxlength="50" placeholder="ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 							<div class="rightIpt">
-								<label for="exampleForControlInput" class="c-label">¿¬¶ôÃ³<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="contact" id="contact" maxlength="15" placeholder="¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½ï¿½ï¿½ï¿½Ã³<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="contact" id="contact" maxlength="15" placeholder="ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 						</div>
 
 						<div class="info pp_ipt_mb pp_ipt_flex">
 							<div class="leftIpt">
-								<label for="exampleForControlInput" class="c-label">ÀÌ¸ÞÀÏ<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="email" id="email" maxlength="50" placeholder="ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½Ì¸ï¿½ï¿½ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="email" id="email" maxlength="50" placeholder="ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 							<div class="rightIpt">
-								<label for="exampleForControlInput" class="c-label">È¨ÆäÀÌÁö</label>
-								<input type="text" class="c-ipt" value="" name="homepage" id="homepage" maxlength="100" placeholder="È¸»ç È¨ÆäÀÌÁö ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
+								<input type="text" class="c-ipt" value="" name="homepage" id="homepage" maxlength="100" placeholder="È¸ï¿½ï¿½ È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 						</div>
 
 						<div class="privacy_use_wrap">
-							<p class="privacy_use">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë ¾È³»</p>
-							<span class="privacy_cont">¼öÁýÇ×¸ñ : (ÇÊ¼ö)È¸»ç¸í, ºÎ¼­¸í, ÀÌ¸§, ¿¬¶ôÃ³, ÀÌ¸ÞÀÏ, (¼±ÅÃ) È¨ÆäÀÌÁöÁÖ¼Ò</span>
-							<span class="privacy_cont">¼öÁý¸ñÀû : ÀÎÅ©·çÆ®¿÷½º µµÀÔ »ó´ã ÁøÇà, µ¥¸ð °èÁ¤ ¹ß±Þ°ú ¼Ö·ç¼Ç ¾÷µ¥ÀÌÆ® ¼Ò½Ä ¹× ´º½º·¹ÅÍ ¹ß¼Û</span>
-							<span class="privacy_cont">ÀÌ¿ë±â°£ : °³ÀÎÁ¤º¸ ÀÌ¿ë ¸ñÀû ´Þ¼º ½Ã ±îÁö</span>
-							<span class="privacy_caution">À§ÀÇ °³ÀÎÁ¤º¸ ¼öÁý¡¤ ÀÌ¿ë µ¿ÀÇ¸¦ °ÅºÎÇÏ½Ç ¼ö ÀÖÀ¸¸ç, °ÅºÎ ½Ã À§ ¼­ºñ½º ÀÌ¿ë¿¡ Á¦ÇÑÀÌ ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù.</span>
+							<p class="privacy_use">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½È³ï¿½</p>
+							<span class="privacy_cont">ï¿½ï¿½ï¿½ï¿½ï¿½×¸ï¿½ : (ï¿½Ê¼ï¿½)È¸ï¿½ï¿½ï¿½, ï¿½Î¼ï¿½ï¿½ï¿½, ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½Ã³, ï¿½Ì¸ï¿½ï¿½ï¿½, (ï¿½ï¿½ï¿½ï¿½) È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½</span>
+							<span class="privacy_cont">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß±Þ°ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ò½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½</span>
+							<span class="privacy_cont">ï¿½Ì¿ï¿½â°£ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
+							<span class="privacy_caution">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½Åºï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Åºï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.</span>
 						</div>
 
 						<div class="check__line mt-14">
 							<input type="checkbox" id="agreement" name="agreement">
 							<label for="agreement">
 								<span class="chk"></span>
-								<span class="suggest_txt">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë¿¡ µ¿ÀÇÇÕ´Ï´Ù. (ÇÊ¼ö)</span>
+								<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½Ê¼ï¿½)</span>
 							</label>
 						</div>
 						<div class="check__line mt-14">
 							<input type="checkbox" id="agreement2" name="agreement2">
 							<label for="agreement2">
 								<span class="chk"></span>
-								<span class="suggest_txt">µ¥¸ð½ÅÃ» ¹× ¼Ö·ç¼Ç ¾÷µ¥ÀÌÆ®¼Ò½Ä, ´º½º·¹ÅÍ ¼ö½Å¿¡ µ¿ÀÇÇÕ´Ï´Ù. (¼±ÅÃ)</span>
+								<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ò½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½ï¿½ï¿½ï¿½)</span>
 							</label>
 						</div>
 					</div>
@@ -1009,7 +1009,7 @@ jQuery("#packageSt").empty().append(`
 			</div>
 
 			<div class="packageSt_popup_btn flex">
-				<button type="button" class="view_blue_btn" onclick="Svc_Reg('p');">ÆÐÅ°Áö¼Ö·ç¼Ç ½ÅÃ»</button>
+				<button type="button" class="view_blue_btn" onclick="Svc_Reg('p');">ï¿½ï¿½Å°ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½Ã»</button>
 			</div>
 		</div>
 	</div>
@@ -1017,17 +1017,17 @@ jQuery("#packageSt").empty().append(`
 `);
 };
 
-/* ÆÐÅ°Áö ¼Ö·ç¼Ç ÃßÃµ ¹Þ±â 1  */
+/* ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½Ãµ ï¿½Þ±ï¿½ 1  */
 const Solution_Pop_01=()=>{
 jQuery("#packageSt").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 	<div class="packageSt_step num01 on">
 		<div class="newLayer_header">
-			<h3>ÃßÃµ ÆÐÅ°Áö ¼Ö·ç¼Ç</h3>
+			<h3>ï¿½ï¿½Ãµ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½</h3>
 			<p class="packageLayer-tit">
-				<span class="t-blue-point">°í¹Î ¶Ç´Â ÇØ°áÇÏ°í ½ÍÀº Ã¤¿ë¾÷¹«</span>¸¦ ¸ðµÎ ¼±ÅÃÇØÁÖ¼¼¿ä.<br>
-				°í°´´ÔÀÇ ±â¾÷¿¡ ÇÊ¿äÇÑ ÃÖÀûÈ­µÈ <span class="t-blue-point">ÆÐÅ°Áö ¼Ö·ç¼Ç</span>À¸·Î ÃßÃµÇØ µå¸³´Ï´Ù. (ÃÖ¼Ò 1°³ ¼±ÅÃ ÇÊ¼ö)
+				<span class="t-blue-point">ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Ø°ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½</span>ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.<br>
+				ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ <span class="t-blue-point">ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½</span>ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½å¸³ï¿½Ï´ï¿½. (ï¿½Ö¼ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¼ï¿½)
 			</p>
 		</div>
 		<div class="packageLayer_content">
@@ -1037,7 +1037,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest1" type="checkbox" value="1,2,3,5">
 						<label for="suggest1">
 							<span class="chk"></span>
-							<span class="suggest_txt">Ã¤¿ë Àü °úÁ¤¿¡ ¸ÂÃçÁø ¼Ö·ç¼ÇÀ» ÃßÃµÇØÁÖ¼¼¿ä.</span>
+							<span class="suggest_txt">Ã¤ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1046,7 +1046,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest2" type="checkbox" value="2,3,4">
 						<label for="suggest2">
 							<span class="chk"></span>
-							<span class="suggest_txt">ÀúÈñ È¸»ç¿¡ ¸Â´Â ½ÃÇèÀ» µî·ÏÇÏ¿© Áö¿øÀÚ¸¦ Æò°¡ÇÏ°í ½Í¾î¿ä.</span>
+							<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ç¿¡ ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Í¾ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1055,7 +1055,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest3" type="checkbox" value="1,2">
 						<label for="suggest3">
 							<span class="chk"></span>
-							<span class="suggest_txt">Ã¤¿ë ÁøÇà ½Ã Áö¿øÀÚ¸¦ Æò°¡ÇÒ ¼ö ÀÖ´Â ¼Ö·ç¼ÇÀ» ¹Þ¾Æº¸°í ½Í¾î¿ä.</span>
+							<span class="suggest_txt">Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æºï¿½ï¿½ï¿½ ï¿½Í¾ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1064,7 +1064,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest4" type="checkbox" value="1">
 						<label for="suggest4">
 							<span class="chk"></span>
-							<span class="suggest_txt">ºñ´ë¸é ¸éÁ¢¿¡ ´ëÇÑ ´Ù¾çÇÑ ¼Ö·ç¼ÇÀ» ÃßÃµÇØ ÁÖ¼¼¿ä.</span>
+							<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¾ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1073,7 +1073,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest5" type="checkbox" value="1,2">
 						<label for="suggest5">
 							<span class="chk"></span>
-							<span class="suggest_txt">¹Ýº¹ÀûÀÎ Ã¤¿ë¾÷¹« À§ÁÖ·Î °³¼±ÇÏ°í ½Í¾î¿ä.</span>
+							<span class="suggest_txt">ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Í¾ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1082,7 +1082,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest6" type="checkbox" value="2,4">
 						<label for="suggest6">
 							<span class="chk"></span>
-							<span class="suggest_txt">¿Â¶óÀÎ Æò°¡/½ÃÇè ÁøÇà ½Ã ºÎÁ¤ÇàÀ§¸¦ È®ÀÎÇÒ ¹æ¹ýÀÌ ÇÊ¿äÇØ¿ä.</span>
+							<span class="suggest_txt">ï¿½Â¶ï¿½ï¿½ï¿½ ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ø¿ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1091,7 +1091,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest7" type="checkbox" value="2,3">
 						<label for="suggest7">
 							<span class="chk"></span>
-							<span class="suggest_txt">Áö¿øÀÚ¸¦ Æò°¡ Çù¾÷ÀÌ ºü¸£°í ½±°Ô ÁøÇàµÇ¾úÀ¸¸é ÁÁ°Ú¾î¿ä.</span>
+							<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1100,7 +1100,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest8" type="checkbox" value="4">
 						<label for="suggest8">
 							<span class="chk"></span>
-							<span class="suggest_txt">Ã¤¿ë »Ó¸¸ ¾Æ´Ï¶ó ÀÎ»ç °ü·Ã ¾÷¹« ½Ã ´ë»óÀÚ °ËÁõ ¼Ö·ç¼ÇÀÌ ÇÊ¿äÇØ¿ä.</span>
+							<span class="suggest_txt">Ã¤ï¿½ï¿½ ï¿½Ó¸ï¿½ ï¿½Æ´Ï¶ï¿½ ï¿½Î»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ø¿ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1109,7 +1109,7 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest9" type="checkbox" value="4,5">
 						<label for="suggest9">
 							<span class="chk"></span>
-							<span class="suggest_txt">AI ±â´ÉÀÌ µé¾î°£ Ã¤¿ë ¼Ö·ç¼ÇÀ» ¹Þ¾Æº¸°í ½Í¾î¿ä.</span>
+							<span class="suggest_txt">AI ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°£ Ã¤ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æºï¿½ï¿½ï¿½ ï¿½Í¾ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
@@ -1118,15 +1118,15 @@ jQuery("#packageSt").empty().append(`
 						<input id="suggest10" type="checkbox" value="1,2">
 						<label for="suggest10">
 							<span class="chk"></span>
-							<span class="suggest_txt">°¡Àå ¸¹ÀÌ »ç¿ëÇÏ°í ÀÖ´Â ÆÐÅ°Áö ¼Ö·ç¼ÇÀ» ÃßÃµÇØÁÖ¼¼¿ä.</span>
+							<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.</span>
 						</label>
 					</div>
 				</div>
 			</div>
 
 			<div class="packageSt_popup_btn flex">
-				<button type="button" id="solution_reset" class="reset">ÃÊ±âÈ­</button>
-				<button type="button" class="view_blue_btn" onclick="Solution_Refult_View();">°á°úº¸±â</button>
+				<button type="button" id="solution_reset" class="reset">ï¿½Ê±ï¿½È­</button>
+				<button type="button" class="view_blue_btn" onclick="Solution_Refult_View();">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</button>
 			</div>
 		</div>
 	</div>
@@ -1134,14 +1134,14 @@ jQuery("#packageSt").empty().append(`
 `);
 };
 
-/* µµÀÔ ¹®ÀÇ  */
+/* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  */
 const Consulting_Pop=()=>{
 jQuery("#packageSt").empty().append(`
 <div class="newLayer_container">
-	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>´Ý±â</span></button>
+	<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 	<div class="packageSt_step num04 on">
 		<div class="newLayer_header">
-			<h3>µµÀÔ¹®ÀÇ ¹× µ¥¸ð ½ÅÃ»</h3>
+			<h3>ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»</h3>
 		</div>
 		<div class="packageLayer_content">
 			<div class="packageNum3-inner scroll-shape">
@@ -1150,27 +1150,27 @@ jQuery("#packageSt").empty().append(`
 					<div class="proposal_ipt_wrap">
 
 						<div class="pp_ipt_mb2">
-							<p class="c-label">¿äÃ»»çÇ×<span class="t-star">*</span></p>
+							<p class="c-label">ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½<span class="t-star">*</span></p>
 							<div class="wish pp_ipt_flex">
 								<div class="check__line">
 									<input type="checkbox" id="consulting_3" name="consulting" value="03" checked>
 									<label for="consulting_3">
 										<span class="chk"></span>
-										<span class="suggest_txt">¹«·áÃ¼Çè ½ÅÃ»</span>
+										<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½Ã»</span>
 									</label>
 								</div>
 								<div class="check__line">
 									<input type="checkbox" id="consulting_1" name="consulting" value="01">
 									<label for="consulting_1">
 										<span class="chk"></span>
-										<span class="suggest_txt">µµÀÔ¹®ÀÇ</span>
+										<span class="suggest_txt">ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½</span>
 									</label>
 								</div>
 								<div class="check__line">
 									<input type="checkbox" id="consulting_2" name="consulting" value="02">
 									<label for="consulting_2">
 										<span class="chk"></span>
-										<span class="suggest_txt">¼­ºñ½º¼Ò°³¼­ ½ÅÃ»</span>
+										<span class="suggest_txt">ï¿½ï¿½ï¿½ñ½º¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»</span>
 									</label>
 								</div>
 							</div>
@@ -1178,57 +1178,57 @@ jQuery("#packageSt").empty().append(`
 
 						<div class="info pp_ipt_mb pp_ipt_flex">
 							<div class="leftIpt">
-								<label for="exampleForControlInput" class="c-label">È¸»ç¸í<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="company_nm" id="company_nm" maxlength="50" placeholder="È¸»ç¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">È¸ï¿½ï¿½ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="company_nm" id="company_nm" maxlength="50" placeholder="È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 							<div class="rightIpt">
-								<label for="exampleForControlInput" class="c-label">ºÎ¼­¸í<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="department" id="department" maxlength="25" placeholder="ºÎ¼­¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½Î¼ï¿½ï¿½ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="department" id="department" maxlength="25" placeholder="ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 						</div>
 
 						<div class="info pp_ipt_mb pp_ipt_flex">
 							<div class="leftIpt">
-								<label for="exampleForControlInput" class="c-label">ÀÌ¸§<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="mem_nm" id="mem_nm" maxlength="50" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½Ì¸ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="mem_nm" id="mem_nm" maxlength="50" placeholder="ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 							<div class="rightIpt">
-								<label for="exampleForControlInput" class="c-label">¿¬¶ôÃ³<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="contact" id="contact" maxlength="15" placeholder="¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½ï¿½ï¿½ï¿½Ã³<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="contact" id="contact" maxlength="15" placeholder="ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 						</div>
 
 						<div class="info pp_ipt_mb pp_ipt_flex">
 							<div class="leftIpt">
-								<label for="exampleForControlInput" class="c-label">ÀÌ¸ÞÀÏ<span class="t-star">*</span></label>
-								<input type="text" class="c-ipt" value="" name="email" id="email" maxlength="50" placeholder="ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">ï¿½Ì¸ï¿½ï¿½ï¿½<span class="t-star">*</span></label>
+								<input type="text" class="c-ipt" value="" name="email" id="email" maxlength="50" placeholder="ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 							<div class="rightIpt">
-								<label for="exampleForControlInput" class="c-label">È¨ÆäÀÌÁö</label>
-								<input type="text" class="c-ipt" value="" name="homepage" id="homepage" maxlength="100" placeholder="È¸»ç È¨ÆäÀÌÁö ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+								<label for="exampleForControlInput" class="c-label">È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
+								<input type="text" class="c-ipt" value="" name="homepage" id="homepage" maxlength="100" placeholder="È¸ï¿½ï¿½ È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 							</div>
 						</div>
 
 						<div class="privacy_use_wrap">
-							<p class="privacy_use">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë ¾È³»</p>
-							<span class="privacy_cont">¼öÁýÇ×¸ñ : (ÇÊ¼ö)È¸»ç¸í, ºÎ¼­¸í, ÀÌ¸§, ¿¬¶ôÃ³, ÀÌ¸ÞÀÏ, (¼±ÅÃ) È¨ÆäÀÌÁöÁÖ¼Ò</span>
-							<span class="privacy_cont">¼öÁý¸ñÀû : ÀÎÅ©·çÆ®¿÷½º µµÀÔ »ó´ã ÁøÇà, µ¥¸ð °èÁ¤ ¹ß±Þ°ú ¼Ö·ç¼Ç ¾÷µ¥ÀÌÆ® ¼Ò½Ä ¹× ´º½º·¹ÅÍ ¹ß¼Û</span>
-							<span class="privacy_cont">ÀÌ¿ë±â°£ : °³ÀÎÁ¤º¸ ÀÌ¿ë ¸ñÀû ´Þ¼º ½Ã ±îÁö</span>
-							<span class="privacy_caution">À§ÀÇ °³ÀÎÁ¤º¸ ¼öÁý¡¤ ÀÌ¿ë µ¿ÀÇ¸¦ °ÅºÎÇÏ½Ç ¼ö ÀÖÀ¸¸ç, °ÅºÎ ½Ã À§ ¼­ºñ½º ÀÌ¿ë¿¡ Á¦ÇÑÀÌ ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù.</span>
+							<p class="privacy_use">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½È³ï¿½</p>
+							<span class="privacy_cont">ï¿½ï¿½ï¿½ï¿½ï¿½×¸ï¿½ : (ï¿½Ê¼ï¿½)È¸ï¿½ï¿½ï¿½, ï¿½Î¼ï¿½ï¿½ï¿½, ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½Ã³, ï¿½Ì¸ï¿½ï¿½ï¿½, (ï¿½ï¿½ï¿½ï¿½) È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½</span>
+							<span class="privacy_cont">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß±Þ°ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ò½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½</span>
+							<span class="privacy_cont">ï¿½Ì¿ï¿½â°£ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
+							<span class="privacy_caution">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½Åºï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Åºï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.</span>
 						</div>
 
 						<div class="check__line mt-14">
 							<input type="checkbox" id="agreement" name="agreement">
 							<label for="agreement">
 								<span class="chk"></span>
-								<span class="suggest_txt">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë¿¡ µ¿ÀÇÇÕ´Ï´Ù. (ÇÊ¼ö)</span>
+								<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½Ê¼ï¿½)</span>
 							</label>
 						</div>
 						<div class="check__line mt-14">
 							<input type="checkbox" id="agreement2" name="agreement2">
 							<label for="agreement2">
 								<span class="chk"></span>
-								<span class="suggest_txt">µ¥¸ð½ÅÃ» ¹× ¼Ö·ç¼Ç ¾÷µ¥ÀÌÆ®¼Ò½Ä, ´º½º·¹ÅÍ ¼ö½Å¿¡ µ¿ÀÇÇÕ´Ï´Ù. (¼±ÅÃ)</span>
+								<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½Ö·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ò½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½ï¿½ï¿½ï¿½)</span>
 							</label>
 						</div>
 					</div>
@@ -1237,7 +1237,7 @@ jQuery("#packageSt").empty().append(`
 			</div>
 
 			<div class="packageSt_popup_btn flex">
-				<button type="button" class="view_blue_btn" onclick="Svc_Reg('s');">¹®ÀÇ ¹× ½ÅÃ»</button>
+				<button type="button" class="view_blue_btn" onclick="Svc_Reg('s');">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã»</button>
 			</div>
 		</div>
 	</div>
@@ -1245,7 +1245,7 @@ jQuery("#packageSt").empty().append(`
 `);
 };
 
-/* »ó´ã µî·Ï */
+/* ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ */
 const Svc_Reg=(flag)=>{
 
 	let boolflag=true;
@@ -1277,57 +1277,57 @@ const Svc_Reg=(flag)=>{
 		default: service_cd = "08"; break;
 	}
 
-	// ½ÅÃ»ÇÏ±â Å¬¸¯
+	// ï¿½ï¿½Ã»ï¿½Ï±ï¿½ Å¬ï¿½ï¿½
 	gtag('event', 'consulting-apply-'+service_cd);
 
 	let consulting="";
 
 	if($consulting.filter(":checked").length===0){
-		alert("¿äÃ»»çÇ×À» ¼±ÅÃÇØÁÖ¼¼¿ä.");
+		alert("ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		return false;
 	} else {
 		jQuery("input:checkbox[name=consulting]").filter(":checked").each(function(){return consulting+=","+jQuery(this).val()});
 	}
 
 	if($company_nm.val().trim()==""){
-		alert("È¸»ç¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$company_nm.focus();
 		return false;
 	}
 
 	if($department.val().trim()==""){
-		alert("ºÎ¼­¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$department.focus();
 		return false;
 	}
 
 	if($mem_nm.val().trim()==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$mem_nm.focus();
 		return false;
 	}
 
 	if($contact.val().trim()==""){
-		alert("¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$contact.focus();
 		return false;
 	}
 
 	if($email.val().trim()==""||$email.val().trim().isEmail()==false){
-		alert("ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$email.focus();
 		return false;
 	}
 
 	if($agreement.is(":checked")===false){
-		alert("°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë¿¡ µ¿ÀÇÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		return false;
 	}
 
 	send_url = "//"+serverset+"rasp4.incruit.com/admin/support/api_rasp_intro.asp";
 
-	if (confirm('¹«·áÃ¼ÇèÀ» ½ÅÃ»ÇÏ½Ã°Ú½À´Ï±î?')){
-		// ½ÅÃ»ÇÏ±â submit
+	if (confirm('ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½?')){
+		// ï¿½ï¿½Ã»ï¿½Ï±ï¿½ submit
 		gtag('event', 'consulting-submit-'+service_cd);
 
 		let ecode=get_cookie("WORKSHOME")??"";
@@ -1342,7 +1342,7 @@ const Svc_Reg=(flag)=>{
 			data: {hcompany_nm:escape($company_nm.val().trim()),hmem_nm:escape($mem_nm.val().trim()),phone:$contact.val().trim(),email:$email.val().trim(),sel_type:consulting,hdepartment:escape($department.val().trim()),homepage:escape($homepage.val().trim()),agreement2:jQuery("#agreement2:checked").length===1?"Y":"", custreceivecd:service_cd, request_solution_title:escape(request_solution_title),e:ecode}
 		}).done(function(result){
 			if (result.RESULT == "Y"){
-				alert("ÀÔ·ÂÇÏ½Å ÀÌ¸ÞÀÏ ÁÖ¼Ò·Î ¹«·áÃ¼Çè °èÁ¤ÀÌ Àü´ÞµË´Ï´Ù.\n°èÁ¤ È®ÀÎ±îÁö ´Ù¼Ò ½Ã°£ÀÌ ¼Ò¿äµÉ ¼ö ÀÖ½À´Ï´Ù.\n(¿µ¾÷ÀÏ ±âÁØ 2~3ÀÏ ¼Ò¿ä)");
+				alert("ï¿½Ô·ï¿½ï¿½Ï½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ö¼Ò·ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÞµË´Ï´ï¿½.\nï¿½ï¿½ï¿½ï¿½ È®ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ù¼ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Ò¿ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.\n(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2~3ï¿½ï¿½ ï¿½Ò¿ï¿½)");
 				if(typeof(ga) == "function"){
 					ga('send', 'event', 'button', 'web_consulting', 'button_click');
 				}
@@ -1360,7 +1360,7 @@ const Svc_Reg=(flag)=>{
 				}
 				SetCookie("WORKSHOME","","0","/",".incruit.com","");
 			} else {
-				alert("´Ù½Ã ½ÅÃ»ÇØ ÁÖ¼¼¿ä.");
+				alert("ï¿½Ù½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 			}
 
 			closeLayer();
@@ -1399,32 +1399,32 @@ const Svc_Event_Reg=(flag)=>{
 		default: service_cd = "08"; break;
 	}
 
-	// ½ÅÃ»ÇÏ±â Å¬¸¯
+	// ï¿½ï¿½Ã»ï¿½Ï±ï¿½ Å¬ï¿½ï¿½
 	gtag('event', 'consulting-apply-'+service_cd);
 
 	let consulting="";
 
 	if($mem_nm.val().trim()==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$mem_nm.focus();
 		return false;
 	}
 
 	if($contact.val().trim()==""){
-		alert("¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		$contact.focus();
 		return false;
 	}
 
 	if($agreement.is(":checked")===false){
-		alert("°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë¿¡ µ¿ÀÇÇØ ÁÖ¼¼¿ä.");
+		alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		return false;
 	}
 
 	send_url = "//"+serverset+"rasp4.incruit.com/admin/support/api_rasp_intro.asp";
 
-	if (confirm('¹«·áÃ¼ÇèÀ» ½ÅÃ»ÇÏ½Ã°Ú½À´Ï±î?')){
-		// ½ÅÃ»ÇÏ±â submit
+	if (confirm('ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½?')){
+		// ï¿½ï¿½Ã»ï¿½Ï±ï¿½ submit
 		gtag('event', 'consulting-submit-'+service_cd);
 
 		let ecode=get_cookie("WORKSHOME")??"";
@@ -1439,7 +1439,7 @@ const Svc_Event_Reg=(flag)=>{
 			data: {hcompany_nm:"",hmem_nm:escape($mem_nm.val().trim()),phone:$contact.val().trim(),email:"",sel_type:"",hdepartment:"",homepage:"",agreement2:"", custreceivecd:service_cd, request_solution_title:escape(request_solution_title),e:ecode}
 		}).done(function(result){
 			if (result.RESULT == "Y"){
-				alert("½ÅÃ»Á¢¼ö°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+				alert("ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				if(typeof(ga) == "function"){
 					ga('send', 'event', 'button', 'web_consulting', 'button_click');
 				}
@@ -1457,7 +1457,7 @@ const Svc_Event_Reg=(flag)=>{
 				}
 				SetCookie("WORKSHOME","","0","/",".incruit.com","");
 			} else {
-				alert("´Ù½Ã ½ÅÃ»ÇØ ÁÖ¼¼¿ä.");
+				alert("ï¿½Ù½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 			}
 			closeLayer();
 		});
@@ -1465,9 +1465,9 @@ const Svc_Event_Reg=(flag)=>{
 };
 
 function closeLayer(){
-	jQuery("body").removeClass("is-popupOpen"); //overflow-hidden ÇØÁ¦(½ºÅ©·Ñ ÇØÁ¦)
+	jQuery("body").removeClass("is-popupOpen"); //overflow-hidden ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	jQuery("#packageSt").empty();
-	jQuery("#packageSt").hide(); //ÆË¾÷ ¼û±è
+	jQuery("#packageSt").hide(); //ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½
 }
 function slider() {
 	jQuery('.sub-slider').each(function (index) {
@@ -1478,10 +1478,10 @@ function slider() {
 		sliderAct();
 
 		function sliderAct() {
-			//½½¶óÀÌµå ÀÎµ¦½º Å¬·¡½º Ãß°¡
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Îµï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 			$this.addClass(`sub-slider${index}`);
 
-			//½½¶óÀÌµå ÃÊ±âÈ­
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ê±ï¿½È­
 			if (swiper != undefined) {
 				swiper.destroy();
 				swiper = undefined;
@@ -1502,14 +1502,14 @@ function slider() {
 				},
 				on: {
 					activeIndexChange: function () {
-						slideInx = this.realIndex; //ÇöÀç ½½¶óÀÌµå index °»½Å
+						slideInx = this.realIndex; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ index ï¿½ï¿½ï¿½ï¿½
 					}
 				},
 			});
 		}
 	});
 }
-/* »ó´Ü ÅÇ ½ºÅ©·Ñ ½Ã °íÁ¤ */
+/* ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 function tabFix() {
 	var winTop = jQuery(window).scrollTop(),
 		sectionTab = jQuery('.section-tab-wrap'),
@@ -1523,7 +1523,7 @@ function tabFix() {
 	}
 }
 
-/* »ó´Ü ÅÇ ½ºÅ©·Ñ ½Ã active */
+/* ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ active */
 function tabActive() {
 	var winScrT = jQuery(window).scrollTop(),
 		sectionTab = jQuery('.section-tab-wrap'),
@@ -1556,7 +1556,7 @@ function tabActive() {
 	});
 }
 
-/* »ó´Ü ÅÇ Å¬¸¯ ½Ã ½ºÅ©·Ñ ÀÌµ¿ */
+/* ï¿½ï¿½ï¿½ ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Ìµï¿½ */
 jQuery('.section-tab-item .link').on('click', function () {
 	var thisHref = jQuery(this).attr('href'),
 		thisHrefTop = jQuery(thisHref).offset().top,
@@ -1574,7 +1574,7 @@ jQuery('.section-tab-item .link').on('click', function () {
 	return false;
 });
 
-//assess »ó´Ü ½º¿ÍÀÌÆÛ - ¸ð¹ÙÀÏ
+//assess ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½
 var swiper = new Swiper(".mbSwiper", {
 	pagination: {
 		el: ".swiper-pagination",
@@ -1606,52 +1606,52 @@ function SetCookie(name,value,expires,path,domain,secure){
 const Consulting_Evnet_Pop=()=>{
 	jQuery("#packageSt").empty().append(`
 	<div class="newLayer_container">
-		<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>´Ý±â</span></button>
+		<button type="button" onclick="jQuery('#packageSt').hide(); jQuery('body').removeClass('is-popupOpen');jQuery('.packageSt_step').removeClass('on');" class="layer_closeBtn"><span>ï¿½Ý±ï¿½</span></button>
 		<div class="packageSt_step num04 on">
 			<div class="newLayer_header">
-				<h3>¹«·á»ó´ã½ÅÃ»</h3>
+				<h3>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»</h3>
 			</div>
 			<div class="packageLayer_content">
 				<div class="packageNum3-inner scroll-shape">
 					<div class="inner_contents">
 						<div class="proposal_ipt_wrap">
 
-							<input type="hidden" class="c-ipt" value="" name="company_nm" id="company_nm" maxlength="50" placeholder="È¸»ç¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
-							<input type="hidden" class="c-ipt" value="" name="department" id="department" maxlength="25" placeholder="ºÎ¼­¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
-							<input type="hidden" class="c-ipt" value="" name="email" id="email" maxlength="50" placeholder="ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
-							<input type="hidden" class="c-ipt" value="" name="homepage" id="homepage" maxlength="100" placeholder="È¸»ç È¨ÆäÀÌÁö ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+							<input type="hidden" class="c-ipt" value="" name="company_nm" id="company_nm" maxlength="50" placeholder="È¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
+							<input type="hidden" class="c-ipt" value="" name="department" id="department" maxlength="25" placeholder="ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
+							<input type="hidden" class="c-ipt" value="" name="email" id="email" maxlength="50" placeholder="ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
+							<input type="hidden" class="c-ipt" value="" name="homepage" id="homepage" maxlength="100" placeholder="È¸ï¿½ï¿½ È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 
 							<div class="info pp_ipt_mb pp_ipt_flex">
 								<div class="leftIpt">
-									<label for="exampleForControlInput" class="c-label">ÀÌ¸§<span class="t-star">*</span></label>
-									<input type="text" class="c-ipt" value="" name="mem_nm" id="mem_nm" maxlength="50" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+									<label for="exampleForControlInput" class="c-label">ï¿½Ì¸ï¿½<span class="t-star">*</span></label>
+									<input type="text" class="c-ipt" value="" name="mem_nm" id="mem_nm" maxlength="50" placeholder="ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 								</div>
 								<div class="rightIpt">
-									<label for="exampleForControlInput" class="c-label">¿¬¶ôÃ³<span class="t-star">*</span></label>
-									<input type="text" class="c-ipt" value="" name="contact" id="contact" maxlength="15" placeholder="¿¬¶ôÃ³¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.">
+									<label for="exampleForControlInput" class="c-label">ï¿½ï¿½ï¿½ï¿½Ã³<span class="t-star">*</span></label>
+									<input type="text" class="c-ipt" value="" name="contact" id="contact" maxlength="15" placeholder="ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.">
 								</div>
 							</div>
 
 							<div class="privacy_use_wrap">
-								<p class="privacy_use">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë ¾È³»</p>
-								<span class="privacy_cont">¼öÁýÇ×¸ñ : (ÇÊ¼ö)ÀÌ¸§, ¿¬¶ôÃ³</span>
-								<span class="privacy_cont">¼öÁý¸ñÀû : ÀÎÅ©·çÆ®¿÷½º µµÀÔ »ó´ã ÁøÇà</span>
-								<span class="privacy_cont">ÀÌ¿ë±â°£ : °³ÀÎÁ¤º¸ ÀÌ¿ë ¸ñÀû ´Þ¼º ½Ã ±îÁö</span>
-								<span class="privacy_caution">À§ÀÇ °³ÀÎÁ¤º¸ ¼öÁý¡¤ ÀÌ¿ë µ¿ÀÇ¸¦ °ÅºÎÇÏ½Ç ¼ö ÀÖÀ¸¸ç, °ÅºÎ ½Ã À§ ¼­ºñ½º ÀÌ¿ë¿¡ Á¦ÇÑÀÌ ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù.</span>
+								<p class="privacy_use">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½È³ï¿½</p>
+								<span class="privacy_cont">ï¿½ï¿½ï¿½ï¿½ï¿½×¸ï¿½ : (ï¿½Ê¼ï¿½)ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½Ã³</span>
+								<span class="privacy_cont">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
+								<span class="privacy_cont">ï¿½Ì¿ï¿½â°£ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
+								<span class="privacy_caution">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½Åºï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Åºï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.</span>
 							</div>
 
 							<div class="check__line mt-14">
 								<input type="checkbox" id="agreement" name="agreement">
 								<label for="agreement">
 									<span class="chk"></span>
-									<span class="suggest_txt">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë¿¡ µ¿ÀÇÇÕ´Ï´Ù. (ÇÊ¼ö)</span>
+									<span class="suggest_txt">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¿ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (ï¿½Ê¼ï¿½)</span>
 								</label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="packageSt_popup_btn flex">
-					<button type="button" class="view_blue_btn" onclick="Svc_Event_Reg('s');">¹®ÀÇ ¹× ½ÅÃ»</button>
+					<button type="button" class="view_blue_btn" onclick="Svc_Event_Reg('s');">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã»</button>
 				</div>
 			</div>
 		</div>
@@ -1660,7 +1660,7 @@ const Consulting_Evnet_Pop=()=>{
 	};
 
 
-//µµÀÔ¹®ÀÇ ÀÚµ¿ ½ÇÇà.
+//ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½ ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½.
 function regPopOpen(){
 	Consulting_Evnet_Pop();
 	jQuery("body").addClass('is-popupOpen');
@@ -1668,6 +1668,6 @@ function regPopOpen(){
 }
 
 function productInit(){
-	const eCode=jQuery("#eCode").val();
-	eCode.length==30?regPopOpen():null;
+	/*const eCode=jQuery("#eCode").val();
+	eCode.length==30?regPopOpen():null;*/
 }

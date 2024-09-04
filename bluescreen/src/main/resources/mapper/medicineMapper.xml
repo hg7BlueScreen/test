@@ -53,4 +53,20 @@
 		select * from medicine where mno = #{mno}
 	</select>
 	
+<!-- 	<insert id="enableBookMarkMedicine">
+		insert into medicine_user values()
+	</insert> -->
+	
+	<select id="getAllBookMark" resultType="Integer">
+		select mno from medicine_user where uno = #{uno}
+	</select>
+	
+	<insert id="enableBookMarkMedicine">
+		insert into medicine_user values(#{mno}, #{uno}, 1)
+	</insert>
+	
+	<delete id="disableBookmarkMedicine">
+		delete from medicine_user where uno = #{uno} and mno = #{mno}
+	</delete>
+	
 </mapper>

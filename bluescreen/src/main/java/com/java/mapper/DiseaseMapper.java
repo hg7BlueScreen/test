@@ -14,5 +14,11 @@ public interface DiseaseMapper {
 
 	ArrayList<Disease> selectAll(Page pageDto, String textBox, String categoryDetail);
 
+	void enableBookMarkDisease(int uno, int dno);
+
+	ArrayList<Integer> getAllBookMark(int uno);
+
+	void disableBookMarkDisease(int uno, int dno);
+
 
 }

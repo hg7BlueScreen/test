@@ -16,4 +16,10 @@ public interface MedicineMapper {
 
 	Medicine selectOneMedicine(int mno);
 
+	ArrayList<Integer> getAllBookMark(int uno);
+
+	void enableBookMarkMedicine(int uno, int mno);
+
+	void disableBookmarkMedicine(int uno, int mno);
+
 }
