@@ -55,26 +55,32 @@
 	}
 	
 	function enableBookMarkDisease(dno){
-		$(function(){
-			if(confirm(dno+"번을 즐겨찾기로 등록하시겠습니까?")){
-				$.ajax({
-					url: "/enableBookMarkDisease",
-					method: "post",
-					data: {"uno":3, "dno":dno},
-					success: function(data){
-						console.log(data);
-						if(data == "성공"){
-							$('#bookMarkDisease'+dno).html('<img onclick = "disableBookMarkDisease('+dno+')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUFJREFUSEu1lYGNgzAMRWNYpLcBShiATtIySdtJrptcByARG5RFkE9GCQLqBFNBJESLwM/2d35AHbzg4PhqE8AY86eU6qy1tTQxMUBrfQWAXwoMAOemaV4SiBjgs6980Je19rwboCzLChGpPeOSViGqYJF9gIiqWAUURXHK8/zNtKMDgHpNixFAgbIsuwDASSlFF63pb67lnX84u/d9/2jbdng2AiJtkOjIgq21PzOA1voGAPdvI06/Q8TaOfecAejPHpDldH2IPN1QG6thRWen6AtIdKKiY2qMIVu4SqpIbboUgHZusIYkBxHvzrkH91IKgJLs17xpNw3C3C+T2gSgVni7/tgvMR1YACPwbEq8P5FGwVKI++QOohiAzG34OCbgxLtCNXTSDfYwXakKKolb+mpopNmjdNWuN0wS++rhgH9ykY0ZQa97UwAAAABJRU5ErkJggg==" style = "width: 20px;"/>')
-						}
-					},
-					error: function(){
-						console.log("error");
-					}
-				});
-			}else{
-				alert("취소되었습니다.");
+		if("${sessionUno}" != null){
+			$(function(){
+				if(confirm(dno+"번을 즐겨찾기로 등록하시겠습니까?")){
+					$.ajax({
+						url: "/enableBookMarkDisease",
+						method: "post",
+						data: {"uno":"${sessionUno}", "dno":dno},
+						success: function(data){
+							console.log(data);
+							if(data == "성공"){
+								$('#bookMarkDisease'+dno).html('<img onclick = "disableBookMarkDisease('+dno+')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUFJREFUSEu1lYGNgzAMRWNYpLcBShiATtIySdtJrptcByARG5RFkE9GCQLqBFNBJESLwM/2d35AHbzg4PhqE8AY86eU6qy1tTQxMUBrfQWAXwoMAOemaV4SiBjgs6980Je19rwboCzLChGpPeOSViGqYJF9gIiqWAUURXHK8/zNtKMDgHpNixFAgbIsuwDASSlFF63pb67lnX84u/d9/2jbdng2AiJtkOjIgq21PzOA1voGAPdvI06/Q8TaOfecAejPHpDldH2IPN1QG6thRWen6AtIdKKiY2qMIVu4SqpIbboUgHZusIYkBxHvzrkH91IKgJLs17xpNw3C3C+T2gSgVni7/tgvMR1YACPwbEq8P5FGwVKI++QOohiAzG34OCbgxLtCNXTSDfYwXakKKolb+mpopNmjdNWuN0wS++rhgH9ykY0ZQa97UwAAAABJRU5ErkJggg==" style = "width: 20px;"/>')
+							} // if
+						},
+						error: function(){
+							console.log("error");
+						} // error
+					}); // ajax
+				}else{
+					alert("취소되었습니다.");
+				} // else
+			}); //jquery
+		}else{
+			if(confirm("로그인 하셔야 이용할 수 있습니다.\n로그인 하시겠습니까?")){
+				location.href = "/";		
 			}
-		});
+		}
 	}
 	
 	function disableBookMarkDisease(dno){
@@ -101,27 +107,33 @@
 	}
 	
 	function enableBookMarkMedicine(mno){
-		$(function(){
-			if(confirm(mno+"번을 즐겨찾기로 등록하시겠습니까?")){
-				$.ajax({
-					url: "/enableBookMarkMedicine",
-					method: "post",
-					data: {"uno":3, "mno":mno},
-					success: function(data){
-						console.log(data);
-						if(data == "성공"){
-							$('#bookMarkMedicine'+mno).html('<img onclick = "disableBookMarkMedicine('+mno+')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUFJREFUSEu1lYGNgzAMRWNYpLcBShiATtIySdtJrptcByARG5RFkE9GCQLqBFNBJESLwM/2d35AHbzg4PhqE8AY86eU6qy1tTQxMUBrfQWAXwoMAOemaV4SiBjgs6980Je19rwboCzLChGpPeOSViGqYJF9gIiqWAUURXHK8/zNtKMDgHpNixFAgbIsuwDASSlFF63pb67lnX84u/d9/2jbdng2AiJtkOjIgq21PzOA1voGAPdvI06/Q8TaOfecAejPHpDldH2IPN1QG6thRWen6AtIdKKiY2qMIVu4SqpIbboUgHZusIYkBxHvzrkH91IKgJLs17xpNw3C3C+T2gSgVni7/tgvMR1YACPwbEq8P5FGwVKI++QOohiAzG34OCbgxLtCNXTSDfYwXakKKolb+mpopNmjdNWuN0wS++rhgH9ykY0ZQa97UwAAAABJRU5ErkJggg==" style = "width: 20px;"/>')
-						}
-					},
-					error: function(){
-						console.log("error");
-					}
-				});
-			}else{
-				alert("취소되었습니다.");
+		if("${sessionUno}" != null){
+			$(function(){
+				if(confirm(mno+"번을 즐겨찾기로 등록하시겠습니까?")){
+					$.ajax({
+						url: "/enableBookMarkMedicine",
+						method: "post",
+						data: {"uno":3, "mno":mno},
+						success: function(data){
+							console.log(data);
+							if(data == "성공"){
+								$('#bookMarkMedicine'+mno).html('<img onclick = "disableBookMarkMedicine('+mno+')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUFJREFUSEu1lYGNgzAMRWNYpLcBShiATtIySdtJrptcByARG5RFkE9GCQLqBFNBJESLwM/2d35AHbzg4PhqE8AY86eU6qy1tTQxMUBrfQWAXwoMAOemaV4SiBjgs6980Je19rwboCzLChGpPeOSViGqYJF9gIiqWAUURXHK8/zNtKMDgHpNixFAgbIsuwDASSlFF63pb67lnX84u/d9/2jbdng2AiJtkOjIgq21PzOA1voGAPdvI06/Q8TaOfecAejPHpDldH2IPN1QG6thRWen6AtIdKKiY2qMIVu4SqpIbboUgHZusIYkBxHvzrkH91IKgJLs17xpNw3C3C+T2gSgVni7/tgvMR1YACPwbEq8P5FGwVKI++QOohiAzG34OCbgxLtCNXTSDfYwXakKKolb+mpopNmjdNWuN0wS++rhgH9ykY0ZQa97UwAAAABJRU5ErkJggg==" style = "width: 20px;"/>')
+							} // if
+						},
+						error: function(){
+							console.log("error");
+						} // error
+					}); // ajax
+				}else{
+					alert("취소되었습니다.");
+				} // else
+			}); // jquery
+		}else{
+			if(confirm("로그인 하셔야 이용할 수 있습니다.\n로그인 하시겠습니까?")){
+				location.href = "/";		
 			}
-		});
-	}
+		} // else
+	} // enableBookMarkMedicine
 	
 	function disableBookMarkMedicine(mno){
 		$(function(){

@@ -24,13 +24,11 @@ public class DictController {
 	
 	@Autowired DiseaseService dservice;
 	@Autowired MedicineService mservice;
-	@Autowired HttpSession session;
 	
 	@RequestMapping("/dict")
 	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail) {
-		session.setAttribute("sessionId", "aaa");
-		session.setAttribute("sessionUno", 3);
-		int uno = (int)session.getAttribute("sessionUno");
+		// int uno = (int)session.getAttribute("sessionUno");
+		int uno = 0;
 		if(category != null) {
 			if(category.equals("disease")) {
 				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox, categoryDetail, uno);
