@@ -22,4 +22,8 @@ public interface MedicineMapper {
 
 	void disableBookmarkMedicine(int uno, int mno);
 
+	Medicine selectMedicineOne(Medicine medicine);
+
+	void insertMedicineOne(Medicine medicine);
+
 }

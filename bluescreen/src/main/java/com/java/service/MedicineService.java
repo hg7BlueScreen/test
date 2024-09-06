@@ -15,4 +15,11 @@ public interface MedicineService {
 
 	void disableBookmarkMedicine(int uno, int mno);
 
+	int selectMedicineCount();
+
+	boolean checkNewMedicine(Medicine medicine);
+
+	void insertMedicineOne(Medicine medicine);
+
+
 }

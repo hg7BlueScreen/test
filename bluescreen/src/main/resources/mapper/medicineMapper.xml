@@ -69,4 +69,11 @@
 		delete from medicine_user where uno = #{uno} and mno = #{mno}
 	</delete>
 	
+	<select id="selectMedicineOne" resultType="com.java.dto.Medicine">
+		select * from Medicine where itemSeq = #{itemSeq} and entpName = #{entpName}
+	</select>
+	
+	<insert id="insertMedicineOne">
+		insert into medicine values(medicine_seq.nextval, #{entpName}, #{itemName}, #{itemSeq}, #{efcyQesitm}, #{useMethodQesitm}, #{atpnWarnQesitm}, #{atpnQesitm}, #{intrcQesitm}, #{seQesitm}, #{depositMethodQesitm}, #{imageURL})
+	</insert>
 </mapper>

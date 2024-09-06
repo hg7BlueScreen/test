@@ -20,5 +20,9 @@ public interface DiseaseMapper {
 
 	void disableBookMarkDisease(int uno, int dno);
 
+	Disease selectDiseaseOne(Disease disease);
+
+	void insertDiseaseOne(Disease disease);
+
 
 }

@@ -32,8 +32,6 @@ public class DiseaseServiceImpl implements DiseaseService {
 		return map;
 	}
 
-	
-
 	private Page pageMethodDisease(Page pageDto, String textBox, String categoryDetail) {
 		// 전체 게시글 수 저장
 		pageDto.setListCount(dMapper.selectListCount(textBox, categoryDetail));
@@ -51,8 +49,6 @@ public class DiseaseServiceImpl implements DiseaseService {
 		return pageDto;
 	}
 
-
-
 	@Override
 	public void enableBookMarkDisease(int uno, int dno) {
 		dMapper.enableBookMarkDisease(uno, dno);
@@ -62,6 +58,27 @@ public class DiseaseServiceImpl implements DiseaseService {
 	@Override
 	public void disableBookMarkDisease(int uno, int dno) {
 		dMapper.disableBookMarkDisease(uno, dno);
+	}
+
+	@Override
+	public int selectDiseaseCount() {
+		int diseaseCount = dMapper.selectListCount(null, null);
+		return diseaseCount;
+	}
+
+	@Override
+	public boolean checkNewDisease(Disease disease) {
+		Disease checkDisease = dMapper.selectDiseaseOne(disease);
+		if(checkDisease != null) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+
+	@Override
+	public void insertDiseaseOne(Disease disease) {
+		dMapper.insertDiseaseOne(disease);
 	}
 
 	

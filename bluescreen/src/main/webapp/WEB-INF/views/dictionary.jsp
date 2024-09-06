@@ -235,7 +235,7 @@
 .emptystar{
 			background-color: yellow;
 			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZZJREFUSEu1VYFtgzAQ9CcMQjeIgAHIJA2TpExSOkkzQIyyQRkk5tO3/NbHMdiViiVkQObv/+/uAbXxgo3jqz8B1HX9rZSatNZdbmLZAFVVnQDgkwIDwPF6vV5yQLIBXPatC3rRWh//DaBpmhYRqT1+5VaRVQFnj4gfrkW0Z1WRBDgcDuV+v/+hwMaYN9rd8wQAXYoLD0CBdrvdOwCUSim6aMn7gdVT1zWRfSJFuXNPuzGmv91u9p0HCEgM+ZuMMUf+yFVFnHAiL+e11rZaD1BV1RkAbI+pvwDQ3+/3iYPGFENA9L4oihIRz7/fWZUhYjeO4/AEQA8ShAgdx7HPkaKsPlTXC8nSUDkgIniU9KiKcl2bCv7SItkOoRSvnrBdDLBmukUfCHN5wiIAVq5rrVwDQDYXKclJkwKWbDAxQhZdneRAaw2BhAl3QsRhnucvdjXrPqwyBUAj2bs5mEUWiB2/xEMUQBDMCT1JcMHJUTEsAdBwsy5dIlDMLnY//enseJBrrYI2Z1oK8qO/0uS4zhkVa2c2B3gAO/HxGSEbSvkAAAAASUVORK5CYII=/>");
-		}
+}
 </style>
 <script type="text/javascript">
 	

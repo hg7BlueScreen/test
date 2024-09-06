@@ -13,6 +13,12 @@ public interface DiseaseService {
 
 	void disableBookMarkDisease(int uno, int dno);
 
+	int selectDiseaseCount();
+
+	boolean checkNewDisease(Disease disease);
+
+	void insertDiseaseOne(Disease disease);
+
 
 	
 

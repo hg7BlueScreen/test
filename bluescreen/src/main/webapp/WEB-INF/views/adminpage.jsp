@@ -16,13 +16,20 @@
   <link href = "https://fonts.google.com/specimen/IBM+Plex+Sans+KR?subset=korean&script=Kore" rel="stylesheet" type = "text/css">
   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
+<script type="text/javascript">
+	$(function(){
+		$("#logoImage").click(function(){
+			location.href = "/";
+		}); // logoImage
+	}); // jquery
+</script>
   <style>
   	.links_name {
   font-family: "IBM Plex Sans KR", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 
   </style>
 </head>
@@ -32,7 +39,7 @@
 
   <div class="sidebar">
     <div class="logo_details">
-      <img src = "/image/team.png" width = "50px">
+      <img src = "/image/team.png" width = "50px" id = "logoImage">
       <div class="logo_name">
         Waste Drugs
       </div>
@@ -59,6 +66,14 @@
           <i class='bx bx-error-circle'></i>
           <span class="links_name">
             신고관리
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="admin_update">
+          <i class='bx bx-revision'></i>
+          <span class="links_name">
+            업데이트
           </span>
         </a>
       </li>

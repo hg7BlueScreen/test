@@ -50,5 +50,12 @@
 		delete from disease_user where uno = #{uno} and dno = #{dno}	
 	</delete>
 	
+	<select id="selectDiseaseOne" resultType="com.java.dto.Disease">
+		select * from disease where sickCd = #{sickCd} and sickNm = #{sickNm}
+	</select>
+	
+	<insert id="insertDiseaseOne">
+		insert into disease values(disease_seq.nextval, #{sickCd}, #{sickNm})
+	</insert>
 	
 </mapper>

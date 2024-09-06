@@ -21,5 +21,5 @@ public class Medicine {
 	private String seQesitm; // 부작용
 	private String depositMethodQesitm; // 보관법
 	private String imageURL; // 이미지
-	
+	private String updateDe; // 업로드 날짜
 }

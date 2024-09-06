@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.java.dto.Disease;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.mapper.MedicineMapper;
@@ -58,6 +59,27 @@ public class MedicineServiceImpl implements MedicineService {
 	@Override
 	public void disableBookmarkMedicine(int uno, int mno) {
 		mMapper.disableBookmarkMedicine(uno,mno);
+	}
+
+	@Override
+	public int selectMedicineCount() {
+		int medicineCount = mMapper.selectListCount(null, null);
+		return medicineCount;
+	}
+
+	@Override
+	public boolean checkNewMedicine(Medicine medicine) {
+		Medicine checkMedicine = mMapper.selectMedicineOne(medicine);
+		if(checkMedicine != null) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+
+	@Override
+	public void insertMedicineOne(Medicine medicine) {
+		mMapper.insertMedicineOne(medicine);
 	}
 	
 	
