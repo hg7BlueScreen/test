@@ -136,11 +136,27 @@ h4>a {
 .agreeRadio input {
 	margin-top: 10px;
 }
+#aAgree {
+	width: 1000px; height: 30px;
+	margin: 0 auto;
+}
+
+#aAgree label{
+	font-size: 13px;
+	color: #333;
+	line-height: 16px;
+	vertical-align: 3px;
+	padding-right: 10px;
+	padding-bottom: 50px;
+}
+ input[type="checkbox"]:not(old) {
+	width:24px;
+	opacity: 100;
+}
  input[type="radio"]:not(old) {
 	width:24px;
 	opacity: 100;
 }
-
 .agreeRadio label {
 	font-size: 13px;
 	color: #333;
@@ -179,10 +195,8 @@ h4>a {
 	background: #fff;
 	border: 1px solid rgb(221, 221, 221);
 }
-#terms_button input:nth-child(2) {
-	color: rgb(255, 255, 255);
-	background: rgb(0, 128, 255);
-}
+
+
 
 
 

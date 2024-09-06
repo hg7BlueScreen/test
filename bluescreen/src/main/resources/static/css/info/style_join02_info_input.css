@@ -105,7 +105,6 @@ h4>span {
 .fieldset_class dl dt div {
 	display:inline-block;
 	width: 10px; height: 10px;
-	background: url(../images/join/point_rs.png) no-repeat 45% 88%;
 	position:relative; left: 20px;
 	vertical-align: middle;
 }
@@ -327,14 +326,12 @@ input[type="radio"]:not(old) {
 }
 input[type="radio"]:not(old) + label {
 	/*display:inline-block;*/
-	background: url(../images/join/radio_off.jpg) no-repeat 0px 2px;
 	width: 24px; height: 24px;
 	margin-left: -24px;
 	padding-left: 24px;
 }
 input[type="radio"]:not(old):checked + label {
 	/*display:inline-block;*/
-	background: url(../images/join/radio_on.jpg) no-repeat 0px 2px;
 	width: 24px; height: 24px;
 	margin-left: -24px;
 	padding-left: 24px;
@@ -345,14 +342,12 @@ input[type="checkbox"]:not(old) {
 }
 input[type="checkbox"]:not(old) + label {
 	/*display:inline-block;*/
-	background: url(../images/join/radio_off.jpg) no-repeat 0px 2px;
 	width: 24px; height: 24px;
 	margin-left: -24px;
 	padding-left: 24px;
 }
 input[type="checkbox"]:not(old):checked + label {
 	/*display:inline-block;*/
-	background: url(../images/join/radio_on.jpg) no-repeat 0px 2px;
 	width: 24px; height: 24px;
 	margin-left: -24px;
 	padding-left: 24px;
@@ -428,14 +423,12 @@ input[type="checkbox"]:not(old):checked + label {
 #join_address_dl dd>input:nth-child(1) {
 	width: 80px; height: 30px;	
 }
+
 #join_address_dl dd>input:nth-child(3) {
-	width: 80px; height: 30px;	
-}
-#join_address_dl dd>input:nth-child(5) {
 	width: 755px; height: 30px;
 	margin-top: 5px;	
 }
-#join_address_dl dd>input:nth-child(6) {
+#join_address_dl dd>input:nth-child(4) {
 	width: 755px; height: 30px;
 	margin-top: 5px;	
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,6 +18,9 @@
 		
 		<section>
 			<form name="agree" method="get" action="join4">
+			<input type="hidden" name="uno" value="${uno }"/>
+		
+			
 				<div id="subBanner"></div>
 				
 				
@@ -57,8 +61,9 @@
 							<label for="id">앓고있는 질환</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/><br>
-							<input type="text" id="b_search" name="b_search" minlength="4" maxlength="16"  />
+							<input type="button" value="검색"/ onclick="disease()"><br>
+							<input type="text" id="diseaseSearch" name="diseaseSearch" />
+							<input type="text" id="diseaseSearch" name="diseaseSearch" />
 						</dd>
 					</dl>
 					<dl class="join_id_dl">
@@ -67,8 +72,8 @@
 							<label for="id">과거 질환</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/><br>
-							<input type="text" id="b_search" name="b_search" minlength="4" maxlength="16" />
+							<input type="button" value="검색" onclick="pastDisease()"/><br>
+							<input type="text" id="pastDiseaseSearch" name="pastDiseaseSearch" />
 							
 						</dd>
 					</dl>
@@ -78,8 +83,8 @@
 							<label for="id">가족의 유전성 질환</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/><br>
-							<input type="text" id="b_search" name="b_search" minlength="4" maxlength="16" />
+							<input type="button" value="검색" onclick="hereditaryDisease()"/><br>
+							<input type="text" id="hereditaryDisease" name="hereditaryDisease" />
 						</dd>
 					</dl>
 					</dl>
@@ -89,25 +94,59 @@
 							<label for="n_id">복용중인 약</label>
 						</dt>
 						<dd>
-							<input type="button" value="검색"/><br>
-							<input type="text" id="m_search" name="m_search" minlength="4" maxlength="16" />
+							<input type="button" value="검색" onclick="medicine()"/><br>
+							<input type="text" id="medicineSearch" name="medicineSearch" />
 						</dd>
 					</dl>
 
 				</fieldset>
 				
 				<div id="info_input_button">
-					<input type="reset" value="취소" />
-					<input type="submit" value="가입" />
+					<a onclick = "deleteBtn()"><input type="reset" value="취소" /></a>
+					<a onclick="joinBtn()"><input type="button" style="color: rgb(255, 255, 255); background: rgb(0, 128, 255);" value="다음" /></a>
 				</div>
 				
 			</form>
 		</section>
+		<script type="text/javascript">
+		pOption()
+		function disease(){ //지금 앓고있는 질병
+			var pOption = "width = 1000px, height = 500px, top = 100, left = 200, location = no";
+			window.open("/dict1?category=disease",'pop', pOption);
+			/* $.ajax({
+				url:"disease",
+				method:"post",
+				success:function(data){
+					alert("성공");
+					console.log(data);
+				},
+				error:function(error){
+					alert("실패");
+					console.log(error);
+				}
+			});//ajax */
+		}
+		
+		function pastDisease(){ //과거 질환
+			
+		}
+		function hereditaryDisease(){ //가족이 앓고있는 유전성 질환
+			
+		}
+		function medicine(){ //복용중인 약
+			
+		}
 		
 		
-		
-		
-		
+		function joinBtn(){	//회원가입 완료
+			//agree.submit();
+		}
+		function deleteBtn(){ //회원가입 취소 -> 회원정보 삭제
+			//alert(); 
+			
+		}
+	
+		</script>
 		
 		
 		<footer>

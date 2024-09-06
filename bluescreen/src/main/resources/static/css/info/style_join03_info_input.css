@@ -107,7 +107,6 @@ h4>span {
 .fieldset_class dl dt div {
 	display:inline-block;
 	width: 10px; height: 10px;
-	background: url(../images/join/point_rs.png) no-repeat 45% 88%;
 	position:relative; left: 20px;
 	vertical-align: middle;
 }

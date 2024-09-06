@@ -5,6 +5,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="/css/info/style_join02_info_input.css">
+		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<title>회원가입 - 회원정보입력</title>
 	</head>
 	<body id="body">
@@ -14,7 +16,10 @@
 		
 		
 		<section>
-			<form name="agree" method="get" action="join3">
+			<form name="agree" method="post" action="join3">
+			<input type="hidden" id="ck" name="ck" value="agree"/>
+			
+				
 				<div id="subBanner"></div>
 			
 				
@@ -54,7 +59,7 @@
 							<label for="name">이름</label>
 						</dt>
 						<dd>
-							<input type="text" id="name" name="name" required/>
+							<input type="text" id="name" name="name" />
 						</dd>
 					</dl>
 					<dl id="join_id_dl">
@@ -63,8 +68,8 @@
 							<label for="id">아이디</label>
 						</dt>
 						<dd>
-							<input type="text" id="id" name="id" minlength="4" maxlength="16" required/>
-							<input type="button" value="중복확인"/>
+							<input type="text" id="id" name="id" minlength="4" maxlength="16" />
+							<input type="button" onclick="idOk()" value="중복확인"/>
 							<span>4~16자리의 영문, 숫자, 특수기호(_)만 사용하실 수 있습니다.</span>
 							<span>첫 글자는 영문으로 입력해 주세요.</span>
 						</dd>
@@ -73,50 +78,50 @@
 					<dl id="join_nickname_dl">
 						<dt>
 							<div></div>
-							<label for="n_id">닉네임</label>
+							<label for="nickname">닉네임</label>
 						</dt>
 						<dd>
-							<input type="text" id="n_id" name="n_id" minlength="4" maxlength="16" required/>
-							<input type="button" value="중복확인"/>
+							<input type="text" id="nickName" name="nickName" minlength="3" maxlength="16" />
+							<input type="button" onclick="nickNameOk()" value="중복확인"/>
+							<span>3~16자리의 한글, 영문, 숫자만 사용하실 수 있습니다.</span>
 							<span>사용할 수 있는 닉네임입니다.</span>
 						</dd>
 					</dl>
 					<dl id="join_pw1_dl">
 						<dt>
 							<div></div>
-							<label for="pw1">비밀번호</label>
+							<label for="pw">비밀번호</label>
 						</dt>
 						<dd>
-							<input type="password" id="pw1" name="pw1" minlength="8" required />
-							<span>영문, 숫자, 특수문자 중 2종류 조합 시 10자리 이상 입력</span>
-							<span>영문, 숫자, 특수문자 모두 조합 시 8자리 이상 입력</span>
+							<input type="password" id="pw" name="pw" minlength="8"  />
+							<span>영문, 숫자, 특수문자 모두 조합 8~20까지 입력</span>
 						</dd>
 					</dl>
 					<dl id="join_pw2_dl">
 						<dt>
 							<div></div>
-							<label for="pw2">비밀번호 확인</label>
+							<label for="pwOk">비밀번호 확인</label>
 						</dt>
 						<dd>
-							<input type="password" id="pw2" name="pw2" minlength="8" required />
-							<span>비밀번호를 다시 한번 입력해 주세요.</span>
+							<input type="password" id="pwOk" name="pwOk" minlength="8" onkeyup="pwkey()"   />
+							<span id="pwCheck"></span>
 						</dd>
 					</dl>
 					<dl id="join_mail_dl">
 						<dt>
 							<div></div>
-							<label for="mail_id">이메일</label>
+							<label for="mailId">이메일</label>
 						</dt>
 						<dd>
-							<input type="text" id="mail_id" name="mail_id" required />
+							<input type="text" id="mailId" name="mailId"  />
 							<span>@</span>
-							<input type="text" id="main_tail" name="mail_tail" required />
-							<select>
-								<option selected>직접입력</option>
-								<option>지메일</option>
-								<option>네이버</option>
-								<option>네이트</option>
-								<option>다음</option>
+							<input type="text" id="emailTail" name="emailTail"  />
+							<select id="emailList" onchange="emailCk()">
+								<option value="txt" selected="selected">직접입력</option>
+								<option value="gmail.com">구글</option>
+								<option value="naver.com">네이버</option>
+								<option value="nate.com">네이트</option>
+								<option value="daum.net">다음</option>
 							</select>
 						</dd>
 					</dl>
@@ -124,15 +129,13 @@
 					<dl id="join_address_dl">
 						<dt> 
 							<div></div>
-							<label for="">주소</label>
+							<label for="addr1">주소</label>
 						</dt>
 						<dd>
-							<input type="text" id="f_postal" name="f_postal" required />
-							<span>-</span>
-							<input type="text" id="l_postal" name="l_postal" required />
-							<input type="button" value="우편번호"/>
-							<input type="text" id="address1" name="address1" required />
-							<input type="text" id="address2" name="address2" required />
+							<input type="text" id="addr1" name="addr1"  />
+							<input type="button" onclick="addressBtn()" value="우편번호"/>
+							<input type="text" id="addr2" name="addr2"  />
+							<input type="text" id="addr3" name="addr3" placeholder="상세주소를 입력해주세요." />
 						</dd>
 						
 					</dl>
@@ -140,67 +143,80 @@
 					<dl id="join_tell_dl">
 						<dt>
 							<div></div>
-							<label for="f_tell">휴대전화</label>
+							<label for="phone1">전화번호</label>
 						</dt>
 						<dd>
-							<input type="text" id="f_tell" name="f_tell" maxlength="3" required />
+							<input type="text" id="phone1" name="phone1" maxlength="3" value="010"/>
 							<span> - </span>
-							<input type="text" id="m_tell" name="m_tell" maxlength="4" required />
+							<input type="text" id="phone2" name="phone2" maxlength="4"  />
 							<span> - </span>
-							<input type="text" id="l_tell" name="l_tell" maxlength="4" required />
+							<input type="text" id="phone3" name="phone3" maxlength="4"  />
 						</dd>
 					</dl>
 					<dl id="join_birth_dl">
 						<dt>
 							<div></div>
-							<label for="birth_year">생년월일</label>
+							<label for="year">생년월일</label>
 						</dt>
 						<dd>
-							<select id="birth_year" name="birth_year" required>
-								<option selected>선택</option>
-								<option value="1988">1988</option>
-								<option value="1989">1989</option>
-								<option value="1990">1990</option>
-								<option value="1991">1991</option>
-								<option value="1992">1992</option>
-								<option value="1993">1993</option>
-								<option value="1994">1994</option>
-								<option value="1995">1995</option>
-								<option value="1996">1996</option>
-								<option value="1997">1997</option>
-								<option value="1998">1998</option>
-								<option value="1988">1999</option>
-								<option value="1920">2000</option>
+							<select id="year" name="year" /* required */>
+								<script>
+								for(var i=1920; i<=2024; i++){
+									if(i==1990){
+									document.write("<option value='"+i+"' selected>"+i+"</option>");
+									}
+									document.write("<option value='"+i+"'>"+i+"</option>");
+								}
+								</script>
 							</select>
 							<span>년</span>
-							<select id="birth_month" name="birth_month" required>
-								<option selected>선택</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
+							<select id="month" name="month" onchange="bmonth()" >
+								<option value="0">0</option>
+								<script>
+								for(var i=1; i<=12; i++){
+									if(i<10){
+										document.write("<option value='"+i+"'>0"+i+"</option>");
+									}else{
+										document.write("<option value='"+i+"'>"+i+"</option>");
+									}
+								}
+								</script>
 							</select>
 							<span>월</span>
-							<select id="birth_day" name="birth_day" required>
-								<option selected>선택</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
+							<select id="day" name="day" >
+								<script>
+								function bmonth(){
+									var dmonth = $("#month").val();
+									var str = "";
+									if(dmonth =="2"){
+										for(var i=1;i<=29;i++){
+											if(i<10){
+												str += "<option value='"+i+"'>0" + i + "</option>";
+											}else{
+												str += "<option value='"+i+"'>" + i + "</option>";
+											}
+										}
+									}else if(dmonth=="1" || dmonth=="3" || dmonth=="5" || dmonth=="7" || dmonth=="8" || dmonth=="10" || dmonth=="12"){
+										for(var i=1;i<=31;i++){
+											if(i<10){
+												str += "<option value='"+i+"'>0" + i + "</option>";
+											}else{
+												str += "<option value='"+i+"'>" + i + "</option>";
+											}
+										}
+									}else if(dmonth=="4" || dmonth=="6" || dmonth=="9" || dmonth=="11"){
+										for(var i=1;i<=30;i++){
+											if(i<10){
+												str += "<option value='"+i+"'>0" + i + "</option>";
+											}else{
+												str += "<option value='"+i+"'>" + i + "</option>";
+											}
+										}
+									}
+									$("#day").html(str);
+								}
+								</script>
+								
 							</select>
 							<span>일</span>
 							<div>
@@ -214,7 +230,7 @@
 					<dl id="join_gender_dl">
 						<dt>
 							<div></div>
-							<label for="">성별</label>
+							<label for="gender">성별</label>
 						</dt>
 						<dd>
 							<div>
@@ -245,19 +261,123 @@
 				</fieldset>
 				
 				<div id="info_input_button">
-					<input type="reset" value="취소" />
-					<input type="submit" value="다음" />
+					<a href = "/"><input type="reset" value="취소" /></a>
+					<a onclick="joinBtn()"><input type="button" style="color: rgb(255, 255, 255); background: rgb(0, 128, 255);" value="다음" /></a>
 				</div>
 				
 			</form>
 		</section>
 		
-		
-		
-		
-		
-		
-		
+<script type="text/javascript">
+let idCheck = false;
+let pwCheck = false;
+let nickNameCheck = false;
+let nameCheck = true;
+	function joinBtn(){
+		let nameCk = /^[가-힣]+$/;
+		let idCk = /^[a-zA-Z]{1}[a-zA-Z0-9_]{3,15}$/;
+		let nickNameCk = /^[가-힣a-zA-Z0-9]{3,16}$/;
+		let pwCk = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,20}$/;
+		if(!nameCk.test($("#name").val())){
+			alert("이름은 한글만 입력 가능합니다.");
+			$("#name").val("");
+			$("#name").focus();
+		}//nameCk
+		else if(!idCk.test($("#id").val())){
+			alert("아이디 조건에 부합하지 않습니다.\n(첫 글자는 영문으로 4~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능)")
+			$("#id").val("");
+			$("#id").focus();
+		}//idCk
+		else if(!nickNameCk.test($("#nickname").val())){
+			alert("닉네임 조건에 부합하지 않습니다.\n(한글, 영문, 숫자 조합 3~16자 까지 가능)")
+			$("#nickname").val("");
+			$("#nickname").focus();
+		}//nickNameCk
+		else if(!pwCk.test($("#pw").val())){
+			alert("비밀번호가 조건에 부합하지 않습니다.\n(하나 이상의 영문, 숫자, 특수문자(!@#$%^&*?_)포함 8~20자리까지 가능)");
+			$("#pw").val("");
+			$("#pwOk").val("");
+			$("#pw").focus();
+		}//pwCk 
+		agree.submit();
+	}
+	function pwkey(){
+		if($("#pw").val()==$("#pwOk").val()){
+			$("#pwCheck").text("*비밀번호가 일치합니다.").css('color','blue');
+			pwCheck = true;
+		}else{
+			$("#pwCheck").text("*비밀번호가 일치하지 않습니다.").css('color','red');
+			pwCheck = false;
+		}
+	}
+	function idOk(){
+		$.ajax({
+			url:"/join/idOk",
+			method:"post",
+			data:{"id":$("#id").val()},
+			success:function(data){
+				//alert("성공");
+				//console.log(data);
+				if(data==""||data==null){
+					alert("사용할 수 있는 아이디입니다.");
+					idCheck = false;
+				}else{
+					alert("이미 사용중인 아이디입니다.");
+					$("#id").val("");
+					$("#id").focus();
+					idCheck = false;
+				}
+			},
+			error:function(){
+				alert("실패");
+			}
+		});//ajax
+	}
+	
+	function nickNameOk(){
+		$.ajax({
+			url:"/join/nickNameOk",
+			method:"post",
+			data:{"nickName":$("#nickName").val()},
+			success:function(data){
+				/* alert();
+				console.log(data); */
+				if(data==""||data==null){
+					alert("사용할 수 있는 닉네임입니다.");
+					nickNameCheck = true;
+				}else{
+					alert("이미 사용중인 닉네임입니다.");
+					$("#nickName").val("");
+					$("#nickName").focus();
+					nickNameCheck = false;
+				}
+			},
+			error:function(){
+				alert("실패");
+			}
+		});//ajax
+	}
+	function emailCk(){
+		if($("#emailList").val() != "txt"){
+			$("#emailTail").val($("#emailList").val());
+			$("#emailTail").attr("disabled",true);
+		}else{
+			$("#emailTail").val("");
+			$("#emailTail").attr("disabled",false);
+		}
+	}
+	function addressBtn(){
+		new daum.Postcode({
+	    	oncomplete: function(data) {
+	            console.log(data);
+	            $("#addr1").val(data.zonecode);
+				$("#addr2").val(data.address);
+	        }
+	    }).open();
+	}
+</script>	
+
+
 		<footer>
 			<%@ include file="../footer.jsp" %>
 		</footer>
