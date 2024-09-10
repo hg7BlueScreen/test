@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.java.dto.Join;
@@ -20,21 +22,57 @@ public class JoinServiceImpl implements JoinService {
 		return idOk;
 	}
 	@Override
-	public String nickNameOk(String nickName) {
-		String nName = jmapper.nickNameOk(nickName);
+	public String nicknameCheck(String nickname) {
+		String nName = jmapper.nicknameCheck(nickname);
 		return nName;
 	}
 	@Override
 	public void insertMember(Join join) {
-		
+		//System.out.println(join.getId());
 		jmapper.insertMember(join);
-		System.err.println(join);
+		
 	}
 	@Override
 	public int selectUno(Join join) {
 		int uno = jmapper.selectUno(join);
 		
 		return uno;
+	}
+	@Autowired JavaMailSender mailSender;
+	@Override
+	public String getCode(String name, String email) {
+		System.out.println("이름 : "+name);
+		System.out.println("메일주소 : "+email);
+		//임시 비밀번호 생성
+		String pwcode = createPwCode(); 
+		System.out.println("생성된 임시코드 : "+pwcode);
+		//이메일 발송
+		sendEmail(name, email, pwcode);
+		return pwcode;
+	}
+	
+	private void sendEmail(String name, String email, String pwcode) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(email); //-에게
+		message.setFrom("su02552@gmail.com"); //-로부터   인증코드 받은 이메일
+		message.setSubject(name+"님에게 이메일 인증 임시번호를 발송합니다.");//제목
+		message.setText("안녕하세요. 아이디를 찾기위한 임시번호를 안내해드립니다.\n"+
+						"["+name+"님의 임시 번호 : "+pwcode+"]\n");
+		mailSender.send(message);
+		System.out.println("메일이 발송되었습니다.");
+	}
+	//임시 비밀번호 생성 메소드
+	private String createPwCode() {
+		char[] charset = {'0','1','2','3','4','5','6','7','8','9',
+				'a','b','c','d','e','f','g','h','i','j','k','l','m','n',
+				'o','p','q','r','s','t','u','v','w','x','y','z'};
+		String pwcode="";
+		int idx=0;
+		for(int i=0;i<10;i++) {
+			idx=(int)(Math.random()*36);
+			pwcode += charset[idx];
+		}
+		return pwcode;
 	}
 	
 

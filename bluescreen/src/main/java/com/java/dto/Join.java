@@ -16,7 +16,7 @@ public class Join {
 	private String id;
 	private String pw;
 	private String name;
-	private String nickName;
+	private String nickname;
 	private String gender;
 
 	private String socialNum;	//소셜 넘버
@@ -29,8 +29,8 @@ public class Join {
 	private Timestamp leavedate;	//탈퇴일자
 	
 	private String email;	//이메일
-	private String mailId;
-	private String mailTail;
+	private String emailId;
+	private String emailTail;
 	
 	private String phone;	//전화번호
 	private String phone1;

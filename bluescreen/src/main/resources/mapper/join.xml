@@ -5,11 +5,11 @@
 <select id="idCheck" resultType="String">
 	select id from BMember where id = #{id}
 </select>
-<select id="nickNameOk" resultType="String">
+<select id="nicknameCheck" resultType="String">
 	select nickname from BMember where nickname = #{nickname}
 </select>
 <insert id="insertMember">
-	insert into BMember values(um_seq.nextval,#{id},#{pw},#{name},#{nickName},#{gender},#{address},
+	insert into BMember values(um_seq.nextval,#{id},#{pw},#{name},#{nickname},#{gender},#{address},
 			#{email},#{phone},#{birthday},'','',#{job},'','','',#{ck})
 	
 </insert>

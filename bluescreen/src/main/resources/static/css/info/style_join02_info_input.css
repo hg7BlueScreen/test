@@ -44,7 +44,7 @@ section{
 }
 #join_step_div>ul>li {
 	float: left;
-	width: 248px;
+	width: 33%;
 	text-align: center;
 	box-sizing: border-box;
 	padding-top: 20px;
@@ -190,7 +190,7 @@ dd span {
 	top: 33px;
 }
 #join_nickname_dl dt label {
-	padding-top: 35px;
+	padding-top: 25px;
 }
 #join_nickname_dl input[type="text"] {
 	width: 276px;
@@ -211,24 +211,23 @@ dd span {
 }
 
 #join_pw1_dl dt{
-	height: 87px;
+	height: 70px;
 }
 #join_pw1_dl dd{
-	height: 87px;
+	height: 70px;
 }
 #join_pw1_dl dt div {
 	top: 33px;
 }
 #join_pw1_dl dt label {
-	padding-top: 35px;
-	background-position: 38% 90%;
+	padding-top: 25px;
 }
 #join_pw1_dl dd input {
 	width: 276px;
 }
 #join_pw1_dl span {
 	display: block;
-	margin-top: 2px;
+	margin-top: 5px;
 }
 
 #join_pw2_dl dt {
@@ -248,16 +247,19 @@ dd span {
 }
 
 #join_mail_dl dt {
-	height: 51px;
+	height: 75px;
 }
 #join_mail_dl dd{
-	height: 51px;
+	height: 75px;
 }
 #join_mail_dl dt div {
 	top: 14px;
 }
 #join_mail_dl dt label {
-	padding-top: 16px;
+	padding-top: 25px;
+}
+#emailCk{
+	margin-top:5px;
 }
 #join_mail_dl dd input:nth-child(1) {
 	width: 130px;
@@ -530,7 +532,9 @@ input[type="checkbox"]:not(old):checked + label {
 	color: rgb(255, 255, 255);
 	background: rgb(0, 128, 255);
 }
-
+#timer {
+    color: black;
+}
 
 
 

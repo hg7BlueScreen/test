@@ -30,14 +30,10 @@
 					</li>
 					<li>
 						<span>STEP.2</span>
-						<p>회원 기본 정보</p>
+						<p>회원정보입력</p>
 					</li>
 					<li>
 						<span>STEP.3</span>
-						<p>회원 의료 정보</p>
-					</li>
-					<li>
-						<span>STEP.4</span>
 						<p>회원가입완료</p>
 					</li>
 				</ul>

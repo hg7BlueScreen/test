@@ -9,7 +9,7 @@ public interface JoinMapper {
 
 	String idCheck(String id);
 
-	String nickNameOk(String nickName);
+	String nicknameCheck(String nickname);
 
 	void insertMember(Join join);
 

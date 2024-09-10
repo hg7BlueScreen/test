@@ -28,9 +28,9 @@ public class JoinController {
 	}
 	
 	
-	@GetMapping("/join2")
+	@PostMapping("/join2")
 	public String join2(Join join) {
-		System.out.println(join.getCk());
+		//System.out.println(join.getCk());
 		return "join/join2";
 	}
 	
@@ -41,29 +41,21 @@ public class JoinController {
 		String name = jservice.idCheck(id);
 		return name;
 	}
-	@PostMapping("/nickNameOk")
+	@PostMapping("/nicknameOk")
 	@ResponseBody
-	public String nickNameOk(String nickName) {
+	public String nicknameOk(String nickname) {
 		//System.out.println(id);
-		String nName = jservice.nickNameOk(nickName);
+		String nName = jservice.nicknameCheck(nickname);
 		return nName;
 	}
-	@PostMapping("/join3")
-	public String dojoin2(Join join, Model model) {
-//		System.out.println(join.getId());
-//		System.out.println(join.getName());
-//		System.out.println(join.getPw());
-//		System.out.println(join.getMailId());
-//		System.out.println(join.getMailTail());
-//		System.out.println(join.getAddr1());
-//		System.out.println(join.getAddr2());
-//		System.out.println(join.getAddr3());
-//		System.out.println(join.getPhone1());
-//		System.out.println(join.getPhone2());
-//		System.out.println(join.getPhone3());
+	
+
+
+	@PostMapping("/join4")
+	public String join4(Join join) {
 		String phone = join.getPhone1()+"-"+join.getPhone2()+"-"+join.getPhone3();
 		String address = "("+join.getAddr1()+") "+join.getAddr2()+", "+join.getAddr3();
-		String email = join.getMailId()+"@"+join.getMailTail();
+		String email = join.getEmailId()+"@"+join.getEmailTail();
 		String birthday = join.getYear()+"-"+join.getMonth()+"-"+join.getDay();
 		Date date = Date.valueOf(birthday);
 		join.setPhone(phone);
@@ -71,32 +63,27 @@ public class JoinController {
 		join.setEmail(email);
 		join.setBirthday(date);
 		jservice.insertMember(join);
-		
-		int uno = jservice.selectUno(join);
-		
-		model.addAttribute("uno",uno);
-	
-		return "join/join3";
-	}
-
-	@RequestMapping("/join3")
-	public String join3(Join user) {
-		
-		System.out.println(user.getUno());
-		//시퀀스인 사람에게 의료정보가 넘어가게
-		return "join/join3";
-	}
-	@RequestMapping("/join4")
-	public String join4(Join user) {
-		
-		System.out.println(user.getUno());
-		//시퀀스인 사람에게 의료정보가 넘어가게
+		//System.out.println(join.getId());
+		//System.out.println(join.getAddress()); //
+		//System.out.println(join.getPw());
+		//System.out.println(join.getNickname());
+		//System.out.println(join.getEmail());	
+		//System.out.println(join.getPhone());	//
+		//System.out.println(join.getBirthday());	//
+		//System.out.println(join.getName());
+		//System.out.println(join.getGender());
+		//System.out.println(join);
 		return "join/join4";
 	}
-	@PostMapping("/disease")
+
+	
+	@PostMapping("/emailSend")
 	@ResponseBody
-	public String disease() {
-		
-		return "성공";
+	public String emailSend(String name, String email) {
+//		System.out.println("이름 : "+name);
+//		System.out.println("메일주소 : "+email);
+		String pwCode = jservice.getCode(name, email);
+		return pwCode;
 	}
 }
+	
