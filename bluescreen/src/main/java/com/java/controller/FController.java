@@ -2,23 +2,35 @@ package com.java.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java.dto.Scrap;
+import com.java.service.myService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class FController {
-
+	@Autowired HttpSession session;
+	@Autowired myService myservice;
 	@RequestMapping("/")
 	public String index(Model model) {
+//		session.setAttribute("id", "test1"); 
+//		session.setAttribute("nickname", "test1");
+//		String addr = myservice.selectaddr((String)session.getAttribute("id"));
+//		session.setAttribute("addr", addr);
+		//System.out.println(addr);
 		String URL = "http://www.bosa.co.kr/news/articleList.html?sc_section_code=S1N5&view_type=sm";
 		List<Scrap> scrapers = new ArrayList<>();
 		try {
@@ -56,6 +68,21 @@ public class FController {
 		return "index";
 	}
 
+	@RequestMapping("/my_medicine")
+	public String my_medicine(@RequestParam(defaultValue="1") int page, Model model) {
+		HashMap<String, Object> map = myservice.selectAll(page);
+		
+		model.addAttribute("listCount",map.get("listCount"));
+		model.addAttribute("maxPage",map.get("maxPage"));
+		model.addAttribute("startPage",map.get("startPage"));
+		model.addAttribute("endPage",map.get("endPage"));
+		model.addAttribute("startRow",map.get("startRow"));
+		model.addAttribute("endRow",map.get("endRow"));
+		model.addAttribute("page",map.get("page"));
+		System.out.println("maxPage : "+map.get("maxPage"));
+		
+		return "my_medicine";
+	}
 	@RequestMapping("/index1")
 	public String index1() {
 		return "index1";
