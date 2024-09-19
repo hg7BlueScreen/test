@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,25 +13,31 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.java.dto.Join;
+import com.java.dto.Medicine;
+import com.java.dto.Page;
 import com.java.dto.Scrap;
-import com.java.service.myService;
+import com.java.service.MyService;
 
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class FController {
 	@Autowired HttpSession session;
-	@Autowired myService myservice;
+	@Autowired MyService myservice;
 	@RequestMapping("/")
 	public String index(Model model) {
-//		session.setAttribute("id", "test1"); 
-//		session.setAttribute("nickname", "test1");
-//		String addr = myservice.selectaddr((String)session.getAttribute("id"));
-//		session.setAttribute("addr", addr);
-		//System.out.println(addr);
+		session.setAttribute("id", "testD"); 
+		session.setAttribute("nickname", "시험드래곤");
+		Join user = myservice.selectUser((String)session.getAttribute("id"));
+		session.setAttribute("addr", user.getAddress());
+		session.setAttribute("uno", user.getUno());
+		//System.out.println(user.getUno());System.out.println(user.getAddress());
+		model.addAttribute("user",user);
 		String URL = "http://www.bosa.co.kr/news/articleList.html?sc_section_code=S1N5&view_type=sm";
 		List<Scrap> scrapers = new ArrayList<>();
 		try {
@@ -69,20 +76,53 @@ public class FController {
 	}
 
 	@RequestMapping("/my_medicine")
-	public String my_medicine(@RequestParam(defaultValue="1") int page, Model model) {
-		HashMap<String, Object> map = myservice.selectAll(page);
+	public String my_medicine(Page pageDto, Model model) {
+		//System.out.println("aa"+join);
+		session.setAttribute("id", "testD");
+		Join user = myservice.selectUser((String)session.getAttribute("id"));
+		session.setAttribute("uno", user.getUno());
+		//System.out.println(user.getUno());	System.out.println(user.getId());
+		ArrayList<Medicine> mList = myservice.selectMdList(user.getUno()); 
 		
-		model.addAttribute("listCount",map.get("listCount"));
-		model.addAttribute("maxPage",map.get("maxPage"));
-		model.addAttribute("startPage",map.get("startPage"));
-		model.addAttribute("endPage",map.get("endPage"));
-		model.addAttribute("startRow",map.get("startRow"));
-		model.addAttribute("endRow",map.get("endRow"));
-		model.addAttribute("page",map.get("page"));
-		System.out.println("maxPage : "+map.get("maxPage"));
+		HashMap<String, Object> map = myservice.selectPage(pageDto);
+		//ArrayList<Medicine> medicine = myservice.myMedicineList(uno);
+		model.addAttribute("pageDto",pageDto);
+		model.addAttribute("mList",mList);
+		//System.out.println(mList);
+		//System.out.println("maxPage : "+map.get("maxPage"));
 		
 		return "my_medicine";
 	}
+	
+//	@PostMapping("/deleteCk")
+//	@ResponseBody
+//	public String deleteCk(List<Integer> mno, int uno) {
+//		myservice.deleteCk(mno, uno);
+//		return "성공";
+//	}
+	@PostMapping("/deleteCk")
+	@ResponseBody
+	public String deleteCk(String[] mno, int uno) {
+		int[] mnoNum = new int[mno.length];
+		for(int i=0;i<mno.length;i++) {
+			mnoNum[i] = Integer.parseInt(mno[i]);
+		}
+		myservice.deleteCk(mnoNum, uno);
+		return "성공";
+	}
+	@PostMapping("/myMediUp")
+	@ResponseBody
+	public String myMediUp(int uno, int mno) {
+		String result = myservice.myMediAll(uno,mno);
+		if(result==null) {
+			myservice.myMediUp(uno, mno);
+			return "성공";
+		}else {
+			return "실패";
+		}
+		
+	}
+	
 	@RequestMapping("/index1")
 	public String index1() {
 		return "index1";

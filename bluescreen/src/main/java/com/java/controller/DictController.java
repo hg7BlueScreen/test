@@ -16,6 +16,7 @@ import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.service.DiseaseService;
 import com.java.service.MedicineService;
+import com.java.service.MyService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -24,7 +25,8 @@ public class DictController {
 	
 	@Autowired DiseaseService dservice;
 	@Autowired MedicineService mservice;
-	
+	@Autowired MyService myservice;
+	@Autowired HttpSession session;
 	@RequestMapping("/dict")
 	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail) {
 		// int uno = (int)session.getAttribute("sessionUno");
@@ -73,6 +75,8 @@ public class DictController {
 	@ResponseBody
 	public Medicine getMedicineOne(int mno) {
 		Medicine med = mservice.selectOneMedicine(mno);
+		String myMedi = myservice.myMediAll((int)session.getAttribute("uno"), mno);
+		med.setUno(myMedi);
 		return med;
 	}
 	

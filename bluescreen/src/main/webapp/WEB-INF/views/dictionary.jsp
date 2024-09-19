@@ -238,7 +238,29 @@
 }
 </style>
 <script type="text/javascript">
-	
+	function myMediUp(uno, mno){
+		console.log(uno);
+		console.log(mno);
+		if(confirm("등록하시겠습니까?")){
+			$.ajax({
+				url:"/myMediUp",
+				method:"post",
+				data:{"uno":uno,"mno":mno},
+				success:function(data){
+					console.log(data);
+					if(data=="성공"){
+						alert("복용중인 약으로 등록되었습니다.");
+						$("#modal").css("display","none");
+					}else{
+						alert("이미 등록된 약입니다.");
+					}
+				},
+				error:function(){
+					alert("fail");
+				}
+			});
+		}
+	}
 	function modalUp(mno){
 		$.ajax({
 			url: "/getMedicineOne",
@@ -251,7 +273,16 @@
 					const btn = document.querySelector("#modal-btn");
 					const close = document.querySelector(".close");
 					$("#modal").css("display","block");
-					$("#modalTitle").text(data.itemName);
+					if("${uno}" == null || "${uno}"==""){
+						$("#modalTitle").text(data.itemName); 
+					}else{
+						if(data.uno!=null){
+							$("#modalTitle").text(data.itemName); 
+						}else{
+							$("#modalTitle").html(data.itemName+
+							"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${uno}','"+mno+"')\" value='등록' style='background:rgb(0,128,255); color:#fff; border:none; margin-top:-10px;'/>");
+						}
+					}
 					let mContent = "";
 					if(data.entpName != null){
 						mContent += '<h2>'+"회사명"+'</h2>';

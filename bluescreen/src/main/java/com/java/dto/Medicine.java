@@ -22,4 +22,5 @@ public class Medicine {
 	private String depositMethodQesitm; // 보관법
 	private String imageURL; // 이미지
 	private String updateDe; // 업로드 날짜
+	private String uno;	
 }

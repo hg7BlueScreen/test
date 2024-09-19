@@ -43,28 +43,14 @@
         <div id="pagination"></div>
     </div>
 </div>
-
 <script>
+//alert("${addrs}");
+//alert("${addrg}");
 let userLoc ="21160570" //시청역 1호선 id // 기본 출발지 
-//let userLoc = "";  // 회원 전용 출발지 
-
-// 마커를 담을 배열입니다
-var markers = [];
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 6 // 지도의 확대 레벨
-    };  
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places();  
-// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-var pBoxImg = "/image/p_box.png"; //우체통 이미지
-var mBoxImg = "/image/m_box.png"; //수거함 이미지
-var userImg = ""; //유저 이미지
+let user_loc = "${addr}";
+//console.log(user_loc);
+let userSearch = "${addrA}";
+//console.log(userSearch); console.log(user_loc);
 let seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구",
 	"마포구","서대문구", "서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구"]
 let seoulM = ["강동구","관악구","동대문구","동작구","마포구","서대문구","서초구","송파구","양천구","용산구","은평구"]
@@ -72,6 +58,39 @@ let incheon = ["강화군","계양구","남동구","미추홀구","부평구","�
 let incheonM = ["강화군","계양구","남동구","미추홀구","부평구","서구","연수구"]
 let sejong = ["특별자치시"];
 let str = '';
+//마커를 담을 배열입니다
+var markers = [];
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+mapOption = {
+    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+    level: 6 // 지도의 확대 레벨
+};  
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+// 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places();  
+// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+var keyword = "";
+var pBoxImg = "/image/p_box.png"; //우체통 이미지
+var mBoxImg = "/image/m_box.png"; //수거함 이미지
+
+if(user_loc==null || user_loc==""){
+	//alert("없음");
+}else{
+	//alert("있음");
+	//alert(user_loc);
+	$("#city").val("${addrs}").prop("selected",true);
+	cbtn();
+	$("#gu").val("${addrg}").prop("selected",true);
+	sbtn();
+	ps.keywordSearch(userSearch, placesSearchCb);
+}
+function placesSearchCb(data){ //회원 주소로 길 찾기 검색
+	//alert(userSearch);
+	//console.log(data);	console.log(data[0].id);
+	userLoc = data[0].id;
+}
 function boxbtn(){
 	str='';
 	if($("#box").val()=="우체통"){
@@ -127,8 +146,8 @@ function cbtn(){
 			str += '<option value="'+seoul[i]+'">'+seoul[i]+'</option>'
 			}
 		}$("#gu").html(str);
+		
 		if($("#city").val()=="인천"){
-			
 			str += '<option value="">구</option>'
 			for(let i=0;i<incheon.length;i++){
 				str += '<option value="'+incheon[i]+'">'+incheon[i]+'</option>'
@@ -148,8 +167,8 @@ function cbtn(){
 			str += '<option value="'+seoulM[i]+'">'+seoulM[i]+'</option>'
 			}
 		}$("#gu").html(str);
+		
 		if($("#city").val()=="인천"){
-			
 			str += '<option value="">구</option>'
 			for(let i=0;i<incheonM.length;i++){
 				str += '<option value="'+incheonM[i]+'">'+incheonM[i]+'</option>'
@@ -166,8 +185,8 @@ function cbtn(){
 } 
 function sbtn(){
 	if($("#box").val()=="우체통"){
-	alert($("#city").val()+" "+$("#gu").val());
-	var keyword = $("#city").val()+" "+$("#gu").val() +" "+$("#box").val();
+	//alert($("#city").val()+" "+$("#gu").val());
+	keyword = $("#city").val()+" "+$("#gu").val() +" "+$("#box").val();
 	//console.log(keyword);
 	
 	// 키워드로 장소 검색
@@ -238,8 +257,6 @@ function sbtn(){
 				// 검색결과 항목을 Element로 반환하는 함수입니다
 				function MgetListItem(index, places) {
 					//console.log("getListItem"+places);
-					
-					
 				    var el = document.createElement('li'),
 				    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
 				                '<div class="info">' +
@@ -261,26 +278,22 @@ function sbtn(){
 	}
 }
 
-
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
 		//console.log(data);		console.log(status);		console.log(pagination);
     if (status === kakao.maps.services.Status.OK) {
-
         // 정상적으로 검색이 완료됐으면
         // 검색 목록과 마커를 표출합니다
         displayPlaces(data);
-		
         // 페이지 번호를 표출합니다
         displayPagination(pagination);
+        console.log(data);
 		
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-
         alert('검색 결과가 존재하지 않습니다.');
         return;
 
     } else if (status === kakao.maps.services.Status.ERROR) {
-
         alert('검색 결과 중 오류가 발생했습니다.');
         return;
     }
@@ -472,14 +485,15 @@ function removeAllChildNods(el) {
         el.removeChild (el.lastChild);
     }
 }
+ 
 function showRoute(title, x, y){
 	//console.log(pid);
 	$("#menu_wrap").hide();
  	var str ='<iframe style="width:100%;height:1000px;"  src="'
 	+'https://map.kakao.com/link/from/'+userLoc+'/to/'+title+','+x+','+y+'"></iframe>'; 
-	 
 	$("#map").html(str);
 }
+
 </script>
 	<%@ include file = "footer.jsp" %>
 	</body>

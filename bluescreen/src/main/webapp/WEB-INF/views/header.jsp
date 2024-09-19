@@ -13,6 +13,7 @@
 <script type="text/javascript" src="../../fastly.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.js?20240821162485"></script>
 <script type="text/javascript" src="../../r.incru.it/ajs/product/ats_crm_v2367a.js?20240821162485"></script>
 <script type="text/javascript" src="../../r.incru.it/ajs/product/micro_v2367a.js?20240821162485"></script>
+<script defer src="../../r.incru.it/ajs/works.console.adv367a.js?20240821162485"></script>
 <header id="header" class="">
 	<!-- <div class="v2banner">배너영역 2차 시 내용 추가</div> -->
 		<div class="inner">
@@ -35,7 +36,7 @@
 										<span class="d-menu-t">DICTIONARY</span>
 										<span class="d-menu-t2">의약품 및 질병 사전</span>
 									</a>
-									<a href="javascript:;" class="go_interview list_menuBox">
+									<a href="my_medicine" class="go_interview list_menuBox">
 										<span class="d-menu-t">MYPAGE</span>
 										<span class="d-menu-t2">개인 정보 및 의료 정보</span>
 									</a>
@@ -46,12 +47,6 @@
 								</div>
 							</div>
 						</li>
-
-
-
-
-
-
 
 
 

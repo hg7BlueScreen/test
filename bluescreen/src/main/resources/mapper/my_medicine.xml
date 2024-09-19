@@ -1,11 +1,23 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.java.mapper.myMapper">
+<mapper namespace="com.java.mapper.MyMapper">
 	<select id="selectListCount" resultType="int">
 		select count(*) from medicine_user
 	</select>
-	<select id="selectaddr" resultType="String">
-		select address from bmember where id=#{attribute}
+	<select id="selectUser" resultType="com.java.dto.Join">
+		select*from bmember where id=#{attribute}
+	</select>
+	<select id="selectMdList" resultType="com.java.dto.Medicine">
+		select*from Medicine where mno in (select mno from Medicine_User where uno=#{uno})
+	</select>
+	<delete id="deleteCk">
+		delete from medicine_user where uno=#{uno} and mno=#{mno}
+	</delete>
+	<insert id="myMediUp">
+		insert into medicine_user values(#{uno},#{mno},'')
+	</insert>
+	<select id="myMediAll" resultType="String" >
+		select uno from medicine_user where uno=#{uno} and mno=#{mno}
 	</select>
 </mapper>

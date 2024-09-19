@@ -456,7 +456,6 @@ function emailk(data){
 		$("#emailId").attr("readonly", true); // 인증 후 수정 불가
 		$("#emailTail").attr("readonly", true); //인증 후 수정 불가
 		$("#emailList").attr("disabled", true); //인증 후 수정 불가
-		
 	}else{
 		alert("인증 번호가 다릅니다.\n다시 입력해주세요.");
 	} 
