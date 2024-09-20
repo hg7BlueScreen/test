@@ -47,26 +47,25 @@ function medicineDel(){// 복용약 삭제
 	let mno = [];
 	let uno = "${uno}";
 	if($(".deleteCheck").is(":checked")){
-		alert("체크된 약품들을 목록에서 삭제하겠습니다.");
-		//console.log("${uno}");
-		//console.log($("input[class=deleteCheck]:checked").eq(0).val());
-		for(var i=0;i<$("input[class=deleteCheck]:checked").length;i++){
-			mno.push($("input[class=deleteCheck]:checked").eq(i).val());
-		}
-		console.log(mno);
-		$.ajax({
-			url:"/deleteCk",
-			method:"post",
-			data:{"mno":mno, "uno":uno},
-			success:function(data){
-				//alert("성공");
-				//console.log(data);
-				$("input[class=deleteCheck]:checked").parent().parent().parent().remove();
-			},
-			error:function(status){
-				//alert("실패");
+		if(confirm("체크된 약품들을 목록에서 삭제하시겠습니까?")){
+		//console.log("${uno}"); console.log($("input[class=deleteCheck]:checked").eq(0).val());
+			for(var i=0;i<$("input[class=deleteCheck]:checked").length;i++){
+				mno.push($("input[class=deleteCheck]:checked").eq(i).val());
 			}
-		});
+			console.log(mno);
+			$.ajax({
+				url:"/deleteCk",
+				method:"post",
+				data:{"mno":mno, "uno":uno},
+				success:function(data){
+					//alert("성공"); console.log(data);
+					$("input[class=deleteCheck]:checked").parent().parent().parent().remove();
+				},
+				error:function(status){
+					//alert("실패");
+				}
+			});
+		}	
 	}else{
 		alert("체크된 약품이 없습니다.");
 	}

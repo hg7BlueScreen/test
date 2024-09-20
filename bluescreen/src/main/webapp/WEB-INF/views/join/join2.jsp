@@ -432,7 +432,7 @@ function startTimer(){ //타이머
 	interval = setInterval(function(){
 		if(timeLeft <= 0){
 			clearInterval(interval);
-			$("#timer").html("시간 초과!\n새로운 인증번호를 발송하세요");
+			$("#timer").html("시간 초과!\n새로운 인증번호를 발송하세요").css('color','red');
 			$("#emailOk").attr("disabled", true); // 버튼 비활성화
 			$("#email_send").attr("disabled", false); //버튼 활성화
 			
