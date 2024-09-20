@@ -47,9 +47,8 @@
 //alert("${addrs}");
 //alert("${addrg}");
 let userLoc ="21160570" //시청역 1호선 id // 기본 출발지 
-let user_loc = "${addr}";
-//console.log(user_loc);
-let userSearch = "${addrA}";
+let user_loc = "${addr}";//console.log(user_loc); 회원 주소
+let userSearch = "${addrA}"; //길찾기 시 검색용 주소
 //console.log(userSearch); console.log(user_loc);
 let seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구",
 	"마포구","서대문구", "서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구"]
@@ -78,8 +77,7 @@ var mBoxImg = "/image/m_box.png"; //수거함 이미지
 if(user_loc==null || user_loc==""){
 	//alert("없음");
 }else{
-	//alert("있음");
-	//alert(user_loc);
+	//alert("있음"); alert(user_loc);
 	$("#city").val("${addrs}").prop("selected",true);
 	cbtn();
 	$("#gu").val("${addrg}").prop("selected",true);
@@ -290,7 +288,7 @@ function placesSearchCB(data, status, pagination) {
         console.log(data);
 		
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-        alert('검색 결과가 존재하지 않습니다.');
+        //alert('검색 결과가 존재하지 않습니다.');
         return;
 
     } else if (status === kakao.maps.services.Status.ERROR) {

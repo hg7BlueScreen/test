@@ -25,8 +25,7 @@ public class MapController {
 			 String[] user_addr = addr.split(" "); //회원 주소 시 / 자치구 분리
 			 String userAddr = addr.substring(8);
 			 String[] useraddr = userAddr.split(",");
-			 //System.out.println(userAddr);
-			 //System.out.println(useraddr[0]);
+			 //System.out.println(userAddr); System.out.println(useraddr[0]);
 			 model.addAttribute("addrA",useraddr[0]); 
 			 model.addAttribute("addrs",user_addr[1]);	//시
 			 model.addAttribute("addrg",user_addr[2]);	//구
