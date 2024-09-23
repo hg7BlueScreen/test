@@ -339,8 +339,11 @@ function modalUp(dno){
 		  </div>
 		</div>
 		
-		<input type = "checkbox" id = "onlyBookMark" name = "onlyBookMark" onclick = "onlyBookMark()" <c:if test="${onlyBookMark == 1 }">checked</c:if>>
-		<label for = "onlyBookMark">즐겨찾기만 보기</label>
+		<label class="switch">
+  			<input type="checkbox"  id = "onlyBookMark" name = "onlyBookMark" onclick = "onlyBookMark()" <c:if test="${onlyBookMark == 1 }">checked</c:if>>
+  			<span class="slider round"></span>
+		</label>
+		<label for = "switch">즐겨찾기만 보기</label>
 		
 		<div id="tableLocate">
 			<c:if test="${category == 'drug' }">
@@ -405,7 +408,7 @@ function modalUp(dno){
 			
 			<!-- 시작페이지 이동 시작 -->
 			<c:if test="${pageDto.page != 1 }">
-				<a href = "dict?category=${category }&page=1&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="first"></li></a>
+				<a href = "dict?category=${category }&page=1&textBox=${textBox}&categoryDetail=${categoryDetail}&onlyBookMark=${onlyBookMark}"><li class="first"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == 1 }">
 				<li class="first"></li>
@@ -413,7 +416,7 @@ function modalUp(dno){
 			<!-- 시작페이지 이동 끝 -->
 			<!-- 이전 페이지 이동 시작 -->
 			<c:if test="${pageDto.page != 1 }">
-				<a href = "dict?category=${category }&page=${pageDto.page - 1}&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="prev"></li></a>
+				<a href = "dict?category=${category }&page=${pageDto.page - 1}&textBox=${textBox}&categoryDetail=${categoryDetail}&onlyBookMark=${onlyBookMark}"><li class="prev"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == 1 }">
 				<li class="prev"></li>
@@ -422,11 +425,11 @@ function modalUp(dno){
 				<c:forEach begin = "${pageDto.startPage }" end = "${pageDto.endPage }" step = "1" var = "pNum">
 					<c:if test="${pNum <= pageDto.maxPage }">
 						<c:if test="${pageDto.page == pNum }">
-						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}&categoryDetail=${categoryDetail}"><div style = "margin-top:5px; font-size:16px;">
+						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}&categoryDetail=${categoryDetail}&onlyBookMark=${onlyBookMark}"><div style = "margin-top:5px; font-size:16px;">
 							<strong>${pNum }</strong>
 						</c:if>
 						<c:if test="${pageDto.page != pNum }">
-						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}&categoryDetail=${categoryDetail}"><div style = "margin-top:5px; font-size:16px;">
+						<li class="num"><a href = "dict?category=${category }&page=${pNum }&textBox=${textBox}&categoryDetail=${categoryDetail}&onlyBookMark=${onlyBookMark}"><div style = "margin-top:5px; font-size:16px;">
 							${pNum }
 						</c:if>
 						</div></a></li>
@@ -434,7 +437,7 @@ function modalUp(dno){
 				</c:forEach>
 			<!-- 다음 페이지 이동 시작 -->
 			<c:if test="${pageDto.page != pageDto.maxPage }">
-				<a href = "dict?category=${category }&page=${pageDto.page + 1}&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="next"></li></a>
+				<a href = "dict?category=${category }&page=${pageDto.page + 1}&textBox=${textBox}&categoryDetail=${categoryDetail}&onlyBookMark=${onlyBookMark}"><li class="next"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == pageDto.maxPage }">
 				<li class="next"></li>
@@ -442,7 +445,7 @@ function modalUp(dno){
 			<!-- 다음 페이지 이동 끝 -->
 			<!-- 마지막 페이지 이동 시작 -->
 			<c:if test="${pageDto.page != pageDto.maxPage }">
-				<a href = "dict?category=${category }&page=${pageDto.maxPage}&textBox=${textBox}&categoryDetail=${categoryDetail}"><li class="last"></li></a>
+				<a href = "dict?category=${category }&page=${pageDto.maxPage}&textBox=${textBox}&categoryDetail=${categoryDetail}&onlyBookMark=${onlyBookMark}"><li class="last"></li></a>
 			</c:if>
 			<c:if test="${pageDto.page == pageDto.maxPage }">
 				<li class="last"></li>
