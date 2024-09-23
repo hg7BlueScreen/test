@@ -29,4 +29,8 @@ public interface DrugMapper {
 
 	void disableBookmarkDrug(int uno, int dno);
 
+	Drug selectDrugOne(Drug drug);
+
+	void insertDrugOne(Drug drug);
+
 }

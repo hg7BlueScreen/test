@@ -13,7 +13,7 @@ public class Drug {
 	
 	private int dno;
 	private int	item_seq;
-	private int	entp_seq;
+	private int	entp_no;
 	private String item_name;
 	private String entp_name;
 	private String etc_otc_code;
@@ -25,6 +25,6 @@ public class Drug {
 	private String ingr_name;
 	private String atc_code;
 	private String imageURL;
-	private Timestamp item_permit_date;
+	private String item_permit_date;
 	private String defendOverInsert;
 }

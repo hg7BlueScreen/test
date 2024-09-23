@@ -78,7 +78,7 @@ html {
 }
 </style>
 <script type="text/javascript">
-	let medicine = [];
+	let drug = [];
 		$(function(){
 			$('#img1').on({
 				mouseenter: function(){
@@ -90,37 +90,35 @@ html {
 				click: function(){
 					$(".home_section").empty();
 					$.ajax({
-						url: '/updateCheckMedicine',
+						url: '/updateCheckDrug',
 						method: "get",
 						success: function(data){
-							console.log(data);
 							if(data.length != 0){
 								let str = "";
-								str += '<div class="details" style = "height: 400px;" id = "details_medicine">';
-								str += '<div class="recent_project" id = "recent_project_medicine">';
+								str += '<div class="details" style = "height: 400px;" id = "details_drug">';
+								str += '<div class="recent_project" id = "recent_project_drug">';
 								str += '<div class="card_header" style = "height:15px;"><h2><span class = "links_name">의약품 정보 업데이트</span></h2></div>';
-								str += '<table><colgroup><col width = "18%"><col width = "18%"><col width = "18%"><col width = "18%"><col width = "18%"><col width = "10%"></colgroup><thead><tr><td>업체명</td><td>제품명</td><td>기준코드</td><td>업로드 날짜</td><td>이미지여부</td><td></td></tr></thead>';
+								str += '<table><colgroup><col width = "18%"><col width = "18%"><col width = "18%"><col width = "18%"><col width = "18%"><col width = "10%"></colgroup><thead><tr><td>업체명</td><td>제품명</td><td>기준코드</td><td>보관일자</td><td>이미지여부</td><td></td></tr></thead>';
 								str += '<tbody>';
 								for(let i = 0; i < data.length; i++){
-									medicine.push({'entpName':data[i].entpName,'itemName':data[i].itemName,'itemSeq':data[i].itemSeq,'efcyQesitm':data[i].efcyQesitm,'useMethodQesitm':data[i].useMethodQesitm,'atpnWarnQesitm':data[i].atpnWarnQesitm,'atpnQesitm':data[i].atpnQesitm,'intrcQesitm':data[i].intrcQesitm,'seQesitm':data[i].seQesitm,'depositMethodQesitm':data[i].depositMethodQesitm,'imageURL':data[i].imageURL});
+									drug.push({'item_seq':data[i].item_seq,'item_name':data[i].item_name,'entp_name':data[i].entp_name,'item_permit_date':data[i].item_permit_date,'etc_otc_code':data[i].etc_otc_code,'chart':data[i].chart,'material_name':data[i].material_name,'storage_method':data[i].storage_method,'valid_term':data[i].valid_term,'entp_no':data[i].entp_no,'main_item_ingr':data[i].main_item_ingr,'ingr_name':data[i].ingr_name,'atc_code':data[i].atc_code,'imageURL':data[i].imageURL});
 			
-									str += '<tr id = "'+data[i].itemSeq+'">';
-									str += '<td>'+data[i].entpName+'</td>';
-									str += '<td>'+data[i].itemName+'</td>';
-									str += '<td>'+data[i].itemSeq+'</td>';
-									str += '<td>'+data[i].updateDe+'</td>';
+									str += '<tr id = "'+data[i].item_seq+'">';
+									str += '<td>'+data[i].entp_name+'</td>';
+									str += '<td>'+data[i].item_name+'</td>';
+									str += '<td>'+data[i].item_seq+'</td>';
+									str += '<td>'+data[i].valid_term+'</td>';
 									str += '<td>';
-									if(data[i].imageURL == ""){
+									if(data[i].imageURL == "" || data[i].imageURL == null){
 										str += 'N';
 									}else{
 										str += 'Y';
 									}
 									str += '</td>';
-									str += '<td><button type = "button" onclick = "medicineUpdateButton(\''+i+'\')" style = "width: 80px; background-color: #3f80ea; border: 1px white;">업데이트</button></td>';
+									str += '<td><button type = "button" onclick = "drugUpdateButton(\''+i+'\')" style = "width: 80px; background-color: #3f80ea; border: 1px white;">업데이트</button></td>';
 									str += '</tr>';
 								}
 								str += '</tbody></table></div></div></div>';
-								console.log("메디슨",medicine);
 								$(".home_section").append(str);
 							}
 						},
@@ -128,62 +126,18 @@ html {
 							alert("실패");
 						} // error
 					}); // ajax 
-					
-					$.ajax({
-						url: '/updateCheckDisease',
-						method: "get",
-						success: function(data){
-							console.log(data);
-							if(data.length != 0){
-								let str = "";
-								str += '<div class="details" style = "height: 400px;" id = "details_disease">';
-								str += '<div class="recent_project" id = "recent_project">';
-								str += '<div class="card_header" style = "height:15px;"><h2><span class = "links_name">질병 정보 업데이트</span></h2></div>';
-								str += '<table><colgroup><col width = "20%"><col width = "20%"><col width = "20%"><col width = "40%"></colgroup><thead><tr><td>질병코드</td><td>&nbsp;&nbsp;&nbsp;질병명</td><td></td><td></td></tr></thead>';
-								str += '<tbody>';
-								for(let i = 0; i < data.length; i++){
-									str += '<tr id = "'+data[i].sickCd+'">';
-									str += '<td>'+data[i].sickCd+'</td>';
-									str += '<td>'+data[i].sickNm+'</td>';
-									str += '<td><button type = "button" onclick = "diseaseUpdateButton(\''+data[i].sickCd+'\',\''+data[i].sickNm+'\')" style = "width: 80px; background-color: #3f80ea; border: 1px white;">업데이트</button></td>';
-									str += '<td></td>';
-									str += '</tr>';
-								}
-								str += '</tbody></table></div></div></div>';
-								
-								$(".home_section").append(str);
-							}
-						},
-						error: function(){
-							alert("실패");
-						} // error
-					}); // ajax 
+
 				} // click function
 			}); // img on
 		}); // jquery
 		
-		function diseaseUpdateButton(sickCd, sickNm){
+		function drugUpdateButton(idx){
 			$.ajax({
-				url: "/insertDiseaseOne",
+				url: "/insertDrugOne",
 				method: "post",
-				data: {"sickCd":sickCd, "sickNm":sickNm},
+				data: {'item_seq':drug[idx].item_seq,'item_name':drug[idx].item_name,'entp_name':drug[idx].entp_name,'item_permit_date':drug[idx].item_permit_date,'etc_otc_code':drug[idx].etc_otc_code,'chart':drug[idx].chart,'material_name':drug[idx].material_name,'storage_method':drug[idx].storage_method,'valid_term':drug[idx].valid_term,'entp_no':drug[idx].entp_no,'main_item_ingr':drug[idx].main_item_ingr,'ingr_name':drug[idx].ingr_name,'atc_code':drug[idx].atc_code,'imageURL':drug[idx].imageURL},
 				success: function(data){
-					$("#"+sickCd).html("");
-				},
-				error: function(error){
-					alert(error);
-				} // error
-			}); // ajax
-		}
-		
-		function medicineUpdateButton(idx){
-			console.log(medicine[idx].entpName);
-			$.ajax({
-				url: "/insertMedicineOne",
-				method: "post",
-				data: {"entpName":medicine[idx].entpName,"itemName":medicine[idx].itemName,"itemSeq":medicine[idx].itemSeq,"efcyQesitm":medicine[idx].efcyQesitm,"useMethodQesitm":medicine[idx].useMethodQesitm,"atpnWarnQesitm":medicine[idx].atpnWarnQesitm,"atpnQesitm":medicine[idx].atpnQesitm,"intrcQesitm":medicine[idx].intrcQesitm,"seQesitm":medicine[idx].seQesitm,"depositMethodQesitm":medicine[idx].depositMethodQesitm,"imageURL":medicine[idx].imageURL,},
-				success: function(data){
-					$("#"+medicine[idx].itemSeq).html("");
+					$("#"+drug[idx].item_seq).remove();
 				},
 				error: function(error){
 					alert(error);
@@ -224,7 +178,7 @@ html {
 			</div>
 		</div>
 		
-		<div class="details" style = "height: 400px;" id = "details_medicine">
+		<div class="details" style = "height: 400px;" id = "details_drug">
 		
 		</div>
 	</section>

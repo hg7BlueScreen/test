@@ -22,5 +22,11 @@ public interface DrugService {
 
 	void disableBookmarkDrug(int uno, int dno);
 
+	int selectDrugCount();
+
+	boolean checkNewDrug(Drug drug);
+
+	void insertDrugOne(Drug drug);
+
 
 }

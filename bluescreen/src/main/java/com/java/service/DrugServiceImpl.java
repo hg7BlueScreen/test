@@ -75,4 +75,25 @@ public class DrugServiceImpl implements DrugService {
 		drugMapper.disableBookmarkDrug(uno,dno);
 	}
 
+	@Override
+	public int selectDrugCount() {
+		int drugCount = drugMapper.selectListCount(null, null, 0, 0);
+		return drugCount;
+	}
+
+	@Override
+	public boolean checkNewDrug(Drug drug) {
+		Drug checkDrug = drugMapper.selectDrugOne(drug);
+		if(checkDrug != null) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+
+	@Override
+	public void insertDrugOne(Drug drug) {
+		drugMapper.insertDrugOne(drug);
+	}
+
 }

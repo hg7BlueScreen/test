@@ -28,103 +28,39 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 import com.java.dto.Disease;
+import com.java.dto.Drug;
 import com.java.dto.Medicine;
 import com.java.service.DiseaseService;
+import com.java.service.DrugService;
 import com.java.service.MedicineService;
 
 @Controller
 public class AdminController {
 
-	@Autowired
-	DiseaseService dservice;
-	@Autowired
-	MedicineService mservice;
-
+	@Autowired DrugService drugService;
+	
 	@RequestMapping("/admin_update")
 	public String admin_update(Model model) {
-		int diseaseCount = dservice.selectDiseaseCount();
-		int page = diseaseCount / 100 + 1;
-		model.addAttribute("page", page);
 		return "admin_update";
 	}
-
-	@GetMapping("/updateCheckDisease")
+	
+	@GetMapping("/updateCheckDrug")
 	@ResponseBody
-	public List<Disease> updateCheckDisease(Model model) throws Exception {
+	public List<Drug> updateCheckDrug(Model model) throws Exception {
 		// 본인이 받은 api키를 추가
 		String key1 = "";
-		int diseaseCount = dservice.selectDiseaseCount();
-		int page = diseaseCount / 100 + 1;
-		try {
-			String serviceKey = "0nCpudgmWV03aBHAVaXghXKMUDOEVBOlavcvZdz%2Bc99KB07ML6%2BUx3VyIIZGq7J18bgoBMZ02iLfcEuD4TV7FA%3D%3D";
-			String url = "https://apis.data.go.kr/B551182/diseaseInfoService1/getDissNameCodeList1";
-			url += "?serviceKey=" + serviceKey;
-			url += "&numOfRows=" + 100;
-			url += "&pageNo=" + page;
-			url += "&sickType=" + 1;
-			url += "&medTp=" + 1;
-
-			DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
-			Document doc = dBuilder.parse(url);
-
-			// 제일 첫번째 태그
-			doc.getDocumentElement().normalize();
-			List<Disease> diseaseList = new ArrayList<>();
-			// 파싱할 tag
-			NodeList nList = doc.getElementsByTagName("item");
-			for (int temp = 0; temp < nList.getLength(); temp++) {
-				Node nNode = nList.item(temp);
-				Element eElement = (Element) nNode;
-				Disease disease = new Disease();
-				disease.setSickCd(getTagValue("sickCd", eElement));
-				disease.setSickNm(getTagValue("sickNm", eElement));
-				boolean checkNewDisease = dservice.checkNewDisease(disease);
-				// System.out.println(checkNewDisease);
-				if (checkNewDisease) {
-					// dservice.insertDiseaseOne(disease);
-					diseaseList.add(disease);
-				}
-			}
-			return diseaseList;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	@GetMapping("/updateCheckMedicine")
-	@ResponseBody
-	public List<Medicine> updateCheckMedicine(Model model) throws Exception {
-		// 본인이 받은 api키를 추가
-		String key1 = "";
-		int medicineCount = mservice.selectMedicineCount();
-		int page = (medicineCount / 100) + 1;
-		Date date = new Date();
-		SimpleDateFormat formatMonth = new SimpleDateFormat("MM");
-		SimpleDateFormat formatYear = new SimpleDateFormat("yyyy");
-		String StringMonth = formatMonth.format(date);
-		String StringYear = formatYear.format(date);
-		int month = (Integer.parseInt(StringMonth)) - 1;
-		int year = (Integer.parseInt(StringYear)) - 1;
-		System.out.println(month);
+		int drugCount = drugService.selectDrugCount();
+		drugCount = 46556;
+		int page = (drugCount / 100) + 1;
 		try {
 			// pageNo=49&numOfRows=100&type=xml
 			String serviceKey = "0nCpudgmWV03aBHAVaXghXKMUDOEVBOlavcvZdz%2Bc99KB07ML6%2BUx3VyIIZGq7J18bgoBMZ02iLfcEuD4TV7FA%3D%3D";
-			String url = "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList";
+			String url = "https://apis.data.go.kr/1471000/DrugPrdtPrmsnInfoService06/getDrugPrdtPrmsnDtlInq05";
 			url += "?serviceKey=" + serviceKey;
 			url += "&numOfRows=" + 100;
-			url += "&pageNo=" + 1;
+			url += "&pageNo=" + page;
 			url += "&type=xml";
-			if(month == 0) {
-				url += "&openDe="+year+"-12";
-			}else if(month < 10) {
-				url += "&openDe=2024-0"+month;
-			}else {
-				url += "&openDe=2024-"+month;
-			}
 			
-
 			DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
 			Document doc = dBuilder.parse(url);
@@ -132,32 +68,46 @@ public class AdminController {
 			// System.out.println(doc.getDocumentElement().getTextContent());
 
 			// 제일 첫번째 태그 
-			doc.getDocumentElement().normalize(); 
-			List<Medicine> medicineList = new ArrayList<>(); 
+			doc.getDocumentElement().normalize();
+			List<Drug> drugList = new ArrayList<>(); 
 			// 파싱할 tag
 			NodeList nList = doc.getElementsByTagName("item");
 			for(int i = 0; i < nList.getLength(); i++) {
-				Medicine medicine = new Medicine();
-				medicine.setEntpName(doc.getDocumentElement().getElementsByTagName("entpName").item(i).getTextContent());
-				medicine.setItemName(doc.getDocumentElement().getElementsByTagName("itemName").item(i).getTextContent());
-				medicine.setItemSeq(doc.getDocumentElement().getElementsByTagName("itemSeq").item(i).getTextContent());
-				medicine.setEfcyQesitm(doc.getDocumentElement().getElementsByTagName("efcyQesitm").item(i).getTextContent());
-				medicine.setUseMethodQesitm(doc.getDocumentElement().getElementsByTagName("useMethodQesitm").item(i).getTextContent());
-				medicine.setAtpnWarnQesitm(doc.getDocumentElement().getElementsByTagName("atpnWarnQesitm").item(i).getTextContent());
-				medicine.setAtpnQesitm(doc.getDocumentElement().getElementsByTagName("atpnQesitm").item(i).getTextContent());
-				medicine.setIntrcQesitm(doc.getDocumentElement().getElementsByTagName("intrcQesitm").item(i).getTextContent());
-				medicine.setSeQesitm(doc.getDocumentElement().getElementsByTagName("seQesitm").item(i).getTextContent());
-				medicine.setDepositMethodQesitm(doc.getDocumentElement().getElementsByTagName("depositMethodQesitm").item(i).getTextContent());
-				medicine.setImageURL(doc.getDocumentElement().getElementsByTagName("itemImage").item(i).getTextContent());
-				medicine.setUpdateDe(doc.getDocumentElement().getElementsByTagName("updateDe").item(i).getTextContent());
-				boolean checkNewMedicine = mservice.checkNewMedicine(medicine);
+				Drug drug = new Drug();
+				
+				drug.setItem_seq(Integer.parseInt(doc.getDocumentElement().getElementsByTagName("ITEM_SEQ").item(i).getTextContent()));
+				drug.setItem_name(doc.getDocumentElement().getElementsByTagName("ITEM_NAME").item(i).getTextContent());
+				drug.setEntp_name(doc.getDocumentElement().getElementsByTagName("ENTP_NAME").item(i).getTextContent());
+				
+				boolean checkNewDrug = drugService.checkNewDrug(drug); 
 				// System.out.println(checkNewDisease);
-				if (checkNewMedicine) {
-					// dservice.insertDiseaseOne(disease);
-					medicineList.add(medicine);
+				if (checkNewDrug) { 
+
+				}else {
+					continue;
 				}
+				
+				drug.setItem_permit_date(doc.getDocumentElement().getElementsByTagName("ITEM_PERMIT_DATE").item(i).getTextContent());
+				drug.setEtc_otc_code(doc.getDocumentElement().getElementsByTagName("ETC_OTC_CODE").item(i).getTextContent());
+				drug.setChart(doc.getDocumentElement().getElementsByTagName("CHART").item(i).getTextContent());
+				drug.setMaterial_name(doc.getDocumentElement().getElementsByTagName("MATERIAL_NAME").item(i).getTextContent());
+				drug.setStorage_method(doc.getDocumentElement().getElementsByTagName("STORAGE_METHOD").item(i).getTextContent());
+				drug.setValid_term(doc.getDocumentElement().getElementsByTagName("VALID_TERM").item(i).getTextContent());
+				drug.setEntp_no(Integer.parseInt(doc.getDocumentElement().getElementsByTagName("ENTP_NO").item(i).getTextContent()));
+				drug.setMain_item_ingr(doc.getDocumentElement().getElementsByTagName("MAIN_ITEM_INGR").item(i).getTextContent());
+				
+				if(doc.getDocumentElement().getElementsByTagName("ATC_CODE").item(i) != null) {
+					drug.setAtc_code(doc.getDocumentElement().getElementsByTagName("ATC_CODE").item(i).getTextContent());
+				}
+				
+				if(doc.getDocumentElement().getElementsByTagName("ITEM_IMAGE").item(i) != null) {
+					drug.setImageURL(doc.getDocumentElement().getElementsByTagName("ITEM_IMAGE").item(i).getTextContent());
+				}
+				
+				drugList.add(drug); 
+				
 			}
-			return medicineList;
+			return drugList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -191,19 +141,18 @@ public class AdminController {
 
 		return result;
 	}
-
-	@PostMapping("/insertDiseaseOne")
+	
+	/*
+	 * @PostMapping("/insertMedicineOne")
+	 * 
+	 * @ResponseBody public String insertMedicineOne(Medicine medicine) {
+	 * mservice.insertMedicineOne(medicine); return "성공"; }
+	 */
+	
+	@PostMapping("/insertDrugOne")
 	@ResponseBody
-	public String insertDiseaseOne(Disease disease) {
-		dservice.insertDiseaseOne(disease);
+	public String insertDrugOne(Drug drug) {
+		drugService.insertDrugOne(drug);
 		return "성공";
 	}
-	
-	@PostMapping("/insertMedicineOne")
-	@ResponseBody
-	public String insertMedicineOne(Medicine medicine) {
-		mservice.insertMedicineOne(medicine);
-		return "성공";
-	}
-	
 }

@@ -181,5 +181,12 @@
 		delete from drug_user where uno = #{uno} and dno =
 		#{dno}
 	</delete>
-
+	
+	<select id="selectDrugOne" resultType="com.java.dto.Drug">
+		select * from drug where item_seq = #{item_seq} and entp_name = #{entp_name}
+	</select>
+	
+	<insert id="insertDrugOne">
+		insert into drug values(drug_seq.nextval, #{item_seq}, #{item_name}, #{entp_name}, #{item_permit_date}, #{etc_otc_code}, #{chart}, #{material_name}, #{storage_method}, #{valid_term}, #{entp_no}, #{main_item_ingr}, #{ingr_name}, #{atc_code}, #{imageURL})
+	</insert>
 </mapper>
