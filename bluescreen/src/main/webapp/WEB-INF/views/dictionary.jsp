@@ -123,12 +123,12 @@ function modalUp(dno){
 				const close = document.querySelector(".close");
 				$("#modal").css("display","block");
 				if("${uno}" == null || "${uno}"==""){
-					$("#modalTitle").text(data.itemName);
+					$("#modalTitle").text(data.drug.item_name);
 				}else{
-					if(data.uno!=null){
-						$("#modalTitle").text(data.itemName);
+					if(data.drug.defendOverInsert!=null){
+						$("#modalTitle").text(data.drug.item_name);
 					}else{
-						$("#modalTitle").html(data.itemName+
+						$("#modalTitle").html(data.drug.item_name+
 						"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${uno}','"+dno+"')\" value='등록' style='background:rgb(0,128,255); color:#fff; border:none; margin-top:-10px;'/>");
 					}
 				}
@@ -224,6 +224,7 @@ function modalUp(dno){
 					}
 					
 					mContent += '</table>';
+					
 					
 					$("#modalContent").html(mContent);
 				});

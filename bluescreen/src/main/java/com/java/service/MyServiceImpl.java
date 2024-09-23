@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.java.dto.Drug;
 import com.java.dto.Join;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
@@ -52,27 +53,34 @@ public class MyServiceImpl implements MyService {
 		return selectaddr;
 	}
 	@Override
-	public ArrayList<Medicine> selectMdList(int uno) {
+	public ArrayList<Drug> selectMdList(int uno) {
 		//System.out.println(uno);
-		ArrayList<Medicine> mList = mymapper.selectMdList(uno);
+		ArrayList<Drug> mList = mymapper.selectMdList(uno);
 		return mList;
 	}
 	@Override
-	public void deleteCk(int[] mnoNum, int uno) {
-		for(int i=0;i<mnoNum.length;i++) {
-			mymapper.deleteCk(mnoNum[i], uno);
+	public void deleteCk(int[] dnoNum, int uno) {
+		for(int i=0;i<dnoNum.length;i++) {
+			mymapper.deleteCk(dnoNum[i], uno);
 		}
 		
 	}
+	
 	@Override
-	public void myMediUp(int uno, int mno) {
-		mymapper.myMediUp(uno, mno);
+	public String myMediAll(int uno, int dno) {
+		String result = mymapper.myMediAll(uno, dno);
+		//System.out.println(result);
+		return result;
 	}
 	@Override
-	public String myMediAll(int uno, int mno) {
-		String result = mymapper.myMediAll(uno, mno);
-		System.out.println(result);
-		return result;
+	public void myMediUp(int uno, int dno, String mdate) {
+		mymapper.myMediUp(uno, dno, mdate);
+		
+	}
+	@Override
+	public void alramDate(int uno, String alDate) {
+		mymapper.alramDate(uno, alDate);
+		
 	}
 
 

@@ -10,10 +10,10 @@
 </select>
 <insert id="insertMember">
 	insert into BMember values(um_seq.nextval,#{id},#{pw},#{name},#{nickname},#{gender},#{address},
-			#{email},#{phone},#{birthday},'','',#{job},'','','',#{ck})
-	
+			#{email},#{phone},#{birthday},'','',#{job},'','','',#{ck},'7')
 </insert>
 <select id="selectUno" resultType="int">
 	select uno from BMember where id = #{id}
 </select>
+
 </mapper>

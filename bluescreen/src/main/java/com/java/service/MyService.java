@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.java.dto.Drug;
 import com.java.dto.Join;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
@@ -15,13 +16,15 @@ public interface MyService {
 
 	HashMap<String, Object> selectPage(Page pageDto);
 
-	ArrayList<Medicine> selectMdList(int uno);
+	ArrayList<Drug> selectMdList(int uno);
 
-	void deleteCk(int[] mnoNum, int uno);
+	void deleteCk(int[] dnoNum, int uno);
 
-	void myMediUp(int uno, int mno);
+	void myMediUp(int uno, int dno, String mdate);
 
-	String myMediAll(int uno, int mno);
+	String myMediAll(int uno, int dno);
+
+	void alramDate(int uno, String alDate);
 
 
 	

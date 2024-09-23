@@ -126,6 +126,7 @@
 						</dd>
 					</dl>
 					
+					
 					<dl id="join_address_dl">
 						<dt> 
 							<div></div>
@@ -450,7 +451,7 @@ function emailk(data){
 	//console.log(data);
 	 if(data==$("#emailCheck").val()){
 		clearInterval(interval);
-		$("#timer").html("인증 완료되었습니다.");
+		$("#timer").html("인증 완료되었습니다.").css("color","blue");
 		email_check = true; //이메일 인증 완료
 		$("#emailOk").attr("disabled", true); // 버튼 비활성화
 		$("#emailId").attr("readonly", true); // 인증 후 수정 불가

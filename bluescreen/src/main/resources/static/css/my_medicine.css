@@ -2,7 +2,7 @@
 #container{position:relative; width:1200px; height:500px; left:300px; padding:46px 0 40px 0; margin:0 auto; margin-top:150px; margin-bottom:200px; margin-right:690px;}
 #container:after {content:""; display:block; clear:both;}
 #outbox{width:100%; margin:20px 0 0 0; overflow:hidden; left:30px;}
-#medicineAdd, #medicineDel {background:rgb(0,128,255); color:#fff; border:none;}
+
 
 
 /** LOCATION **/
@@ -32,7 +32,7 @@
 #contents h2 span{width:100%; display:block; font-size:14px; color:#888; font-weight:normal; line-height:1.2; word-break:keep-all;}
 
 /* FAQ */
-.faqList{width:100%; border-bottom:1px #d9d9d9 solid; margin:16px 0 0 0; overflow:hidden; margin-bottom:50px; text-align:left;}
+.faqList{width:100%; border-bottom:1px #d9d9d9 solid; margin:16px 0 0 0;  margin-bottom:50px; text-align:left;}
 .faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden; }
 .faqList ul li a{text-decoration:none;}
 .faqList div{position:relative; width:100%; overflow:hidden;}
@@ -44,6 +44,11 @@
 .faqList ul li .list .number{position:absolute; left:70px;   font-size:14px; font-weight:600; color:#666;}
 .faqList ul li .list .name{position:absolute; left:200px; font-size:15px; font-weight:600; color:#666;}
 .faqList ul li .list .image{font-size:13px; font-weight:600; color:#666; left:700px; font-size:14px; text-decoration:none; width:70px; }
+
+#myMedicineHd{width:100%; bottom:10px;}
+
+#medicineAdd, #medicineDel {background:rgb(0,128,255); color:#fff; border:none; position:absolute; left:700px;}
+#medicineDel{position:absolute; left:800px;}
 
 .faqList ul li .list .blets{position:absolute; left:25px; font-size:14px; font-weight:600; color:#666; line-height:600%;}
 .faqList ul li .list .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; line-height:500%;}

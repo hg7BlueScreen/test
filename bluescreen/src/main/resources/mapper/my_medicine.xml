@@ -3,21 +3,24 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.java.mapper.MyMapper">
 	<select id="selectListCount" resultType="int">
-		select count(*) from medicine_user
+		select count(*) from drug_User
 	</select>
 	<select id="selectUser" resultType="com.java.dto.Join">
 		select*from bmember where id=#{attribute}
 	</select>
-	<select id="selectMdList" resultType="com.java.dto.Medicine">
-		select*from Medicine where mno in (select mno from Medicine_User where uno=#{uno})
+	<select id="selectMdList" resultType="com.java.dto.Drug">
+		select*from Drug where dno in (select dno from drug_User where uno=#{uno})
 	</select>
 	<delete id="deleteCk">
-		delete from medicine_user where uno=#{uno} and mno=#{mno}
+		delete from drug_User where uno=#{uno} and dno=#{dno}
 	</delete>
 	<insert id="myMediUp">
-		insert into medicine_user values(#{uno},#{mno},'')
+		insert into drug_User values(#{uno},#{dno},#{mdate})
 	</insert>
 	<select id="myMediAll" resultType="String" >
-		select uno from medicine_user where uno=#{uno} and mno=#{mno}
+		select uno from drug_User where uno=#{uno} and dno=#{dno}
 	</select>
+	<update id="alramDate"> <!-- 복용약 소비기한 만료 알림 주기 설정 -->
+		update bmember set datealarm=#{alDate} where uno=#{uno} 
+	</update>
 </mapper>

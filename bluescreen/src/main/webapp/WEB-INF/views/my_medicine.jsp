@@ -6,16 +6,16 @@
 <head>
 <title> 복용약 </title>
 <meta charset="UTF-8" />
-<link rel="stylesheet" type="text/css" href="../css/my_medicine.css?v=Y" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script><!--  -->
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/common1.js"></script><!--  -->
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/my_medicine.css?v=Y" />
 </head>
 <body>
 <%@include file = "header.jsp" %>
@@ -39,24 +39,23 @@
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
 <script type="text/javascript">
 function medicineAdd(){//복용약 등록, 의약품 사전으로 이동
-	//alert();
-	location.href="/dict?category=medicine";
+	location.href="/dict?category=drug";
 }
 
 function medicineDel(){// 복용약 삭제
-	let mno = [];
+	let dno = [];
 	let uno = "${uno}";
 	if($(".deleteCheck").is(":checked")){
 		if(confirm("체크된 약품들을 목록에서 삭제하시겠습니까?")){
 		//console.log("${uno}"); console.log($("input[class=deleteCheck]:checked").eq(0).val());
 			for(var i=0;i<$("input[class=deleteCheck]:checked").length;i++){
-				mno.push($("input[class=deleteCheck]:checked").eq(i).val());
+				dno.push($("input[class=deleteCheck]:checked").eq(i).val());
 			}
-			console.log(mno);
+			console.log(dno);
 			$.ajax({
 				url:"/deleteCk",
 				method:"post",
-				data:{"mno":mno, "uno":uno},
+				data:{"dno":dno, "uno":uno},
 				success:function(data){
 					//alert("성공"); console.log(data);
 					$("input[class=deleteCheck]:checked").parent().parent().parent().remove();
@@ -70,16 +69,45 @@ function medicineDel(){// 복용약 삭제
 		alert("체크된 약품이 없습니다.");
 	}
 }
+function alram(){ // 소비기한 만료 알람 기간 선택 보내기
+	console.log($('#alram').val());
+	$.ajax({
+		url:"/alramDate",
+		method:"post",
+		data:{"alDate":$("#alram").val()},
+		success:function(data){
+			//alert("성공"); console.log(data);
+			alert("선택하신 기간으로 알람주기가 설정되었습니다.");
+		},
+		error:function(){
+			alert("실패");
+		}
+	}); 
+}
 </script>
 
 			<!-- contents -->
 			<div id="contents">
-				<div id="customer">
+				<div>
 					<h2><strong>복용약 정보</strong></h2>
 					<!-- FAQ -->
 					<div class="faqList">
-						<button id="medicineAdd" onclick="medicineAdd()">복용약 추가</button>
-						<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
+						<div id="myMedicineHd">
+							<label for="alram">복용약 소비기한 임박알림 받기</label>
+							<select id="alram" onchange="alram()" >
+								<option value="365" >1년 전</option>
+								<option value="180">6개월 전</option>
+								<option value="90">3개월 전</option>
+								<option value="30">1개월 전</option>
+								<option value="15">15일 전</option>
+								<option value="7" selected="selected">일주일 전</option>
+								<option value="1">하루 전</option>
+								<option value="0">당일</option>
+								<option value=null>없음</option>
+							</select>
+							<button id="medicineAdd" onclick="medicineAdd()">복용약 추가</button>
+							<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
+						</div>
 						<ul>
 							<!-- list -->
 							<li>
@@ -87,53 +115,7 @@ function medicineDel(){// 복용약 삭제
 								<div class="na">이름</div>
 								<div class="img">사진</div>
 							</li>
-							<c:forEach var="m" items="${mList }" varStatus="status">
-								<li>
-									<a href="javascript:;" class="faqbtn">
-										<div class="list">
-											<input type="checkbox" class="deleteCheck" value="${m.mno }"/>
-											<div class="number">${status.count }</div>
-											<div class="name">${m.itemName }</div>
-											<div class="image"><img src="${m.imageURL }"></div>
-										</div>
-									</a>
-									<div class="faqanswer" style="display: none;">
-										<div class="faqbox">
-											<c:if test="${m.useMethodQesitm!=null }">
-												<div class="blet">복용법</div>
-												<div class="text">
-													${m.useMethodQesitm }
-												</div>
-											</c:if>
-											<c:if test="${m.depositMethodQesitm!=null }">
-												<div class="blet">보관방법</div>
-												<div class="text">
-													${m.depositMethodQesitm } 
-												</div>
-											</c:if>
-												<div class="blet">주의사항</div>
-												<div class="text">
-											<c:if test="${m.atpnWarnQesitm!=null }">
-													<strong><u>복용 전 주의</u></strong><p>${m.atpnWarnQesitm}</p>
-											</c:if>
-											<c:if test="${m.atpnQesitm!=null }">
-													<strong><u>복용 중 주의</u></strong><p>${m.atpnQesitm}</p>
-											</c:if>
-											<c:if test="${m.intrcQesitm!=null }">
-													<strong><u>복용 후 주의</u></strong><p>${m.intrcQesitm}</p>
-											</c:if>
-												</div>
-											<c:if test="${m.seQesitm!=null }">
-												<div class="blet">부작용</div>
-												<div class="text">
-													${m.seQesitm } 
-												</div>
-											</c:if>
-										</div>
-									</div>
-								</li>
-							</c:forEach>
-							<!-- //list -->
+							
 						</ul>
 					</div>
 					<!-- //FAQ -->

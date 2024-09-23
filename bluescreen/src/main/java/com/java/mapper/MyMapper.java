@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.java.dto.Drug;
 import com.java.dto.Join;
 import com.java.dto.Medicine;
 
@@ -16,13 +17,15 @@ public interface MyMapper {
 
 	Join selectUser(String attribute);
 
-	ArrayList<Medicine> selectMdList(int uno);
+	ArrayList<Drug> selectMdList(int uno);
 
-	void deleteCk(int mno, int uno);
+	void deleteCk(int dno, int uno);
 
-	void myMediUp(int uno, int mno);
+	void myMediUp(int uno, int dno, String mdate);
 
-	String myMediAll(int uno, int mno);
+	String myMediAll(int uno, int dno);
+
+	void alramDate(int uno, String alDate);
 
 	
 	

@@ -26,5 +26,5 @@ public class Drug {
 	private String atc_code;
 	private String imageURL;
 	private Timestamp item_permit_date;
-	
+	private String defendOverInsert;
 }

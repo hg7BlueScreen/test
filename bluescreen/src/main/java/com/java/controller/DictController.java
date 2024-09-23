@@ -21,6 +21,7 @@ import com.java.dto.Page;
 import com.java.service.DiseaseService;
 import com.java.service.DrugService;
 import com.java.service.MedicineService;
+import com.java.service.MyService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -31,7 +32,7 @@ public class DictController {
 	@Autowired MedicineService mservice;
 	@Autowired DrugService drugService;
 	@Autowired HttpSession session;
-	
+	@Autowired MyService myservice;
 	@RequestMapping("/dict")
 	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail, @RequestParam(defaultValue = "0") int onlyBookMark) {
 		// int uno = (int)session.getAttribute("sessionUno");
@@ -101,6 +102,8 @@ public class DictController {
 		Drug drug = drugService.selectOneDrug(dno);
 		ArrayList<DrugEffect> drugEffect = drugService.selectOneDrugEffect(dno);
 		ArrayList<DrugGeneralWarning> drugGeneralWarning = drugService.selectOneDrugGeneralWarning(dno);
+		String myMedi = myservice.myMediAll((int)session.getAttribute("uno"), dno);
+		drug.setDefendOverInsert(myMedi);
 		map.put("drug", drug);
 		map.put("drugEffect", drugEffect);
 		map.put("drugGeneralWarning", drugGeneralWarning);

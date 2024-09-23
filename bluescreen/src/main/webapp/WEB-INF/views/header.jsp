@@ -35,7 +35,7 @@
 										<span class="d-menu-t">DICTIONARY</span>
 										<span class="d-menu-t2">의약품 사전</span>
 									</a>
-									<a href="javascript:;" class="go_interview list_menuBox">
+									<a href="my_medicine" class="go_interview list_menuBox">
 										<span class="d-menu-t">MYPAGE</span>
 										<span class="d-menu-t2">개인 정보 및 의료 정보</span>
 									</a>

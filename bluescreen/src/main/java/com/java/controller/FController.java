@@ -1,7 +1,10 @@
 package com.java.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.java.dto.Drug;
 import com.java.dto.Join;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
@@ -82,7 +86,7 @@ public class FController {
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
 		session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
-		ArrayList<Medicine> mList = myservice.selectMdList(user.getUno()); 
+		ArrayList<Drug> mList = myservice.selectMdList(user.getUno()); 
 		
 		HashMap<String, Object> map = myservice.selectPage(pageDto);
 		//ArrayList<Medicine> medicine = myservice.myMedicineList(uno);
@@ -96,33 +100,64 @@ public class FController {
 	
 //	@PostMapping("/deleteCk")
 //	@ResponseBody
-//	public String deleteCk(List<Integer> mno, int uno) {
-//		myservice.deleteCk(mno, uno);
+//	public String deleteCk(List<Integer> dno, int uno) {
+//		myservice.deleteCk(dno, uno);
 //		return "성공";
 //	}
 	@PostMapping("/deleteCk")
 	@ResponseBody
-	public String deleteCk(String[] mno, int uno) {
-		int[] mnoNum = new int[mno.length];
-		for(int i=0;i<mno.length;i++) {
-			mnoNum[i] = Integer.parseInt(mno[i]);
+	public String deleteCk(String[] dno, int uno) {
+		int[] dnoNum = new int[dno.length];
+		for(int i=0;i<dno.length;i++) {
+			dnoNum[i] = Integer.parseInt(dno[i]);
 		}
-		myservice.deleteCk(mnoNum, uno);
+		myservice.deleteCk(dnoNum, uno);
 		return "성공";
 	}
 	@PostMapping("/myMediUp")
 	@ResponseBody
-	public String myMediUp(int uno, int mno) {
-		String result = myservice.myMediAll(uno,mno);
+	public String myMediUp(int uno, int dno, String myMdate) {
+		String mdate = "";
+		String result = myservice.myMediAll(uno,dno);
+		if(myMdate==null||myMdate=="") {
+			myMdate = "730"; // 처방 아닐 시 기본 소비기한
+		}
+		int datem = Integer.parseInt(myMdate.replaceAll("[^0-9]", ""));
+		String dateFormatType = "yyyyMMdd";
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat  = new SimpleDateFormat(dateFormatType);
+		String toDate = simpleDateFormat.format(date);
+		System.out.println(toDate);
+		try {
+			mdate = AddDate(toDate, datem);
+			System.out.println(mdate);
+		} catch (Exception e) {e.printStackTrace();}
+		
 		if(result==null) {
-			myservice.myMediUp(uno, mno);
+			myservice.myMediUp(uno, dno, mdate);
 			return "성공";
 		}else {
 			return "실패";
 		}
 		
 	}
-	
+	private static String AddDate(String strDate, int day) throws Exception {
+        SimpleDateFormat dtFormat = new SimpleDateFormat("yyyyMMdd");
+		Calendar cal = Calendar.getInstance();
+		Date dt = dtFormat.parse(strDate);
+		cal.setTime(dt);
+		cal.add(Calendar.DATE,  day);
+		return dtFormat.format(cal.getTime());
+	}
+	@PostMapping("/alramDate")
+	@ResponseBody
+	public String alramDate(String alDate) {
+		int uno = (int)session.getAttribute("uno");
+		//System.out.println(alDate);
+		//System.out.println(uno);
+		myservice.alramDate(uno, alDate);
+		return "";
+	}
 	@RequestMapping("/index1")
 	public String index1() {
 		return "index1";
