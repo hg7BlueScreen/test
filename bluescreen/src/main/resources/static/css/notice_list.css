@@ -1,3 +1,6 @@
+
+
+
 /* Main Section */
 section {
   text-align: center;
@@ -15,27 +18,7 @@ h1 {
   position: relative;
 }
 
-select {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  height: 40px;
-  margin-left: -185px;
-  margin-top: -20px;
-  
-  padding: 5px;
-  border: 1px solid #666666;
-  font-family: inherit;
-  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 95% 50%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
 
-select::-ms-expand {
-  display: none;
-}
 
 form > div {
   position: absolute;
@@ -45,29 +28,35 @@ form > div {
   height: 38px;
   margin-left: -100px;
   margin-top: -20px;
-
   display: inline-block;
   border: 1px solid #666666;
 }
+
+#searchToolTable{
+	position: relative;
+	width: 60%;
+	border: 0px;
+}
+
+select{
+	width: 95%;
+	height: 50px;
+	font-size: 26px;
+	font-weight: 600;
+	color: #333333;
+}
+
 #textBox {
-  position: absolute;
-  top: 50%;
-  left: 55%;
-  width: 200px;
-  height: 38px;
-  margin-left: -100px;
-  margin-top: -20px;
-
-  display: inline-block;
-  border: 1px solid #666666;
+  position: relative;
+  border: none;
+  font-size: 26px;
+  width: 100%;
+  height: 49px;
 }
 
-input {
-  position: relative;
-  top: 4px;
-  left: 2px;
-  border: none;
-  font-size: 16px;
+
+input::placeholder {
+ 	color: #b3b3b3;
 }
 
 input:active,
@@ -77,25 +66,21 @@ input:hover {
 }
 
 button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  margin-left: 106px;
-  margin-top: -20px;
-
-  background: #666666;
   color: white;
   border: none;
+  height: 15px;
 }
 
 table {
   width: 96%;
-  margin-top: 100px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   line-height: 40px;
+}
+
+#searchToolTable > table > tbody > tr > td{
+	height: 60px;
 }
 
 .table-notice {
@@ -118,13 +103,42 @@ th {
   border-top: 2px solid black;
 }
 
-td {
+.modalTitleTD {
+	font-weight: 700;
+}
+
+.modalTable > tbody > tr > td {
+  	border-left: hidden;
+  	border-right: hidden;
+  	vertical-align: middle;
+}
+
+.modalTable > tbody > tr {
+	background-color: #ffffff;
+
+   	transition-property: width, background-color, color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+   	transition-duration: 0.1s, 0.1s; /* width와 bg-color가 2초동안 변화 */
+}
+
+.modalTable > tbody > tr:hover {
+	background-color: #cccccc; 
+}
+
+.modalTable {
+	border-collapse: separate;
+   	border-spacing: 0px 15px;
+}
+
+#tableLocate > table > tbody > tr > td {
   border: 1px solid silver;
 }
 
+#tableLocate > table > tbody > tr > td {
+  border-left: hidden;
+  border-right: hidden;
+}
 
-th,
-td {
+th{
   border-left: hidden;
   border-right: hidden;
 }
@@ -178,3 +192,93 @@ td {
   margin: 0 30px 50px 0;
   border: 2px black solid;
 }
+
+	.dialog {
+  display:none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog>.tb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dialog>.tb .inner {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.dialog .top {
+  display: flex;
+  align-item: center;
+  border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.dialog .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dialog .ct {
+  max-height: 60vh;
+  height: 60vh;
+  overflow-y: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+}
+
+.num {
+   background-color: #ffffff;
+
+   transition-property: width, background-color, color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+   transition-duration: 0.1s, 0.1s; /* width와 bg-color가 2초동안 변화 */
+}
+.num:hover { /* 마우스를 올리면 transition발동해서 적용될 상태 */
+	background-color: #cccccc; 
+}
+
+.drugTr {
+   background-color: #ffffff;
+
+   transition-property: width, background-color, color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+   transition-duration: 0.1s, 0.1s; /* width와 bg-color가 2초동안 변화 */
+}
+.drugTr:hover { /* 마우스를 올리면 transition발동해서 적용될 상태 */
+	background-color: #cccccc; 
+}
+.selectList{
+	font-weight: 400;
+	height: 50px;
+}
+
+.emptystar{
+			background-color: yellow;
+			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZZJREFUSEu1VYFtgzAQ9CcMQjeIgAHIJA2TpExSOkkzQIyyQRkk5tO3/NbHMdiViiVkQObv/+/uAbXxgo3jqz8B1HX9rZSatNZdbmLZAFVVnQDgkwIDwPF6vV5yQLIBXPatC3rRWh//DaBpmhYRqT1+5VaRVQFnj4gfrkW0Z1WRBDgcDuV+v/+hwMaYN9rd8wQAXYoLD0CBdrvdOwCUSim6aMn7gdVT1zWRfSJFuXNPuzGmv91u9p0HCEgM+ZuMMUf+yFVFnHAiL+e11rZaD1BV1RkAbI+pvwDQ3+/3iYPGFENA9L4oihIRz7/fWZUhYjeO4/AEQA8ShAgdx7HPkaKsPlTXC8nSUDkgIniU9KiKcl2bCv7SItkOoRSvnrBdDLBmukUfCHN5wiIAVq5rrVwDQDYXKclJkwKWbDAxQhZdneRAaw2BhAl3QsRhnucvdjXrPqwyBUAj2bs5mEUWiB2/xEMUQBDMCT1JcMHJUTEsAdBwsy5dIlDMLnY//enseJBrrYI2Z1oK8qO/0uS4zhkVa2c2B3gAO/HxGSEbSvkAAAAASUVORK5CYII=/>");
+}
+
+label[for="onlyBookMark"],
+#onlyBookMark {
+	position: relative;
+	left: 25%;
+}
+
+
+
+
+
+

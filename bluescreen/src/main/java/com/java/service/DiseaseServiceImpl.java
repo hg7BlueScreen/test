@@ -21,7 +21,7 @@ public class DiseaseServiceImpl implements DiseaseService {
 	MedicineMapper mMapper;
 
 	@Override
-	public HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail, int uno) {
+	public HashMap<String, Object> selectAllDisease(Page pageDto, String textBox, String categoryDetail, int uno, int onlyBookMark) {
 		pageDto = pageMethodDisease(pageDto, textBox, categoryDetail);
 		HashMap<String, Object> map = new HashMap<>();
 		ArrayList<Disease> list = dMapper.selectAll(pageDto, textBox, categoryDetail);
@@ -80,8 +80,6 @@ public class DiseaseServiceImpl implements DiseaseService {
 	public void insertDiseaseOne(Disease disease) {
 		dMapper.insertDiseaseOne(disease);
 	}
-
-	
 
 
 }

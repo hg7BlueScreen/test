@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.mapper.DrugMapper">
+
+	<select id="selectListCount" resultType="int">
+		<!-- (시작)검색어가 있으면서 즐겨찾기만 보기가 비활성화일 때 -->
+		<if test="(categoryDetail != null and !categoryDetail.equals('')) and ((onlyBookMark == 0 or onlyBookMark.equals('0')) or (onlyBookMark == null or onlyBookMark.equals('')))">
+			<if test="categoryDetail == 'entpName' or categoryDetail == 'itemName'">
+				<if test="categoryDetail == 'entpName'">
+					select count(*) from drug where entp_name like '%'||
+					#{textBox} ||'%'
+				</if>
+				<if test="categoryDetail == 'itemName'">
+					select count(*) from drug where item_name like '%'||
+					#{textBox} ||'%'
+				</if>
+			</if>
+			<if test="categoryDetail == 'efcyQesitm'">
+				select count(*) from drug_effect where article_title like
+				'%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox}
+				||'%'
+			</if>
+			<if test="categoryDetail == 'atpn'">
+				select count(*) from drug_banned_warning where text like
+				'%'|| #{textBox} ||'%'
+			</if>
+		</if>
+		<!-- (끝)검색어가 있으면서 즐겨찾기만 보기가 비활성화일 때 -->
+
+		<!-- (시작)검색어가 있으면서 즐겨찾기만 보기가 활성화일 때 -->
+		<if test="(categoryDetail != null and !categoryDetail.equals('')) and (onlyBookMark == 1 or onlyBookMark.equals('1'))">
+			<if test="categoryDetail == 'entpName' or categoryDetail == 'itemName'">
+				<if test="categoryDetail == 'entpName'">
+					select count(*) from (select * from drug where dno in
+					(select dno from drug_user where uno = #{uno})) where entp_name
+					like '%'|| #{textBox} ||'%'
+				</if>
+				<if test="categoryDetail == 'itemName'">
+					select count(*) from (select * from drug where dno in
+					(select dno from drug_user where uno = #{uno})) where item_name
+					like '%'|| #{textBox} ||'%'
+				</if>
+			</if>
+			<if test="categoryDetail == 'efcyQesitm'">
+				select count(*) from (select * from drug_effect where
+				item_seq in (select item_seq from drug where dno in (select dno from
+				drug_user where uno = #{uno})))
+				where article_title like '%'|| #{textBox} ||'%' or article_content like
+				'%'|| #{textBox} ||'%'
+			</if>
+			<if test="categoryDetail == 'atpn'">
+				select count(*) from (select * from drug_banned_warning
+				where item_seq in (select item_seq from drug where dno in (select
+				dno from drug_user where uno = #{uno})))
+				where text like '%'||
+				#{textBox} ||'%'
+			</if>
+		</if>
+
+		<if test="(categoryDetail == null or categoryDetail.equals('')) and (onlyBookMark == 0 or onlyBookMark.equals('0'))">
+			select count(*) from drug
+		</if>
+		<if test="(categoryDetail == null or categoryDetail.equals('')) and (onlyBookMark == 1 or onlyBookMark.equals('1'))">
+			select count(*) from drug where dno in (select dno from
+			drug_user where uno = #{uno})
+		</if>
+	</select>
+
+	<select id="selectAll" resultType="com.java.dto.Drug">
+		<if test="(categoryDetail != null and !categoryDetail.equals('')) and ((onlyBookMark == 0 or onlyBookMark.equals('0')) or (onlyBookMark == null or onlyBookMark.equals('')))">
+			<if test="categoryDetail == 'entpName' or categoryDetail == 'itemName'">
+				<if test="categoryDetail == 'entpName'">
+						<![CDATA[ 
+							select * from (select rownum rnum, a.* from (select * from drug 
+							where entp_Name like '%'|| #{textBox} ||'%' order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						]]>
+				</if>
+				<if test="categoryDetail == 'itemName'">
+						<![CDATA[ 
+							select * from (select rownum rnum, a.* from (select * from drug 
+							where item_Name like '%'|| #{textBox} ||'%' order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						]]>
+				</if>
+			</if>
+			<if test="categoryDetail == 'efcyQesitm'">
+					<![CDATA[ 
+						select * from (select rownum rnum, a.* from (select * from drug
+						where item_seq in(select item_seq from drug_effect 
+						where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%') order by dno asc) a) 
+						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+					]]>
+			</if>
+			<if test="categoryDetail == 'atpn'">
+					<![CDATA[ 
+						select * from (select rownum rnum, a.* from (select * from drug
+						where item_seq in(select item_seq from drug_general_warning 
+						where text like '%'|| #{textBox} ||'%') order by dno asc) a) 
+						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+					]]>
+			</if>
+		</if>
+		
+		<!-- ====================================경계선================================================ -->
+		
+		<if test="(categoryDetail != null and !categoryDetail.equals('')) and (onlyBookMark == 1 or onlyBookMark.equals('1'))">
+			<if test="categoryDetail == 'entpName' or categoryDetail == 'itemName'">
+				<if test="categoryDetail == 'entpName'">
+						<![CDATA[ 
+							select * from (select rownum rnum, a.* from (select * from (select * from drug where dno in (select dno from drug_user where uno=#{uno})) 
+							where entp_Name like '%'|| #{textBox} ||'%' order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						]]>
+				</if>
+				<if test="categoryDetail == 'itemName'">
+						<![CDATA[ 
+							select * from (select rownum rnum, a.* from (select * from (select * from drug where dno in (select dno from drug_user where uno=#{uno}))
+							where item_Name like '%'|| #{textBox} ||'%' order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						]]>
+				</if>
+			</if>
+			<if test="categoryDetail == 'efcyQesitm'">
+					<![CDATA[ 
+						select * from (select rownum rnum, a.* from (select * from drug
+						where item_seq in(select item_seq from (select item_seq from drug_effect where item_seq in (select item_seq from drug where dno in(select dno from drug_user where uno = #{uno}))) 
+						where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%') order by dno asc) a) 
+						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+					]]>
+			</if>
+			<if test="categoryDetail == 'atpn'">
+					<![CDATA[ 
+						select * from (select rownum rnum, a.* from (select * from drug
+						where item_seq in((select item_seq from (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in(select dno from drug_user where uno = #{uno})))
+						where text like '%'|| #{textBox} ||'%') order by dno asc) a) 
+						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+					]]>
+			</if>
+		</if>
+		
+		
+		
+		<if test="(categoryDetail == null or categoryDetail.equals('')) and (onlyBookMark == 0 or onlyBookMark.equals('0'))">
+				<![CDATA[
+					select * from (select rownum rnum, a.* from (select * from drug order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+				]]>
+		</if>
+		<if test="(categoryDetail == null or categoryDetail.equals('')) and (onlyBookMark == 1 or onlyBookMark.equals('1'))">
+				<![CDATA[
+					select * from (select rownum rnum, a.* from (select * from drug where dno in (select dno from drug_user where uno = #{uno}) order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+				]]>
+		</if>
+	</select>
+
+	<select id="getAllBookMark" resultType="Integer">
+		select dno from drug_user
+		where uno = #{uno}
+	</select>
+
+	<select id="selectOneMedicine" resultType="com.java.dto.Drug">
+		select * from drug
+		where dno = #{dno}
+	</select>
+
+	<select id="selectOneDrugEffect"
+		resultType="com.java.dto.DrugEffect">
+		select * from drug_effect where item_seq = (select item_seq
+		from drug where dno = #{dno})
+	</select>
+
+	<select id="selectOneDrugGeneralWarning"
+		resultType="com.java.dto.DrugGeneralWarning">
+		select * from drug_general_warning where item_seq = (select
+		item_seq from drug where dno = #{dno})
+	</select>
+
+	<insert id="enableBookMarkDrug">
+		insert into drug_user values(#{dno}, #{uno}, 1)
+	</insert>
+
+	<delete id="disableBookmarkDrug">
+		delete from drug_user where uno = #{uno} and dno =
+		#{dno}
+	</delete>
+
+</mapper>

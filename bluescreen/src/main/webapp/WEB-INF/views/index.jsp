@@ -21,13 +21,11 @@
 <link rel="stylesheet" href="/npm/swiper%4011/swiper-bundle.min.css" />
 <link rel="stylesheet" href="/css/layout.css">
 <link rel="stylesheet" href="/css/main_new.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJ31PFFV4W"></script>
 <script type="text/javascript">
 <!--
 window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-TJ31PFFV4W');
 -->
 </script><script type="text/javascript" src="/ajs/jquery-3.2.1.min367a.js?20240821162485"></script>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDLR8CQ');</script>
 
 </head>
 <body data-aos-easing="ease-in-out-back" data-aos-duration="400" data-aos-delay="0" style="" data-domain="">
@@ -73,9 +71,9 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 								</li>
 								<li class="solTab assess">
 									<p>사전</p>
-									<span class="tit_explan">질병 및 의약품 정보</span>
+									<span class="tit_explan">의약품 백과사전</span>
 									<div class="add_move_btn"></div>
-									<a href="dict?category=disease" class="anchor-link"></a>
+									<a href="dict?category=drug" class="anchor-link"></a>
 								</li>
 								<li class="solTab interview">
 									<p>커뮤니티</p>
@@ -176,8 +174,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 	</div>
 
 	</div>
-	<div class="newLayer_body newType" id="packageSt" style="display: none;"></div>
-	<div class="newLayer_body newType fullLayer" id="packageSt_1" style="display: none;"></div>
+
 	
 <%@ include file="footer.jsp" %>
 		

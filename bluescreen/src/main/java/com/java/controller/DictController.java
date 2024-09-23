@@ -1,5 +1,6 @@
 package com.java.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -12,11 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.Disease;
+import com.java.dto.Drug;
+import com.java.dto.DrugEffect;
+import com.java.dto.DrugGeneralWarning;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.service.DiseaseService;
+import com.java.service.DrugService;
 import com.java.service.MedicineService;
-import com.java.service.MyService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -25,32 +29,44 @@ public class DictController {
 	
 	@Autowired DiseaseService dservice;
 	@Autowired MedicineService mservice;
-	@Autowired MyService myservice;
+	@Autowired DrugService drugService;
 	@Autowired HttpSession session;
+	
 	@RequestMapping("/dict")
-	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail) {
+	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail, @RequestParam(defaultValue = "0") int onlyBookMark) {
 		// int uno = (int)session.getAttribute("sessionUno");
+		session.setAttribute("sessionUno", 0);
 		int uno = 0;
 		if(category != null) {
 			if(category.equals("disease")) {
-				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox, categoryDetail, uno);
+				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox, categoryDetail, uno, onlyBookMark);
 				model.addAttribute("list", map.get("list"));
 				model.addAttribute("category", category);
 				model.addAttribute("pageDto",pageDto);
 				model.addAttribute("textBox",textBox);
 				model.addAttribute("categoryDetail",categoryDetail);
+				model.addAttribute("onlyBookMark",onlyBookMark);
 				model.addAttribute("bookMarkListDisease", map.get("bookMarkList"));
 				/*
 				 * for(int i = 0; i < 10; i++) { System.out.println(map.get("bookMarkList")); }
 				 */
-			}else if(category.equals("medicine")) {
-				HashMap<String, Object> map = mservice.selectAllMedicine(pageDto, textBox, categoryDetail, uno);
+			}else if(category.equals("drug")) {
+				/*
+				 * HashMap<String, Object> map = mservice.selectAllMedicine(pageDto, textBox,
+				 * categoryDetail, uno); model.addAttribute("list", map.get("list"));
+				 * model.addAttribute("category", category);
+				 * model.addAttribute("pageDto",pageDto); model.addAttribute("textBox",textBox);
+				 * model.addAttribute("categoryDetail",categoryDetail);
+				 * model.addAttribute("bookMarkListMedicine", map.get("bookMarkList"));
+				 */
+				HashMap<String, Object> map = drugService.selectAllDrugs(pageDto, textBox, categoryDetail, uno, onlyBookMark);
 				model.addAttribute("list", map.get("list"));
 				model.addAttribute("category", category);
 				model.addAttribute("pageDto",pageDto);
 				model.addAttribute("textBox",textBox);
 				model.addAttribute("categoryDetail",categoryDetail);
-				model.addAttribute("bookMarkListMedicine", map.get("bookMarkList"));
+				model.addAttribute("onlyBookMark",onlyBookMark);
+				model.addAttribute("bookMarkListDrug", map.get("bookMarkList"));
 			}
 		}
 		return "dictionary";
@@ -75,36 +91,33 @@ public class DictController {
 	@ResponseBody
 	public Medicine getMedicineOne(int mno) {
 		Medicine med = mservice.selectOneMedicine(mno);
-		String myMedi = myservice.myMediAll((int)session.getAttribute("uno"), mno);
-		med.setUno(myMedi);
 		return med;
 	}
 	
-	@PostMapping("/enableBookMarkDisease")
+	@PostMapping("/getDrugOne")
 	@ResponseBody
-	public String enableBookMarkDisease(int uno, int dno) {
-		dservice.enableBookMarkDisease(uno,dno);
+	public HashMap<String, Object> getDrugOne(int dno) {
+		HashMap<String, Object> map = new HashMap<>();
+		Drug drug = drugService.selectOneDrug(dno);
+		ArrayList<DrugEffect> drugEffect = drugService.selectOneDrugEffect(dno);
+		ArrayList<DrugGeneralWarning> drugGeneralWarning = drugService.selectOneDrugGeneralWarning(dno);
+		map.put("drug", drug);
+		map.put("drugEffect", drugEffect);
+		map.put("drugGeneralWarning", drugGeneralWarning);
+		return map;
+	}
+	
+	@PostMapping("/enableBookMarkDrug")
+	@ResponseBody
+	public String enableBookMarkDrug(int uno, int dno) {
+		drugService.enableBookMarkDrug(uno,dno);
 		return "성공";
 	}
 	
-	@PostMapping("/disableBookMarkDisease")
+	@PostMapping("/disableBookMarkDrug")
 	@ResponseBody
-	public String disableBookMarkDisease(int uno, int dno) {
-		dservice.disableBookMarkDisease(uno,dno);
-		return "성공";
-	}
-	
-	@PostMapping("/enableBookMarkMedicine")
-	@ResponseBody
-	public String enableBookMarkMedicine(int uno, int mno) {
-		mservice.enableBookMarkMedicine(uno,mno);
-		return "성공";
-	}
-	
-	@PostMapping("/disableBookMarkMedicine")
-	@ResponseBody
-	public String disableBookMarkMedicine(int uno, int mno) {
-		mservice.disableBookmarkMedicine(uno,mno);
+	public String disableBookMarkDrug(int uno, int dno) {
+		drugService.disableBookmarkDrug(uno,dno);
 		return "성공";
 	}
 }
