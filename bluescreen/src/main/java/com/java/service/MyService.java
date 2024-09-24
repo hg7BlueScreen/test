@@ -16,15 +16,17 @@ public interface MyService {
 
 	HashMap<String, Object> selectPage(Page pageDto);
 
-	ArrayList<Drug> selectMdList(int uno);
+	ArrayList<Drug> selectDList(int uno);
 
 	void deleteCk(int[] dnoNum, int uno);
 
-	void myMediUp(int uno, int dno, String mdate);
+	void myMediUp(int uno, int dno, String ddate);
 
 	String myMediAll(int uno, int dno);
 
 	void alramDate(int uno, String alDate);
+
+	ArrayList<Medicine> selectMList(int uno);
 
 
 	

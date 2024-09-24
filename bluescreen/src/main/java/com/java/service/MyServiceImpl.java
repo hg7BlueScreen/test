@@ -53,17 +53,16 @@ public class MyServiceImpl implements MyService {
 		return selectaddr;
 	}
 	@Override
-	public ArrayList<Drug> selectMdList(int uno) {
+	public ArrayList<Drug> selectDList(int uno) {
 		//System.out.println(uno);
-		ArrayList<Drug> mList = mymapper.selectMdList(uno);
-		return mList;
+		ArrayList<Drug> dList = mymapper.selectDList(uno);
+		return dList;
 	}
 	@Override
 	public void deleteCk(int[] dnoNum, int uno) {
 		for(int i=0;i<dnoNum.length;i++) {
 			mymapper.deleteCk(dnoNum[i], uno);
 		}
-		
 	}
 	
 	@Override
@@ -73,14 +72,19 @@ public class MyServiceImpl implements MyService {
 		return result;
 	}
 	@Override
-	public void myMediUp(int uno, int dno, String mdate) {
-		mymapper.myMediUp(uno, dno, mdate);
+	public void myMediUp(int uno, int dno, String ddate) {
+		mymapper.myMediUp(uno, dno, ddate);
 		
 	}
 	@Override
 	public void alramDate(int uno, String alDate) {
 		mymapper.alramDate(uno, alDate);
 		
+	}
+	@Override
+	public ArrayList<Medicine> selectMList(int uno) {
+		ArrayList<Medicine> mList = mymapper.selectMList(uno);
+		return mList;
 	}
 
 

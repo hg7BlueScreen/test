@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,8 +96,6 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 						<div id="myMedicineHd">
 							<label for="alram">복용약 소비기한 임박알림 받기</label>
 							<select id="alram" onchange="alram()" >
-								<option value="365" >1년 전</option>
-								<option value="180">6개월 전</option>
 								<option value="90">3개월 전</option>
 								<option value="30">1개월 전</option>
 								<option value="15">15일 전</option>
@@ -111,11 +110,62 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 						<ul>
 							<!-- list -->
 							<li>
-								<div class="num">번호</div>
 								<div class="na">이름</div>
+								<div class="date">권장소비기한</div>
 								<div class="img">사진</div>
 							</li>
-							
+							<c:forEach var="d" items="${dList }">
+								<li>
+									<a href="javascript:;" class="faqbtn">
+										<div class="list">
+											<input type="checkbox" class="deleteCheck" value="${d.dno }"/>
+											<div class="name">${d.item_name }</div>
+											<div class="ddate"><fmt:formatDate value="${d.ddate }" pattern="yyyy-MM-dd"/></div>
+											<div class="image"><img src="${d.imageURL }"></div>
+										</div>
+									</a>
+									<div class="faqanswer" style="display: none;">
+										<div class="faqbox">
+											<c:if test="${d.storage_method!=null }">
+												<div class="blet">보관방법</div>
+												<div class="text">
+													${d.storage_method } 
+												</div>
+											</c:if>
+										<c:forEach var="m" items="${mList }">
+											<c:if test="${d.item_seq==m.itemSeq}">
+												<c:if test="${m.useMethodQesitm != null}">
+													<div class="blet">복용법</div>
+													<div class="text">
+														${m.useMethodQesitm }
+													</div>
+												</c:if>
+											
+												<div class="blet">주의사항</div>
+												<div class="text">
+											<c:if test="${m.atpnWarnQesitm!=null }">
+													<strong><u>복용 전 주의</u></strong><p>${m.atpnWarnQesitm}</p>
+											</c:if>
+											<c:if test="${m.atpnQesitm!=null }">
+													<strong><u>복용 중 주의</u></strong><p>${m.atpnQesitm}</p>
+											</c:if>
+											<c:if test="${m.intrcQesitm!=null }">
+													<strong><u>복용 후 주의</u></strong><p>${m.intrcQesitm}</p>
+											</c:if>
+												</div>
+											<c:if test="${m.seQesitm!=null }">
+												<div class="blet">부작용</div>
+												<div class="text">
+													${m.seQesitm } 
+												</div>
+											</c:if>
+											</c:if>
+										</c:forEach>
+										</div>
+									</div>
+								</li> 
+							</c:forEach>
+							<!-- //list -->
 						</ul>
 					</div>
 					<!-- //FAQ -->

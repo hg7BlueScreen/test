@@ -73,15 +73,7 @@ public class DictController {
 		return "dictionary";
 	}
 	
-	@RequestMapping("/admin_report")
-	public String adreport() {
-		return "admin_report";
-	}
-	
-	@RequestMapping("/admin_user")
-	public String admin_user() {
-		return "admin_user";
-	}
+
 	
 	@RequestMapping("/modal")
 	public String modal() {

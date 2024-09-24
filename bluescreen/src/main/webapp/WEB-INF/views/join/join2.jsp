@@ -460,7 +460,6 @@ function emailk(data){
 	}else{
 		alert("인증 번호가 다릅니다.\n다시 입력해주세요.");
 	} 
-	
 }
 
 </script>	

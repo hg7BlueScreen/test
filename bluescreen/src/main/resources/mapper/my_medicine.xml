@@ -8,14 +8,20 @@
 	<select id="selectUser" resultType="com.java.dto.Join">
 		select*from bmember where id=#{attribute}
 	</select>
-	<select id="selectMdList" resultType="com.java.dto.Drug">
-		select*from Drug where dno in (select dno from drug_User where uno=#{uno})
+	<select id="selectDList" resultType="com.java.dto.Drug">
+		select a.*, b.ddate from drug a, drug_user b where a.dno in (select dno from drug_User where uno=#{uno}) and a.dno = b.dno order by ddate asc
+	</select>
+	<select id="selectMList" resultType="com.java.dto.Medicine">
+		select a.*, b.ddate from medicine a, drug_user b where itemseq in (
+			select item_seq from (
+			select item_seq from drug where dno in (
+			select dno from drug_user where uno = #{uno}))) and a.itemseq = (select item_Seq from drug where dno = b.dno)
 	</select>
 	<delete id="deleteCk">
 		delete from drug_User where uno=#{uno} and dno=#{dno}
 	</delete>
 	<insert id="myMediUp">
-		insert into drug_User values(#{uno},#{dno},#{mdate})
+		insert into drug_User values(#{uno},#{dno},#{ddate})
 	</insert>
 	<select id="myMediAll" resultType="String" >
 		select uno from drug_User where uno=#{uno} and dno=#{dno}

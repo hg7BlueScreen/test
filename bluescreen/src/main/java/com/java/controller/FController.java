@@ -86,12 +86,14 @@ public class FController {
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
 		session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
-		ArrayList<Drug> mList = myservice.selectMdList(user.getUno()); 
+		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
+		ArrayList<Drug> dList = myservice.selectDList(user.getUno()); 
 		
 		HashMap<String, Object> map = myservice.selectPage(pageDto);
 		//ArrayList<Medicine> medicine = myservice.myMedicineList(uno);
 		model.addAttribute("pageDto",pageDto);
 		model.addAttribute("mList",mList);
+		model.addAttribute("dList",dList);
 		//System.out.println(mList);
 		//System.out.println("maxPage : "+map.get("maxPage"));
 		
@@ -116,30 +118,28 @@ public class FController {
 	}
 	@PostMapping("/myMediUp")
 	@ResponseBody
-	public String myMediUp(int uno, int dno, String myMdate) {
-		String mdate = "";
+	public String myMediUp(int uno, int dno, String myMdate, String item_seq) {
+		String ddate = "";
 		String result = myservice.myMediAll(uno,dno);
 		if(myMdate==null||myMdate=="") {
 			myMdate = "730"; // 처방 아닐 시 기본 소비기한
 		}
 		int datem = Integer.parseInt(myMdate.replaceAll("[^0-9]", ""));
-		String dateFormatType = "yyyyMMdd";
 		Date date = new Date();
-		SimpleDateFormat simpleDateFormat  = new SimpleDateFormat(dateFormatType);
+		SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("yyyyMMdd");
 		String toDate = simpleDateFormat.format(date);
 		System.out.println(toDate);
 		try {
-			mdate = AddDate(toDate, datem);
-			System.out.println(mdate);
+			ddate = AddDate(toDate, datem);
+			System.out.println(ddate);
 		} catch (Exception e) {e.printStackTrace();}
 		
 		if(result==null) {
-			myservice.myMediUp(uno, dno, mdate);
+			myservice.myMediUp(uno, dno, ddate);
 			return "성공";
 		}else {
 			return "실패";
 		}
-		
 	}
 	private static String AddDate(String strDate, int day) throws Exception {
         SimpleDateFormat dtFormat = new SimpleDateFormat("yyyyMMdd");
@@ -158,41 +158,6 @@ public class FController {
 		myservice.alramDate(uno, alDate);
 		return "";
 	}
-	@RequestMapping("/index1")
-	public String index1() {
-		return "index1";
-	}
 
-
-
-	@RequestMapping("/index_2")
-	public String index_2() {
-		return "index_2";
-	}
-
-	@RequestMapping("/index4cde_2")
-	public String index4cde_2() {
-		return "index4cde_2";
-	}
-
-	@RequestMapping("/index77f6_2")
-	public String index77f6_2() {
-		return "index77f6_2";
-	}
-
-	@RequestMapping("/indexa49c_2")
-	public String indexa49c_2() {
-		return "indexa49c_2";
-	}
-
-	@RequestMapping("/indexac60_2")
-	public String indexac60_2() {
-		return "indexac60_2";
-	}
-
-	@RequestMapping("/indexe939_2")
-	public String indexe939_2() {
-		return "indexe939_2";
-	}
 
 }

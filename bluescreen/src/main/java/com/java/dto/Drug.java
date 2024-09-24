@@ -27,4 +27,5 @@ public class Drug {
 	private String imageURL;
 	private String item_permit_date;
 	private String defendOverInsert;
+	private Timestamp ddate;
 }

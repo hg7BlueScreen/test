@@ -36,14 +36,14 @@
 .faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden; }
 .faqList ul li a{text-decoration:none;}
 .faqList div{position:relative; width:100%; overflow:hidden;}
-.faqList ul li .num{position:absolute; left:70px; font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .na{position:absolute; left:200px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .img{font-size:13px; font-weight:600; color:#666; left:700px; font-size:14px; text-decoration:none;}
+.faqList ul li .na{position:absolute; left:50px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .date{position:absolute; left:670px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .img{ font-weight:600; color:#666; left:800px; font-size:15px; text-decoration:none;}
 .faqList ul li .list{width:100%; margin:10px 0; padding:2px 0; line-height:1.2; overflow:hidden; }
 .faqList ul li .list .deleteCheck{position:absolute; left:15px;   font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .list .number{position:absolute; left:70px;   font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .list .name{position:absolute; left:200px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .list .image{font-size:13px; font-weight:600; color:#666; left:700px; font-size:14px; text-decoration:none; width:70px; }
+.faqList ul li .list .name{position:absolute; left:50px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .list .ddate{position:absolute; left:670px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .list .image{font-size:13px; font-weight:200; color:#666; left:800px; font-size:14px; text-decoration:none; width:70px; }
 
 #myMedicineHd{width:100%; bottom:10px;}
 
