@@ -111,7 +111,13 @@
         </colgroup>
 			
 				 <tr>
-				 <td><span class = "links_name">유저 이름</span></td>
+				 <td><span class = "links_name">
+				 	<select>
+				 		<option value = "name" >이름</option>
+				 		<option value = "nickName" >닉네임</option>
+				 		<option value = "ID" >아이디</option>
+				 	</select>
+				 </span></td>
 				 <td><input type = "text" name = "user_sinfo" ></td>
 				 <td><button type = "button" onclick = "sBtn()" style = "width:80px;"><span class = "links_name">검색</span></button></td>
 				 <td></td>
