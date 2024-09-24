@@ -62,7 +62,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 						</span>
 
 						<div class="select-tab-box" class="incruit-viewPoint" data-aos="fade-up" data-aos-delay="50" data-aos-anchor-placement="top-bottom" data-aos-duration="1300">
-							<ul>
+							<ul style = "padding-bottom: 70px;">
 								<li class="solTab atscrm">
 									<p>폐의약품 수거함 위치</p>
 									<span class="tit_explan">지도를 통한 검색</span>

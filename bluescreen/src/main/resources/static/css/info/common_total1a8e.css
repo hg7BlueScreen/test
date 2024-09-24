@@ -139,8 +139,7 @@ html, body {scroll-behavior: smooth;}
 .bottom_btnWrap {position: absolute; width: 200px; padding:20px 0; bottom:0; left:0; display: flex; justify-content: center;}
 .bottom_btnWrap .roundBtn {margin:0 5px; min-width: 58px; text-align: center;}
 
-/* footer °øÅë */
-#footer{position:relative;width:100%;padding: 17px 0 50px; background: #fff;font-family: "MinSansVF", "Min Sans", sans-serif;color:#555; border-top:1px solid #f0f0f0}
+#footer{position:relative;width:100%;padding: 17px 0 50px; background: #fff;font-family: "MinSansVF", "Min Sans", sans-serif;color:#555;}
 #footer .inner{position:relative;max-width:1260px;margin:0 auto;}
 #footer .f-link{padding: 0 0 18px 0;border-bottom: 1px solid #e1e1e1;}
 #footer .f-link a{position:relative;display:inline-block;margin-right:6px;padding-right:10px;font-size: 13px;font-weight: 500;color: #121212;line-height:14px;text-decoration:none;}
@@ -162,8 +161,7 @@ html, body {scroll-behavior: smooth;}
 #footer .copywrap p span.pc-block .m-block:first-child,
 #footer .copywrap p span.pc-first{padding-left:0;margin-left:0;}
 #footer .copywrap p span.m-block {margin-left: 4px;padding-left: 5px;}
-/* #footer .copywrap p span.pc-block:after, 
-#footer .copywrap p span.m-block:after,*/
+
 #footer .copywrap p span.pc-first:after{display:none;}
 #footer .copywrap p span:last-of-type{border-right:0;}
 #footer .copy{padding-top:8px;font-weight:500;font-size:12px;color:#838383;}
