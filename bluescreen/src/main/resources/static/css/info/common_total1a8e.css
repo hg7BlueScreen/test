@@ -6,7 +6,7 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {font-family: "MinSansVF", "Min Sans", sans-serif;margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;font-style: inherit;font-size: 100%;vertical-align: baseline;letter-spacing:-0.075em;}
 html {-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust: none;height:100%;}
 body, p {margin:0;}
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display:block}
+article, aside, details, figcaption, figure, header, hgroup, nav, section {display:block}
 b, strong {font-weight:700}
 img {border:0}
 hr {height:0;	-webkit-box-sizing:content-box;	-moz-box-sizing:content-box;box-sizing:content-box}

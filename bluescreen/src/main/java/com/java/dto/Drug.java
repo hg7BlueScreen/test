@@ -28,4 +28,5 @@ public class Drug {
 	private String item_permit_date;
 	private String defendOverInsert;
 	private Timestamp ddate;
+	private String dateCh; //소비기한 확인
 }

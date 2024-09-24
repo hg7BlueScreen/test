@@ -1,6 +1,7 @@
 package com.java.controller;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -8,7 +9,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.catalina.User;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -81,21 +81,32 @@ public class FController {
 
 	@RequestMapping("/my_medicine")
 	public String my_medicine(Page pageDto, Model model) {
-		//System.out.println("aa"+join);
 		session.setAttribute("id", "testD");
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
 		session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
 		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
-		ArrayList<Drug> dList = myservice.selectDList(user.getUno()); 
-		
-		HashMap<String, Object> map = myservice.selectPage(pageDto);
-		//ArrayList<Medicine> medicine = myservice.myMedicineList(uno);
-		model.addAttribute("pageDto",pageDto);
+		HashMap<String, Object> dList = myservice.selectDList(pageDto, user.getUno()); 
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Timestamp tdate = new Timestamp(System.currentTimeMillis());
+		ArrayList<Drug> drlist = (ArrayList<Drug>) dList.get("dList");
+//		System.out.println(drlist.get(0).getDdate());
+//		System.out.println(tdate);
+		// System.out.println(end_dt);
+		//Date todate = format.parse(tdate);
+		for(int i=0;i<drlist.size();i++) {
+			if(drlist.get(i).getDdate().compareTo(tdate) == -1) {
+				drlist.get(i).setDateCh("past");
+			}
+		}
 		model.addAttribute("mList",mList);
-		model.addAttribute("dList",dList);
+		model.addAttribute("dList",dList.get("dList"));
+		model.addAttribute("page",dList.get("page"));
+		//model.addAttribute("todate",todate);
+		//System.out.println(todate);
+		
 		//System.out.println(mList);
-		//System.out.println("maxPage : "+map.get("maxPage"));
 		
 		return "my_medicine";
 	}
@@ -124,7 +135,7 @@ public class FController {
 		if(myMdate==null||myMdate=="") {
 			myMdate = "730"; // 처방 아닐 시 기본 소비기한
 		}
-		int datem = Integer.parseInt(myMdate.replaceAll("[^0-9]", ""));
+		int datem = Integer.parseInt(myMdate.replaceAll("[^0-9]", "")); // 숫자만 가져옴
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("yyyyMMdd");
 		String toDate = simpleDateFormat.format(date);

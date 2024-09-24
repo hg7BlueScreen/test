@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,10 @@
 <link rel="stylesheet" type="text/css" href="../css/my_medicine.css?v=Y" />
 </head>
 <body>
+
 <%@include file = "header.jsp" %>
 	<!-- container -->
-	<div id="container">
+	<div id="container" style = "margin-bottom: 500px;">
 		<div id="location">
 			<ol>
 				<li><a href="/">HOME</a></li>
@@ -85,6 +87,7 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 		}
 	}); 
 }
+
 </script>
 
 			<!-- contents -->
@@ -120,7 +123,12 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 										<div class="list">
 											<input type="checkbox" class="deleteCheck" value="${d.dno }"/>
 											<div class="name">${d.item_name }</div>
-											<div class="ddate"><fmt:formatDate value="${d.ddate }" pattern="yyyy-MM-dd"/></div>
+											<c:if test="${d.dateCh == 'past' }">
+												<div class="ddate" style="color:red;"><fmt:formatDate value="${d.ddate }" pattern="yyyy-MM-dd"/></div>
+											</c:if>
+											<c:if test="${d.dateCh != 'past' }">
+												<div class="ddate"><fmt:formatDate value="${d.ddate }" pattern="yyyy-MM-dd"/></div>
+											</c:if>
 											<div class="image"><img src="${d.imageURL }"></div>
 										</div>
 									</a>
@@ -175,12 +183,31 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 					<div class="btnAreaList">
 						<!-- 페이징이동1 -->
 						<div class="allPageMoving1">
-
-						<a href="#" class="n"><img src="../images/btn/btn_pre2.gif" alt="처음으로"/></a><a href="#" class="pre"><img src="../images/btn/btn_pre1.gif" alt="앞페이지로"/></a>
-						<a style="color:#0a47ff; border:1px #0a47ff solid; background:#fff;">1</a>
-						<a href="faq2" class="faqq">2</a>
-						<a href="faq2" class="next"><img src="../images/btn/btn_next1.gif" alt="뒤페이지로"/></a><a href="faq2" class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
-
+						<c:if test="${page.page!=1 }">
+							<a href="my_medicine?page=1" class="n"><img src="../images/btn/btn_pre2.gif" alt="처음으로"/></a>
+							<a href="my_medicine?page=${page.page-1 }" class="pre"><img src="../images/btn/btn_pre1.gif" alt="앞페이지로"/></a>
+						</c:if>
+						<c:if test="${page.page==1 }">
+							<a class="n"><img src="../images/btn/btn_pre2.gif" alt="처음으로"/></a>
+							<a class="pre"><img src="../images/btn/btn_pre1.gif" alt="앞페이지로"/></a>
+						</c:if>
+						<c:forEach begin="${page.startPage }" end="${page.maxPage }" step="1" var ="pNum">
+							<c:if test="${page.page == pNum}">
+								<a style="color:#0a47ff; border:1px #0a47ff solid; background:#fff;">${pNum }</a>
+							</c:if>
+							<c:if test="${page.page != pNum}">
+								<a href="my_medicine?page=${pNum }" class="faqq">${pNum }</a>
+							</c:if>
+						</c:forEach>
+						<c:if test="${page.page!=page.maxPage }">
+							<a href="my_medicine?page=${page.page+1}" class="next"><img src="../images/btn/btn_next1.gif" alt="뒤페이지로"/></a>
+							<a href="my_medicine?page=${page.maxPage }" class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
+						</c:if>
+						<c:if test="${page.page==page.maxPage }">
+							<a class="next"><img src="../images/btn/btn_next1.gif" alt="뒤페이지로"/></a>
+							<a class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
+						</c:if>
+						
 						</div>
 						<!-- //페이징이동1 -->
 					</div>
@@ -192,7 +219,6 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 		</div>
 	</div>
 	<!-- //container -->
-
-<%@include file = "footer.jsp" %>
 </body>
+	<%@include file = "footer.jsp" %>
 </html>

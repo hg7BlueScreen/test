@@ -3,13 +3,22 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.java.mapper.MyMapper">
 	<select id="selectListCount" resultType="int">
-		select count(*) from drug_User
+		select count(*) from drug_User where uno=#{uno}
 	</select>
 	<select id="selectUser" resultType="com.java.dto.Join">
 		select*from bmember where id=#{attribute}
 	</select>
 	<select id="selectDList" resultType="com.java.dto.Drug">
-		select a.*, b.ddate from drug a, drug_user b where a.dno in (select dno from drug_User where uno=#{uno}) and a.dno = b.dno order by ddate asc
+		<![CDATA[ 
+			SELECT * FROM (
+		    SELECT rownum rnum, a.*, b.ddate 
+		    FROM drug a
+		    JOIN drug_user b ON a.dno = b.dno 
+		    WHERE a.dno IN (SELECT dno FROM drug_user WHERE uno = #{uno}) 
+		    ORDER BY b.ddate ASC
+			) 
+			WHERE rnum >= #{page.startRow} AND rnum <= #{page.endRow}
+		]]>
 	</select>
 	<select id="selectMList" resultType="com.java.dto.Medicine">
 		select a.*, b.ddate from medicine a, drug_user b where itemseq in (

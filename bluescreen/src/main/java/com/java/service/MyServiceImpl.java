@@ -2,7 +2,6 @@ package com.java.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,46 +16,36 @@ import com.java.mapper.MyMapper;
 public class MyServiceImpl implements MyService {
 	@Autowired MyMapper mymapper;
 	@Override
-	public HashMap<String, Object> selectPage(Page pageDto) {
-		HashMap<String, Object> map = new HashMap<>();
-		
-//		int listCount = mymapper.selectListCount();	//총 게시글의 수
-//		int maxPage = (int)Math.ceil(listCount/10.0); //최대 페이지
-//		int startPage = (int)((pageDto.getPage()-1)/10)*10+1;
-//		int endPage = startPage+10-1;
-//		//int startRow = (pageDto-1)*10+1;
-//		int endRow = startRow+10-1;
-//		if(endPage>maxPage) endPage=maxPage;
-//		System.out.println("게시글 수 : "+listCount);
-//		System.out.println("현재 페이지 : "+page);
-//		System.out.println("최대 페이지 : "+maxPage);
-//		System.out.println("startPage : "+startPage);
-//		System.out.println("endPage : "+endPage);
-//		System.out.println("startRow : "+startRow);
-//		System.out.println("endRow : "+endRow);
-		//ArrayList<Medicine> list = mymapper.selectAll(startRow, endRow);
-//		
-//		map.put("listCount", listCount);
-//		map.put("maxPage", maxPage);
-//		map.put("startPage", startPage);
-//		map.put("endPage", endPage);
-//		map.put("startRow", startRow);
-//		map.put("endRow", endRow);
-//		map.put("page", page);
-		//map.put("list", list);
-		
-		return map;
-	}
-	@Override
 	public Join selectUser(String attribute) {
 		Join selectaddr = mymapper.selectUser(attribute);
 		return selectaddr;
 	}
 	@Override
-	public ArrayList<Drug> selectDList(int uno) {
+	public HashMap<String, Object> selectDList(Page page, int uno) {
 		//System.out.println(uno);
-		ArrayList<Drug> dList = mymapper.selectDList(uno);
-		return dList;
+		page = pageMyMedi(page, uno);
+		HashMap<String, Object> map = new HashMap<>();
+		ArrayList<Drug> dList = mymapper.selectDList(page, uno);
+		
+		map.put("page", page);
+		map.put("dList", dList);
+		return map;
+	}
+
+	private Page pageMyMedi(Page pageDto, int uno) {
+		// 전체 게시글 수 저장
+		pageDto.setListCount(mymapper.selectListCount(uno));
+		// 최대 넘버링 페이지
+		pageDto.setMaxPage((int) Math.ceil((double) pageDto.getListCount() / 10));
+		// 시작 넘버링페이지
+		pageDto.setStartPage((int) ((pageDto.getPage() - 1) / 10) * 10 + 1);
+		// 끝 넘버링 페이지
+		pageDto.setEndPage(pageDto.getStartPage() + 10 - 1);
+		// 게시글 시작번호
+		pageDto.setStartRow((pageDto.getPage() - 1) * 10 + 1);
+		// 게시글 끝나는 번호
+		pageDto.setEndRow(pageDto.getStartRow() + 10 - 1);
+		return pageDto;
 	}
 	@Override
 	public void deleteCk(int[] dnoNum, int uno) {

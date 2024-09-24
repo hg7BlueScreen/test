@@ -22,6 +22,7 @@
                    <h1 id="su">유형&nbsp;:&nbsp; 
 						<select name="box" id="box" onchange="boxbtn()" style="width:130px;font-size:20px;">
 							<option value="우체통">우체통</option>
+							<option value="약국">약국</option>
 							<option value="수거함">수거함</option>
 						</select><br>
 						지역&nbsp;:&nbsp; 
@@ -73,6 +74,7 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 var keyword = "";
 var pBoxImg = "/image/p_box.png"; //우체통 이미지
 var mBoxImg = "/image/m_box.png"; //수거함 이미지
+var pharmacyImg = "/image/pharmacy.png"; //수거함 이미지
 
 if(user_loc==null || user_loc==""){
 	//alert("없음");
@@ -91,7 +93,7 @@ function placesSearchCb(data){ //회원 주소로 길 찾기 검색
 }
 function boxbtn(){
 	str='';
-	if($("#box").val()=="우체통"){
+	if($("#box").val()=="우체통" || $("#box").val()=="약국"){
 		if($("#city").val()=="서울"){
 			str += '<option value="">구</option>'
 			for(let i=0;i<seoul.length;i++){
@@ -137,7 +139,7 @@ function boxbtn(){
 }
 function cbtn(){
 	str = "";
-	if($("#box").val()=="우체통"){
+	if($("#box").val()=="우체통" || $("#box").val()=="약국"){
 		if($("#city").val()=="서울"){
 			str += '<option value="">구</option>'
 			for(let i=0;i<seoul.length;i++){
@@ -182,7 +184,7 @@ function cbtn(){
 	}
 } 
 function sbtn(){
-	if($("#box").val()=="우체통"){
+	if($("#box").val()=="우체통" || $("#box").val()=="약국"){
 	//alert($("#city").val()+" "+$("#gu").val());
 	keyword = $("#city").val()+" "+$("#gu").val() +" "+$("#box").val();
 	//console.log(keyword);
@@ -381,10 +383,12 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-		if($("#box").val()=="우체통"){
+		if($("#box").val()=="우체통" ){
 	    var imageSrc = pBoxImg; 
 		}else if($("#box").val()=="수거함"){
 	    var imageSrc = mBoxImg;
+		}else if($("#box").val()=="약국"){
+	    var imageSrc = pharmacyImg;
 		}
         var imageSize = new kakao.maps.Size(30, 30),  // 마커 이미지의 크기
         imgOptions = {offset: new kakao.maps.Point(13, 37)} // 마커 좌표에 일치시킬 이미지 내에서의 좌표

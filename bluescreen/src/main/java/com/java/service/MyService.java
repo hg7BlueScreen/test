@@ -14,9 +14,7 @@ public interface MyService {
 
 	Join selectUser(String attribute);
 
-	HashMap<String, Object> selectPage(Page pageDto);
-
-	ArrayList<Drug> selectDList(int uno);
+	HashMap<String, Object> selectDList(Page pageDto, int uno);
 
 	void deleteCk(int[] dnoNum, int uno);
 
