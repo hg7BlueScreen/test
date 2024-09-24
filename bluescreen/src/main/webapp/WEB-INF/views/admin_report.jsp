@@ -22,6 +22,27 @@
 			location.href = "/";
 		}); // logoImage
 	}); // jquery
+	
+	function applyCaution(uno, nickname){
+		var reportScore = $("#report_score").val();
+		if(confirm(nickname+"에게 "+reportScore+"점을 추가하시겠습니까?")){
+			let reason = prompt("사유를 입력해주세요.");
+			$.ajax({
+				url: "applyCaution",
+				method: "post",
+				data: {"CautionScore":reportScore, "uno":uno, "CautionReason":reason},
+				success: function(data){
+					if(data == '성공'){
+						alert("나이스");
+					}
+					
+				},
+				error: function(status){
+					console.log(status);
+				}
+			}); // ajax
+		}
+	}
 </script>
   <style>
   	.links_name {
@@ -118,8 +139,8 @@
           </thead>
           <tbody>
             <tr>
-              <td>trafficlight0131</td>
-              <td>trafficlight0131</td>
+              <td>${member.nickname }</td>
+              <td>${member.id }</td>
               <td><select id = "report_score">
               <c:forEach var = "r" begin = "1" end = "10" step = "1">
               	<option value = "${r }">${r }</option>
@@ -129,7 +150,7 @@
                 <!-- <span class="badge bg_worning">
                   Meduim
                 </span> -->
-              <td><button type = "button" style = "width: 80px; background-color: #3f80ea; border: 1px white;">적용</button></td>
+              <td><button type = "button" onclick = "applyCaution('${member.uno}', '${member.nickname }')" style = "width: 80px; background-color: #3f80ea; border: 1px white;">적용</button></td>
             </tr>
             
           </tbody>

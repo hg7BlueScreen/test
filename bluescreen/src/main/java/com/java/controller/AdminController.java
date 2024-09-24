@@ -18,26 +18,32 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelExtensionsKt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import com.java.dto.Caution;
 import com.java.dto.Disease;
 import com.java.dto.Drug;
 import com.java.dto.Medicine;
+import com.java.dto.Member;
 import com.java.service.DiseaseService;
 import com.java.service.DrugService;
 import com.java.service.MedicineService;
+import com.java.service.MemberService;
 
 @Controller
 public class AdminController {
 
 	@Autowired DrugService drugService;
+	@Autowired MemberService memberService;
 	
 	@RequestMapping("/admin_update")
 	public String admin_update(Model model) {
@@ -155,4 +161,33 @@ public class AdminController {
 		drugService.insertDrugOne(drug);
 		return "성공";
 	}
+	
+	@RequestMapping("/admin_report")
+	public String adreport(@RequestParam(defaultValue = "0") int uno, Model model) {
+		Member member = memberService.selectOneMember(uno);
+		model.addAttribute("member",member);
+		return "admin_report";
+	}
+	
+	@RequestMapping("/admin_user")
+	public String admin_user(@RequestParam(defaultValue = "name") String userCategory, String keyword, Model model) {
+		ArrayList<Member> memberList = memberService.selectAllMember(userCategory, keyword);
+		model.addAttribute("memberList",memberList);
+		return "admin_user";
+	}
+	
+	@RequestMapping("/adminpage")
+	public String adminpage() {
+		return "adminpage";
+	}
+	
+	@PostMapping("/applyCaution")
+	@ResponseBody
+	public String applyCaution(Caution caution) {
+		memberService.setCaution(caution);
+		return "성공";
+	}
+	
+	
+	
 }

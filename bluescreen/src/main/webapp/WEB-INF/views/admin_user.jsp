@@ -22,6 +22,20 @@
 			location.href = "/";
 		}); // logoImage
 	}); // jquery
+	
+	function searchBtn(){
+		$(function(){
+			var userCategory = $("#userCategory").val();
+			var searchKeyword = $("#user_sinfo").val();
+			location.href = "admin_user?userCategory="+userCategory+"&keyword="+searchKeyword;
+		}); // jquery
+	}
+	
+	function setCaution(uno){
+		if(confirm(uno+"번 유저에게 경고를 부여하시겠습니까?")){
+			location.href = "admin_report?uno="+uno;
+		}
+	}
 </script>
   <style>
   	.links_name {
@@ -112,14 +126,14 @@
 			
 				 <tr>
 				 <td><span class = "links_name">
-				 	<select>
+				 	<select id = "userCategory" name = "userCategory">
 				 		<option value = "name" >이름</option>
 				 		<option value = "nickName" >닉네임</option>
 				 		<option value = "ID" >아이디</option>
 				 	</select>
 				 </span></td>
-				 <td><input type = "text" name = "user_sinfo" ></td>
-				 <td><button type = "button" onclick = "sBtn()" style = "width:80px;"><span class = "links_name">검색</span></button></td>
+				 <td><input type = "text" id = "user_sinfo" name = "user_sinfo"></td>
+				 <td><button type = "button" onclick = "searchBtn()" style = "width:80px;"><span class = "links_name">검색</span></button></td>
 				 <td></td>
             </tr>
 			     
@@ -143,16 +157,16 @@
           </thead>
           <tbody>
           <!-- 반복 시작 -->
-          <c:forEach var = "u" begin = "1" end = "30" step = "1">
-            <tr id = "user_info">
-            <td>${u }</td>
-              <td>trafficlight0131</td>
-              <td>trafficlight0131</td>
-              <td>0</td>
+          <c:forEach var = "m" items = "${memberList }" step = "1">
+            <tr id = "user_info" onclick = "setCaution(${m.uno})">
+            <td>${m.uno }</td>
+              <td>${m.nickname }</td>
+              <td>${m.id }</td>
+              <td>${m.caucount }</td>
                 <!-- <span class="badge bg_worning">
                   Meduim
                 </span> -->
-              <td>2024/08/28</td>
+              <td>${m.birthday }</td>
             </tr>
           </c:forEach>
             

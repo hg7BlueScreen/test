@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 
 public class Caution {
 	
-	private int CautionSeq;
-	private int CautionScore;
+	private int cautionSeq;
+	private int cautionScore;
 	private int uno;
-	private String CautionReason;
-	private Timestamp CautionDate;
+	private String cautionReason;
+	private Timestamp cautionDate;
 	
 }
