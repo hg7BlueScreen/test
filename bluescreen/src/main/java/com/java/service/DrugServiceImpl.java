@@ -108,12 +108,8 @@ public class DrugServiceImpl implements DrugService {
 			ArrayList<Drug> drugOne = drugMapper.findDrug(textPortable);
 			if(drugOne.size() == 0) {
 				
-			}else if(drugOne.size() == 1) {
-				for(int j = 0; j < 1; j++) {
-					list.add(drugOne.get(j));
-				}
-			}else if(drugOne.size() == 2) {
-				for(int j = 0; j < 2; j++) {
+			}else if(drugOne.size() < 3) {
+				for(int j = 0; j < drugOne.size(); j++) {
 					list.add(drugOne.get(j));
 				}
 			}else {

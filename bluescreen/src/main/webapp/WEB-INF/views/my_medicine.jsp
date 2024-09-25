@@ -47,8 +47,8 @@ function medicineAdd(){//복용약 등록, 의약품 사전으로 이동
 
 function medicineImage(){//복용약 등록, 사진으로 추가함.
 	$(function() {
+		alert("업로드 할 사진은 정면에서 글자가 뚜렷하게 보여야 합니다.");
 	    var formData = new FormData();
-
 
 	    $(this).val('');
 	    $("#fileInput").click();
