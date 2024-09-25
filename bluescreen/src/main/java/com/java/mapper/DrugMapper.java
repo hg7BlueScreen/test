@@ -35,4 +35,7 @@ public interface DrugMapper {
 
 	ArrayList<Drug> findDrug(String textPortable);
 
+	void insertUserDrugOne(String dno, int uno);
+
+
 }

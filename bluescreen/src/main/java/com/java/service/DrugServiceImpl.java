@@ -105,7 +105,6 @@ public class DrugServiceImpl implements DrugService {
 				continue;
 			}
 			textPortable = textPortable.substring(0, 5);
-			System.out.println(textPortable);
 			ArrayList<Drug> drugOne = drugMapper.findDrug(textPortable);
 			if(drugOne.size() == 0) {
 				
@@ -124,6 +123,15 @@ public class DrugServiceImpl implements DrugService {
 			}
 		}
 		return list;
+	}
+
+	@Override
+	public void insertUserDrugList(String[] dno, int uno) {
+		
+		for(int i = 0; i < dno.length; i++) {
+			drugMapper.insertUserDrugOne(dno[i], uno);
+		}
+		
 	}
 
 }

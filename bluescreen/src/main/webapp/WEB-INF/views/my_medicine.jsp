@@ -72,11 +72,10 @@ function medicineImage(){//복용약 등록, 사진으로 추가함.
 	                    	return false;
 	                    }
 	                    let str = '';
-	                    str += '<table class = "modalTable"><thead><tr><th></th><th>품목기준번호</th><th>회사명</th><th>제품명</th><th>이미지</th></tr></thead>';
+	                    str += '<table class = "modalTable"><thead><tr><th>품목기준번호</th><th>회사명</th><th>제품명</th><th>이미지</th></tr></thead>';
 	                    str += '<tbody>';
 	                    for(let i = 0; i < data.length; i++){
-							str += '<tr onclick = "checkBoxOn('+data[i].dno+')">';
-							str += '<td><input type = "checkbox" name = "drugCheckBox" id = "drugCheckBox'+data[i].dno+'" value = "'+data[i].dno+'"></td>';
+							str += '<tr onclick = "modalTRClick('+data[i].dno+')" id = "modalTROne'+data[i].dno+'">';
 							str += '<td>'+data[i].item_seq+'</td>';             	
 							str += '<td>'+data[i].entp_name+'</td>';             	
 							str += '<td>'+data[i].item_name+'</td>';             	
@@ -97,8 +96,55 @@ function medicineImage(){//복용약 등록, 사진으로 추가함.
 	});
 }
 
-function checkBoxOn(dno){
-	$("#drugCheckBox"+dno).attr("checked", true);
+function modalTRClick(dno){
+	let uno = "${uno}";
+	myMediUp(uno,dno);
+}
+
+function myMediUp(uno, dno){
+	if(confirm("처방 받으신 약입니까?")){
+		let myMdate = prompt("약 복용 기간을 입력해주세요\nex) 30일 처방 : 30일");
+		$.ajax({
+			url:"/myMediUp",
+			method:"post",
+			data:{"uno":uno,"dno":dno,"myMdate":myMdate},
+			success:function(data){
+				console.log(data);
+				if(data=="성공"){
+					alert("복용중인 약으로 등록되었습니다.");
+					$("#modalTROne").remove();
+				}else{
+					alert("이미 등록된 약입니다.");
+				}
+			},
+			error:function(){
+				alert("fail");
+			}
+		});
+	}else{
+		$.ajax({
+			url:"/myMediUp",
+			method:"post",
+			data:{"uno":uno,"dno":dno,"myMdate":""},
+			success:function(data){
+				console.log(data);
+				if(data=="성공"){
+					alert("복용중인 약으로 등록되었습니다.");
+					$("#modalTROne").remove();
+				}else{
+					alert("이미 등록된 약입니다.");
+				}
+			},
+			error:function(){
+				alert("fail");
+			}
+		});
+	}
+}
+
+function insertDrugModi(){
+	$("#modal").css("display","none");
+	location.href = "my_medicine";
 }
 
 function modalUp() {
@@ -110,8 +156,6 @@ function modalUp() {
 
 $(function(){
 	$("#close").click(function(){
-		console.log("${onlyBookMark}")
-		console.log("${category}")
 		$("#modal").css("display","none");
 	});
 });

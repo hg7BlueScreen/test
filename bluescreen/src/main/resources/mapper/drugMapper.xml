@@ -174,7 +174,7 @@
 	</select>
 
 	<insert id="enableBookMarkDrug">
-		insert into drug_user values(#{dno}, #{uno}, 1)
+		insert into drug_user values(#{uno}, #{dno}, 1)
 	</insert>
 
 	<delete id="disableBookmarkDrug">
@@ -193,4 +193,8 @@
 	<select id="findDrug" resultType="com.java.dto.Drug">
 		select * from drug where item_name like '%'|| #{textPortable} ||'%'
 	</select>
+	
+	<insert id="insertUserDrugOne">
+		insert into drug_user values(#{uno}, #{dno}, sysdate)
+	</insert>
 </mapper>

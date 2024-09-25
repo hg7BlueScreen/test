@@ -30,5 +30,7 @@ public interface DrugService {
 
 	ArrayList<Drug> findDrug(String[] textResult);
 
+	void insertUserDrugList(String[] dno, int uno);
+
 
 }
