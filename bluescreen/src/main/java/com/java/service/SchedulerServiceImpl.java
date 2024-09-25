@@ -35,7 +35,6 @@ public class SchedulerServiceImpl implements SchedulerService {
 		System.out.println("매일 10시 메일 보내기");
 		
 	}
-	
 //	@Scheduled(fixedDelay = 5000) //확인용
 //	public void per5sec() throws Exception {
 //		System.out.println("5");
