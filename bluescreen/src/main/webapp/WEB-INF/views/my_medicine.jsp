@@ -112,7 +112,7 @@ function myMediUp(uno, dno){
 				console.log(data);
 				if(data=="성공"){
 					alert("복용중인 약으로 등록되었습니다.");
-					$("#modalTROne").remove();
+					$("#modalTROne"+dno).remove();
 				}else{
 					alert("이미 등록된 약입니다.");
 				}
@@ -130,7 +130,7 @@ function myMediUp(uno, dno){
 				console.log(data);
 				if(data=="성공"){
 					alert("복용중인 약으로 등록되었습니다.");
-					$("#modalTROne").remove();
+					$("#modalTROne"+dno).remove();
 				}else{
 					alert("이미 등록된 약입니다.");
 				}
@@ -344,7 +344,7 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 		        <a href="#" id = "close" class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQdJREFUSEvFVdsNgzAMtGUGoRsgwX/LJu0kZZOqk5QBsMQGzSLYbRAgSIEqoY98OvJdfOfYCF8++GV8+C1BlmUHVb0AQBxYmUHEU1VVZZ8/qSBN0xsAHALB+zTDzLslAt0I3qYz8/Bwt4K/EZgZX+Zi/hWo6klESiKy/vTmt2aKyB4RC1dWH4lM0zR5XdcmSZK4I4G+U7rYfQuBzZ2QRFEU2zZcAg81eSCxAGvgwQTjDzSSa/ZD+njQSjTW3AYcT15IvAgQMXc0d43fZrKqFiJyJaIxUEtCROdnhcetXeQ9Pbwk8kb/9yz6xLgumTmfHdfdwrHGhe6E9YUTove7nN/u5HevCbl/AEcnshnv36ogAAAAAElFTkSuQmCC"/></a>
 		      </div>
 		      <div class="ct" id = "modalContent">
-		      모달 창 내용
+		      로딩 중...
 		      </div>
 		    </div>
 		  </div>
