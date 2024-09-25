@@ -1,9 +1,6 @@
 package com.java.service;
 
-import java.security.Timestamp;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -61,9 +58,7 @@ public class JoinServiceImpl implements JoinService {
 		mailSender.send(message);
 		System.out.println("메일이 발송되었습니다.");
 	}
-	private void alarmHtmlTxt() {	// 복용중 약품 소비기한  회원이름, 약품명, 사진, 소비/처방 기한 남은 기간
-		
-	}
+
 	//임시 비밀번호 생성 메소드
 	private String createPwCode() {
 		char[] charset = {'0','1','2','3','4','5','6','7','8','9',

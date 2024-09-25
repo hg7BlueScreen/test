@@ -161,13 +161,13 @@ public class FController {
 		return dtFormat.format(cal.getTime());
 	}
 	
-	@PostMapping("/alramDate")
+	@PostMapping("/alarmDate")
 	@ResponseBody
-	public String alramDate(String alDate) {
+	public String alarmDate(String alDate) {
 		int uno = (int)session.getAttribute("uno");
 		//System.out.println(alDate);
 		//System.out.println(uno);
-		myservice.alramDate(uno, alDate);
+		myservice.alarmDate(uno, alDate);
 		return "";
 	}
 

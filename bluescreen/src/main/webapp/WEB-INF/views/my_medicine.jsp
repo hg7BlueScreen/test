@@ -187,18 +187,19 @@ function medicineDel(){// 복용약 삭제
 		alert("체크된 약품이 없습니다.");
 	}
 }
-function alram(){ // 소비기한 만료 알람 기간 선택 보내기
+function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 	console.log($('#alram').val());
 	$.ajax({
-		url:"/alramDate",
+		url:"/alarmDate",
 		method:"post",
 		data:{"alDate":$("#alram").val()},
 		success:function(data){
 			//alert("성공"); console.log(data);
 			alert("선택하신 기간으로 알람주기가 설정되었습니다.");
 		},
-		error:function(){
+		error:function(status){
 			alert("실패");
+			console.log(status);
 		}
 	}); 
 }
@@ -212,8 +213,8 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 					<!-- FAQ -->
 					<div class="faqList">
 						<div id="myMedicineHd">
-							<label for="alram">복용약 소비기한 임박알림 받기</label>
-							<select id="alram" onchange="alram()" >
+							<label for="alarm">복용약 소비기한 임박알림 받기</label>
+							<select id="alram" onchange="alarm()" >
 								<option value="90">3개월 전</option>
 								<option value="30">1개월 전</option>
 								<option value="15">15일 전</option>

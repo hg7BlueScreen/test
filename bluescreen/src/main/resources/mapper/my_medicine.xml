@@ -30,12 +30,12 @@
 		delete from drug_User where uno=#{uno} and dno=#{dno}
 	</delete>
 	<insert id="myMediUp">
-		insert into drug_User values(#{uno},#{dno},#{ddate})
+		insert into drug_User values(#{uno},#{dno},#{ddate},#{ddate}-7)
 	</insert>
 	<select id="myMediAll" resultType="String" >
 		select uno from drug_User where uno=#{uno} and dno=#{dno}
 	</select>
-	<update id="alramDate"> <!-- 복용약 소비기한 만료 알림 주기 설정 -->
-		update bmember set datealarm=#{alDate} where uno=#{uno} 
+	<update id="alarmDate"> <!-- 복용약 소비기한 만료 알림 설정 -->
+		update drug_user set datealarm = ddate-#{alDate} where uno=#{uno} 
 	</update>
 </mapper>

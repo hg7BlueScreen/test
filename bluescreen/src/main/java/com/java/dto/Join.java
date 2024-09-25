@@ -23,7 +23,6 @@ public class Join {
 	private String socialKey;	//소셜 키	
 	private String job;	//직업
 	private String ck;	//선택 동의사항 동의 여부
-	private int dateAlarm; // 복용약 소비기한 만료 전 알람 여부 
 	
 	private int caucount;	//경고점수
 	private String leavereason;	//탈퇴사유
