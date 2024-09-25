@@ -107,7 +107,6 @@ public class FController {
 		//System.out.println(todate);
 		
 		//System.out.println(mList);
-		
 		return "my_medicine";
 	}
 	
@@ -152,6 +151,7 @@ public class FController {
 			return "실패";
 		}
 	}
+	
 	private static String AddDate(String strDate, int day) throws Exception {
         SimpleDateFormat dtFormat = new SimpleDateFormat("yyyyMMdd");
 		Calendar cal = Calendar.getInstance();
@@ -160,6 +160,7 @@ public class FController {
 		cal.add(Calendar.DATE,  day);
 		return dtFormat.format(cal.getTime());
 	}
+	
 	@PostMapping("/alramDate")
 	@ResponseBody
 	public String alramDate(String alDate) {

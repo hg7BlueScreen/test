@@ -96,4 +96,34 @@ public class DrugServiceImpl implements DrugService {
 		drugMapper.insertDrugOne(drug);
 	}
 
+	@Override
+	public ArrayList<Drug> findDrug(String[] textResult) {
+		ArrayList<Drug> list = new ArrayList<>();
+		for(int i = 0; i < textResult.length; i++) {
+			String textPortable = textResult[i].replaceAll("[^가-힣]", "");
+			if(textPortable.length() < 5) {
+				continue;
+			}
+			textPortable = textPortable.substring(0, 5);
+			System.out.println(textPortable);
+			ArrayList<Drug> drugOne = drugMapper.findDrug(textPortable);
+			if(drugOne.size() == 0) {
+				
+			}else if(drugOne.size() == 1) {
+				for(int j = 0; j < 1; j++) {
+					list.add(drugOne.get(j));
+				}
+			}else if(drugOne.size() == 2) {
+				for(int j = 0; j < 2; j++) {
+					list.add(drugOne.get(j));
+				}
+			}else {
+				for(int j = 0; j < 3; j++) {
+					list.add(drugOne.get(j));
+				}
+			}
+		}
+		return list;
+	}
+
 }

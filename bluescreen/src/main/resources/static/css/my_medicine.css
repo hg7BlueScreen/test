@@ -47,8 +47,10 @@
 
 #myMedicineHd{width:100%; bottom:10px;}
 
-#medicineAdd, #medicineDel {background:rgb(0,128,255); color:#fff; border:none; position:absolute; left:700px;}
+#medicineAdd, #medicineDel, #medicineImage {background:rgb(0,128,255); color:#fff; border:none; position:absolute; left:700px;}
 #medicineDel{position:absolute; left:800px;}
+#medicineAdd{position:absolute; left:695px;}
+#medicineImage{position:absolute; left:590px;}
 
 .faqList ul li .list .blets{position:absolute; left:25px; font-size:14px; font-weight:600; color:#666; line-height:600%;}
 .faqList ul li .list .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; line-height:500%;}
@@ -92,3 +94,62 @@
 .allPageMoving1 span.mobile{display:none;}
 .allPageMoving1 .faqq:hover{display:inline-block; width:25px; height:25px; line-height:23px; color:rgb(0, 128, 255); text-decoration:none; border:1px rgb(0, 128, 255) solid; background:#fff; font-size:12px; font-weight:normal;}
 
+	.dialog {
+  display:none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog>.tb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dialog>.tb .inner {
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.dialog .top {
+  display: flex;
+  align-item: center;
+  border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.dialog .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dialog .ct {
+  max-height: 60vh;
+  height: 60vh;
+  overflow-y: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+}
+
+.modalTable > tbody > tr {
+	background-color: #ffffff;
+
+   	transition-property: width, background-color, color; /* 어떤 css 프로퍼티를 transition할지 지정 */
+   	transition-duration: 0.1s, 0.1s; /* width와 bg-color가 2초동안 변화 */
+}
+
+.modalTable > tbody > tr:hover {
+	background-color: #cccccc; 
+}

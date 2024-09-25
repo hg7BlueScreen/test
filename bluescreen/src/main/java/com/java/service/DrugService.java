@@ -28,5 +28,7 @@ public interface DrugService {
 
 	void insertDrugOne(Drug drug);
 
+	ArrayList<Drug> findDrug(String[] textResult);
+
 
 }

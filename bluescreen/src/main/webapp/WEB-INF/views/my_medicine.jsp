@@ -45,6 +45,77 @@ function medicineAdd(){//복용약 등록, 의약품 사전으로 이동
 	location.href="/dict?category=drug";
 }
 
+function medicineImage(){//복용약 등록, 사진으로 추가함.
+	$(function() {
+	    var formData = new FormData();
+
+
+	    $(this).val('');
+	    $("#fileInput").click();
+		
+	    // 파일 선택 후 AJAX 요청
+	    $('#fileInput').on('change', function() {
+	        let file = this.files[0]; // 선택된 파일 가져오기
+	        if (file) {
+	            formData.append('file', file); // FormData에 파일 추가
+
+	            $.ajax({
+	                url: "imageToString",
+	                method: "post",
+	                data: formData,
+	                processData: false, // FormData를 자동으로 변환하지 않도록 설정
+	                contentType: false, // Content-Type을 자동으로 설정하지 않도록 설정
+	                success: function(data) {
+	                    console.log(data);
+	                    if(data == '' || data == null){
+	                    	alert("약 정보를 찾을 수 없습니다.");
+	                    	return false;
+	                    }
+	                    let str = '';
+	                    str += '<table class = "modalTable"><thead><tr><th></th><th>품목기준번호</th><th>회사명</th><th>제품명</th><th>이미지</th></tr></thead>';
+	                    str += '<tbody>';
+	                    for(let i = 0; i < data.length; i++){
+							str += '<tr onclick = "checkBoxOn('+data[i].dno+')">';
+							str += '<td><input type = "checkbox" name = "drugCheckBox" id = "drugCheckBox'+data[i].dno+'" value = "'+data[i].dno+'"></td>';
+							str += '<td>'+data[i].item_seq+'</td>';             	
+							str += '<td>'+data[i].entp_name+'</td>';             	
+							str += '<td>'+data[i].item_name+'</td>';             	
+							str += '<td><img style = "width: 75px;" src = "'+data[i].imageURL+'"></td>';
+							str += '</tr>';
+	                    }
+	                    str += '</tbody></table>';
+	                    str += '<input type = "button" onclick = "insertDrugModi()" value = "확인">';
+	                    $("#modalContent").html(str);
+	                },
+	                error: function(status) {
+	                    console.log(status);
+	                }
+	            });
+	            modalUp(); // 모달 열기
+	        }
+	    });
+	});
+}
+
+function checkBoxOn(dno){
+	$("#drugCheckBox"+dno).attr("checked", true);
+}
+
+function modalUp() {
+	const modal = document.querySelector("#modal");
+	const btn = document.querySelector("#modal-btn");
+	const close = document.querySelector(".close");
+	$("#modal").css("display","block");
+}
+
+$(function(){
+	$("#close").click(function(){
+		console.log("${onlyBookMark}")
+		console.log("${category}")
+		$("#modal").css("display","none");
+	});
+});
+
 function medicineDel(){// 복용약 삭제
 	let dno = [];
 	let uno = "${uno}";
@@ -105,9 +176,11 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 								<option value="7" selected="selected">일주일 전</option>
 								<option value="1">하루 전</option>
 								<option value="0">당일</option>
-								<option value=null>없음</option>
+								<option value="" >없음</option>
 							</select>
-							<button id="medicineAdd" onclick="medicineAdd()">복용약 추가</button>
+							<button id="medicineImage" onclick="medicineImage()">사진으로 추가</button>
+							<input type="file" id="fileInput" style="display: none;">
+							<button id="medicineAdd" onclick="medicineAdd()">사전에서 추가</button>
 							<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
 						</div>
 						<ul>
@@ -219,6 +292,19 @@ function alram(){ // 소비기한 만료 알람 기간 선택 보내기
 		</div>
 	</div>
 	<!-- //container -->
+	<div id="modal" class="dialog">
+		  <div class="tb">
+		    <div class="inner" style="max-width:1300px;">
+		      <div class="top">
+		        <div class="title" id = "modalTitle">등록할 약을 선택해주세요.</div>
+		        <a href="#" id = "close" class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQdJREFUSEvFVdsNgzAMtGUGoRsgwX/LJu0kZZOqk5QBsMQGzSLYbRAgSIEqoY98OvJdfOfYCF8++GV8+C1BlmUHVb0AQBxYmUHEU1VVZZ8/qSBN0xsAHALB+zTDzLslAt0I3qYz8/Bwt4K/EZgZX+Zi/hWo6klESiKy/vTmt2aKyB4RC1dWH4lM0zR5XdcmSZK4I4G+U7rYfQuBzZ2QRFEU2zZcAg81eSCxAGvgwQTjDzSSa/ZD+njQSjTW3AYcT15IvAgQMXc0d43fZrKqFiJyJaIxUEtCROdnhcetXeQ9Pbwk8kb/9yz6xLgumTmfHdfdwrHGhe6E9YUTove7nN/u5HevCbl/AEcnshnv36ogAAAAAElFTkSuQmCC"/></a>
+		      </div>
+		      <div class="ct" id = "modalContent">
+		      모달 창 내용
+		      </div>
+		    </div>
+		  </div>
+		</div>
 </body>
 	<%@include file = "footer.jsp" %>
 </html>

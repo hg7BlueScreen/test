@@ -33,4 +33,6 @@ public interface DrugMapper {
 
 	void insertDrugOne(Drug drug);
 
+	ArrayList<Drug> findDrug(String textPortable);
+
 }
