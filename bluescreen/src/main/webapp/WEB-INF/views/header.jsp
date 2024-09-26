@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <link type="text/css" rel="stylesheet" href="/css/info/common_total1a8e.css?20240805140085">
 <link type="text/css" rel="stylesheet" href="/css/info/sub_main1a8e.css?20240805140085" />
 <link rel="stylesheet" href="/js/aos/aos.css" />
@@ -31,11 +32,11 @@
 										<span class="d-menu-t">MAP</span>
 										<span class="d-menu-t2">폐의약품 수거함 검색</span>
 									</a>
-									<a href="dict?category=drug" class="go_assess list_menuBox">
+									<a href="dict?category=disease" class="go_assess list_menuBox">
 										<span class="d-menu-t">DICTIONARY</span>
-										<span class="d-menu-t2">의약품 사전</span>
+										<span class="d-menu-t2">의약품 및 질병 사전</span>
 									</a>
-									<a href="my_medicine" class="go_interview list_menuBox">
+									<a href="javascript:;" class="go_interview list_menuBox">
 										<span class="d-menu-t">MYPAGE</span>
 										<span class="d-menu-t2">개인 정보 및 의료 정보</span>
 									</a>
@@ -53,12 +54,15 @@
 
 
 
-
-
-						<li class="outLink"><a href="javascript:;" class="consulting roundBtn on">로그아웃</a></li>
-						<li class="pc">
-							<a href="https://rasp4.incruit.com/admin/" class="roundBtn">로그인</a>
+						<c:if test="${sessionId!=null }">
+						<li class="outLink"><a href="/logout" class="consulting roundBtn on">로그아웃</a></li>
+						</c:if>
+						
+						<c:if test="${sessionId==null }">
+ㄴ						<li class="pc">
+							<a href="/login" class="roundBtn">로그인</a>
 						</li>
+						</c:if>
 					</ul>
 				</nav>
 			</div>

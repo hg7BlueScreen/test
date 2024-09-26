@@ -36,15 +36,7 @@ public class FController {
 	@Autowired MyService myservice;
 	@RequestMapping("/")
 	public String index(Model model) {
-		session.setAttribute("id", "testD"); 
-		session.setAttribute("nickname", "시험드래곤");
 		
-		Join user = myservice.selectUser((String)session.getAttribute("id"));
-		
-		session.setAttribute("addr", user.getAddress());
-		session.setAttribute("uno", user.getUno());
-		
-		model.addAttribute("user",user);
 		
 		ScrapNews scraper = selectOneNews();
 		
@@ -96,13 +88,13 @@ public class FController {
 
 	@RequestMapping("/my_medicine")
 	public String my_medicine(Page pageDto, Model model) {
-		session.setAttribute("id", "testD");
-		Join user = myservice.selectUser((String)session.getAttribute("id"));
+//		session.setAttribute("id", "testD");
+		Join user = myservice.selectUser((String)session.getAttribute("sessionId"));
 		session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
 		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
 		HashMap<String, Object> dList = myservice.selectDList(pageDto, user.getUno()); 
-		Join member = myservice.selectUser((String)session.getAttribute("id"));
+		Join member = myservice.selectUser((String)session.getAttribute("sessionId"));
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Timestamp tdate = new Timestamp(System.currentTimeMillis());
 		ArrayList<Drug> drlist = (ArrayList<Drug>) dList.get("dList");
