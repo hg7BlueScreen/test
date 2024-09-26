@@ -81,9 +81,9 @@ public class FController {
 
 	@RequestMapping("/my_medicine")
 	public String my_medicine(Page pageDto, Model model) {
-		session.setAttribute("id", "testD");
+		//session.setAttribute("id", "testD");
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
-		session.setAttribute("uno", user.getUno());
+		//session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
 		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
 		HashMap<String, Object> dList = myservice.selectDList(pageDto, user.getUno()); 

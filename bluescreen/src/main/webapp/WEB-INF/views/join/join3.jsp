@@ -44,8 +44,8 @@
 					감사합니다.
 					<strong>회원가입이 완료되었습니다.</strong>
 				</p>
-				<button class="" onClick="location.href=''">로그인</button>
-				<button class="" onClick="location.href='/'">메인화면</button>
+				<button class="end" onClick="location.href=''">로그인</button>
+				<button class="end" onClick="location.href='/'">메인화면</button>
 			</div>	
 			
 				

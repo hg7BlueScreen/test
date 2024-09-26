@@ -18,7 +18,7 @@ import com.java.mapper.JoinMapper;
 public class SchedulerServiceImpl implements SchedulerService {
 	@Autowired JavaMailSender mailSender;
 	@Autowired JoinMapper jmapper;
-	@Scheduled(cron = "0 0 10 * * *", zone = "Asia/Seoul")	// 서울 시간으로 매일 10시 실행
+	@Scheduled(cron = "0 0 8 * * *", zone = "Asia/Seoul")	// 서울 시간으로 매일 8시 실행
 	public void perDay() throws Exception {
 		//소비기한 만료일지난 drug 가져오기(drug_user - uno,dno,ddate /
 		Timestamp todate = new Timestamp(System.currentTimeMillis());
@@ -32,7 +32,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 		//System.out.println("333"+mlist.size());
 		
 		medicineSendEmail(dlist, mlist);
-		System.out.println("매일 10시 메일 보내기");
+		System.out.println("매일 8시 메일 보내기");
 		
 	}
 //	@Scheduled(fixedDelay = 5000) //확인용

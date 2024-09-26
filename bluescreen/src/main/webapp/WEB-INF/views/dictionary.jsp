@@ -56,7 +56,6 @@
 						method: "post",
 						data: {"uno":"${sessionUno}", "dno":dno},
 						success: function(data){
-							console.log(data);
 							if(data == "성공"){
 								$('#bookMarkDrug'+dno).html('<img onclick = "disableBookMarkDrug('+dno+')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUFJREFUSEu1lYGNgzAMRWNYpLcBShiATtIySdtJrptcByARG5RFkE9GCQLqBFNBJESLwM/2d35AHbzg4PhqE8AY86eU6qy1tTQxMUBrfQWAXwoMAOemaV4SiBjgs6980Je19rwboCzLChGpPeOSViGqYJF9gIiqWAUURXHK8/zNtKMDgHpNixFAgbIsuwDASSlFF63pb67lnX84u/d9/2jbdng2AiJtkOjIgq21PzOA1voGAPdvI06/Q8TaOfecAejPHpDldH2IPN1QG6thRWen6AtIdKKiY2qMIVu4SqpIbboUgHZusIYkBxHvzrkH91IKgJLs17xpNw3C3C+T2gSgVni7/tgvMR1YACPwbEq8P5FGwVKI++QOohiAzG34OCbgxLtCNXTSDfYwXakKKolb+mpopNmjdNWuN0wS++rhgH9ykY0ZQa97UwAAAABJRU5ErkJggg==" style = "width: 20px;"/>')
 							} // if
@@ -84,7 +83,6 @@
 					method: "post",
 					data: {"uno":"${sessionUno}", "dno":dno},
 					success: function(data){
-						console.log(data);
 						if(data == "성공"){
 							$('#bookMarkDrug'+dno).html('<img onclick = "enableBookMarkDrug('+dno+')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUdJREFUSEu1ldFRAzEMRDedQCdQCVAJUAlQSegEOgEe42U2h+zoPuKZjJMbn56k1ToHXXgdLhxfewFHSZ+SHrqJ7QHcS3oZgW8lvXcgewBkfzOCEhzI2dUFEBhArlYVXYCzfxoE9lYVHcCVpI8R+Hrs/LbYSy0SQKA7Sex8WPn9NaYHsREdCGu7P/tZAlLErXgEoOcOBJjzTqQ6/1ttAh5/HrjHlO0sHLSamKyU9z1l+ISK/xktIcCAdFZWfzJdlchpqA7EwUvRZ1PUde0yeNWibIcnJadn2y4DpqZb+cAv/wlWiOEkpq1cAb7CXPSXiSEgO1AmzVfI1NUdDTiT02Vj0bq34XISsMtPCj0HILN0c95F6WDOlDrMAO6ts9mOYOXkchhmAC4zu3QmoO8uV1W2aVUBAlrMlZstfvlX2rmuO1fF9MzFAd+iKVUZhSjEFAAAAABJRU5ErkJggg==" style = "width: 20px;"/>')
 						}
@@ -116,13 +114,12 @@ function modalUp(dno){
 		method: "post",
 		data: {"dno":dno},
 		success: function(data){
-			console.log("success");
 			$(function(){
 				const modal = document.querySelector("#modal");
 				const btn = document.querySelector("#modal-btn");
 				const close = document.querySelector(".close");
 				$("#modal").css("display","block");
-				if("${uno}" == null || "${uno}"==""){
+				if(!(data.drug.defendOverInsert>=1 &&data.drug.defendOverInsert<=99999)){
 					$("#modalTitle").text(data.drug.item_name);
 				}else{
 					if(data.drug.defendOverInsert!=null){
@@ -135,7 +132,6 @@ function modalUp(dno){
 					
 					let mContent = "<table class = 'modalTable'>";
 					
-					console.log(data);
 					
 					if(data.drug.entp_name != null){
 						mContent += '<tr>';
@@ -212,23 +208,17 @@ function modalUp(dno){
 								mContent += data.drugGeneralWarning[i].text+'<br>';
 							}
 						}
-						
 						mContent += '</td></tr>';
 					}
-					
 					if(data.drug.imageURL == "" || data.drug.imageURL == null){
 						
 					}else{
 						mContent += '<tr><td class = "modalTitleTD">이미지</td>';
 						mContent += '<td><img src = "'+data.drug.imageURL+'"></td>';
 					}
-					
 					mContent += '</table>';
-					
-					
 					$("#modalContent").html(mContent);
 				});
-				
 			},
 			error: function(){
 				console.log("error");
@@ -238,8 +228,6 @@ function modalUp(dno){
 	
 	$(function(){
 		$("#close").click(function(){
-			console.log("${onlyBookMark}")
-			console.log("${category}")
 			$("#modal").css("display","none");
 		});
 	});
@@ -252,7 +240,6 @@ function modalUp(dno){
 				method:"post",
 				data:{"uno":uno,"dno":dno,"myMdate":myMdate},
 				success:function(data){
-					console.log(data);
 					if(data=="성공"){
 						alert("복용중인 약으로 등록되었습니다.");
 						$("#modal").css("display","none");
@@ -270,7 +257,6 @@ function modalUp(dno){
 				method:"post",
 				data:{"uno":uno,"dno":dno,"myMdate":""},
 				success:function(data){
-					console.log(data);
 					if(data=="성공"){
 						alert("복용중인 약으로 등록되었습니다.");
 						$("#modal").css("display","none");
