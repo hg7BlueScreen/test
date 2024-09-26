@@ -31,7 +31,7 @@
 		delete from drug_User where uno=#{uno} and dno=#{dno}
 	</delete>
 	<insert id="myMediUp">
-		insert into drug_User values(#{uno},#{dno},#{ddate},#{ddate}-7)
+		insert into drug_User values(#{uno},#{dno},#{ddate},to_date(#{ddate})-7)
 	</insert>
 	<select id="myMediAll" resultType="String" >
 		select uno from drug_User where uno=#{uno} and dno=#{dno}

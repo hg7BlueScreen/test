@@ -28,6 +28,7 @@ import com.java.dto.Page;
 import com.java.dto.ScrapNews;
 import com.java.service.MyService;
 
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -144,7 +145,7 @@ public class FController {
 		}
 		int datem = Integer.parseInt(myMdate.replaceAll("[^0-9]", "")); // 숫자만 가져옴
 		Date date = new Date();
-		SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("yyyyMMdd");
+		SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("yy/MM/dd");
 		String toDate = simpleDateFormat.format(date);
 		System.out.println(toDate);
 		try {
@@ -161,12 +162,14 @@ public class FController {
 	}
 	
 	private static String AddDate(String strDate, int day) throws Exception {
-        SimpleDateFormat dtFormat = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat dtFormat = new SimpleDateFormat("yy/MM/dd");
 		Calendar cal = Calendar.getInstance();
 		Date dt = dtFormat.parse(strDate);
 		cal.setTime(dt);
 		cal.add(Calendar.DATE,  day);
+		System.out.println("dd"+dtFormat.format(cal.getTime()));
 		return dtFormat.format(cal.getTime());
+		
 	}
 	
 	@PostMapping("/alarmDate")

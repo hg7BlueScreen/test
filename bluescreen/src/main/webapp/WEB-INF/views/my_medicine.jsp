@@ -167,7 +167,7 @@ $(function(){
 
 function medicineDel(){// 복용약 삭제
 	let dno = [];
-	let uno = "${uno}";
+	let uno = "${sessionUno}";
 	if($(".deleteCheck").is(":checked")){
 		if(confirm("체크된 약품들을 목록에서 삭제하시겠습니까?")){
 		//console.log("${uno}"); console.log($("input[class=deleteCheck]:checked").eq(0).val());

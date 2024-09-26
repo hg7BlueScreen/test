@@ -29,6 +29,7 @@ public class LoginController {
 			session.setAttribute("sessionId", bmem.getId());
 			session.setAttribute("sessionName", bmem.getName());
 			session.setAttribute("sessionUno", bmem.getUno());
+			session.setAttribute("addr", bmem.getAddress());
 			model.addAttribute("loginCk",1);
 		}else {
 			model.addAttribute("loginCk", 0);	//alert창 띄우기 위한 방법
