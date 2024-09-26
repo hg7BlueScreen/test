@@ -215,13 +215,13 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 						<div id="myMedicineHd">
 							<label for="alarm">복용약 소비기한 임박알림 받기</label>
 							<select id="alram" onchange="alarm()" >
-								<option value="90">3개월 전</option>
-								<option value="30">1개월 전</option>
-								<option value="15">15일 전</option>
-								<option value="7" selected="selected">일주일 전</option>
-								<option value="1">하루 전</option>
-								<option value="0">당일</option>
-								<option value="" >없음</option>
+								<option value="90" <c:if test="${member.datealarm == '90'}">selected</c:if>>3개월 전</option>
+								<option value="30" <c:if test="${member.datealarm == '30'}">selected</c:if>>1개월 전</option>
+								<option value="15"<c:if test="${member.datealarm == '15'}">selected</c:if>>15일 전</option>
+								<option value="7"<c:if test="${member.datealarm == '7'}">selected</c:if>>일주일 전</option>
+								<option value="1"<c:if test="${member.datealarm == '1'}">selected</c:if>>하루 전</option>
+								<option value="0"<c:if test="${member.datealarm == '0'}">selected</c:if>>당일</option>
+								<option value="" <c:if test="${member.datealarm == ''}">selected</c:if>>없음</option>
 							</select>
 							<button id="medicineImage" onclick="medicineImage()">사진으로 추가</button>
 							<input type="file" id="fileInput" style="display: none;">

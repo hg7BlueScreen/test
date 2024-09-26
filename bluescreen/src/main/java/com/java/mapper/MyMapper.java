@@ -30,6 +30,8 @@ public interface MyMapper {
 
 	int selectListCount(int uno);
 
+	void alarm_date(int uno, String alDate);
+
 	
 	
 }
