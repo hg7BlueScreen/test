@@ -36,10 +36,7 @@ public class FController {
 	@Autowired MyService myservice;
 	@RequestMapping("/")
 	public String index(Model model) {
-		
-		
 		ScrapNews scraper = selectOneNews();
-		
 		model.addAttribute("scrap",scraper);
 		
 		return "index";
@@ -88,13 +85,13 @@ public class FController {
 
 	@RequestMapping("/my_medicine")
 	public String my_medicine(Page pageDto, Model model) {
-//		session.setAttribute("id", "testD");
-		Join user = myservice.selectUser((String)session.getAttribute("sessionId"));
-		session.setAttribute("uno", user.getUno());
+		if(session.getAttribute("sessionId")==null) {
+			return "my_medicine";
+		}
 		//System.out.println(user.getUno());	System.out.println(user.getId());
-		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
-		HashMap<String, Object> dList = myservice.selectDList(pageDto, user.getUno()); 
 		Join member = myservice.selectUser((String)session.getAttribute("sessionId"));
+		ArrayList<Medicine> mList = myservice.selectMList(member.getUno()); 
+		HashMap<String, Object> dList = myservice.selectDList(pageDto, member.getUno()); 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Timestamp tdate = new Timestamp(System.currentTimeMillis());
 		ArrayList<Drug> drlist = (ArrayList<Drug>) dList.get("dList");
@@ -107,6 +104,7 @@ public class FController {
 				drlist.get(i).setDateCh("past");
 			}
 		}
+		
 		model.addAttribute("mList",mList);
 		model.addAttribute("dList",dList.get("dList"));
 		model.addAttribute("page",dList.get("page"));

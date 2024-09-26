@@ -26,6 +26,8 @@ public interface MyService {
 
 	ArrayList<Medicine> selectMList(int uno);
 
+	
+
 
 	
 

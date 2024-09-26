@@ -11,13 +11,13 @@
 	<select id="selectDList" resultType="com.java.dto.Drug">
 		<![CDATA[ 
 			select * from (
-			select rownum rnum, c.* from
-			(select * from drug a
-			inner join drug_user b
-			ON a.dno = b.dno
-			WHERE a.dno IN (SELECT dno FROM drug_user WHERE uno = #{uno})
-			ORDER BY b.ddate ASC
-			) c )
+				select rownum rnum, c.* from
+					(select * from drug a
+					inner join drug_user b
+					ON a.dno = b.dno
+					WHERE a.dno IN (SELECT dno FROM drug_user WHERE uno = #{uno})
+					ORDER BY b.ddate ASC
+				) c )
 			where rnum>=#{page.startRow} and rnum<=#{page.endRow}
 		]]>
 	</select>
@@ -43,4 +43,5 @@
 	<update id="alarm_date"> <!-- 복용약 소비기한 만료 알림 설정 -->
 		update bmember set datealarm = #{alDate} where uno=#{uno} 
 	</update>
+
 </mapper>

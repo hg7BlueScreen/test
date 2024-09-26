@@ -16,6 +16,7 @@ import com.java.dto.Disease;
 import com.java.dto.Drug;
 import com.java.dto.DrugEffect;
 import com.java.dto.DrugGeneralWarning;
+import com.java.dto.Join;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.service.DiseaseService;
@@ -36,11 +37,27 @@ public class DictController {
 	@RequestMapping("/dict")
 	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail, @RequestParam(defaultValue = "0") int onlyBookMark) {
 		// int uno = (int)session.getAttribute("sessionUno");
-		session.setAttribute("sessionUno", 0);
-		int uno = 0;
+		//session.setAttribute("sessionUno", 0);
+		int uno = -1;
+		
+		
+		if(session.getAttribute("sessionId")==null) {
+			
+		}else {
+			String id = (String)session.getAttribute("sessionId");
+			Join user = myservice.selectUser(id);
+			uno = user.getUno();
+		}
+		
+		
+		
+		
+		
+		
+		
 		if(category != null) {
 			if(category.equals("disease")) {
-				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox, categoryDetail, uno, onlyBookMark);
+				HashMap<String, Object> map = dservice.selectAllDisease(pageDto, textBox, categoryDetail,uno, onlyBookMark);
 				model.addAttribute("list", map.get("list"));
 				model.addAttribute("category", category);
 				model.addAttribute("pageDto",pageDto);
@@ -91,13 +108,15 @@ public class DictController {
 	@ResponseBody
 	public HashMap<String, Object> getDrugOne(int dno) {
 		HashMap<String, Object> map = new HashMap<>();
-		Drug drug = drugService.selectOneDrug(dno);
+		String id = (String)session.getAttribute("sessionId");
 		ArrayList<DrugEffect> drugEffect = drugService.selectOneDrugEffect(dno);
 		ArrayList<DrugGeneralWarning> drugGeneralWarning = drugService.selectOneDrugGeneralWarning(dno);
-		
-		if(session.getAttribute("uno")!=null) {
-			String myMedi = myservice.myMediAll((int)session.getAttribute("uno"), dno);
+		Drug drug = drugService.selectOneDrug(dno);
+		if(session.getAttribute("sessionId")!=null) {
+			Join user = myservice.selectUser(id);
+			String myMedi = myservice.myMediAll(user.getUno(), dno);
 			drug.setDefendOverInsert(myMedi);
+			System.out.println(drug.getDefendOverInsert());
 		}
 		
 		map.put("drug", drug);
@@ -109,6 +128,8 @@ public class DictController {
 	@PostMapping("/enableBookMarkDrug")
 	@ResponseBody
 	public String enableBookMarkDrug(int uno, int dno) {
+		
+		System.out.println();
 		drugService.enableBookMarkDrug(uno,dno);
 		return "성공";
 	}

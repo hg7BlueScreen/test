@@ -76,6 +76,7 @@ public class MyServiceImpl implements MyService {
 		ArrayList<Medicine> mList = mymapper.selectMList(uno);
 		return mList;
 	}
+	
 
 
 }

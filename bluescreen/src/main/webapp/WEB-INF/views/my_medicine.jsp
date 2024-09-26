@@ -41,6 +41,11 @@
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
 <script type="text/javascript">
+let id = "${sessionId}";
+if(id==null || id==""){
+	alert("로그인 후 이용가능합니다.");
+	location.href="/login";
+}
 function medicineAdd(){//복용약 등록, 의약품 사전으로 이동
 	location.href="/dict?category=drug";
 }

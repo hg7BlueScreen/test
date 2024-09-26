@@ -23,10 +23,15 @@ public class DrugServiceImpl implements DrugService {
 		pageDto = pageMethodDrug(pageDto, textBox, categoryDetail, onlyBookMark, uno);
 		HashMap<String, Object> map = new HashMap<>();
 		ArrayList<Medicine> list = drugMapper.selectAll(pageDto, textBox, categoryDetail, onlyBookMark, uno);
-		ArrayList<Integer> bookMarkList = drugMapper.getAllBookMark(uno);
+		if(uno == -1) {
+			ArrayList<Integer> noList = new ArrayList<>();
+			map.put("bookMarkList", noList);
+		}else {
+			ArrayList<Integer> bookMarkList = drugMapper.getAllBookMark(uno);
+			map.put("bookMarkList", bookMarkList);
+		}
 		map.put("pageDto", pageDto);
 		map.put("list", list);
-		map.put("bookMarkList", bookMarkList);
 		return map;
 	}
 	
@@ -67,6 +72,7 @@ public class DrugServiceImpl implements DrugService {
 
 	@Override
 	public void enableBookMarkDrug(int uno, int dno) {
+		System.out.println(dno);
 		drugMapper.enableBookMarkDrug(uno,dno);
 	}
 

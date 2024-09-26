@@ -48,7 +48,7 @@
 	
 	
 	function enableBookMarkDrug(dno){
-		if("${sessionUno}" != null){
+		if(!("${sessionUno}" == null || "${sessionUno}" == "")){
 			$(function(){
 				if(confirm(dno+"번을 즐겨찾기로 등록하시겠습니까?")){
 					$.ajax({
@@ -122,9 +122,10 @@ function modalUp(dno){
 				if(!(data.drug.defendOverInsert>=1 &&data.drug.defendOverInsert<=99999)){
 					$("#modalTitle").text(data.drug.item_name);
 				}else{
-					if(data.drug.defendOverInsert!=null){
+					if(!(data.drug.defendOverInsert==null || data.drug.defendOverInsert=="")){
 						$("#modalTitle").text(data.drug.item_name);
 					}else{
+						
 						$("#modalTitle").html(data.drug.item_name+
 						"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${uno}','"+dno+"')\" value='등록' style='background:rgb(0,128,255); color:#fff; border:none; margin-top:-10px;'/>");
 					}
@@ -220,8 +221,8 @@ function modalUp(dno){
 					$("#modalContent").html(mContent);
 				});
 			},
-			error: function(){
-				console.log("error");
+			error: function(status){
+				console.log(status);
 			}
 		});
 	}

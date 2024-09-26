@@ -33,5 +33,7 @@ public interface MyMapper {
 	void alarm_date(int uno, String alDate);
 
 	
+
+	
 	
 }

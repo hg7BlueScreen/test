@@ -34,26 +34,26 @@
 			<if test="categoryDetail == 'entpName' or categoryDetail == 'itemName'">
 				<if test="categoryDetail == 'entpName'">
 					select count(*) from (select * from drug where dno in
-					(select dno from drug_user where uno = #{uno})) where entp_name
+					(select dno from DRUG_USER_BOOKMARK where uno = #{uno})) where entp_name
 					like '%'|| #{textBox} ||'%'
 				</if>
 				<if test="categoryDetail == 'itemName'">
 					select count(*) from (select * from drug where dno in
-					(select dno from drug_user where uno = #{uno})) where item_name
+					(select dno from DRUG_USER_BOOKMARK where uno = #{uno})) where item_name
 					like '%'|| #{textBox} ||'%'
 				</if>
 			</if>
 			<if test="categoryDetail == 'efcyQesitm'">
 				select count(*) from (select * from drug_effect where
 				item_seq in (select item_seq from drug where dno in (select dno from
-				drug_user where uno = #{uno})))
+				DRUG_USER_BOOKMARK where uno = #{uno})))
 				where article_title like '%'|| #{textBox} ||'%' or article_content like
 				'%'|| #{textBox} ||'%'
 			</if>
 			<if test="categoryDetail == 'atpn'">
 				select count(*) from (select * from drug_banned_warning
 				where item_seq in (select item_seq from drug where dno in (select
-				dno from drug_user where uno = #{uno})))
+				dno from DRUG_USER_BOOKMARK where uno = #{uno})))
 				where text like '%'||
 				#{textBox} ||'%'
 			</if>
@@ -64,7 +64,7 @@
 		</if>
 		<if test="(categoryDetail == null or categoryDetail.equals('')) and (onlyBookMark == 1 or onlyBookMark.equals('1'))">
 			select count(*) from drug where dno in (select dno from
-			drug_user where uno = #{uno})
+			DRUG_USER_BOOKMARK where uno = #{uno})
 		</if>
 	</select>
 
@@ -108,13 +108,13 @@
 			<if test="categoryDetail == 'entpName' or categoryDetail == 'itemName'">
 				<if test="categoryDetail == 'entpName'">
 						<![CDATA[ 
-							select * from (select rownum rnum, a.* from (select * from (select * from drug where dno in (select dno from drug_user where uno=#{uno})) 
+							select * from (select rownum rnum, a.* from (select * from (select * from drug where dno in (select dno from DRUG_USER_BOOKMARK where uno=#{uno})) 
 							where entp_Name like '%'|| #{textBox} ||'%' order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 						]]>
 				</if>
 				<if test="categoryDetail == 'itemName'">
 						<![CDATA[ 
-							select * from (select rownum rnum, a.* from (select * from (select * from drug where dno in (select dno from drug_user where uno=#{uno}))
+							select * from (select rownum rnum, a.* from (select * from (select * from drug where dno in (select dno from DRUG_USER_BOOKMARK where uno=#{uno}))
 							where item_Name like '%'|| #{textBox} ||'%' order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 						]]>
 				</if>
@@ -130,7 +130,7 @@
 			<if test="categoryDetail == 'atpn'">
 					<![CDATA[ 
 						select * from (select rownum rnum, a.* from (select * from drug
-						where item_seq in((select item_seq from (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in(select dno from drug_user where uno = #{uno})))
+						where item_seq in((select item_seq from (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in(select dno from DRUG_USER_BOOKMARK where uno = #{uno})))
 						where text like '%'|| #{textBox} ||'%') order by dno asc) a) 
 						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
@@ -152,7 +152,7 @@
 	</select>
 
 	<select id="getAllBookMark" resultType="Integer">
-		select dno from drug_user
+		select dno from DRUG_USER_BOOKMARK
 		where uno = #{uno}
 	</select>
 
@@ -174,11 +174,11 @@
 	</select>
 
 	<insert id="enableBookMarkDrug">
-		insert into drug_user values(#{uno}, #{dno}, 1)
+		insert into DRUG_USER_BOOKMARK values(#{uno}, #{dno})
 	</insert>
 
 	<delete id="disableBookmarkDrug">
-		delete from drug_user where uno = #{uno} and dno =
+		delete from DRUG_USER_BOOKMARK where uno = #{uno} and dno =
 		#{dno}
 	</delete>
 	
