@@ -7,6 +7,7 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -30,6 +31,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 import com.java.dto.Caution;
+import com.java.dto.Complain;
 import com.java.dto.Disease;
 import com.java.dto.Drug;
 import com.java.dto.Medicine;
@@ -165,6 +167,8 @@ public class AdminController {
 	@RequestMapping("/admin_report")
 	public String adreport(@RequestParam(defaultValue = "0") int uno, Model model) {
 		Member member = memberService.selectOneMember(uno);
+		ArrayList<Complain> complainList = memberService.selectComplainAll();
+		model.addAttribute("complain", complainList);
 		model.addAttribute("member",member);
 		return "admin_report";
 	}
@@ -188,6 +192,18 @@ public class AdminController {
 		return "성공";
 	}
 	
+	@PostMapping("/deleteReportOne")
+	@ResponseBody
+	public String deleteReportOne(int cno) {
+		memberService.deleteReportOne(cno);
+		return "성공";
+	}
+	
+	@RequestMapping("/jumpToBoard")
+	public String jumpToBoard(int cno) {
+		// cno를 통해 bno를 가져온 후 return 값을 "bread?bno="+bno;로 바꿔야 함.
+		return "redirect:/";
+	}
 	
 	
 }

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +34,7 @@
 				data: {"CautionScore":reportScore, "uno":uno, "CautionReason":reason},
 				success: function(data){
 					if(data == '성공'){
-						alert("나이스");
+						alert("처리되었습니다.");
 					}
 					
 				},
@@ -43,6 +44,29 @@
 			}); // ajax
 		}
 	}
+	
+	function deleteReportOne(cno) {
+		$.ajax({
+			url: "deleteReportOne",
+			method: "post",
+			data: {"cno":cno},
+			success: function(data){
+				if(data == '성공'){
+					alert("정상적으로 처리되었습니다.");
+					$("#complainTR"+cno).remove();
+					
+				}
+			},
+			error: function(status){
+				console.log(status);
+			}
+		});
+	}
+	
+	function jumpToBoard(cno) {
+		location.href = "jumpToBoard?cno="+cno;
+	}
+	
 </script>
   <style>
   	.links_name {
@@ -116,7 +140,8 @@
 
         <table>    
         <colgroup>
-        	<col width = "20%">
+        	<col width = "10%">
+        	<col width = "10%">
         	<col width = "20%">
         	<col width = "20%">
         	<col width = "40%">
@@ -124,6 +149,7 @@
           <thead>
             <tr>
               <td>닉네임</td>
+              <td>누적 경고</td>
               <td>&nbsp;&nbsp;&nbsp;아이디</td>
               <td>추가 경고</td>
               <td></td>
@@ -132,6 +158,7 @@
           <tbody>
             <tr>
               <td>${member.nickname }</td>
+              <td>${member.caucount }</td>
               <td>${member.id }</td>
               <td><select id = "report_score">
               <c:forEach var = "r" begin = "1" end = "10" step = "1">
@@ -159,7 +186,8 @@
 
         <table>    
         <colgroup>
-        	<col width = "20%">
+        	<col width = "10%">
+        	<col width = "10%">
         	<col width = "20%">
         	<col width = "20%">
         	<col width = "20%">
@@ -168,26 +196,37 @@
           <thead>
             <tr>
               <td>글 번호</td>
-              <td>&nbsp;&nbsp;&nbsp;신고자</td>
+              <td>&nbsp;&nbsp;&nbsp;구분</td>
+              <td>신고자</td>
               <td>신고 날짜</td>
               <td>신고 사유</td>
               <td></td>
             </tr>
           </thead>
           <tbody>
-            <tr id = "user_info_toss">
-              <td>8</td>
-              <td>hwJJM</td>
-              <td>2024/08/26</td>
+          <c:forEach var = "c" items = "${complain }" step = "1">
+            <tr id = "complainTR${c.cno }">
+              <td>${c.no }</td>
+              <td>
+    	          <c:if test="${c.division == 0 }">
+	        	      게시글
+        	      </c:if>
+    	          <c:if test="${c.division == 1 }">
+	        	      댓글
+        	      </c:if>
+              </td>
+              <td>${c.nickname }</td>
+              <td><fmt:formatDate pattern="yyyy-MM-dd" value = "${c.cdate }"/></td>
                 <!-- <span class="badge bg_worning">
                   Meduim
                 </span> -->
-              <td>부적절한 글 게시</td>
+              <td>${c.creason }</td>
               <td>
-              <button type = "button" style = "width: 80px; background-color: #3f80ea; border: 1px white;">삭제</button>
-              <button type = "button" style = "width: 80px; background-color: #3f80ea; border: 1px white;">이동</button>
+              <button type = "button" onclick = "deleteReportOne(${c.cno})" style = "width: 80px; background-color: #3f80ea; border: 1px white;">삭제</button>
+              <button type = "button" onclick = "jumpToBoard(${c.cno})" style = "width: 80px; background-color: #3f80ea; border: 1px white;">이동</button>
               </td>
             </tr>
+          </c:forEach>
             
           </tbody>
         </table>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.java.dto.Caution;
+import com.java.dto.Complain;
 import com.java.dto.Member;
 import com.java.mapper.MemberMapper;
 
@@ -15,8 +16,6 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public ArrayList<Member> selectAllMember(String userCategory, String keyword) {
-		System.out.println(userCategory);
-		System.out.println(keyword);
 		ArrayList<Member> memberList = memberMapper.selectAllMember(userCategory, keyword);
 		return memberList;
 	}
@@ -30,6 +29,17 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void setCaution(Caution caution) {
 		memberMapper.setCaution(caution);
+	}
+
+	@Override
+	public ArrayList<Complain> selectComplainAll() {
+		ArrayList<Complain> list = memberMapper.selectComplainAll();
+		return list;
+	}
+
+	@Override
+	public void deleteReportOne(int cno) {
+		memberMapper.deleteReportOne(cno);
 	}
 	
 	

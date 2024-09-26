@@ -56,7 +56,13 @@
 		insert into caution values(caution_seq.nextval, #{cautionScore},  #{cautionReason}, sysdate, #{uno})
 	</insert>
 	
+	<select id="selectComplainAll" resultType="com.java.dto.Complain">
+		select a.*, b.nickname from complain a, member b where a.cuno = b.uno
+	</select>
 	
+	<delete id="deleteReportOne">
+		delete from complain where cno = #{cno}
+	</delete>
 	
 	
 </mapper>

@@ -3,6 +3,7 @@ package com.java.service;
 import java.util.ArrayList;
 
 import com.java.dto.Caution;
+import com.java.dto.Complain;
 import com.java.dto.Member;
 
 public interface MemberService {
@@ -12,5 +13,9 @@ public interface MemberService {
 	Member selectOneMember(int uno);
 
 	void setCaution(Caution caution);
+
+	ArrayList<Complain> selectComplainAll();
+
+	void deleteReportOne(int cno);
 
 }

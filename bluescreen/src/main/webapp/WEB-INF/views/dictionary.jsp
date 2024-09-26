@@ -15,8 +15,8 @@
 			$("#categoryDetail").html('<option value = "none"></option>');
 		}else if($("#category").val() == "drug"){
 			let optionHtml = "";
-			optionHtml += '<option value = "entpName" class = \'selectList\' <c:if test="${categoryDetail == \'entpName\' }">selected</c:if>>회사명</option>';
 			optionHtml += '<option value = "itemName" class = \'selectList\' <c:if test="${categoryDetail == \'itemName\' }">selected</c:if>>제품명</option>';
+			optionHtml += '<option value = "entpName" class = \'selectList\' <c:if test="${categoryDetail == \'entpName\' }">selected</c:if>>회사명</option>';
 			optionHtml += '<option value = "efcyQesitm" class = \'selectList\' <c:if test="${categoryDetail == \'efcyQesitm\' }">selected</c:if>>효능</option>';
 			optionHtml += '<option value = "atpn" class = \'selectList\' <c:if test="${categoryDetail == \'atpn\' }">selected</c:if>>주의사항</option>';
 			$("#categoryDetail").html(optionHtml);
