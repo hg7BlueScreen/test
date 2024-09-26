@@ -66,8 +66,8 @@ public class MyServiceImpl implements MyService {
 		
 	}
 	@Override
-	public void alramDate(int uno, String alDate) {
-		mymapper.alramDate(uno, alDate);
+	public void alarmDate(int uno, String alDate) {
+		mymapper.alarmDate(uno, alDate);
 		
 	}
 	@Override

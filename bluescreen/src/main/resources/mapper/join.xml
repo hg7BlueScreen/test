@@ -10,10 +10,24 @@
 </select>
 <insert id="insertMember">
 	insert into BMember values(um_seq.nextval,#{id},#{pw},#{name},#{nickname},#{gender},#{address},
-			#{email},#{phone},#{birthday},'','',#{job},'','','',#{ck},'7')
+			#{email},#{phone},#{birthday},'','',#{job},'','','',#{ck})
 </insert>
 <select id="selectUno" resultType="int">
 	select uno from BMember where id = #{id}
+</select>
+<select id="selectDrugAll" resultType="com.java.dto.Drug">
+	<![CDATA[
+	select*from(select a.*, b.ddate
+    from drug_user b join drug a on b.dno = a.dno 
+    where b.dno in (select dno from drug_user where datealarm = #{today})order by b.datealarm asc) 
+    ]]>
+</select>
+<select id="selectMemberAll" resultType="com.java.dto.Join">
+	<![CDATA[
+	select*from(select a.*, b.ddate
+    from drug_user b join bmember a on b.uno = a.uno
+    where b.dno in (select dno from drug_user where datealarm = #{today}) and a.ck = 'agree' order by b.datealarm asc) 
+    ]]>
 </select>
 
 </mapper>

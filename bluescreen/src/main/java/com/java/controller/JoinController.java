@@ -48,11 +48,9 @@ public class JoinController {
 		String nName = jservice.nicknameCheck(nickname);
 		return nName;
 	}
-	
 
-
-	@PostMapping("/join4")
-	public String join4(Join join) {
+	@PostMapping("/join3")
+	public String join3(Join join) {
 		String phone = join.getPhone1()+"-"+join.getPhone2()+"-"+join.getPhone3();
 		String address = "("+join.getAddr1()+") "+join.getAddr2()+", "+join.getAddr3();
 		String email = join.getEmailId()+"@"+join.getEmailTail();
@@ -73,7 +71,7 @@ public class JoinController {
 		//System.out.println(join.getName());
 		//System.out.println(join.getGender());
 		//System.out.println(join);
-		return "join/join4";
+		return "join/join3";
 	}
 
 	

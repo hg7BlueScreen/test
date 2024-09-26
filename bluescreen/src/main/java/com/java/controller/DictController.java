@@ -94,8 +94,12 @@ public class DictController {
 		Drug drug = drugService.selectOneDrug(dno);
 		ArrayList<DrugEffect> drugEffect = drugService.selectOneDrugEffect(dno);
 		ArrayList<DrugGeneralWarning> drugGeneralWarning = drugService.selectOneDrugGeneralWarning(dno);
-		String myMedi = myservice.myMediAll((int)session.getAttribute("uno"), dno);
-		drug.setDefendOverInsert(myMedi);
+		
+		if(session.getAttribute("uno")!=null) {
+			String myMedi = myservice.myMediAll((int)session.getAttribute("uno"), dno);
+			drug.setDefendOverInsert(myMedi);
+		}
+		
 		map.put("drug", drug);
 		map.put("drugEffect", drugEffect);
 		map.put("drugGeneralWarning", drugGeneralWarning);

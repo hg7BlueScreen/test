@@ -22,7 +22,7 @@ public interface MyService {
 
 	String myMediAll(int uno, int dno);
 
-	void alramDate(int uno, String alDate);
+	void alarmDate(int uno, String alDate);
 
 	ArrayList<Medicine> selectMList(int uno);
 

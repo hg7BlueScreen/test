@@ -17,7 +17,7 @@
 		
 		
 		<section>
-			<form name="agree" method="post" action="join4">
+			<form name="agree" method="post" action="join3">
 			<input type="hidden" id="ck" name="ck" value="agree"/>
 			
 				

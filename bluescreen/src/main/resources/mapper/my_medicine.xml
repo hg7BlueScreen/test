@@ -11,13 +11,13 @@
 	<select id="selectDList" resultType="com.java.dto.Drug">
 		<![CDATA[ 
 			SELECT * FROM (
-		    SELECT rownum rnum, a.*, b.ddate 
+		    SELECT a.*, b.ddate 
 		    FROM drug a
 		    JOIN drug_user b ON a.dno = b.dno 
 		    WHERE a.dno IN (SELECT dno FROM drug_user WHERE uno = #{uno}) 
 		    ORDER BY b.ddate ASC
 			) 
-			WHERE rnum >= #{page.startRow} AND rnum <= #{page.endRow}
+			WHERE rownum >= #{page.startRow} AND rownum <= #{page.endRow}
 		]]>
 	</select>
 	<select id="selectMList" resultType="com.java.dto.Medicine">
@@ -30,12 +30,12 @@
 		delete from drug_User where uno=#{uno} and dno=#{dno}
 	</delete>
 	<insert id="myMediUp">
-		insert into drug_User values(#{uno},#{dno},#{ddate})
+		insert into drug_User values(#{uno},#{dno},#{ddate},#{ddate}-7)
 	</insert>
 	<select id="myMediAll" resultType="String" >
 		select uno from drug_User where uno=#{uno} and dno=#{dno}
 	</select>
-	<update id="alramDate"> <!-- 복용약 소비기한 만료 알림 주기 설정 -->
-		update bmember set datealarm=#{alDate} where uno=#{uno} 
+	<update id="alarmDate"> <!-- 복용약 소비기한 만료 알림 설정 -->
+		update drug_user set datealarm = ddate-#{alDate} where uno=#{uno} 
 	</update>
 </mapper>

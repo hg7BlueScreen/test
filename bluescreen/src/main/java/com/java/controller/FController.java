@@ -96,9 +96,9 @@ public class FController {
 
 	@RequestMapping("/my_medicine")
 	public String my_medicine(Page pageDto, Model model) {
-		session.setAttribute("id", "testD");
+		//session.setAttribute("id", "testD");
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
-		session.setAttribute("uno", user.getUno());
+		//session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
 		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
 		HashMap<String, Object> dList = myservice.selectDList(pageDto, user.getUno()); 
@@ -176,13 +176,13 @@ public class FController {
 		return dtFormat.format(cal.getTime());
 	}
 	
-	@PostMapping("/alramDate")
+	@PostMapping("/alarmDate")
 	@ResponseBody
-	public String alramDate(String alDate) {
+	public String alarmDate(String alDate) {
 		int uno = (int)session.getAttribute("uno");
 		//System.out.println(alDate);
 		//System.out.println(uno);
-		myservice.alramDate(uno, alDate);
+		myservice.alarmDate(uno, alDate);
 		return "";
 	}
 
