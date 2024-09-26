@@ -59,7 +59,7 @@
 						</c:if>
 						
 						<c:if test="${sessionId==null }">
-ㄴ						<li class="pc">
+						<li class="pc">
 							<a href="/login" class="roundBtn">로그인</a>
 						</li>
 						</c:if>
