@@ -96,13 +96,13 @@ public class FController {
 
 	@RequestMapping("/my_medicine")
 	public String my_medicine(Page pageDto, Model model) {
-		//session.setAttribute("id", "testD");
+		session.setAttribute("id", "testD");
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
-		//session.setAttribute("uno", user.getUno());
+		session.setAttribute("uno", user.getUno());
 		//System.out.println(user.getUno());	System.out.println(user.getId());
 		ArrayList<Medicine> mList = myservice.selectMList(user.getUno()); 
 		HashMap<String, Object> dList = myservice.selectDList(pageDto, user.getUno()); 
-
+		Join member = myservice.selectUser((String)session.getAttribute("id"));
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Timestamp tdate = new Timestamp(System.currentTimeMillis());
 		ArrayList<Drug> drlist = (ArrayList<Drug>) dList.get("dList");
@@ -118,6 +118,9 @@ public class FController {
 		model.addAttribute("mList",mList);
 		model.addAttribute("dList",dList.get("dList"));
 		model.addAttribute("page",dList.get("page"));
+		model.addAttribute("member",member);
+		System.out.println(member.getDatealarm());
+		
 		//model.addAttribute("todate",todate);
 		//System.out.println(todate);
 		
@@ -183,6 +186,7 @@ public class FController {
 		//System.out.println(alDate);
 		//System.out.println(uno);
 		myservice.alarmDate(uno, alDate);
+		
 		return "";
 	}
 
