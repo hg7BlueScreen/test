@@ -27,6 +27,7 @@ public class DrugServiceImpl implements DrugService {
 			ArrayList<Integer> noList = new ArrayList<>();
 			map.put("bookMarkList", noList);
 		}else {
+			System.out.println("uno : "+uno);
 			ArrayList<Integer> bookMarkList = drugMapper.getAllBookMark(uno);
 			map.put("bookMarkList", bookMarkList);
 		}

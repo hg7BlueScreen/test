@@ -146,7 +146,7 @@
 		</if>
 		<if test="(categoryDetail == null or categoryDetail.equals('')) and (onlyBookMark == 1 or onlyBookMark.equals('1'))">
 				<![CDATA[
-					select * from (select rownum rnum, a.* from (select * from drug where dno in (select dno from drug_user where uno = #{uno}) order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+					select * from (select rownum rnum, a.* from (select * from drug where dno in (select dno from drug_user_bookmark where uno = #{uno}) order by dno asc) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 				]]>
 		</if>
 	</select>
