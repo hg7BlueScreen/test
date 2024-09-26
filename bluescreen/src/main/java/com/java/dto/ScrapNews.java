@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Scrap {
+public class ScrapNews {
 	
 	private String title;
 	private String imgUrl;

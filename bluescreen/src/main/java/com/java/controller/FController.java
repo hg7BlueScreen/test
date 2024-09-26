@@ -1,6 +1,7 @@
 package com.java.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import com.java.dto.Drug;
 import com.java.dto.Join;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
-import com.java.dto.Scrap;
+import com.java.dto.ScrapNews;
 import com.java.service.MyService;
 
 import jakarta.servlet.http.HttpSession;
@@ -37,21 +38,33 @@ public class FController {
 	public String index(Model model) {
 		session.setAttribute("id", "testD"); 
 		session.setAttribute("nickname", "시험드래곤");
+		
 		Join user = myservice.selectUser((String)session.getAttribute("id"));
+		
 		session.setAttribute("addr", user.getAddress());
 		session.setAttribute("uno", user.getUno());
-		//System.out.println(user.getUno());System.out.println(user.getAddress());
+		
 		model.addAttribute("user",user);
+		
+		ScrapNews scraper = selectOneNews();
+		
+		model.addAttribute("scrap",scraper);
+		
+		return "index";
+	}
+	
+
+	private ScrapNews selectOneNews() {
+		List<ScrapNews> scrapers = new ArrayList<>();
 		String URL = "http://www.bosa.co.kr/news/articleList.html?sc_section_code=S1N5&view_type=sm";
-		List<Scrap> scrapers = new ArrayList<>();
 		try {
 			// timeout을 설정하지 않으면 ReadTimeoutException이 발생할 수 있다.
 			Document doc = Jsoup.connect(URL).timeout(50000).get();
 			Elements elements = doc.select("ul[class=type2]").select("li");
 			// System.out.println(elements);
-			ArrayList<Scrap> scraps = new ArrayList<>();
+			ArrayList<ScrapNews> scraps = new ArrayList<>();
 			for (Element element : elements) {
-				Scrap scrap = new Scrap();
+				ScrapNews scrap = new ScrapNews();
 
 				// System.out.println(element);
 				scrap.setImgUrl(element.select("img").attr("src")); // String imgUrl =
@@ -71,12 +84,14 @@ public class FController {
 				}
 			}
 			int number = (int)Math.round(Math.random()*10);
-			model.addAttribute("scrap",scraps.get(number));
+			
+			// model.addAttribute("scrap",scraps.get(number));
+			return scraps.get(number);
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		return "index";
+		return null;
 	}
 
 	@RequestMapping("/my_medicine")

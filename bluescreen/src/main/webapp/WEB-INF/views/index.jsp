@@ -107,7 +107,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 				<div class="content">
 					<div class="left">
 						<h2>데이터 스토리</h2>
-						<p>플랫폼에서 제공하는 데이터를 활용한 흥미로운<br> 시각화 컨텐츠를 제공합니다.</p>
+						<p>일상생활 중 알아두면 좋은 의학 지식,<br>또는 현재 이슈가 되는 의학 뉴스를 보여드립니다.</p>
 					</div>
 					<div class="right">
 						<div class="wrap">

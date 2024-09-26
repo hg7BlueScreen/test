@@ -17,7 +17,7 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.java.dto.Scrap;
+import com.java.dto.ScrapNews;
 
 @Controller
 public class NewsController {
@@ -27,15 +27,15 @@ public class NewsController {
 		// pom에 jsoup 추가 후 사용 
 		
 		String URL = "http://www.bosa.co.kr/news/articleList.html?sc_section_code=S1N5&view_type=sm";
-		List<Scrap> scrapers = new ArrayList<>();
+		List<ScrapNews> scrapers = new ArrayList<>();
         try {
             // timeout을 설정하지 않으면 ReadTimeoutException이 발생할 수 있다.
             Document doc = Jsoup.connect(URL).timeout(50000).get(); 
             Elements elements = doc.select("ul[class=type2]").select("li");
            //System.out.println(elements);
-            Scrap scrap1 = new Scrap();
+            ScrapNews scrap1 = new ScrapNews();
 			  for( Element element : elements ) { 
-			  Scrap scrap = new Scrap();
+			  ScrapNews scrap = new ScrapNews();
 			  
 			  // System.out.println(element);
 			  scrap.setImgUrl(element.select("img").attr("src")); // String imgUrl =
