@@ -154,9 +154,6 @@ html {
 			<div class="logo_name">&nbsp;&nbsp;Waste Drugs</div>
 		</div>
 		<ul>
-			<li><a href="adminpage"> <i class='bx bx-bar-chart'></i> <span
-					class="links_name"> 통계 </span>
-			</a></li>
 			<li><a href="admin_user"> <i class='bx bx-user'></i> <span
 					class="links_name"> 회원정보 </span>
 			</a></li>
