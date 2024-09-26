@@ -32,17 +32,13 @@
 										<span class="d-menu-t">MAP</span>
 										<span class="d-menu-t2">폐의약품 수거함 검색</span>
 									</a>
-									<a href="dict?category=disease" class="go_assess list_menuBox">
+									<a href="dict?category=drug" class="go_assess list_menuBox">
 										<span class="d-menu-t">DICTIONARY</span>
 										<span class="d-menu-t2">의약품 및 질병 사전</span>
 									</a>
 									<a href="javascript:;" class="go_interview list_menuBox">
 										<span class="d-menu-t">MYPAGE</span>
 										<span class="d-menu-t2">개인 정보 및 의료 정보</span>
-									</a>
-									<a href="javascript:;" class="go_proctor list_menuBox">
-										<span class="d-menu-t">ECOPOINT</span>
-										<span class="d-menu-t2">탄소 중립 포인트제</span>
 									</a>
 								</div>
 							</div>
