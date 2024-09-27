@@ -48,12 +48,7 @@ public class DictController {
 			Join user = myservice.selectUser(id);
 			uno = user.getUno();
 		}
-		
-		
-		
-		
-		
-		
+
 		
 		if(category != null) {
 			if(category.equals("disease")) {
@@ -115,8 +110,9 @@ public class DictController {
 		if(session.getAttribute("sessionId")!=null) {
 			Join user = myservice.selectUser(id);
 			String myMedi = myservice.myMediAll(user.getUno(), dno);
+			System.out.println("myMedi"+myMedi);
 			drug.setDefendOverInsert(myMedi);
-			System.out.println(drug.getDefendOverInsert());
+			System.out.println("defendOverInsert"+drug.getDefendOverInsert());
 		}
 		
 		map.put("drug", drug);

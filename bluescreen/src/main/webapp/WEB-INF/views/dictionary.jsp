@@ -119,16 +119,10 @@ function modalUp(dno){
 				const btn = document.querySelector("#modal-btn");
 				const close = document.querySelector(".close");
 				$("#modal").css("display","block");
-				if((data.drug.defendOverInsert>=1 &&data.drug.defendOverInsert<=99999)){
+				if((data.drug.defendOverInsert>=1 &&data.drug.defendOverInsert<=99999) || "${sessionId}"=="" ){
 					$("#modalTitle").text(data.drug.item_name);
-					
 				}else{
-					if(!(data.drug.defendOverInsert==null || data.drug.defendOverInsert=="")){
-						$("#modalTitle").text(data.drug.item_name);
-					}else{
-						$("#modalTitle").html(data.drug.item_name+
-						"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${sessionUno}','"+dno+"')\" value='등록' style='background:rgb(0,128,255); color:#fff; border:none; margin-top:-10px;'/>");
-					}
+					$("#modalTitle").html(data.drug.item_name+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${sessionUno}','"+dno+"')\" value='등록' style='background:rgb(0,128,255); color:#fff; border:none; margin-top:-10px;'/>");
 				}
 					
 					let mContent = "<table class = 'modalTable'>";
