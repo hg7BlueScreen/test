@@ -123,6 +123,12 @@
 			<artifactId>tess4j</artifactId>
 			<version>4.4.1</version>
 		</dependency>
+		
+<dependency> 
+  <groupId>org.springframework</groupId> 
+  <artifactId>spring-test</artifactId> 
+  <version>5.0.7.RELEASE</version> 
+</dependency>
 	</dependencies>
 
 	<build>

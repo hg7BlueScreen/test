@@ -1,0 +1,115 @@
+/* Main Section */
+section {
+  margin: auto;
+  width: 90%;
+}
+
+h1 {
+  font-size: 45px;
+  margin: 50px 0 40px 0;
+  text-align: center;
+  font-weight:normal;
+}
+
+hr {
+  border: 0px solid #ccc;;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+
+  
+}
+
+tr {
+  padding: 50px;
+ 
+}
+
+th {
+  font-weight: normal;
+  font-size: 20px;
+  padding:10px;
+  width:10px;
+}
+
+select,
+input,
+textarea {
+  width: 100%;
+  border: 0.1px solid #ccc;
+   margin:20px;
+}
+
+.category-wrapper {
+  width: 100%;
+  border: 2px solid #ccc;
+
+}
+
+select {
+  padding: 5px 0px 5px 10px;
+  background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/search-box-select.png) no-repeat 98% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input {
+  height: 30px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+}
+
+#file {
+  border: none;
+}
+
+button {
+  cursor : pointer;	
+  width: 110px;
+  height: 45px;
+
+  font-size: 18px;
+}
+
+.write {
+  width: 125px;
+  height: 60px;
+  line-height: 60px;
+  background: #0a47ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-weight:bold;
+  font-size:14px;
+  text-align:center;
+  float:right;
+  margin-left:20px;
+
+}
+
+.cancel {
+  width: 125px;
+  height: 60px;
+  line-height: 60px;
+  background: #0a47ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-weight:bold;
+  font-size:14px;
+  text-align:center;
+  float:right;
+  margin-left:20px;
+ 
+}

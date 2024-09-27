@@ -1,0 +1,108 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.BMapper">
+	<!--  게시글 전체의 숫자 -->
+	 <select id="selectListCount" resultType="int">
+	 	select count(*) from board
+	 </select>
+   <!--  게시글 전체 -->
+	<select id="selectAll" resultType="com.java.dto.Board">
+	   <![CDATA[
+		select * from (select rownum rnum, a.* from 
+		(select * from board order by bgroup desc, bstep asc) a)
+		where rnum>=#{startRow} and rnum<=#{endRow}	
+		]]>
+	</select>
+	<select id="selectOne" resultType="com.java.dto.Board">
+		select * from board where bno=#{bno}
+	</select>
+	<insert id="insertOne">
+		insert into board values (board_seq.nextval, #{id}, #{btitle},#{bcontent},sysdate, 
+		0,board_seq.currval, 0,0,#{bfile},'1')	
+	</insert>
+	<delete id="deleteOne">
+		delete from board where bno=#{bno}
+	</delete>
+	<update id="updateOne">
+		update board set btitle=#{btitle}, 
+		bcontent=#{bcontent}, bfile=#{bfile} where bno=#{bno}
+	</update>
+	
+	<insert id="insertReplyOne">
+		insert into board values (
+		board_seq.nextval, #{id}, #{btitle},#{bcontent},sysdate, 
+		0,#{bgroup}, #{bstep}+1,#{bindent}+1,#{bfile})	
+	</insert>
+	<update id="updateBstepCount">
+		update board set bstep=bstep+1 
+		where bgroup=#{bgroup} and bstep>#{bstep}
+	</update>
+	<select id="selectOner" resultType="com.java.dto.Board">
+	select * from board where bno=#{bno}
+	</select>
+	<select id="selectPrev" resultType="com.java.dto.Board">
+		select * from board where bno = ( 
+		select prevDto from
+		(select bno, btitle, lag(bno,1,-1) over(order by bgroup desc, bstep asc)
+		as prevDto from board 
+		<if test="category == 'title'"> 
+		where btitle like '%'||#{s_word}||'%'
+		</if>
+		<if test="category == 'content'"> 
+		where bcontent like '%'||#{s_word}||'%'
+		</if>
+		<if test="category == 'all'"> 
+		where btitle like '%'||#{s_word}||'%' or bcontent like '%'||#{s_word}||'%'
+		</if>
+		order by bgroup desc, bstep asc)
+		where bno = #{bno})
+	</select>
+	<select id="selectNext" resultType="com.java.dto.Board">
+		select * from board where bno = ( 
+		select nextDto from
+		(select bno, btitle, lead(bno,1,-1) over(order by bgroup desc, bstep asc)
+		as nextDto from board 
+		<if test="category == 'title'"> 
+		where btitle like '%'||#{s_word}||'%'
+		</if>
+		<if test="category == 'content'"> 
+		where bcontent like '%'||#{s_word}||'%'
+		</if>
+		<if test="category == 'all'"> 
+		where btitle like '%'||#{s_word}||'%' or bcontent like '%'||#{s_word}||'%'
+		</if>
+		order by bgroup desc, bstep asc)
+		where bno = #{bno})
+	</select>
+	<!-- 댓글 -->
+	<select id="selectComAll" resultType="com.java.dto.Comment">
+		select * from commentBoard where bno = #{bno}
+		order by cno desc
+	</select>
+	<insert id="commentInsert">
+		<selectKey resultType="int" keyProperty="cno" order="BEFORE">
+			select comment_seq.nextval from dual
+		</selectKey>
+			insert into commentBoard values 
+			(#{cno}, #{bno}, #{id}, #{cpw}, #{ccontent}, sysdate)
+	</insert>
+	<select id="selectComOne" resultType="com.java.dto.Comment">
+		select * from commentBoard where cno = #{cno}
+	</select>
+	<delete id="commentDelete">
+		delete from commentBoard where cno = #{cno}
+	</delete>
+	
+	<update id="commentUpdate">
+		update commentBoard set cpw=#{cpw}, ccontent=#{ccontent}, cdate=sysdate
+		where cno=#{cno}
+	</update>
+	<select id="comCnt" resultType="int">
+		select count(*) from commentBoard where bno=#{bno}
+	</select>
+	<update id="updateBhitUp">
+	update board set bhit=bhit+1 where bno=#{bno}
+	</update>
+</mapper>

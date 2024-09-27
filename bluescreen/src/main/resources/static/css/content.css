@@ -12,14 +12,14 @@
 #location ol li a:hover{text-decoration:none; color:#888;}
 
 /** LEFT **/
-#left{float:left; width:180px; margin:100px 50px 0 0; overflow:hidden;}
+#left{float:left; width:180px; margin:0 50px 0 0; overflow:hidden;}
 #left #title{width:100%; height:81px; font-size:34px; color:#444; font-weight:600; letter-spacing:-1px; line-height:1;}
 #left #title span{display:block; font-size:14px; color:#888; font-weight:600; line-height:2;}
 #left #title2{width:100%; height:81px; font-size:27px; color:#444; font-weight:600; letter-spacing:-1px; line-height:1;}
 #left #title2 span{display:block; font-size:14px; color:#888; font-weight:600; line-height:2;}
 #left ul li{width:100%; height:29px; border-bottom:1px #d9d9d9 solid;}
 #left ul li a{display:block; height:29px; line-height:29px; padding:0 0 0 10px; color:#666; font-size:15px; font-weight:600;}
-#left ul li a.hover{background:url('../images/bg/bg_left.png') 163px 8px #0a47ff  no-repeat; color:#fff;}
+#left ul li a.hover{background: #0a47ff  no-repeat; color:#fff;}
 #left ul li a:hover{background:163px 8px #0a47ff  no-repeat; color:#fff;}
 #left ul li.last{border:0;}
 
@@ -39,7 +39,21 @@
 #maxcontents .banner .mobile{width:290px; margin:0 auto;}
 
 
-
+.bllist {
+  width: 45px;
+  height: 24px;
+  line-height: 20px;
+  color:white;
+  border:none;
+  border-radius: 12px;
+  font-size:11px;
+   background:#0a47ff;
+  font-weight:bold;
+  
+  
+  
+  
+}
 
 /****************  SEARCH RESULT  **************/
 .sContents{width:100%; margin:40px 0 0 0; overflow:hidden;}
@@ -291,18 +305,28 @@
 .otherTab ul li a.on{background:#5a524c; color:#fff;}
 .otherTab ul li a.on span{color:#fff;}
 
-.faqTab{width:100%; margin:40px 0 0 0; overflow:hidden;}
+.faqTab{width:100%; margin:40px 0 0 0; overflow:hidden; }
+.myTab{width:1000px; margin-left:auto; margin-right:auto; }
 .faqTabb{width:100%; margin:1px 0 0 0; overflow:hidden;}
-.faqTab ul{width:100%; border-bottom:1px #0a47ff solid; overflow:hidden;}
+.faqTab ul{width:100%; border-bottom:1px #0a47ff solid; }
+.myTab ul{width:100%;  overflow:hidden; }
 .faqTabb ul{width:100%; border-bottom:none; overflow:hidden; }
-.faqTab ul li{float:left; padding:0 0px 0 0;}
-.faqTab ul li a{display:block; width:167.5px; height:40px; line-height:40px; background:#ebebeb; font-weight:600; font-size:14px; text-align:center;}
+.faqTab ul li{float:left;}
+.faqTab ul li a{display:block; width:250px; height:60px; line-height:60px; background:#ebebeb; font-weight:600; font-size:16px; text-align:center;}
 .faqTab ul li a span{color:#0a47ff;}
 .faqTab ul li a.on{background:#0a47ff; color:#fff;}
 .faqTab ul li a:hover{background:#0a47ff; color:#fff;}
 .faqTab ul li a.on span{color:#fff;}
 .faqTab ul li.last{padding:0;}
-.faqTab ul li.last a{width:167.5px;}
+.faqTab ul li.last a{width:250px;}
+.myTab ul li{float:left; padding:0 0px 0 0;}
+.myTab ul li a{display:block; width:250px; height:40px; line-height:40px; background:#fff; font-weight:bold; font-size:19px; text-align:center;}
+.myTab ul li a span{color:#0a47ff;}
+.myTab ul li a.on{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff;}
+.myTab ul li a:hover{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff; }
+.myTab ul li a.on span{color:#fff;}
+.myTab ul li.last{padding:0;}
+.myTab ul li.last a{width:250px;}
 .normaltab{margin:40px 0 0 0;}
 .fusho1{float:left; padding:0 5px 0 0; font-size:14px; font-weight:600; margin-bottom:10px; margin-left:25px;}
 .fusho2{float:left; padding:0 5px 0 0; font-size:14px; font-weight:600; margin-bottom:10px; margin-left:20px;}
@@ -359,27 +383,33 @@
 .eventList ul li .txt .day{position:absolute; right:0; top:5px; color:#666;}
 
 
+.replyChat{width:1000px; height:200px; margin-right: auto;
+    margin-left: auto; }
 /* reply */
-.replyWrite{width:100%; margin:50px 0 30px 0; overflow:hidden;}
+.replyWrite{width:1100px;margin-right: auto;
+    margin-left: auto; }
 .replyWrite ul li{float:left;}
 .replyWrite ul li.in{position:relative; width:82%; padding:25px 0 0 0;}
 .replyWrite ul li.in p.txt{position:absolute; left:0; top:4px; font-size:13px; font-weight:600; color:#666;}
 .replyWrite ul li.in p.password{position:absolute; right:-2px; top:0; line-height:20px;} 
 .replyWrite ul li.btn{margin:1px 0 0 10px;}
 .replyWrite p.ntic{clear:both; padding:5px 0;}
-.replyType{width:610px; height:95px; border:1px #d9d9d9 solid; padding:0;  font-size:12px; margin:30px;}
-.replyBtn{display:block; width:100px; height:45px; line-height:45px; color:#fff; font-size:13px; font-weight:600; 
-		  background:#0a47ff; text-align:center; border-bottom-right-radius: 8px; overflow: hidden; float:right; margin-left:669px; border-left:none; margin-bottom:50px;}
+.replyType{width:100%; height:140px; border:1px #d9d9d9 solid; padding:30px;  font-size:14px; }
+.ReplyType{width:100%; height:80px; border:1px #d9d9d9 solid; font-size:14px; border-radius: 10px; padding:15px;}
+.replyBtn{display:block; width:130px; height:70px; line-height:55px; color:#fff; font-size:13px; font-weight:600; 
+		  background:#0a47ff; text-align:center; border-bottom-right-radius: 8px; overflow: hidden; border-left:none; }
 .replyBtn:hover{color:#fff; text-decoration:none;}
-.replyBox{width:100%; border-top:1px #d9d9d9 solid; overflow:hidden;}
-.replyBox ul{position:relative; border-bottom:1px #d9d9d9 solid; margin:15px 0 0 0; padding:0 20px 15px 20px;}
-.replyBox ul li.name{font-size:14px; font-weight:600; color:#555; padding:0 0 10px 0;}
-.replyBox ul li.name span{font-size:12px; color:#888; font-weight:normal;}
-.replyBox ul li.txt{width:100%; color:#888; line-height:1.5; font-size:13px; word-break:keep-all;}
+.replyBox{width:1000px; border-top:1px #d9d9d9 solid; overflow:hidden; margin-right: auto; margin-left: auto; margin-top:100px; margin-bottom:300px;}
+.replyBox ul{ border-bottom:1px #d9d9d9 solid; padding:15px 20px;}
+.replyBox ul li.name{font-size:13px;  color:#555;  display: flex; align-items: center; float:left; line-height: 50px; font-family: "Pretendard";}
+.replyBox ul li.name span{font-size:13px; font-weight:normal; margin-left:3px; align-items: center; font-family: "Pretendard";}
+.replyBox ul li.txt{width:900px; font-size:15px; line-height: 20px; padding: 20px 0;}
+.replyBox ul li.Rtxt{width:100%; font-size:15px; margin-top: -23px; }
 .replyBox ul li.btn{text-align:right; height:20px; padding:3px 0 0 0;}
 .replyBox ul li.btn .rebtn{display:inline-block; width:43px; height:23px; line-height:22px; color:#777; font-weight:600; text-align:center; background:url('../images/btn/btn_daybtn.gif') left top no-repeat;}
 .replyBox ul li.btn .rebtn:hover{color:#777;}
-.replynum{width:82px; height:20px; line-height:20px; border:1px #d9d9d9 solid; padding:0 0 0 5px;}
+.replynum{width:90px; height:20px; line-height:100px; border:1px #d9d9d9 solid; border-radius:10px; padding:7px; margin:-2px 0 0 3px;}
+.Replynum{width:90px; height:20px; border:1px #d9d9d9 solid; border-radius:10px; padding:7px;}
 .finReply{margin:50px 0 0 0;}
 
 /* AMOUNT */
@@ -602,23 +632,23 @@
 .viewLine{border-bottom:1px #d9d9d9 solid;}
 
 /* FAQ */
-.faqList{width:100%; border-bottom:1px #d9d9d9 solid; margin:16px 0 0 0; overflow:hidden; margin-bottom:50px; text-align:left;}
+.faqList{width:100%; border-bottom:1px #d9d9d9 solid; overflow:hidden; text-align:left; }
 .faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden;}
 .faqList div{position:relative; width:100%; overflow:hidden;}
-.faqList ul li .question{width:100%; margin:25px 0; padding:2px 0; line-height:1.2; overflow:hidden;}
-.faqList ul li .question .blet{position:absolute; left:25px;   font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .question .category{position:absolute; left:65px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .question .title{font-size:13px; font-weight:600; color:#666; margin:0 0 0 180px; font-size:14px;}
+.faqList ul li .question{width:100%; padding:2px 0; line-height:1.2; overflow:hidden;}
+.faqList ul li .question .blet{position:absolute; left:25px;   font-size:16px; font-weight:600; color:#666; line-height: 55px;}
+.faqList ul li .question .category{position:absolute; left:65px; font-size:16px; font-weight:600; color:#666;line-height: 58px;}
+.faqList ul li .question .title{font-size:16px; font-weight:600; color:#666; margin:0 0 0 180px;line-height: 55px;}
 
 .faqLists{width:100%; border:none; margin:16px 0 0 0; overflow:hidden; margin-bottom:50px;}
 
 .faqList ul li .question .blets{position:absolute; left:25px; font-size:14px; font-weight:600; color:#666; line-height:600%;}
-.faqList ul li .question .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; line-height:500%;}
+.faqList ul li .question .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; margin-top:40px; }
 .faqList ul li .question .titles{font-size:18px; font-weight:600; color:#666; float:left; margin-left:40px; line-height:700%; }
-.faqList ul li .question .bbdate{font-size:12px; font-weight:600; color:#666; text-align:right; position:absolute; bottom:20px;  overflow:hidden; width:630px;}
-.faqList ul li .question .bbhit{font-size:12px; font-weight:600; color:#666; float:right; margin-left:160px; bottom:20px; position:absolute;overflow:hidden;}
-.faqList ul li .question .bbchat{font-size:12px; font-weight:600; color:#666; float:right; margin-left:67px; bottom:20px; position:absolute;overflow:hidden;}
-.faqList ul li.hover .question{background: #0a47ff; }
+.faqList ul li .question .bbdate{font-size:12px; font-weight:600; color:#666; text-align:right; position:absolute; bottom:26px;  overflow:hidden; width:630px; left:330px;  }
+.faqList ul li .question .bbhit{font-size:12px; font-weight:600; color:#666; float:right; margin-left:160px; bottom:28px; position:absolute;overflow:hidden;}
+.faqList ul li .question .bbchat{font-size:12px; font-weight:600; color:#666; float:right; margin-left:67px; bottom:28px; position:absolute;overflow:hidden;}
+.faqList ul li.hover .question{background: #0a47ff;}
 .faqList ul li.hover .question .blet{color:#fff;}
 .faqList ul li.hover .question .blets{color:#fff;}
 .faqList ul li.hover .question .category{color:#fff;}
@@ -640,10 +670,10 @@
 .answer .inbox .aname p span{font-size:12px; color:#888;}
 .answer .inbox .atxt{font-size:13px; color:#888; line-height:1.3;}
 .faqanswer{display:none; width:100%; background:#f9f9f9; overflow:hidden; clear:both;}
-.faqanswer .faqbox{position:relative; border-top:1px #eaeaea solid; padding:10px 20px 10px 22px;}
+.faqanswer .faqbox{position:relative; border-top:1px #eaeaea solid; padding:20px 20px 20px 22px;}
 .faqanswer .faqbox:after {content:""; display:block; clear:both;}
-.faqanswer .faqbox .blet{position:absolute; left:22px; top:11px; font-size:14px; font-weight:600; color:#0a47ff; line-height:1.4;}
-.faqanswer .faqbox .text{font-size:13px; color:#888; line-height:1.4; margin:0 0 0 31px;}
+.faqanswer .faqbox .blet{position:absolute; left:22px; top:11px; font-size:16px; font-weight:600; color:#0a47ff; line-height:45px;}
+.faqanswer .faqbox .text{font-size:15px; color:#888; line-height:1.4; margin:0 0 0 31px;}
 .faqanswer .faqbox .text strong{color:#444;}
 
 
@@ -673,7 +703,7 @@
 .emailType{width:189px; height:38px; line-height:38px; padding:0 0 0 9px; border:1px #d9d9d9 solid; font-size:14px; font-weight:600; color:#888; background:url('../images/bg/bg_email.gif') left top #fff no-repeat;}
 .addressType{width:480px; height:18px; line-height:18px; background:#fff; border:1px #d9d9d9 solid; padding:0 0 0 5px; font-size:12px;}
 .addressType2{width:665px; height:18px; line-height:18px; background:#fff; border:1px #d9d9d9 solid; padding:0 0 0 5px; font-size:12px;}
-.searchInput{width:134px; height:18px; line-height:18px; background:#fff; border:1px #c0c0c0 solid; padding:0 0 0 5px; font-size:12px; margin:0 4px 0 0;}
+.searchInput{width:134px; height:24px; line-height:18px; background:#fff; border:1px #edeef0 solid; padding:8px; font-size:12px; margin-top:-3px; border-radius: 12px;}
 
 .wlong{width:95%; height:18px; line-height:18px; background:#fff; border:1px #d9d9d9 solid; padding:0 5px; font-size:12px;}
 .w348{width:343px; height:18px; line-height:18px; background:#fff; border:1px #c0c0c0 solid; padding:0 0 0 5px; font-size:12px;}
@@ -790,22 +820,23 @@
 .allPageMoving1 .faqq:hover{display:inline-block; width:25px; height:25px; line-height:23px; color:#0a47ff; text-decoration:none; border:1px #0a47ff solid; background:#fff; font-size:12px; font-weight:normal;}
 .allPageMoving2 {margin:30px 0 0 0;}
 .allPageMoving2 *{vertical-align:top;}
-.allPageMoving2 {display:inline-block;width:25px;height:25px;line-height:23px;color:#888;text-decoration:none; border:1px #c0c0c0 solid; background:#fff; font-size:12px; font-weight:normal;}
-.allPageMoving2 li:hover{color:#0a47ff; border:1px #0a47ff solid; background:#fff;}
+.allPageMoving2 {display:inline-block;width:25px;height:25px;line-height:23px;color:#888;text-decoration:none; border:1px #c0c0c0 solid; background:#fff; font-size:14px; font-weight:normal;}
+.allPageMoving2:hover{color:#0a47ff; border:1px #0a47ff solid; background:#fff;}
 .allPageMoving2 span.mobile{display:none;}
 .allPageMoving23{display:inline-block; width:25px; height:25px; line-height:23px; color:#fff; text-decoration:none; border:1px #0a47ff solid; background:#0a47ff; font-size:12px; font-weight:normal;}
 
 /* SEARCH */
-.searchWrap{width:100%; background:#f1f1f1; padding:10px 0 9px 0; margin:40px 0 0 0;}
+.searchWrap{width:100%; height:50px; background:#f1f1f1; padding:12px 0 13px 0; margin:80px 0 0 0;}
 .search{width:380px; margin:0 auto; text-align:center; overflow:hidden;}
 .search ul li{float:left; }
-.search ul li.se{margin:0 12px 0 0;}
+.search ul li.se{margin:0 12px 0 0; line-height: 25px;}
 
 
 /* SELECT CHANGE */
-span.searchStyleSelectBox{height:19px; font-size:12px;background:url('../images/bg/bg_select.gif') right center #fff no-repeat;padding:1px 20px 0 0; border-left:1px #dfdfdf solid;}
+span.searchStyleSelectBox{width:85px; height:24px; font-size:10px;padding:3px 20px 0 6px; border-left:1px #dfdfdf solid; border-radius: 12px; background-color: white; border: 1px #edeef0 solid; line-height: 10px;}
+/**/
 span.searchStyleSelectBox.changed{background-color: #fff;}
-.searchStyleSelectBoxInner{font-size:12px;white-space:nowrap; line-height:1.4; padding:0 40px 0 4px;}
+.searchStyleSelectBoxInner{font-size:12px;white-space:nowrap; line-height:1.4; padding:0 40px 0 4px;  }
 
 
 /* SPAN */
@@ -884,8 +915,10 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 
 /* Tab */
 .faqTab ul li a{width:143px;}
+.myTab ul li a{width:143px;}
 .faqTabb ul li{width:143px;}
 .faqTab ul li.last a{width:145px;}
+.myTab ul li.last a{width:145px;}
 .faqTabb ul li.last{width:145px;}
 
 .detailTab ul li a{display:block; width:143px; height:40px; line-height:40px; background:#ebebeb; font-weight:600; font-size:14px; text-align:center;}
@@ -928,7 +961,8 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 .replyWrite ul li.in{width:auto;}
 .replyWrite ul li.in p.password{right:0;}
 .replyWrite ul li.btn{margin:5px 0 0 0;}
-.replyType{width:99.7%; height:48px; border:1px #e5e5e5 solid;}
+.replyType{width:99.7%; height:10px; border:1px #e5e5e5 solid;}
+.ReplyType{width:99.7%; height:48px; border:1px #e5e5e5 solid;}
 .replyBtn{width:100%; height:40px; line-height:40px;}
 
 
@@ -1185,8 +1219,10 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 .otherTab ul li a{width:142px;}
 
 .faqTab ul li a{width:142px;}
+.myTab ul li a{width:142px;}
 .faqTabb ul li{width:142px;}
 .faqTab ul li.last a{width:142px;}
+.myTab ul li.last a{width:142px;}
 .faqTabb ul li.last{width:142px;}
 
 .normaltab{margin:30px 0 0 0;}
@@ -1313,6 +1349,9 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 .faqTab ul li.dep{padding:0;}
 .faqTab ul li a{width:142px; margin:0 0 4px 0;}
 .faqTab ul li.last a{width:142px;}
+.myTab ul li.dep{padding:0;}
+.myTab ul li a{width:142px; margin:0 0 4px 0;}
+.myTab ul li.last a{width:142px;}
 .faqTabb ul li.dep{padding:0;}
 .faqTabb ul li{width:142px; margin:0 0 4px 0;}
 .faqTabb ul li.last{width:142px;}
@@ -1355,6 +1394,7 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 /* REPLY */
 .replyWrite ul li.in p.password{position:relative; margin:5px 0 10px 0;}
 .replyType{width:99%;}
+.ReplyType{width:99%;}
 
 
 /* BTNAREA */
@@ -1374,6 +1414,12 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 }
 .fusho3{
 	display:block; width:163px; height:40px; line-height:40px; background:#ebebeb; font-weight:600; font-size:14px; text-align:center;
+}
+
+/* myPage */
+.Mfind{
+	width:298px;
+	height:190px;
 }
 
 }

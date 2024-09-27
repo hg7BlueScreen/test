@@ -52,7 +52,7 @@ em { font-style:normal; }
 
 legend { visibility:hidden; height:0; width:0; font-size:0; line-height:0; overflow:hidden; position:absolute; }
 form fieldset { border:none; padding:0; margin:0; }
-img { vertical-align:middle; max-width:100%; }
+img { max-width:100%; }
 
 
 
