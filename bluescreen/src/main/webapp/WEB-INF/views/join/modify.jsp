@@ -15,12 +15,11 @@
 			<%@ include file="../header.jsp" %>
 		</header>
 		
-		
 		<section>
-			<form name="agree" method="post" action="join3">
+			<form name="agree" method="post" action="myInformation">
+			<input type="hidden" id="uno" name="uno" value="${mem.uno }"/>
 			<input type="hidden" id="ck" name="ck" value="agree"/>
 			
-				
 				<div id="subBanner"></div>
 				
 				<div id="sub_top_area">
@@ -45,7 +44,7 @@
 				</div>
 				
 				<h4>
-					회원 정보 입력 
+					회원 정보 수정
 					<span>(*는 필수 입력사항입니다.)</span>
 				</h4>
 				<fieldset class="fieldset_class">
@@ -55,63 +54,62 @@
 							<label for="name">*이름</label>
 						</dt>
 						<dd>
-							<input type="text" id="name" name="name" />
+							<input type="text" id="name" name="name" value="${mem.name }"/>
 						</dd>
 					</dl>
 					<dl id="join_id_dl">
 						<dt>
 							<div></div>
-							<label for="id">*아이디</label>
+							<label for="id">아이디</label>
 						</dt>
 						<dd>
-							<input type="text" id="id" name="id" onchange = "idchange()" />
-							<input type="button" onclick="idOk()" value="중복확인"/>
-							<span>4~16자리의 영문, 숫자, 특수기호(_)만 사용하실 수 있습니다.</span>
-							<span>첫 글자는 영문으로 입력해 주세요.</span>
+							${mem.id }
 						</dd>
 					</dl>
 					</dl>
 					<dl id="join_nickname_dl">
 						<dt>
 							<div></div>
-							<label for="nickname">*닉네임</label>
+							<label for="nickname">닉네임</label>
 						</dt>
 						<dd>
-							<input type="text" id="nickname" name="nickname" onchange = "nicknamechange()" />
-							<input type="button" onclick="nicknameOk()" value="중복확인"/>
+							<input type="text" id="nickname" name="nickname" onchange = "nicknamechange()" value="${mem.nickname }" />
+							<input type="button" onclick="nicknameOk()" value="중복확인" id="nicBtn" disabled/>
 							<span>3~16자리의 한글, 영문, 숫자만 사용하실 수 있습니다.</span>
 						</dd>
 					</dl>
 					<dl id="join_pw1_dl">
 						<dt>
 							<div></div>
-							<label for="pw">*비밀번호</label>
+							<label for="pw1">비밀번호</label>
 						</dt>
 						<dd>
-							<input type="password" id="pw" name="pw"  />
-							<span>영문, 숫자, 특수문자 모두 조합 8~20까지 입력할 수 있습니다.</span>
+							<input type="password" id="pw1" name="pw1" class="pw1" onchange="pwChg()" disabled />
+							<input type="hidden" id="pw" name="pw" value="${mem.pw }"/>
+							<input type="button" onclick="pwBtn()" value="비밀번호 변경"/>
+							<span id="pwCon"></span>
 						</dd>
 					</dl>
 					<dl id="join_pw2_dl">
 						<dt>
 							<div></div>
-							<label for="pwOk">*비밀번호 확인</label>
+							<label for="pwOk">비밀번호 확인</label>
 						</dt>
 						<dd>
-							<input type="password" id="pwOk" name="pwOk" onkeyup="pwkey()" />
+							<input type="password" id="pwOk" name="pwOk" onkeyup="pwkey()" class="pw" disabled/>
 							<span id="pwCheck"></span>
 						</dd>
 					</dl>
 					<dl id="join_mail_dl">
 						<dt>
 							<div></div>
-							<label for="mailId">*이메일</label>
+							<label for="mailId">이메일</label>
 						</dt>
 						<dd>
 							<div>
-							<input type="text" id="emailId" name="emailId"/>
+							<input type="text" id="emailId" name="emailId" onchange="emailCk()" value="${mem.emailId}"/>
 							<span>@</span>
-							<input type="text" id="emailTail" name="emailTail"  />
+							<input type="text" id="emailTail" name="emailTail"  value="${mem.emailTail }"/>
 							<select id="emailList" onchange="emailCk()">
 								<option value="txt" selected="selected">직접입력</option>
 								<option value="gmail.com">구글</option>
@@ -133,10 +131,10 @@
 							<label for="addr1">주소</label>
 						</dt>
 						<dd>
-							<input type="text" id="addr1" name="addr1"/>
+							<input type="text" id="addr1" name="addr1" value="${mem.addr1 }"/>
 							<input type="button" onclick="addressBtn()" value="우편번호"/>
-							<input type="text" id="addr2" name="addr2"/>
-							<input type="text" id="addr3" name="addr3" placeholder="상세주소를 입력해주세요." />
+							<input type="text" id="addr2" name="addr2" value="${mem.addr2 }"/>
+							<input type="text" id="addr3" name="addr3" value="${mem.addr3 }"/>
 						</dd>
 						
 					</dl>
@@ -149,9 +147,9 @@
 						<dd>
 							<input type="text" id="phone1" name="phone1" maxlength="3" value="010"/>
 							<span> - </span>
-							<input type="text" id="phone2" name="phone2" maxlength="4"  />
+							<input type="text" id="phone2" name="phone2" maxlength="4"  value="${mem.phone2 }"/>
 							<span> - </span>
-							<input type="text" id="phone3" name="phone3" maxlength="4"  />
+							<input type="text" id="phone3" name="phone3" maxlength="4"  value="${mem.phone3 }"/>
 						</dd>
 					</dl>
 					<dl id="join_birth_dl">
@@ -161,37 +159,59 @@
 						</dt>
 						<dd>
 							<select id="year" name="year">
-								<script>
-								for(var i=1920; i<=2024; i++){
-									if(i==1990){
-									document.write("<option value='"+i+"' selected>"+i+"</option>");
-									}
-									document.write("<option value='"+i+"'>"+i+"</option>");
-								}
-								</script>
+								<c:forEach var="y" begin="1920" end="2024" step="1">
+									<c:if test="${y == mem.year}">
+										<option value="${y }" selected>${y }</option>
+									</c:if>
+									<c:if test="${y != mem.year}">
+										<option value="${y }">${y }</option>
+									</c:if>
+								</c:forEach>
 							</select>
 							<span>년</span>
 							<select id="month" name="month" onchange="bmonth()" >
-								<script>
-								for(var i=1; i<=12; i++){
-									if(i<10){
-										document.write("<option value='"+i+"'>0"+i+"</option>");
-									}else{
-										document.write("<option value='"+i+"'>"+i+"</option>");
-									}
-								}
-								</script>
+								<c:forEach var="m" begin="1" end="12" step="1">
+									<c:if test="${m == mem.month}">
+										<c:if test="${m < 10}">
+											<option value="${m }" selected>0${m }</option>
+										</c:if>
+										<c:if test="${m >= 10 }">
+											<option value="${m }" selected>${m }</option>
+										</c:if>
+									</c:if>
+									<c:if test="${m != mem.month}">
+										<c:if test="${m < 10}">
+											<option value="${m }">0${m }</option>
+										</c:if>
+										<c:if test="${m >= 10 }">
+											<option value="${m }">${m }</option>
+										</c:if>
+									</c:if>
+								</c:forEach>
 							</select>
 							<span>월</span>
 							<select id="day" name="day" >
+								<c:forEach var="d" begin="1" end="31" step="1">
+									<c:if test="${d == mem.day }">
+										<c:if test="${d<10 }">
+											<option value="${d }"selected>0${d }</option>
+										</c:if>
+										<c:if test="${d>=10 }">
+											<option value="${d }"selected>${d }</option>
+										</c:if>
+									</c:if>
+									<c:if test="${d != mem.day }">
+										<c:if test="${d<10 }">
+											<option value="${d }">0${d }</option>
+										</c:if>
+										<c:if test="${d>=10 }">
+											<option value="${d }">${d }</option>
+										</c:if>
+									</c:if>
+								</c:forEach>
+								
 								<script>
-								for(var i=1; i<=31; i++){
-									if(i<10){
-										document.write("<option value='"+i+"'>0"+i+"</option>");
-									}else{
-										document.write("<option value='"+i+"'>"+i+"</option>");
-									}
-								}
+								
 								function bmonth(){
 									var dmonth = $("#month").val();
 									var str = "";
@@ -235,9 +255,9 @@
 						</dt>
 						<dd>
 							<div>
-								<input type="radio" name="gender" id="male" value="남성" checked="checked"/>
+								<input type="radio" name="gender" id="male" value="남성"<c:if test="${mem.gender == '남성'}">checked</c:if>  />
 								<label for="male">남성</label>
-								<input type="radio" name="gender" id="female" value="여성" />
+								<input type="radio" name="gender" id="female" value="여성" <c:if test="${mem.gender == '여성'}">checked</c:if>/>
 								<label for="female">여성</label>
 							</div>
 						</dd>
@@ -249,13 +269,13 @@
 						</dt>
 						<dd>
 							<select id="job" name="job">
-								<option value="" selected>선택</option>
-								<option value="회사원">회사원</option>
-								<option value="자영업">자영업</option>
-								<option value="프리랜서">프리랜서</option>
-								<option value="전업주부">전업주부</option>
-								<option value="학생">학생</option>
-								<option value="기타">기타</option>						
+								<option value="" <c:if test="${mem.job == ''}" >selected</c:if>>선택</option>
+								<option value="회사원"<c:if test="${mem.job == '회사원'}" >selected</c:if>>회사원</option>
+								<option value="자영업"<c:if test="${mem.job == '자영업'}" >selected</c:if>>자영업</option>
+								<option value="프리랜서"<c:if test="${mem.job == '프리랜서'}" >selected</c:if>>프리랜서</option>
+								<option value="전업주부"<c:if test="${mem.job == '전업주부'}" >selected</c:if>>전업주부</option>
+								<option value="학생"<c:if test="${mem.job == '학생'}" >selected</c:if>>학생</option>
+								<option value="기타"<c:if test="${mem.job == '기타'}" >selected</c:if>>기타</option>						
 							</select>
 						</dd>
 					</dl>
@@ -263,7 +283,7 @@
 				
 				<div id="info_input_button">
 					<a href = "/"><input type="reset" value="취소" /></a>
-					<a onclick="joinBtn()"><input type="button" style="color: rgb(255, 255, 255); background: rgb(0, 128, 255);" value="다음" /></a>
+					<a onclick="saveBtn()"><input type="button" style="color: rgb(255, 255, 255); background: rgb(0, 128, 255);" value="저장" /></a>
 				</div>
 				
 			</form>
@@ -271,8 +291,8 @@
 		
 <script type="text/javascript">
 let idCheck = false;
-let pwCheck = false;
-let nicknameCheck = false;
+let pwCheck = true;
+let nicknameCheck = true;
 let email_check = false;
 let nameCk = /^[가-힣]+$/;
 let idCk = /^[a-zA-Z]{1}[a-zA-Z0-9_]{3,15}$/;
@@ -281,77 +301,55 @@ let pwCk = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,20}$/;
 let interval; //
 
 function nicknamechange(){
+	if("${mem.nickname}"==$("#nickname").val()){
+		$("#nicBtn").attr("disabled",true);
+	}else{
+		$("#nicBtn").attr("disabled",false);
+	}
 	nicknameCheck=false;
 }
 function idchange(){
 	idCheck=false;
 }
-function joinBtn(){
+function pwBtn(){
+	 	$("#pwCon").html("영문, 숫자, 특수문자 모두 조합 8~20까지 입력할 수 있습니다.");
+		$("#pw1").attr("disabled",false);
+		$("#pwOk").attr("disabled",false); 
+}
+function pwChg(){
+	if(!pwCk.test($("#pw1").val())){
+		alert("비밀번호가 조건에 부합하지 않습니다.\n(하나 이상의 영문, 숫자, 특수문자(!@#$%^&*?_)포함 8~20자리까지 가능)");
+		$("#pw1").val("");
+		$("#pwOk").val("");
+		$("#pw1").focus();
+	}//pwCk 
+	else if(pwCheck==false){
+		alert("비밀번호가 일치하지 않습니다.\n비밀번호와 비밀번호 확인이 일치하게 해주세요.");
+	}
+}
+	
+function saveBtn(){
+	alert();
 	if(!nameCk.test($("#name").val())){
 		alert("이름은 한글만 입력 가능합니다.");
 		$("#name").val("");
 		$("#name").focus();
 	}//nameCk
-	else if(idCheck==false){
-		alert("아이디 중복체크를 완료해주세요.");
-		$("#id").focus();
-	}//idCk
 	else if(nicknameCheck==false){
 		alert("닉네임 중복체크를 완료해주세요.");
 		$("#nickname").focus();
 	}//nicknameCk
-	else if(!pwCk.test($("#pw").val())){
-		alert("비밀번호가 조건에 부합하지 않습니다.\n(하나 이상의 영문, 숫자, 특수문자(!@#$%^&*?_)포함 8~20자리까지 가능)");
-		$("#pw").val("");
-		$("#pwOk").val("");
-		$("#pw").focus();
-	}//pwCk 
-	else if(pwCheck==false){
-		alert("비밀번호가 일치하지 않습니다.\n비밀번호와 비밀번호 확인이 일치하게 해주세요.");
-	}else if($("#emailId").val()==""||$("#emailTail").val()==""){
-		alert("이메일을 입력해주세요.");
-		return false;
-	}else if(email_check==false){
-		alert("이메일 인증 받아주세요.");	
-	}else{
+	else{
 		agree.submit();
 	}
 }
 function pwkey(){
-	if($("#pw").val()==$("#pwOk").val()){
+	if($("#pw1").val()==$("#pwOk").val()){
 		$("#pwCheck").text("*비밀번호가 일치합니다.").css('color','blue');
 		pwCheck = true;
 	}else{
 		$("#pwCheck").text("*비밀번호가 일치하지 않습니다.").css('color','red');
 		pwCheck = false;
-	}
-}
-function idOk(){
-	if(!idCk.test($("#id").val())){
-		alert("조건에 부합하지 않는 아이디입니다.\n다시 입력해주세요.");
-		idCheck = false;
-	}else{
-		$.ajax({
-			url:"/join/idOk",
-			method:"post",
-			data:{"id":$("#id").val()},
-			success:function(data){
-				//alert("성공");
-				//console.log(data); //겹치는 아이디 확인 
-				if(data==""){
-					alert("사용할 수 있는 아이디입니다.");
-					idCheck = true;
-				}else{
-					alert("이미 사용중인 아이디입니다.");
-					$("#id").val("");
-					$("#id").focus();
-					idCheck = false;
-				}
-			},
-			error:function(){
-				alert("다시 시도해주세요");
-			}
-		});//ajax
 	}
 }
 function nicknameOk(){
@@ -388,6 +386,12 @@ function emailCk(){
 	}else{
 		$("#emailTail").val("");
 	}
+	if($("#emailId").val()==""||$("#emailTail").val()==""){
+		alert("이메일을 입력해주세요.");
+		return false;
+	}else if(email_check==false){
+		alert("이메일 인증 받아주세요.");	
+	}
 }
 function addressBtn(){
 	new daum.Postcode({
@@ -413,14 +417,12 @@ function emailSend(){ //이메일 인증번호 보내기 후 활성화
 			$("#emailCk").append('<input type="button" id="emailOk" onclick="emailk(\''+data+'\')" value="인증번호 확인"/>');
 			$("#emailCk").append('<span id="timer"></span>'); 
 			//console.log(name); console.log(email);
-			
 		},
 		error:function(error, status){
 			alert("다시 시도해주세요");
 		}
 	});//ajax
 }
-
 function startTimer(){ //타이머
 	var timeLeft = 300; //5분
 	const timerElement = $("#timer");

@@ -242,8 +242,9 @@ function modalUp(dno){
 						alert("이미 등록된 약입니다.");
 					}
 				},
-				error:function(){
+				error:function(status){
 					alert("fail");
+					console.log(status);
 				}
 			});
 		}else{

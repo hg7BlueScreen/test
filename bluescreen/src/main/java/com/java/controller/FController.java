@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.Drug;
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.dto.ScrapNews;
@@ -90,7 +90,7 @@ public class FController {
 			return "my_medicine";
 		}
 		//System.out.println(user.getUno());	System.out.println(user.getId());
-		Join member = myservice.selectUser((String)session.getAttribute("sessionId"));
+		Member member = myservice.selectUser((String)session.getAttribute("sessionId"));
 		ArrayList<Medicine> mList = myservice.selectMList(member.getUno()); 
 		HashMap<String, Object> dList = myservice.selectDList(pageDto, member.getUno()); 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -5,7 +5,7 @@
 	<select id="selectListCount" resultType="int">
 		select count(*) from drug_User where uno=#{uno}
 	</select>
-	<select id="selectUser" resultType="com.java.dto.Join">
+	<select id="selectUser" resultType="com.java.dto.Member">
 		select*from bmember where id=#{attribute}
 	</select>
 	<select id="selectDList" resultType="com.java.dto.Drug">

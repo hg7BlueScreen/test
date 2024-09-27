@@ -22,12 +22,17 @@
     where b.dno in (select dno from drug_user where datealarm = #{today})order by b.datealarm asc) 
     ]]>
 </select>
-<select id="selectMemberAll" resultType="com.java.dto.Join">
+<select id="selectMemberAll" resultType="com.java.dto.Member">
 	<![CDATA[
 	select*from(select a.*, b.ddate
     from drug_user b join bmember a on b.uno = a.uno
     where b.dno in (select dno from drug_user where datealarm = #{today}) and a.ck = 'agree' order by b.datealarm asc) 
     ]]>
 </select>
+<update id="updateUser">
+	update bmember set name=#{name}, nickname=#{nickname}, pw=#{pw}, email=#{email}, address=#{address}, 
+		phone=#{phone}, birthday=#{birthday},job=#{job},gender=#{gender} where uno=#{uno}
+</update>
+
 
 </mapper>

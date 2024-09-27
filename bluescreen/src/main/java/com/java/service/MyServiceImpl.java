@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.java.dto.Drug;
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.mapper.MyMapper;
@@ -16,8 +16,8 @@ import com.java.mapper.MyMapper;
 public class MyServiceImpl implements MyService {
 	@Autowired MyMapper mymapper;
 	@Override
-	public Join selectUser(String attribute) {
-		Join selectaddr = mymapper.selectUser(attribute);
+	public Member selectUser(String attribute) {
+		Member selectaddr = mymapper.selectUser(attribute);
 		return selectaddr;
 	}
 	@Override

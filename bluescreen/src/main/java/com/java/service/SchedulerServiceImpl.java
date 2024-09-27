@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.java.dto.Drug;
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.mapper.JoinMapper;
 
 @Service
@@ -27,7 +27,7 @@ public class SchedulerServiceImpl implements SchedulerService {
         String today = sdf.format(todate);
 
 		ArrayList<Drug> dlist = jmapper.selectDrugAll(today);  
-		ArrayList<Join> mlist = jmapper.selectMemberAll(today);  
+		ArrayList<Member> mlist = jmapper.selectMemberAll(today);  
 		//System.out.println(dlist.get(0));System.out.println(mlist.get(0));
 		//System.out.println("333"+mlist.size());
 		
@@ -41,7 +41,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 //		perDay();
 //	}
 	
-	private void medicineSendEmail(ArrayList<Drug> dlist, ArrayList<Join> mlist) {
+	private void medicineSendEmail(ArrayList<Drug> dlist, ArrayList<Member> mlist) {
 		SimpleMailMessage message = new SimpleMailMessage();
 		if(!mlist.isEmpty()) {
 			for(int i=0;i<mlist.size();i++) {

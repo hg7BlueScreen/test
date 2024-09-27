@@ -1,6 +1,6 @@
 package com.java.service;
 
-import com.java.dto.Join;
+import com.java.dto.Member;
 
 public interface JoinService {
 
@@ -8,11 +8,15 @@ public interface JoinService {
 
 	String nicknameCheck(String nickname);
 
-	void insertMember(Join join);
+	void insertMember(Member join);
 
-	int selectUno(Join join);
+	int selectUno(Member join);
 
 	String getCode(String name, String email);
+
+	Member selectAll(String id);
+
+	void updateUser(Member member);
 
 	
 }

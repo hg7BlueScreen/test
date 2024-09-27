@@ -23,7 +23,7 @@ public class Member {
 	private String socialKey;	//소셜 키	
 	private String job;	//직업
 	private String ck;	//선택 동의사항 동의 여부
-	private String dateAlarm; // 복용약 소비기한 만료 전 알람 여부 
+	private String datealarm; // 고객 선택 알람 주기
 	
 	private int caucount;	//경고점수
 	private String leavereason;	//탈퇴사유
@@ -47,5 +47,6 @@ public class Member {
 	private String year;
 	private String month;
 	private String day;
+	
 	
 }

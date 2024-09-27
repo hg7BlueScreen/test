@@ -16,7 +16,7 @@ import com.java.dto.Disease;
 import com.java.dto.Drug;
 import com.java.dto.DrugEffect;
 import com.java.dto.DrugGeneralWarning;
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.service.DiseaseService;
@@ -45,7 +45,7 @@ public class DictController {
 			
 		}else {
 			String id = (String)session.getAttribute("sessionId");
-			Join user = myservice.selectUser(id);
+			Member user = myservice.selectUser(id);
 			uno = user.getUno();
 		}
 
@@ -108,7 +108,7 @@ public class DictController {
 		ArrayList<DrugGeneralWarning> drugGeneralWarning = drugService.selectOneDrugGeneralWarning(dno);
 		Drug drug = drugService.selectOneDrug(dno);
 		if(session.getAttribute("sessionId")!=null) {
-			Join user = myservice.selectUser(id);
+			Member user = myservice.selectUser(id);
 			String myMedi = myservice.myMediAll(user.getUno(), dno);
 			System.out.println("myMedi"+myMedi);
 			drug.setDefendOverInsert(myMedi);

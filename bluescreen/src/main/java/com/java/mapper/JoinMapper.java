@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.java.dto.Drug;
-import com.java.dto.Join;
+import com.java.dto.Member;
 
 @Mapper
 public interface JoinMapper {
@@ -15,12 +15,15 @@ public interface JoinMapper {
 
 	String nicknameCheck(String nickname);
 
-	void insertMember(Join join);
+	void insertMember(Member join);
 
-	int selectUno(Join join);
+	int selectUno(Member join);
 
 	ArrayList<Drug> selectDrugAll(String today);
 
-	ArrayList<Join> selectMemberAll(String today);
+	ArrayList<Member> selectMemberAll(String today);
+	
+	void updateUser(Member member);
+	
 
 }

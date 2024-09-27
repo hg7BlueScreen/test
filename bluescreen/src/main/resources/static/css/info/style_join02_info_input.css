@@ -4,8 +4,6 @@
 ul, ol{ list-style-type: none; }
 
 
-
-
 /* section */
 section{
 	width: 100%; height: 1200px;
@@ -244,6 +242,18 @@ dd span {
 }
 #join_pw2_dl input {
 	width: 276px;
+}
+#pw3_dl dt,dd {
+	height: 51px;
+}
+#pw3_dl dt div {
+	top: 14px;
+}
+#pw3_dl dt {
+	 padding-top: 16px;
+}
+#pw3_dl input {
+	width: 200px;
 }
 
 #join_mail_dl dt {

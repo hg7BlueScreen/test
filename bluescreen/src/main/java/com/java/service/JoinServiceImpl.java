@@ -7,12 +7,14 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.mapper.JoinMapper;
+import com.java.mapper.MyMapper;
 
 @Service
 public class JoinServiceImpl implements JoinService {
 	@Autowired JoinMapper jmapper;
+	@Autowired MyMapper mymapper;
 	@Override
 	public String idCheck(String id) {
 		String idOk = jmapper.idCheck(id);
@@ -24,13 +26,13 @@ public class JoinServiceImpl implements JoinService {
 		return nName;
 	}
 	@Override
-	public void insertMember(Join join) {
+	public void insertMember(Member join) {
 		//System.out.println(join.getId());
 		jmapper.insertMember(join);
 		
 	}
 	@Override
-	public int selectUno(Join join) {
+	public int selectUno(Member join) {
 		int uno = jmapper.selectUno(join);
 		
 		return uno;
@@ -71,6 +73,16 @@ public class JoinServiceImpl implements JoinService {
 			pwcode += charset[idx];
 		}
 		return pwcode;
+	}
+	@Override
+	public Member selectAll(String id) {
+		Member member = mymapper.selectUser(id);
+		return member;
+	}
+	@Override
+	public void updateUser(Member member) {
+		jmapper.updateUser(member);
+		
 	}
 	
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.java.dto.Drug;
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 
@@ -14,7 +14,7 @@ public interface MyMapper {
 
 	ArrayList<Medicine> selectPage(int startRow, int endRow);
 
-	Join selectUser(String attribute);
+	Member selectUser(String attribute);
 
 	void deleteCk(int dno, int uno);
 
@@ -31,6 +31,8 @@ public interface MyMapper {
 	int selectListCount(int uno);
 
 	void alarm_date(int uno, String alDate);
+
+	
 
 	
 

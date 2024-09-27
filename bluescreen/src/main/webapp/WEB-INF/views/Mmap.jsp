@@ -260,10 +260,13 @@ function sbtn(){
 				    var el = document.createElement('li'),
 				    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
 				                '<div class="info">' +
-				                '   <h5>' + places.name + '</h5>';
-				    itemStr += '    <span>' + places.addr + '</span>';
-				    itemStr += '  <span class="tel">' + places.phone  + '</span>' +
-				                '</div>';           
+				                '<h5>' + places.name + '</h5>';
+				    itemStr += '<span>' + places.addr + '</span>';
+				    if(places.phone == null){
+				     	itemStr += '  <span class="tel">' + ""  + '</span>' + '</div>';           
+				    }else{
+				      	itemStr += '  <span class="tel">' + places.phone  + '</span>' + '</div>';           
+				    }             
 
 				    el.innerHTML = itemStr;
 				    el.className = 'item';
@@ -372,8 +375,7 @@ function getListItem(index, places) {
         itemStr += '    <span>' +  places.address_name  + '</span>'; 
     }
                  
-      itemStr += '  <span class="tel">' + places.phone  + '</span>' +
-                '</div>';           
+      itemStr += '  <span class="tel">' + places.phone  + '</span>' + '</div>';           
 
     el.innerHTML = itemStr;
     el.className = 'item';

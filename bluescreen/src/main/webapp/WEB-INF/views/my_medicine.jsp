@@ -102,7 +102,7 @@ function medicineImage(){//복용약 등록, 사진으로 추가함.
 }
 
 function modalTRClick(dno){
-	let uno = "${uno}";
+	let uno = "${sessionUno}";
 	myMediUp(uno,dno);
 }
 

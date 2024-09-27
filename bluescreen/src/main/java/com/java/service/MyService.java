@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.java.dto.Drug;
-import com.java.dto.Join;
+import com.java.dto.Member;
 import com.java.dto.Medicine;
 import com.java.dto.Page;
 
 public interface MyService {
 
 
-	Join selectUser(String attribute);
+	Member selectUser(String attribute);
 
 	HashMap<String, Object> selectDList(Page pageDto, int uno);
 
