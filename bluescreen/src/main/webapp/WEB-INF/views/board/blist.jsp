@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -113,7 +114,7 @@
 				       	<!-- <img src="/images/image.png" style="width:17px;"> -->
 				       </c:if>
 				        </td> --%>
-				       	<div class="bbdate">${board.bdate } 에 작성</div>
+				       	<div class="bbdate"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
 				        <div style="overflow: hidden; width:20px; height:20px; float:left; left:130px;  margin-top:-15px;"><img src="/image/eye.png"></div>
 				       	<div style="overflow: hidden; width:18px; height:25px; float:left; margin-left:20px;  margin-bottom:20px; margin-top:-15px;"><img src="/image/bubble-chating.png"></div>
 						
@@ -130,31 +131,6 @@
       	
       </div>
 
-<!-- <input type='button'
-       onclick='count("plus")'
-       value='+'/>
-<input type='button'
-       onclick='count("minus")'
-       value='-'/>
-<div id='result'>0</div>
-
-function count(type)  {
-  // 결과를 표시할 element
-  const resultElement = document.getElementById('result');
-  
-  // 현재 화면에 표시된 값
-  let number = resultElement.innerText;
-  
-  // 더하기/빼기
-  if(type === 'plus') {
-    number = parseInt(number) + 1;
-  }else if(type === 'minus')  {
-    number = parseInt(number) - 1;
-  }
-  
-  // 결과 출력
-  resultElement.innerText = number;
-} -->
 
 <div class="btnAreaList" style="margin-bottom:300px;">
     <ul class="page-num">

@@ -24,13 +24,13 @@
 <script type="text/javascript" src="../js/html5.js"></script>
 <script type="text/javascript" src="../js/respond.min.js"></script>
 <![endif]-->
-<script type="text/javascript">
-$(document).ready(function() {
-	
-
-
-});
-</script>
+<!-- <script type="text/javascript">
+	  $(function(){
+		 if(${sessionId==null}){	 
+			 location.href="/login";
+		 }
+	  }); //jquery
+  </script> -->
 </head>
 <body>
 <%@include file = "header.jsp" %>
@@ -39,7 +39,7 @@ $(document).ready(function() {
 		
 	
 			<!-- contents -->
-<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
+<div id="left" style="width:250px; height: 250px; overflow: hidden;margin:100px 0 0 100px;">
 			<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
 				<ul >	
 					<li style="height:40px;"><a href="myPage" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
@@ -61,7 +61,7 @@ $(document).ready(function() {
 					
 					
 					
-					<div style="margin-top:100px; font-size: 25px; margin-left: auto; margin-right: auto; width:1000px;display: flex; margin-left: 450px; align-items: center;">
+					<div style="margin-top:100px; font-size: 25px; width:1000px;display: flex; margin-left: 450px; margin-right:auto; align-items: center;">
 						<img src="/image/Uuser.png"style="width:110px; height:110px; margin-right: 40px;">				
 						<div>
 						ddd님
@@ -70,7 +70,7 @@ $(document).ready(function() {
 						</div>
 						
 						</div>
-					<div style="width:1000px; height:300px; display: flex; justify-content: space-around; align-items: center; margin-left: 445px;">
+					<div style="width:1000px; height:300px; display: flex; justify-content: space-around; align-items: center; margin-right:auto; margin-left:450px;">
 					<div class="Mfind" style="width:245px; height:185px; background:none; color:#0a47ff; border-radius: 50px; 
 					 font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold; ">
 						<p style="overflow: hidden; margin:40px 0 0 0; font-size:27px;text-align: center;">

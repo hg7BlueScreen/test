@@ -1,5 +1,5 @@
 /*********** LAYOUT **********/
-#container{position:relative; max-width:900px; padding:46px 0 40px 0; margin:0 auto; *zoom:1;}
+#container{position:relative; max-width:900px; padding:46px 0 40px 0; margin:0 auto; zoom:1;}
 #container:after {content:""; display:block; clear:both;}
 #outbox{width:100%; margin:20px 0 0 0; overflow:hidden;}
 
@@ -399,8 +399,8 @@
 .replyBtn{display:block; width:130px; height:70px; line-height:55px; color:#fff; font-size:13px; font-weight:600; 
 		  background:#0a47ff; text-align:center; border-bottom-right-radius: 8px; overflow: hidden; border-left:none; }
 .replyBtn:hover{color:#fff; text-decoration:none;}
-.replyBox{width:1000px; border-top:1px #d9d9d9 solid; overflow:hidden; margin-right: auto; margin-left: auto; margin-top:100px; margin-bottom:300px;}
-.replyBox ul{ border-bottom:1px #d9d9d9 solid; padding:15px 20px;}
+.replyBox{width:1000px; border-top:1px  #d7dce5 solid; overflow:hidden; margin-right: auto; margin-left: auto; margin-top:100px; margin-bottom:300px;}
+.replyBox ul{ border-bottom:1px #edeef0 solid; padding:15px 20px;}
 .replyBox ul li.name{font-size:13px;  color:#555;  display: flex; align-items: center; float:left; line-height: 50px; font-family: "Pretendard";}
 .replyBox ul li.name span{font-size:13px; font-weight:normal; margin-left:3px; align-items: center; font-family: "Pretendard";}
 .replyBox ul li.txt{width:900px; font-size:15px; line-height: 20px; padding: 20px 0;}

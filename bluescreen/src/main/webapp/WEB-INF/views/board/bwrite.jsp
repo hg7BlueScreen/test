@@ -72,7 +72,7 @@
 				<span style="font-size: 15px; color: #888888; font-weight: normal;">게시글 쓰기</span>
 			</h2>
 			<hr>
-			<form action="bwrite" name="write" method="post" enctype="multipart/form-data">
+			<form action="bwrite" id= "bwrite" name="write" method="post" enctype="multipart/form-data">
       <table  style="margin: 80px 0 100px 0;">
         <colgroup>
 	        <col width="10%">
@@ -84,12 +84,12 @@
         </tr>
         <tr>
         	<th style="font-size: 15px; color: #0a47ff; font-weight: bold; padding-bottom: 10px;">제목</th>
-        	<td><input type="text" name="btitle" placeholder="제목을 작성해주세요." style="font-size: 15px; border-radius: 15px; margin-bottom: 10px; border-color: #edeef0; padding: 20px 20px;"></td>
+        	<td><input type="text" name="btitle" id="btitle" placeholder="제목을 작성해주세요." style="font-size: 15px; border-radius: 15px; margin-bottom: 10px; border-color: #edeef0; padding: 20px 20px;"></td>
         </tr>
         <tr>
           <th style="font-size: 15px; color: #0a47ff; font-weight: bold; padding-bottom: 15px;">내용</th>
           <td>
-            <textarea name="bcontent" placeholder="내용을 작성해주세요." onkeyup="bcontent" cols="50" rows="15" style="margin-top: 5px; font-size: 15px; border-radius: 20px; margin-bottom: 10px; border-color: #edeef0; padding: 20px 20px;"></textarea>
+            <textarea name="bcontent" id="bcontent" placeholder="내용을 작성해주세요." cols="50" rows="15" style="margin-top: 5px; font-size: 15px; border-radius: 20px; margin-bottom: 10px; border-color: #edeef0; padding: 20px 20px;"></textarea>
           </td>
         </tr>
         <tr>
@@ -102,18 +102,30 @@
       <hr>
       <script type="text/javascript">
 			function writetn(){
-				if(bcontent<0){
-					alert("내용을 작성해주세요");
+				let btitle=$("#btitle").val();
+				let bcontent=$("#bcontent").val();
+				if(confirm("작성 완료하시겠습니까?")){
 					
-				}else if(confirm("작성 완료하시겠습니까?")){
-					location.href="blist";
+					if(btitle=='' || btitle==null){
+					alert("제목을 입력하세요");
+					return false;
+					}// if
+					if(bcontent=='' || bcontent==null){
+						alert("내용을 입력하세요");
+						return false;
+					}// if
 					
+					$("#bwrite").submit();
+					
+				
 				}
-			
+				
+				
 			}
 </script>
       <div class="button-wrapper"style="border: none; margin-right: auto; margin-left: auto; margin-bottom: 460px;">
-        <button type="submit" class="write" onclick="writetn()">작성완료</button>
+        
+        <button type="button" class="write" onclick="writetn()">작성완료</button> 
         <a href="blist"><button type="button" class="cancel">취소</button></a>
       </div>
     </form>

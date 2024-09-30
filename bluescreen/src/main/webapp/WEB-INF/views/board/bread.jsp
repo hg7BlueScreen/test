@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -75,15 +76,17 @@
 					<div colspan="3" class="article" style="font-size: 15px; overflow: hidden; bottom: 40px; display: flex; align-items: center; margin-top:40px;">
 						<img src="/image/Uuser.png" style="width: 40px; height: 40px; margin-right: 15px;">
 						<div>${board.id }<br>
-							<div style="font-size: 12px;">${board.bdate }에 작성</div>
+							<div style="font-size: 12px;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
 						</div>
 						
-					<div class="articlee"><img src="/image/eye.png" style="width:20px; height:20px; vertical-align: middle;">&nbsp;&nbsp;&nbsp; ${board.bhit}</div>
+					<%-- <div class="articlee"><img src="/image/eye.png" style="width:20px; height:20px; vertical-align: middle;">&nbsp;&nbsp;&nbsp; ${board.bhit}</div> --%>
 					</div>
 					<div colspan="3" class="article"
 						style="overflow: hidden; bottom: 25px; font-size: 16px; word-break: break-all; line-height: 27px;">${board.bcontent }</div>
 					<div colspan="3" class="Aarticle">
+					<c:if test="${board.bfile != null}">
 						<img src="/images/${board.bfile }" style="">
+					</c:if>
 					</div>
 
 					<%--  <div colspan="3" class="article">
@@ -138,9 +141,11 @@
 
 
 		<div style="width: 1000px; margin-right: auto; margin-left: auto; margin-bottom: 100px;">
-			<a href="blist"><div class="list" style="float: right;">목록</div></a>
+			<a href="blist"><div class="list" style="float: right; margin-right:20px;">목록</div></a>
+		<c:if test="${sessionId==board.id }">
 			<a onclick="delBtn()" style="float: right;"><div class="list">삭제</div></a>
 			<a href="bmodi?bno=${board.bno}" onclick="fixBtn()"><div class="list">수정</div></a>
+		</c:if>
 			<%-- <a href="breply?bno=${board.bno}"><div class="list">답글달기</div></a> --%>
 		</div>
 
@@ -157,12 +162,14 @@
 			</div>
 			<div class="btn" style="float: right;">
 				<div>
+					
 					<a onclick="commentBtn()" class="replyBtn">댓글 등록</a>
+					
 				</div>
 			</div>
 			<div style="display: flex; align-items: center; height: 55px;">
 				<p class="password" style="width: 200px; font-size: 13px; padding-left: 40px;">
-					비밀번호&nbsp;&nbsp; <input type="password" class="replynum" />
+					비밀번호&nbsp;&nbsp; <input type="password" id= "Ppassword" class="replynum" />
 				</p>
 				<p style="font-size: 12px; color: #0a47ff; height: 20px;">※ 비밀번호를 입력하시면 댓글이 비밀글로 등록 됩니다.</p>
 				<span id="reCount"style="float: right; font-size: 14px; padding-left: 330px; height: 20px;">0 / 1500 자</span>
@@ -173,8 +180,10 @@
 	
 	
 	<!-- 댓글 문자 수  -->
+	
 	<script type="text/javascript">
-		function counter(text, length){
+		
+	function counter(text, length){
 			var limit = length;
 			var str = text.value.length;
 			if(str>limit){
@@ -187,57 +196,64 @@
 	</script>
  
 	<script type="text/javascript">
-		function llistBtn(){
-			if(${sessionId==null}){
-				alert("로그인하셔야 신고가 가능합니다");
-				location.href="/login";
-			}  
-		}
-	</script>
-	
-	<script type="text/javascript">
 	function commentBtn(){
+		
 		let ccontent = $(".replyType").val();
 		let cpw = $(".replynum").val();
-		let id = "${board.id}"; /* "${sessionId}"; */
+		let id =  "${sessionId}"; 
 		let bno = "${board.bno}";
+		
 		// 로그인 하지 않으면 글을 쓸수 없게 막아놓음 
-		 /* if(id!=""){
+		if(${sessionId==null}){
 			alert("로그인하셔야 댓글을 다실 수 있습니다");
 			location.href="/login";
-		}  */  
-		$.ajax({
-			url : "/board/commentInsert",
-			method: "post",
-			data : {"id":id, "cpw":cpw, "ccontent":ccontent, "bno":bno},
-			success: function(data){
-				let str='';
-				str += '<ul id='+data.cno+'>';
-				str += '<li class="name"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px; display: flex;align-items: center;"><div style="font-family: Pretendard;">'+data.id+' 님<br><div style="font-family: Pretendard; font-size: 11px; color:#888888;">'+data.cdate+' 에 작성</div></div></li>';
-				str += '<a href="fudel" onclick="ggBtn()" style="float:right; margin-top: 4px;"><button class="llist">신고</button></a><li class="txt"> '+data.ccontent+' </li>';
-				str += '<li style="position: relative; width: 100%; overflow: hidden;">';
-				str += '<a onclick="updateBtn('+data.cno+',\''+ data.id +'\',\''+ data.cdate +'\',\''+ data.ccontent + '\')" class="rebtn">수정</a>';
-				str += '&nbsp;<a onclick="deleteBtn('+data.cno+')" class="rebtn" style="margin-right:15px;">삭제</a>';
-				str += '</li>';
-				str += '</ul>';
-				$(".replyBox").prepend(str);
+			return false;
+		}
+		
+			if(ccontent==null || ccontent==''){
+			alert("내용을 입력하세요");
+			return false;
+			};// if
+		
+	
+		
+			$.ajax({
 				
-				var n = $("#comNum").text();
-				console.log(n);  // 기존의 댓글의 수 
-				console.log(typeof(n)); // 문자열이다. 		
-				//javascript에서 문자를 숫자 Number()
-				var commentNum = Number(n)+1;
-				$("#comNum").text(commentNum);
-				$(".replyType").val("");
-				$(".replynum").val("");	
+				url : "/board/commentInsert",
+				method: "post",
+				data : {"id":id, "cpw":cpw, "ccontent":ccontent, "bno":bno},
 				
-				
-			},
-			error : function(){
-				alert("실패");
-			}
-		});// ajax
+				success: function(data){
+						
+					let str='';
+					str += '<ul id='+data.cno+'>';
+					str += '<li class="name"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px; display: flex;align-items: center;"><div style="font-family: Pretendard;">'+data.id+' 님<br><div style="font-family: Pretendard; font-size: 11px; color:#888888;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div></div></li>';
+					str += '<a href="fudel" onclick="ggBtn()" style="float:right; margin-top: 4px;"><button class="llist">신고</button></a><li class="txt"> '+data.ccontent+' </li>';
+					str += '<li style="position: relative; width: 100%; overflow: hidden;">';
+					str += '<a onclick="updateBtn('+data.cno+',\''+ data.id +'\',\''+ data.cdate +'\',\''+ data.ccontent + '\')" class="rebtn">수정</a>';
+					str += '&nbsp;<a onclick="deleteBtn('+data.cno+')" class="rebtn" style="margin-right:15px;">삭제</a>';
+					str += '</li>';
+					str += '</ul>';
+					$(".replyBox").prepend(str);
+					
+					var n = $("#comNum").text();
+					console.log(n);  // 기존의 댓글의 수 
+					console.log(typeof(n)); // 문자열이다. 		
+					//javascript에서 문자를 숫자 Number()
+					var commentNum = Number(n)+1;
+					$("#comNum").text(commentNum);
+					$(".replyType").val("");
+					$(".replynum").val("");	
+					
+								
+				},
+				error : function(){
+					alert("실패");
+				}
+			
+			});// ajax
 	}
+	
 	
 	//--------------------------------------------------------------------------
 	//----------- 댓글 수정하기----------------------------------------------------
@@ -245,7 +261,7 @@
 		if(confirm("댓글을 수정하시겠습니까? ")){
 			//alert(cno);	alert(id);alert(cdate);	alert(ccontent);	
 			let str='';
-			str += '<li class="name" style="line-height:30px;"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px;">'+id+' 님&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: Pretendard;">작성일 : '+ cdate +' </span>';
+			str += '<li class="name" style="line-height:30px;"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px;">'+id+' 님&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: Pretendard;">작성일 : <fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/></span>';
 			str += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 			str += '<input type="password" class="Replynum" id="updatePw" />';
 			str += '</li>';
@@ -264,7 +280,7 @@
 		console.log(cno);	console.log(id);
 		console.log(cdate);	console.log(ccontent);
 		var str = '';
-		str+= '<li class="name"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px; display: flex;align-items: center;"><div style="font-family: Pretendard;">'+id+' 님<br><div style="font-family: Pretendard; font-size: 11px; color:#888888;">'+cdate+' 에 작성</div></div></li>';
+		str+= '<li class="name"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px; display: flex;align-items: center;"><div style="font-family: Pretendard;">'+id+' 님<br><div style="font-family: Pretendard; font-size: 11px; color:#888888;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div></div></li>';
 		str+= '<a href="fudel" onclick="ggBtn()" style="float:right; margin-top: 4px;"><button class="llist">신고</button></a><li class="txt"> '+ccontent+' </li>';
 		str+= '<li style="position: relative; width: 100%; overflow: hidden;">';
 		str+= '<a onclick="updateBtn('+cno+',\''+ id +'\',\''+ cdate +'\',\''+ ccontent + '\')" class="rebtn">수정</a>';
@@ -307,17 +323,21 @@
 					"ccontent":$("#updateContent").val() },
 				success: function(data){
 					/* alert("댓글 수정 성공"); */
+					let updateContent=$("#updateContent").val();
+					if(updateContent=='' || updateContent==null){
+						alert("내용을 입력하세요");
+						return false;
+					}
+					
 					console.log(data);
 					var str = '';
-					str+= '<li class="name"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px; display: flex;align-items: center;"><div style="font-family: Pretendard;">'+data.id+' 님<br><div style="font-family: Pretendard; font-size: 11px; color:#888888;">'+data.cdate+' 에 작성</div></div></li>';
+					str+= '<li class="name"><img src="/image/Uuser.png"style="width:35px; height:35px; margin-right:15px; display: flex;align-items: center;"><div style="font-family: Pretendard;">'+data.id+' 님<br><div style="font-family: Pretendard; font-size: 11px; color:#888888;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div></div></li>';
 					str+= '<a href="fudel" onclick="ggBtn()" style="float:right; margin-top: 4px;"><button class="llist">신고</button></a><li class="txt"> '+data.ccontent+' </li>';
 					str+= '<li style="position: relative; width: 100%; overflow: hidden;">';
 					str+= '<a onclick="updateBtn('+data.cno+',\''+ data.id +'\',\''+ data.cdate +'\',\''+ data.ccontent + '\')" class="rebtn">수정</a>';
 					str+= '&nbsp;<a onclick="deleteBtn('+data.cno+')" class="rebtn" style="margin-right:15px;">삭제</a>';
 					str+= '</li>';
 					$("#"+cno).html(str);
-					
-					
 					
 				},
 				error:function(){
@@ -328,10 +348,11 @@
 	}//updateSave
 	
 	</script>
-	
+
 	<div class="replyBox">
 
 		<c:forEach var="cdto" items="${comList }">
+			
 			<ul id="${cdto.cno }">
 
 				<li class="name"><img src="/image/Uuser.png"
@@ -339,8 +360,7 @@
 					<div style="font-family: Pretendard;">${cdto.id }
 						님<br>
 						<div
-							style="font-family: Pretendard; font-size: 11px; color: #888888;">${cdto.cdate }
-							에 작성</div>
+							style="font-family: Pretendard; font-size: 11px; color: #888888;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
 					</div></li>
 
 				<!-- 비밀글일때 아이디와 세션아이디가 같을때만 보여야함. 비밀번호가 있을때만 비밀글-->
@@ -354,16 +374,18 @@
 					<li class="txt">${cdto.ccontent }</li>
 				</c:if>
 				<!-- 댓글쓴 아이디와 로그인한 아이디(세션아이디)가 같을경우만 버튼을 노출함  -->
-				<%-- <c:if test="${sessionId == cdto.id}"> --%>
+				<c:if test="${sessionId == cdto.id}">
 				<%-- <c:if test="${cdto.id == cdto.id }"> --%>
 					<li style="position: relative; width: 100%;">
 						<a onclick="updateBtn(${cdto.cno }, '${cdto.id }', '${cdto.cdate }', '${cdto.ccontent }')"class="rebtn">수정</a>
 						<a onclick="deleteBtn(${cdto.cno })"class="rebtn" style="margin-right: 15px;">삭제</a>
 					</li>
 				
-				<%-- </c:if> --%>
+				 </c:if> 
 				
 			</ul>
+			
+		
 		</c:forEach>
 	</div>
 

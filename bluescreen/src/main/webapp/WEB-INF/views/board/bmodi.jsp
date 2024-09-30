@@ -55,7 +55,7 @@
    			</h2>
 
     <hr>
-    <form action="bmodi" name="write" method="post" enctype="multipart/form-data">
+    <form action="bmodi" id="bmodi" name="write" method="post" enctype="multipart/form-data">
     
       <input type="hidden" name="bno" value="${board.bno }">
       
@@ -73,21 +73,23 @@
         <tr>
           <th style="font-size:15px;color: #0a47ff; font-weight: bold;padding-bottom: 10px;">제목</th>
           <td>
-            <input type="text" name="btitle" value=" ${board.btitle }" style="font-size:15px;border-radius: 15px;margin-bottom:10px;border-color: #edeef0; padding:20px 20px;">
+            <input type="text" id="btitle" name="btitle" value=" ${board.btitle }" style="font-size:15px;border-radius: 15px;margin-bottom:10px;border-color: #edeef0; padding:20px 20px;">
           </td>
         </tr>
         </div>
         <tr>
           <th style="font-size:15px;color: #0a47ff; font-weight: bold;padding-bottom: 15px;">내용</th>
           <td>
-            <textarea name="bcontent" cols="50" rows="10" style="margin-top:5px; font-size:15px;border-radius: 20px;margin-bottom:10px;border-color: #edeef0; padding:20px 20px;">${board.bcontent }</textarea>
+            <textarea name="bcontent" id="bcontent" cols="50" rows="10" style="margin-top:5px; font-size:15px;border-radius: 20px;margin-bottom:10px;border-color: #edeef0; padding:20px 20px;">${board.bcontent }</textarea>
           </td>
         </tr>
         <tr>
           <th style="font-size:15px;color: #0a47ff; font-weight: bold;padding-bottom: 30px;">파일</th>
           <td style="text-align:left;">
             <input type="hidden" name="bfile" id="bfile" value="${board.bfile }">
+          <c:if test="${board.bfile != null}">
             <img src="/images/${board.bfile }" style="size:20px; border-radius: 20px;">
+          </c:if>
           	<div style="text-align:left; margin-left:20px; margin-top:20px; font-size:12px;"><%-- ${board.bfile } --%></div><br>
           </td>
         </tr>
@@ -101,24 +103,36 @@
       <hr>
       <script type="text/javascript">
 	function moditn(){
+		let btitle=$("#btitle").val();
+		let bcontent=$("#bcontent").val();
 		if(confirm("수정하시겠습니까?")){
-			location.href="bmodi?bno=${board.bno}";
+			
+			if(btitle=='' || btitle==null){
+			alert("제목을 입력하세요");
+			return false;
+			}// if
+			if(bcontent=='' || bcontent==null){
+				alert("내용을 입력하세요");
+				return false;
+			}// if
+			
+			$("#bmodi").submit();
+			/* location.href="bmodi?bno=${board.bno}"; */
 		}
+
+		
 	}
 	
 </script>
       
       <div class="button-wrapper" style="border:none; margin-right:auto; margin-left: auto; margin-bottom: 460px;">
-        <button type="submit" class="write" onclick="moditn()"style="border:none;">수정</button>
+        <button type="button" class="write" onclick="moditn()"style="border:none;">수정</button>
         <a href="bread?bno=${board.bno}"><button type="button" class="cancel">취소</button></a>
       </div>
     </form>
 </div>
 </div>
-</div>
-</div>
-</div>
-  </section>
+
 <%@include file = "footer.jsp" %> 
 </body>
 </html>

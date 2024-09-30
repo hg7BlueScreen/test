@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>게시글 신고</title>
-</head>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/write.css">
@@ -22,6 +21,15 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
+  <script type="text/javascript">
+	  $(function(){
+		 if(${sessionId==null}){
+			 alert("로그인을 하셔야 신고가 가능합니다. "); 
+			 location.href="/login";
+		 }
+	  }); //jquery
+  </script> 
+</head>
 <body>
 <%@include file = "header.jsp" %>
 
@@ -55,7 +63,7 @@
 
 
     <hr>
-    <form action="bmodi" name="write" method="post" enctype="multipart/form-data">
+    <form action="fu" id="fu" name="write" method="post" enctype="multipart/form-data">
     
       <input type="hidden" name="bno" value="${board.bno }">
       
@@ -82,29 +90,35 @@
         <tr>
           <th style="font-size:15px;color: #0a47ff; font-weight: bold;">신고내용</th>
           <td>
-            <textarea name="bcontent" cols="50" rows="15" placeholder="내용을 작성해주세요." style="margin-top:14px; font-size:15px;border-radius: 20px;border-color: #edeef0; padding:20px;"></textarea>
+            <textarea name="bcontent" id= "bcontent" cols="50" rows="15" placeholder="내용을 작성해주세요." style="margin-top:14px; font-size:15px;border-radius: 20px;border-color: #edeef0; padding:20px;"></textarea>
           </td>
         </tr>
       </table>
       <hr>
  <script type="text/javascript">
 	function futn(){
+		let bcontent=$("#bcontent").val();
 		if(confirm("신고하시겠습니까?")){
-			location.href="blist";
+			
+		if(bcontent=='' || bcontent==null){
+			alert("내용을 입력하세요");
+			return false;
+		}
+		
+		$("#fu").submit();
+		location.href="blist";
 		}
 	}
 	
 </script> 
       <div class="button-wrapper" style="border:none; margin-bottom: 460px;">
-        <button type="submit" class="write" onclick="futn()"style="border:none;">신고</button>
+        <button type="button" class="write" onclick="futn()" style="border:none;">신고</button>
         <a href="blist"><button type="button" class="cancel">취소</button></a>
       </div>
     </form>
 </div>
 </div>
-</div>
-</div>
-</div>
+
 
   <%@include file = "footer.jsp" %>
 </body>
