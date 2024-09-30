@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/npm/swiper%4011/swiper-bundle.min.css" />
 <link rel="stylesheet" href="/css/layout.css">
 <link rel="stylesheet" href="/css/main_new.css">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../../r.incru.it/static/js/aos/aos367a.js?20240821162485"></script>
 <script type="text/javascript" src="../../fastly.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.js?20240821162485"></script>
 <script type="text/javascript" src="../../r.incru.it/ajs/product/ats_crm_v2367a.js?20240821162485"></script>

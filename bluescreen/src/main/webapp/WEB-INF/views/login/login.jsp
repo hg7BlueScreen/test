@@ -37,7 +37,6 @@
 
       <button type="submit">로그인</button>
     </form>
-    
 
 		<div class="login-box">
       <!-- 카카오 로그인 -->
@@ -54,8 +53,8 @@
 
     <div class="sign-up-info">
       <h3>WDH 회원이 아니신가요?</h3>
-      <p> 회원가입하시면 WDH의 다양한 서비스를 이용하실 수 있습니다.</p>
-      <div class="sign-up"><a href="/join/join1"> 회원 가입하기 </a><div class="arrow">&emsp;</div></div>
+      <p> 회원가입하시면 WDH의 다양한 서비스를 <br> 이용하실 수 있습니다.</p>
+      <div class="sign-up"><a href="/member/join1"> 회원 가입하기 </a><div class="arrow">&emsp;</div></div>
     </div>
   </section>
 	<%@include file = "../footer.jsp"%>

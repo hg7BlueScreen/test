@@ -1,7 +1,13 @@
 package com.java.controller;
 
 import java.io.File;
+import java.sql.Date;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -18,14 +24,23 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
+import com.java.dto.Drug;
+import com.java.dto.Medicine;
+import com.java.dto.Member;
+import com.java.dto.Page;
 import com.java.service.BService;
+import com.java.service.JoinService;
+import com.java.service.MyService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/board")
 public class BController {
-
+	@Autowired HttpSession session;
 	@Autowired BService bservice; 
-	
+	@Autowired JoinService jservice;
+	@Autowired MyService myservice;
 	@PostMapping("/commentInsert")
 	@ResponseBody
 	public Comment commentInsert(Comment comdto) {
@@ -195,6 +210,60 @@ public class BController {
 		return "redirect:blist";
 	}
 	
+	@RequestMapping("/modify")
+	public String modify(Model model) {
+		String id = (String)session.getAttribute("sessionId"); 
+		Member member = jservice.selectAll(id);
+		String[] aEmail = member.getEmail().split("@");
+		String emailId = aEmail[0];	String emailTail = aEmail[1];
+		member.setEmailId(emailId);	member.setEmailTail(emailTail);
+		String addr1 = member.getAddress().substring(1,6);
+		String[] adr = member.getAddress().substring(8).split(",");
+		String addr2 = adr[0];	String addr3 = adr[1];
+		member.setAddr1(addr1);	member.setAddr2(addr2);	member.setAddr3(addr3);
+		String[] phn = member.getPhone().split("-");
+		String phone2 = phn[1];	String phone3 = phn[2];
+		member.setPhone2(phone2);
+		member.setPhone3(phone3);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		String bhday = format.format(member.getBirthday());
+		String[] bday = bhday.split("-");
+		String year = bday[0];String month = bday[1];String day = bday[2];
+		member.setYear(year);member.setMonth(month);member.setDay(day);
+		
+		model.addAttribute("mem",member);
+		return "member/modify";
+	}
+	@GetMapping("/myPageFix")
+	public String myInformation(Model model) {
+		String id = (String)session.getAttribute("sessionId"); 
+		Member member = jservice.selectAll(id);
+		model.addAttribute("mem",member);
+		return "board/myPageFix";
+	}
+	@PostMapping("/myPageFix")
+	public String domyInformation(Member member, String pw1, Model model) {
+		String phone = member.getPhone1()+"-"+member.getPhone2()+"-"+member.getPhone3();
+		String address = "("+member.getAddr1()+") "+member.getAddr2()+", "+member.getAddr3();
+		String email = member.getEmailId()+"@"+member.getEmailTail();
+		String birthday = member.getYear()+"-"+member.getMonth()+"-"+member.getDay();
+		Date date = Date.valueOf(birthday);
+		member.setPhone(phone);
+		member.setAddress(address);
+		member.setEmail(email);
+		member.setBirthday(date);
+		if(pw1 != null) {
+			member.setPw(pw1);
+		}
+		jservice.updateUser(member);
+		System.out.println(member.getUno());
+		String id = (String)session.getAttribute("sessionId"); 
+		Member mem = jservice.selectAll(id);
+		model.addAttribute("mem",mem);
+		return "/board/myPageFix";
+	}
+	
+	
 	@RequestMapping("/faq")
 	public String faq() {
 		return "/board/faq";
@@ -227,18 +296,11 @@ public class BController {
 	public String myPage() {
 		return "/board/myPage";
 	}
-	@RequestMapping("/myPageMedi")
-	public String myPageMedi() {
-		return "/board/myPageMedi";
-	}
 	@RequestMapping("/myPageFind")
 	public String myPageFind() {
 		return "/board/myPageFind";
 	}
-	@RequestMapping("/myPageFix")
-	public String myPageFix() {
-		return "/board/myPageFix";
-	}
+	
 	
 	@PostMapping("/commentCnt")
 	@ResponseBody

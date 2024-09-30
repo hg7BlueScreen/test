@@ -84,11 +84,8 @@ public class FController {
 		return null;
 	}
 
-	@RequestMapping("/my_medicine")
+	@RequestMapping("/board/myPageMedi")
 	public String my_medicine(Page pageDto, Model model) {
-		if(session.getAttribute("sessionId")==null) {
-			return "my_medicine";
-		}
 		//System.out.println(user.getUno());	System.out.println(user.getId());
 		Member member = myservice.selectUser((String)session.getAttribute("sessionId"));
 		ArrayList<Medicine> mList = myservice.selectMList(member.getUno()); 
@@ -113,10 +110,9 @@ public class FController {
 		System.out.println(member.getDatealarm());
 		
 		//model.addAttribute("todate",todate);
-		//System.out.println(todate);
 		
 		//System.out.println(mList);
-		return "my_medicine";
+		return "board/myPageMedi";
 	}
 	
 //	@PostMapping("/deleteCk")

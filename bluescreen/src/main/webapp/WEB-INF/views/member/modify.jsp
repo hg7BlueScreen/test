@@ -5,8 +5,16 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="/css/info/style_join02_info_input.css">
-		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
+		<link rel="stylesheet" type="text/css" href="../css/info/member.css">
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/top_navi.js"></script>
+		<script type="text/javascript" src="../js/left_navi.js"></script>
+		<script type="text/javascript" src="../js/main.js"></script>
+		<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<title>회원가입 - 회원정보입력</title>
 	</head>
@@ -14,34 +22,33 @@
 		<header>
 			<%@ include file="../header.jsp" %>
 		</header>
-		
+		<div id="" style="margin-top:150px; margin-bottom:80px;">
+			<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
+			<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
+				<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
+				<ul >	
+					<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
+					<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">즐겨찾기</a></li>
+					<li style="height:40px;"><a href="myPageMedi" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">복용 중인 약</span></a></li>
+					<li class="last" style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
+				</ul>				
+			</div><script type="text/javascript">initSubmenu(3,0);</script>
+			<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
+			<div class="myTab">
+				<ul>
+					<li><a href="myPage" >내 정보</a></li>
+					<li class="dep"><a href="myPageFind" >즐겨찾기</a></li>
+					<li><a href="myPageMedi">복용 중인 약</a></li>
+					<li class="last"><a class="on">회원정보수정</a></li>
+				</ul>						
+			</div>	
+		</div>
 		<section>
-			<form name="agree" method="post" action="myInformation">
+			<form name="agree" method="post" action="/board/myPageFix">
 			<input type="hidden" id="uno" name="uno" value="${mem.uno }"/>
 			<input type="hidden" id="ck" name="ck" value="agree"/>
 			
 				<div id="subBanner"></div>
-				
-				<div id="sub_top_area">
-					<h3>회원가입</h3>
-				</div>
-				
-				<div id="join_step_div">
-					<ul>
-						<li>
-							<span>STEP.1</span>
-							<p>약관동의</p>
-						</li>
-						<li>
-							<span>STEP.2</span>
-							<p>회원정보입력</p>
-						</li>
-						<li>
-							<span>STEP.3</span>
-							<p>회원가입완료</p>
-						</li>
-					</ul>
-				</div>
 				
 				<h4>
 					회원 정보 수정
@@ -57,7 +64,7 @@
 							<input type="text" id="name" name="name" value="${mem.name }"/>
 						</dd>
 					</dl>
-					<dl id="join_id_dl">
+					<dl id="join_name_dl">
 						<dt>
 							<div></div>
 							<label for="id">아이디</label>
@@ -86,7 +93,7 @@
 						<dd>
 							<input type="password" id="pw1" name="pw1" class="pw1" onchange="pwChg()" disabled />
 							<input type="hidden" id="pw" name="pw" value="${mem.pw }"/>
-							<input type="button" onclick="pwBtn()" value="비밀번호 변경"/>
+							<input type="button" class="buttons" onclick="pwBtn()" value="비밀번호 변경"/>
 							<span id="pwCon"></span>
 						</dd>
 					</dl>
@@ -117,7 +124,7 @@
 								<option value="nate.com">네이트</option>
 								<option value="daum.net">다음</option>
 							</select>
-							<input type="button" id="email_send" onclick="emailSend()" value="인증번호 발송"/>
+							<input type="button" id="email_send" class="buttons" onclick="emailSend()" value="인증번호 발송"/>
 							</div>
 							<div id="emailCk"></div>
 							
@@ -152,7 +159,7 @@
 							<input type="text" id="phone3" name="phone3" maxlength="4"  value="${mem.phone3 }"/>
 						</dd>
 					</dl>
-					<dl id="join_birth_dl">
+					<dl id="join_name_dl">
 						<dt>
 							<div></div>
 							<label for="year">생년월일</label>
@@ -329,7 +336,6 @@ function pwChg(){
 }
 	
 function saveBtn(){
-	alert();
 	if(!nameCk.test($("#name").val())){
 		alert("이름은 한글만 입력 가능합니다.");
 		$("#name").val("");
@@ -358,7 +364,7 @@ function nicknameOk(){
 		nicknameCheck = false;
 	}else{
 		$.ajax({
-			url:"/join/nicknameOk",
+			url:"/member/nicknameOk",
 			method:"post",
 			data:{"nickname":$("#nickname").val()},
 			success:function(data){
@@ -406,7 +412,7 @@ function emailSend(){ //이메일 인증번호 보내기 후 활성화
 	var name = $("#name").val();
 	var email = $("#emailId").val()+"@"+$("#emailTail").val();
 	$.ajax({
-		url:"/join/emailSend",
+		url:"/member/emailSend",
 		type:"post",
 		data:{"name":name, "email":email},
 		success:function(data){

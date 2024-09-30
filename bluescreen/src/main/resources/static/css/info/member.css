@@ -83,12 +83,11 @@ h4>span {
 .fieldset_class {
 	width: 1000px;
 	font-size: 14px;
-	margin: 0 auto;
 	border-top: 1px solid rgb(209, 209, 209);
 	border-left: none;
 	border-right: none;
 	border-bottom: none;
-	
+	margin-left : 500px;
 	margin-bottom: 15px;
 	
 }
@@ -220,12 +219,22 @@ dd span {
 #join_pw1_dl dt label {
 	padding-top: 25px;
 }
-#join_pw1_dl dd input {
+#pw1 {
 	width: 276px;
 }
 #join_pw1_dl span {
 	display: block;
 	margin-top: 5px;
+}
+.buttons {
+	width: 100px; height: 30px;
+	background-color: #6f6f6f;
+	padding: 0px 10px;
+	border: none;
+	line-height: 5px;
+	color: #fff;
+	font-weight: 700;
+	font-size:12px;
 }
 
 #join_pw2_dl dt {
@@ -255,6 +264,16 @@ dd span {
 #pw3_dl input {
 	width: 200px;
 }
+#pw3_dl input[type="button"] {
+	width: 80px; height: 30px;
+	background-color: #6f6f6f;
+	padding: 0px 10px;
+	border: none;
+	line-height: 5px;
+	color: #fff;
+	font-weight: 700;
+	font-size:12px;
+}
 
 #join_mail_dl dt {
 	height: 75px;
@@ -270,16 +289,6 @@ dd span {
 }
 #emailCk{
 	margin-top:5px;
-}
-#email_send {
-	width: 80px; height: 30px;
-	background-color: #6f6f6f;
-	padding: 0px 10px;
-	border: none;
-	line-height: 5px;
-	color: #fff;
-	font-weight: 700;
-	font-size:12px;
 }
 #join_mail_dl dd input:nth-child(1) {
 	width: 130px;

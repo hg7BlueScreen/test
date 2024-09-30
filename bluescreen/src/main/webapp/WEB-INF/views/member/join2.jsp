@@ -154,7 +154,7 @@
 							<input type="text" id="phone3" name="phone3" maxlength="4"  />
 						</dd>
 					</dl>
-					<dl id="join_birth_dl">
+					<dl id="join_name_dl">
 						<dt>
 							<div></div>
 							<label for="year">생년월일</label>
@@ -332,7 +332,7 @@ function idOk(){
 		idCheck = false;
 	}else{
 		$.ajax({
-			url:"/join/idOk",
+			url:"/member/idOk",
 			method:"post",
 			data:{"id":$("#id").val()},
 			success:function(data){
@@ -360,7 +360,7 @@ function nicknameOk(){
 		nicknameCheck = false;
 	}else{
 		$.ajax({
-			url:"/join/nicknameOk",
+			url:"/member/nicknameOk",
 			method:"post",
 			data:{"nickname":$("#nickname").val()},
 			success:function(data){
@@ -402,7 +402,7 @@ function emailSend(){ //이메일 인증번호 보내기 후 활성화
 	var name = $("#name").val();
 	var email = $("#emailId").val()+"@"+$("#emailTail").val();
 	$.ajax({
-		url:"/join/emailSend",
+		url:"/member/emailSend",
 		type:"post",
 		data:{"name":name, "email":email},
 		success:function(data){

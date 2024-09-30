@@ -1,5 +1,5 @@
 /*********** LAYOUT **********/
-#container{position:relative; width:1200px; height:500px; left:300px; padding:46px 0 40px 0; margin:0 auto; margin-top:150px; margin-bottom:200px; margin-right:690px;}
+#container{position:relative; width:1200px; height:500px; left:200px; padding:46px 0 40px 0; margin:0 auto; margin-bottom:200px; margin-right:690px;}
 #container:after {content:""; display:block; clear:both;}
 #outbox{width:100%; margin:20px 0 0 0; overflow:hidden; left:30px;}
 
@@ -45,7 +45,7 @@
 .faqList ul li .list .ddate{position:absolute; left:670px; font-size:15px; font-weight:600; color:#666;}
 .faqList ul li .list .image{font-size:13px; font-weight:200; color:#666; left:800px; font-size:14px; text-decoration:none; width:70px; }
 
-#myMedicineHd{width:100%; bottom:10px;}
+#myMedicineHd{width:100%; bottom:10px; margin-top:10px; }
 
 #medicineAdd, #medicineDel, #medicineImage {background:rgb(0,128,255); color:#fff; border:none; position:absolute; left:700px;}
 #medicineDel{position:absolute; left:800px;}
@@ -76,8 +76,8 @@
 .faqanswer{display:none; width:100%; background:#f9f9f9; overflow:hidden; clear:both;}
 .faqanswer .faqbox{position:relative; border-top:1px #eaeaea solid; padding:10px 20px 10px 22px;}
 .faqanswer .faqbox:after {content:""; display:block; clear:both;}
-.faqanswer .faqbox .blet{position:relative; font-size:14px; font-weight:600; color:rgb(0, 128, 255); line-height:1.4;}
-.faqanswer .faqbox .text{position:relative; font-size:13px; color:#888; line-height:1.4; left: 13px;}
+.faqanswer .faqbox .blet{position:relative; font-size:14px; font-weight:600; color:rgb(0, 128, 255); }
+.faqanswer .faqbox .text{position:relative; font-size:13px; color:#888; line-height:1.4; left: 10px; margin-left:10px;}
 .faqanswer .faqbox .text strong{color:#444;}
 
 /* BTN AREA */

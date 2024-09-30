@@ -74,7 +74,8 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 var keyword = "";
 var pBoxImg = "/image/p_box.png"; //우체통 이미지
 var mBoxImg = "/image/m_box.png"; //수거함 이미지
-var pharmacyImg = "/image/pharmacy.png"; //수거함 이미지
+var pharmacyImg = "/image/pharmacy.png"; //약국 이미지
+var memberImg = "/image/memberimg.png"; //회원위치 이미지
 
 if(user_loc==null || user_loc==""){
 	//alert("없음");
@@ -85,11 +86,15 @@ if(user_loc==null || user_loc==""){
 	$("#gu").val("${addrg}").prop("selected",true);
 	sbtn();
 	ps.keywordSearch(userSearch, placesSearchCb);
+	
 }
 function placesSearchCb(data){ //회원 주소로 길 찾기 검색
-	//alert(userSearch);
-	//console.log(data);	console.log(data[0].id);
+	//alert(userSearch);console.log(data);console.log(data[0].id);
 	userLoc = data[0].id;
+	var userX = data[0].y;
+	var userY = data[0].x;
+	addUserMarker(userX, userY);
+	
 }
 function boxbtn(){
 	str='';
@@ -228,8 +233,7 @@ function sbtn(){
 				        // LatLngBounds 객체에 좌표를 추가합니다
 				        bounds.extend(placePosition);
 						
-				        // 마커와 검색결과 항목에 mouseover 했을때
-				        // 해당 장소에 인포윈도우에 장소명을 표시합니다
+				        // 마커와 검색결과 항목에 mouseover 했을때 해당 장소에 인포윈도우에 장소명을 표시합니다
 				        // mouseout 했을 때는 인포윈도우를 닫습니다
 				        
 				        (function(marker, title) {
@@ -285,12 +289,10 @@ function sbtn(){
 function placesSearchCB(data, status, pagination) {
 		//console.log(data);		console.log(status);		console.log(pagination);
     if (status === kakao.maps.services.Status.OK) {
-        // 정상적으로 검색이 완료됐으면
-        // 검색 목록과 마커를 표출합니다
+        // 정상적으로 검색이 완료됐으면 검색 목록과 마커를 표출합니다
         displayPlaces(data);
         // 페이지 번호를 표출합니다
         displayPagination(pagination);
-        console.log(data);
 		
     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
         //alert('검색 결과가 존재하지 않습니다.');
@@ -316,7 +318,6 @@ function displayPlaces(places) {
 
     // 지도에 표시되고 있는 마커를 제거합니다
     removeMarker();
-    //console.log(places);
     
     for ( var i=0; i<places.length; i++ ) {
     	
@@ -338,16 +339,15 @@ function displayPlaces(places) {
             kakao.maps.event.addListener(marker, 'mouseout', function() {
                 infowindow.close();
             });
-
             itemEl.onmouseover =  function () {
                 displayInfowindow(marker, title);
             };
-
             itemEl.onmouseout =  function () {
                 infowindow.close();
             };
+            
+            
         })(marker, places[i].place_name);
-
         fragment.appendChild(itemEl);
     }
 
@@ -357,6 +357,7 @@ function displayPlaces(places) {
 
     // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
     map.setBounds(bounds);
+
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
@@ -385,21 +386,21 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-		if($("#box").val()=="우체통" ){
-	    var imageSrc = pBoxImg; 
-		}else if($("#box").val()=="수거함"){
-	    var imageSrc = mBoxImg;
-		}else if($("#box").val()=="약국"){
-	    var imageSrc = pharmacyImg;
-		}
-        var imageSize = new kakao.maps.Size(30, 30),  // 마커 이미지의 크기
-        imgOptions = {offset: new kakao.maps.Point(13, 37)} // 마커 좌표에 일치시킬 이미지 내에서의 좌표
-    
-        markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
-            marker = new kakao.maps.Marker({
-            position: position, // 마커의 위치
-            image: markerImage 
-        });
+	if($("#box").val()=="우체통" ){
+    	var imageSrc = pBoxImg; 
+	}else if($("#box").val()=="수거함"){
+    	var imageSrc = mBoxImg;
+	}else if($("#box").val()=="약국"){
+    	var imageSrc = pharmacyImg;
+	}
+       var imageSize = new kakao.maps.Size(30, 30),  // 마커 이미지의 크기
+       imgOptions = {offset: new kakao.maps.Point(13, 37)}, // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+   
+       markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+           marker = new kakao.maps.Marker({
+           position: position, // 마커의 위치
+           image: markerImage 
+       });
 	//console.log(position);
     marker.setMap(map); // 지도 위에 마커를 표출합니다
     markers.push(marker);  // 배열에 생성된 마커를 추가합니다
@@ -419,6 +420,18 @@ function addMarker(position, idx, title) {
     
     return marker;
 }
+function addUserMarker(userX, userY){ //유저 위치 이미지 마커 생성
+	//console.log(userX);console.log(userY);
+	var userImageSize = new kakao.maps.Size(50, 50),  // 마커 이미지의 크기
+	userMarkerImage = new kakao.maps.MarkerImage(memberImg, userImageSize),
+	marker = new kakao.maps.Marker({
+		position: new kakao.maps.LatLng(userX, userY), // 마커의 위치
+        title:"user",
+		image: userMarkerImage 
+    });
+	marker.setMap(map);
+	
+} 
 function makeOverListener(map, marker, infowindow) {
     return function() {
         infowindow.open(map, marker);
@@ -492,13 +505,38 @@ function removeAllChildNods(el) {
  
 function showRoute(title, x, y){
 	//console.log(pid);
+	const modal = document.querySelector("#modal");
+	const btn = document.querySelector("#modal-btn");
+	const close = document.querySelector(".close");
+	$("#modal").css("display","block");
 	$("#menu_wrap").hide();
- 	var str ='<iframe style="width:100%;height:1000px;"  src="'
+ 	var str ='<iframe style="width:100%;height:700px;"  src="'
 	+'https://map.kakao.com/link/from/'+userLoc+'/to/'+title+','+x+','+y+'"></iframe>'; 
-	$("#map").html(str);
+	$("#modalContent").html(str);
 }
-
+$(function(){ //모달창 닫기
+	$("#close").click(function(){
+		$("#modal").css("display","none");
+		location.reload();
+	});
+});
 </script>
+<div id="modal" class="dialog">
+  <div class="tb">
+    <div class="inner" style="max-width:1300px;">
+      <div class="top">
+        <div class="title" id = "modalTitle">모달창 제목</div>
+        <a href="#" id = "close" class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQdJREFUSEvFVdsNgzAMtGUGoRsgwX/LJu0kZZOqk5QBsMQGzSLYbRAgSIEqoY98OvJdfOfYCF8++GV8+C1BlmUHVb0AQBxYmUHEU1VVZZ8/qSBN0xsAHALB+zTDzLslAt0I3qYz8/Bwt4K/EZgZX+Zi/hWo6klESiKy/vTmt2aKyB4RC1dWH4lM0zR5XdcmSZK4I4G+U7rYfQuBzZ2QRFEU2zZcAg81eSCxAGvgwQTjDzSSa/ZD+njQSjTW3AYcT15IvAgQMXc0d43fZrKqFiJyJaIxUEtCROdnhcetXeQ9Pbwk8kb/9yz6xLgumTmfHdfdwrHGhe6E9YUTove7nN/u5HevCbl/AEcnshnv36ogAAAAAElFTkSuQmCC"/></a>
+      </div>
+      <div class="ct" id = "modalContent">
+      모달 창 내용
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 	<%@ include file = "footer.jsp" %>
 	</body>
 	
