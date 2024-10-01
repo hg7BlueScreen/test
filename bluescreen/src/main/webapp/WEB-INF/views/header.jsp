@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/npm/swiper%4011/swiper-bundle.min.css" />
 <link rel="stylesheet" href="/css/layout.css">
 <link rel="stylesheet" href="/css/main_new.css">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../../r.incru.it/static/js/aos/aos367a.js?20240821162485"></script>
 <script type="text/javascript" src="../../fastly.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.js?20240821162485"></script>
 <script type="text/javascript" src="../../r.incru.it/ajs/product/ats_crm_v2367a.js?20240821162485"></script>
@@ -28,11 +29,11 @@
 
 							<div class="show_onlist">
 								<div class="dropdown_inner">
-									<a href="Mmap" class="go_ats_crm list_menuBox">
+									<a href="/Mmap" class="go_ats_crm list_menuBox">
 										<span class="d-menu-t">MAP</span>
 										<span class="d-menu-t2">폐의약품 수거함 검색</span>
 									</a>
-									<a href="dict?category=drug" class="go_assess list_menuBox">
+									<a href="/dict?category=drug" class="go_assess list_menuBox">
 										<span class="d-menu-t">DICTIONARY</span>
 										<span class="d-menu-t2">의약품 및 질병 사전</span>
 									</a>

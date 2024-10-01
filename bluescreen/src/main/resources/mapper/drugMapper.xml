@@ -174,7 +174,7 @@
 	</select>
 
 	<insert id="enableBookMarkDrug">
-		insert into DRUG_USER_BOOKMARK values(#{uno}, #{dno})
+		insert into DRUG_USER_BOOKMARK values(#{dno}, #{uno})
 	</insert>
 
 	<delete id="disableBookmarkDrug">
@@ -197,4 +197,8 @@
 	<insert id="insertUserDrugOne">
 		insert into drug_user values(#{uno}, #{dno}, sysdate)
 	</insert>
+	
+	<delete id="deleteBookMarkListFromMyPage">
+		delete from drug_user_bookmark where dno = #{dno} and uno = #{uno}
+	</delete>
 </mapper>

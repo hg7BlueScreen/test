@@ -36,22 +36,32 @@ import com.java.dto.Disease;
 import com.java.dto.Drug;
 import com.java.dto.Medicine;
 import com.java.dto.Member;
+import com.java.dto.Page;
 import com.java.service.DiseaseService;
 import com.java.service.DrugService;
 import com.java.service.MedicineService;
 import com.java.service.MemberService;
+import com.java.service.MyService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AdminController {
 
-	@Autowired DrugService drugService;
-	@Autowired MemberService memberService;
-	
+	@Autowired
+	DrugService drugService;
+	@Autowired
+	MemberService memberService;
+	@Autowired
+	MyService myservice;
+	@Autowired
+	HttpSession session;
+
 	@RequestMapping("/admin_update")
 	public String admin_update(Model model) {
 		return "admin_update";
 	}
-	
+
 	@GetMapping("/updateCheckDrug")
 	@ResponseBody
 	public List<Drug> updateCheckDrug(Model model) throws Exception {
@@ -68,52 +78,62 @@ public class AdminController {
 			url += "&numOfRows=" + 100;
 			url += "&pageNo=" + page;
 			url += "&type=xml";
-			
+
 			DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
 			Document doc = dBuilder.parse(url);
 
 			// System.out.println(doc.getDocumentElement().getTextContent());
 
-			// 제일 첫번째 태그 
+			// 제일 첫번째 태그
 			doc.getDocumentElement().normalize();
-			List<Drug> drugList = new ArrayList<>(); 
+			List<Drug> drugList = new ArrayList<>();
 			// 파싱할 tag
 			NodeList nList = doc.getElementsByTagName("item");
-			for(int i = 0; i < nList.getLength(); i++) {
+			for (int i = 0; i < nList.getLength(); i++) {
 				Drug drug = new Drug();
-				
-				drug.setItem_seq(Integer.parseInt(doc.getDocumentElement().getElementsByTagName("ITEM_SEQ").item(i).getTextContent()));
+
+				drug.setItem_seq(Integer
+						.parseInt(doc.getDocumentElement().getElementsByTagName("ITEM_SEQ").item(i).getTextContent()));
 				drug.setItem_name(doc.getDocumentElement().getElementsByTagName("ITEM_NAME").item(i).getTextContent());
 				drug.setEntp_name(doc.getDocumentElement().getElementsByTagName("ENTP_NAME").item(i).getTextContent());
-				
-				boolean checkNewDrug = drugService.checkNewDrug(drug); 
-				// System.out.println(checkNewDisease);
-				if (checkNewDrug) { 
 
-				}else {
+				boolean checkNewDrug = drugService.checkNewDrug(drug);
+				// System.out.println(checkNewDisease);
+				if (checkNewDrug) {
+
+				} else {
 					continue;
 				}
-				
-				drug.setItem_permit_date(doc.getDocumentElement().getElementsByTagName("ITEM_PERMIT_DATE").item(i).getTextContent());
-				drug.setEtc_otc_code(doc.getDocumentElement().getElementsByTagName("ETC_OTC_CODE").item(i).getTextContent());
+
+				drug.setItem_permit_date(
+						doc.getDocumentElement().getElementsByTagName("ITEM_PERMIT_DATE").item(i).getTextContent());
+				drug.setEtc_otc_code(
+						doc.getDocumentElement().getElementsByTagName("ETC_OTC_CODE").item(i).getTextContent());
 				drug.setChart(doc.getDocumentElement().getElementsByTagName("CHART").item(i).getTextContent());
-				drug.setMaterial_name(doc.getDocumentElement().getElementsByTagName("MATERIAL_NAME").item(i).getTextContent());
-				drug.setStorage_method(doc.getDocumentElement().getElementsByTagName("STORAGE_METHOD").item(i).getTextContent());
-				drug.setValid_term(doc.getDocumentElement().getElementsByTagName("VALID_TERM").item(i).getTextContent());
-				drug.setEntp_no(Integer.parseInt(doc.getDocumentElement().getElementsByTagName("ENTP_NO").item(i).getTextContent()));
-				drug.setMain_item_ingr(doc.getDocumentElement().getElementsByTagName("MAIN_ITEM_INGR").item(i).getTextContent());
-				
-				if(doc.getDocumentElement().getElementsByTagName("ATC_CODE").item(i) != null) {
-					drug.setAtc_code(doc.getDocumentElement().getElementsByTagName("ATC_CODE").item(i).getTextContent());
+				drug.setMaterial_name(
+						doc.getDocumentElement().getElementsByTagName("MATERIAL_NAME").item(i).getTextContent());
+				drug.setStorage_method(
+						doc.getDocumentElement().getElementsByTagName("STORAGE_METHOD").item(i).getTextContent());
+				drug.setValid_term(
+						doc.getDocumentElement().getElementsByTagName("VALID_TERM").item(i).getTextContent());
+				drug.setEntp_no(Integer
+						.parseInt(doc.getDocumentElement().getElementsByTagName("ENTP_NO").item(i).getTextContent()));
+				drug.setMain_item_ingr(
+						doc.getDocumentElement().getElementsByTagName("MAIN_ITEM_INGR").item(i).getTextContent());
+
+				if (doc.getDocumentElement().getElementsByTagName("ATC_CODE").item(i) != null) {
+					drug.setAtc_code(
+							doc.getDocumentElement().getElementsByTagName("ATC_CODE").item(i).getTextContent());
 				}
-				
-				if(doc.getDocumentElement().getElementsByTagName("ITEM_IMAGE").item(i) != null) {
-					drug.setImageURL(doc.getDocumentElement().getElementsByTagName("ITEM_IMAGE").item(i).getTextContent());
+
+				if (doc.getDocumentElement().getElementsByTagName("ITEM_IMAGE").item(i) != null) {
+					drug.setImageURL(
+							doc.getDocumentElement().getElementsByTagName("ITEM_IMAGE").item(i).getTextContent());
 				}
-				
-				drugList.add(drug); 
-				
+
+				drugList.add(drug);
+
 			}
 			return drugList;
 		} catch (Exception e) {
@@ -149,61 +169,87 @@ public class AdminController {
 
 		return result;
 	}
-	
+
 	/*
 	 * @PostMapping("/insertMedicineOne")
 	 * 
 	 * @ResponseBody public String insertMedicineOne(Medicine medicine) {
 	 * mservice.insertMedicineOne(medicine); return "성공"; }
 	 */
-	
+
 	@PostMapping("/insertDrugOne")
 	@ResponseBody
 	public String insertDrugOne(Drug drug) {
 		drugService.insertDrugOne(drug);
 		return "성공";
 	}
-	
+
 	@RequestMapping("/admin_report")
 	public String adreport(@RequestParam(defaultValue = "0") int uno, Model model) {
 		Member member = memberService.selectOneMember(uno);
 		ArrayList<Complain> complainList = memberService.selectComplainAll();
 		model.addAttribute("complain", complainList);
-		model.addAttribute("member",member);
+		model.addAttribute("member", member);
 		return "admin_report";
 	}
-	
+
 	@RequestMapping("/admin_user")
 	public String admin_user(@RequestParam(defaultValue = "name") String userCategory, String keyword, Model model) {
 		ArrayList<Member> memberList = memberService.selectAllMember(userCategory, keyword);
-		model.addAttribute("memberList",memberList);
+		model.addAttribute("memberList", memberList);
 		return "admin_user";
 	}
-	
+
 	@RequestMapping("/adminpage")
 	public String adminpage() {
 		return "adminpage";
 	}
-	
+
 	@PostMapping("/applyCaution")
 	@ResponseBody
 	public String applyCaution(Caution caution) {
 		memberService.setCaution(caution);
 		return "성공";
 	}
-	
+
 	@PostMapping("/deleteReportOne")
 	@ResponseBody
 	public String deleteReportOne(int cno) {
 		memberService.deleteReportOne(cno);
 		return "성공";
 	}
-	
+
 	@RequestMapping("/jumpToBoard")
 	public String jumpToBoard(int cno) {
 		// cno를 통해 bno를 가져온 후 return 값을 "bread?bno="+bno;로 바꿔야 함.
 		return "redirect:/";
 	}
-	
-	
+
+	@RequestMapping("/myPageFind1")
+	public String myPageFind(Model model, Page pageDto) {
+		int onlyBookMark = 1;
+		int uno = -1;
+		String textBox = "";
+		String categoryDetail = "";
+		if (session.getAttribute("sessionId") == null) {
+			return "/board/myPageFind";
+		} else {
+			String id = (String) session.getAttribute("sessionId");
+			Member user = myservice.selectUser(id);
+			uno = user.getUno();
+		}
+		
+		HashMap<String, Object> map = drugService.selectAllDrugs(pageDto, textBox, categoryDetail, uno, onlyBookMark);
+		
+		model.addAttribute("list", map.get("list"));
+		ArrayList<Drug> list = (ArrayList<Drug>) map.get("list");
+		System.out.println(list.size());
+		model.addAttribute("pageDto", pageDto);
+		model.addAttribute("textBox", textBox);
+		model.addAttribute("onlyBookMark", onlyBookMark);
+		model.addAttribute("bookMarkListDrug", map.get("bookMarkList"));
+
+		return "/board/myPageFind";
+	}
+
 }

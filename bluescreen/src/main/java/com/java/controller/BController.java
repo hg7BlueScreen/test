@@ -29,6 +29,7 @@ import com.java.dto.Medicine;
 import com.java.dto.Member;
 import com.java.dto.Page;
 import com.java.service.BService;
+import com.java.service.DrugService;
 import com.java.service.JoinService;
 import com.java.service.MyService;
 
@@ -41,6 +42,8 @@ public class BController {
 	@Autowired BService bservice; 
 	@Autowired JoinService jservice;
 	@Autowired MyService myservice;
+	@Autowired DrugService drugService;
+	
 	@PostMapping("/commentInsert")
 	@ResponseBody
 	public Comment commentInsert(Comment comdto) {
@@ -297,10 +300,38 @@ public class BController {
 		return "/board/myPage";
 	}
 	@RequestMapping("/myPageFind")
-	public String myPageFind() {
+	public String myPageFind(Model model, Page pageDto) {
+		int onlyBookMark = 1;
+		int uno = -1;
+		String textBox = "";
+		String categoryDetail = "";
+		if (session.getAttribute("sessionId") == null) {
+			return "/board/myPageFind";
+		} else {
+			String id = (String) session.getAttribute("sessionId");
+			Member user = myservice.selectUser(id);
+			uno = user.getUno();
+		}
+		
+		HashMap<String, Object> map = drugService.selectAllDrugs(pageDto, textBox, categoryDetail, uno, onlyBookMark);
+		
+		model.addAttribute("list", map.get("list"));
+		ArrayList<Drug> list = (ArrayList<Drug>) map.get("list");
+		System.out.println(list.size());
+		model.addAttribute("pageDto", pageDto);
+		model.addAttribute("textBox", textBox);
+		model.addAttribute("onlyBookMark", onlyBookMark);
+		model.addAttribute("bookMarkListDrug", map.get("bookMarkList"));
+
 		return "/board/myPageFind";
 	}
 	
+	@PostMapping("/deleteBookMarkListFromMyPage")
+	@ResponseBody
+	public String deleteBookMarkListFromMyPage(String dno[], String uno) {
+		 drugService.deleteBookMarkListFromMyPage(dno, uno);
+		return "성공";
+	}
 	
 	@PostMapping("/commentCnt")
 	@ResponseBody

@@ -32,5 +32,7 @@ public interface DrugService {
 
 	void insertUserDrugList(String[] dno, int uno);
 
+	void deleteBookMarkListFromMyPage(String[] dno, String uno);
+
 
 }

@@ -137,4 +137,11 @@ public class DrugServiceImpl implements DrugService {
 		
 	}
 
+	@Override
+	public void deleteBookMarkListFromMyPage(String[] dno, String uno) {
+		for(int i = 0; i < dno.length; i++) {
+			drugMapper.deleteBookMarkListFromMyPage(dno[i], uno);
+		}
+	}
+
 }

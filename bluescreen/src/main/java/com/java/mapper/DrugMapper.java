@@ -37,5 +37,7 @@ public interface DrugMapper {
 
 	void insertUserDrugOne(String dno, int uno);
 
+	void deleteBookMarkListFromMyPage(String dno, String uno);
+
 
 }

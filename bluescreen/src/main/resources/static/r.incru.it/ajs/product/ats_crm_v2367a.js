@@ -1,4 +1,10 @@
-const IeCheck=function(){const agent=navigator.userAgent.toLowerCase();if((navigator.appName=='Netscape'&&navigator.userAgent.search('Trident')!=-1)||(agent.indexOf("msie")!=-1)){alert('Internet Explorer�� ȣȯ���� �ʴ� ������ �Դϴ�.');}};
+
+const IeCheck=function(){
+	const agent=navigator.userAgent.toLowerCase();
+	if((navigator.appName=='Netscape'&&navigator.userAgent.search('Trident')!=-1)||(agent.indexOf("msie")!=-1)){
+		alert('Internet Explorer�� ȣȯ���� �ʴ� ������ �Դϴ�.');
+	}
+};
 //IeCheck();
 
 //�̸��� ���Խ� üũ
@@ -13,6 +19,8 @@ String.prototype.isPhone = function() {
 	return re.test(String(this));
 }
 
+$(function(){
+	
 
 jQuery(document).ready(()=>{
 
@@ -129,6 +137,7 @@ jQuery(document).ready(()=>{
 	;
 
 	productInit();
+});
 });
 //�޴� �ٿ� ��� - Ŭ������
 // jQuery(document).ready(function(){
@@ -1557,22 +1566,22 @@ function tabActive() {
 }
 
 /* ��� �� Ŭ�� �� ��ũ�� �̵� */
-jQuery('.section-tab-item .link').on('click', function () {
-	var thisHref = jQuery(this).attr('href'),
-		thisHrefTop = jQuery(thisHref).offset().top,
-		headerH = jQuery('#header').height(),
-		sectionTabH = jQuery('.section-tab-list').height();
-
-	if (jQuery(window).width() > 767) {
-		jQuery('html, body').stop().animate({ scrollTop: thisHrefTop - headerH - sectionTabH - 60}, 300);
-	} else {
-		jQuery('html, body').stop().animate({ scrollTop: thisHrefTop - headerH - sectionTabH - 40}, 300);
-	}
-	jQuery('.section-tab-item .link').removeClass('active');
-	jQuery(this).addClass('active');
-
-	return false;
-});
+	jQuery('.section-tab-item .link').on('click', function () {
+		var thisHref = jQuery(this).attr('href'),
+			thisHrefTop = jQuery(thisHref).offset().top,
+			headerH = jQuery('#header').height(),
+			sectionTabH = jQuery('.section-tab-list').height();
+	
+		if (jQuery(window).width() > 767) {
+			jQuery('html, body').stop().animate({ scrollTop: thisHrefTop - headerH - sectionTabH - 60}, 300);
+		} else {
+			jQuery('html, body').stop().animate({ scrollTop: thisHrefTop - headerH - sectionTabH - 40}, 300);
+		}
+		jQuery('.section-tab-item .link').removeClass('active');
+		jQuery(this).addClass('active');
+	
+		return false;
+	});
 
 //assess ��� �������� - �����
 var swiper = new Swiper(".mbSwiper", {
