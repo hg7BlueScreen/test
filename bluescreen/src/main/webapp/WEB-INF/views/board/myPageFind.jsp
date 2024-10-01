@@ -257,7 +257,8 @@
 			</c:if>
 			</div>
 		</div>
-			<button type = "button" onclick = "bookMarkDeleteBtn()" style = "position: relative; display: flex; margin: 0 auto; bottom: 90px; left: 500px;">버튼왕 김버튼</button>
+			<button type="button" onclick="bookMarkDeleteBtn()" style="position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; 
+    bottom: 90px; left: 500px; border-radius: 20px; border: 1px solid white; background-color: #0A47FF; color: #ffffff; width: 100px; height: 40px;">삭제</button>
 
 	
 	
