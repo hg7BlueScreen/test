@@ -185,7 +185,7 @@
 
 
 		<div
-			style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 50px 500px 100px 500px; width: 1000px;">
+			style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 50px 550px 100px 450px; width: 1000px; min-height: 160px; ">
 			<table>
 				<colgroup>
 					<col width="20%">
@@ -258,7 +258,7 @@
 			</div>
 		</div>
 			<button type="button" onclick="bookMarkDeleteBtn()" style="position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; 
-    bottom: 90px; left: 500px; border-radius: 20px; border: 1px solid white; background-color: #0A47FF; color: #ffffff; width: 100px; height: 40px;">삭제</button>
+    bottom: 90px; left: 450px; border-radius: 20px; border: 1px solid white; background-color: #0A47FF; color: #ffffff; width: 100px; height: 40px;">삭제</button>
 
 	
 	

@@ -29,15 +29,15 @@
 
 							<div class="show_onlist">
 								<div class="dropdown_inner">
-									<a href="Mmap" class="go_ats_crm list_menuBox">
+									<a href="../Mmap" class="go_ats_crm list_menuBox">
 										<span class="d-menu-t">MAP</span>
 										<span class="d-menu-t2">폐의약품 수거함 검색</span>
 									</a>
-									<a href="dict?category=drug" class="go_assess list_menuBox">
+									<a href="../dict?category=drug" class="go_assess list_menuBox">
 										<span class="d-menu-t">DICTIONARY</span>
 										<span class="d-menu-t2">의약품 및 질병 사전</span>
 									</a>
-									<a href="/board/myPage" class="go_interview list_menuBox">
+									<a href="../board/myPage" class="go_interview list_menuBox">
 										<span class="d-menu-t">MYPAGE</span>
 										<span class="d-menu-t2">개인 정보 및 의료 정보</span>
 									</a>
