@@ -47,7 +47,7 @@
 		
 	<!-- contents -->
 	<div style="width:1000px; margin-right: auto; margin-left:auto;">					
-   			<h2 style="margin-top:200px; text-align: center;">
+   			<h2 style="margin-top:150px; text-align: center;">
    				<strong style="font-size: 55px; font-weight:600px; color:#444444; ">게시글</strong>
    				<br>
    				<br>

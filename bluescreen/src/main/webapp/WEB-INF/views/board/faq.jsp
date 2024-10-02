@@ -70,11 +70,11 @@ $(document).ready(function() {
 							<ul>
 								<li class="web"><p style="font-weight: bold; color:#666666; line-height: 28px; margin-right: 20px; font-size: 13px;">검색</p></li>
 								<li class="se">
-									<select style="font-size: 13px;">
+									<select>
 										<option value="0"/>전체</option>
 										<option value="title" />제목</option>
-										<option value="content" />내용</option>
-										<option value="plus">제목+내용</option>
+										<!-- <option value="content" />내용</option>
+										<option value="plus">제목+내용</option> -->
 									</select>
 								</li>
 								<li><input type="text" class="searchInput" style="margin:1px 0 0 1.5px;" /></li>
@@ -97,7 +97,7 @@ $(document).ready(function() {
 							<!-- list -->
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet" >Q</div>
 										<div class="category">의약품</div>
 										<div class="title">폐의약품 수거함 위치 확인하는 방법</div>
@@ -105,10 +105,10 @@ $(document).ready(function() {
 								</a>
 
 								<div class="faqanswer" style="display: none;">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											메인페이지에 지도 위젯을 클릭하시고 거주 위치 혹은 현재 위치를 입력하시면 주변에 위치한 폐의약품 위치 정보를 확인하실 수 있습니다. 다른 궁금한 점이 있으시면 <strong><u>소비자상담실(02-0000-0000)</u></strong>로 연락 주시면 답변드리겠습니다. 
+											메인페이지에 지도 위젯을 클릭하시고 거주 위치 혹은 현재 위치를 입력하시면 주변에 위치한 폐의약품 위치 정보를 확인하실 수 있습니다. 다른 궁금한 점이 있으시면 <strong><u>고객센터(02-000-0000)</u></strong>로 연락 주시면 답변드리겠습니다. 
 										</div>
 									</div>
 								</div>
@@ -117,7 +117,7 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">기능</div>
 										<div class="title">사전 사용하는 방법</div>
@@ -125,10 +125,10 @@ $(document).ready(function() {
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											메인페이지 - 사전 경로로 들어가셔서 검색하실 의약품 및 질병을 검색하시면 됩니다. 
 										</div>
 									</div>
 								</div>
@@ -136,18 +136,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
-										<div class="title">회원가입을 하면 어떤 혜택이 있나요?</div>
+										<div class="title">회원 정보 수정</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											마이페이지 - 회원정보 수정으로 들어가신 뒤 수정을 원하는 정보를 수정하시면 됩니다. 
 										</div>
 									</div>
 								</div>
@@ -155,18 +155,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
-										<div class="title">회원 탈퇴를 하고 싶습니다</div>
+										<div class="title">회원 탈퇴</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											마이페이지&nbsp;&nbsp;-&nbsp;&nbsp;회원탈퇴를 클릭하시면 별도의 과정을 거친 뒤 탈퇴가 가능합니다. 
 										</div>
 									</div>
 								</div>
@@ -174,18 +174,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
-										<div class="title">비밀번호를 잊어버렸습니다.</div>
+										<div class="title">비밀번호 찾기</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											로그인&nbsp;&nbsp;-&nbsp;&nbsp;비밀번호 찾기를 클릭하시면 본인 여부 확인 후 찾기가 가능합니다. 
 										</div>
 									</div>
 								</div>
@@ -193,7 +193,7 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
 										<div class="title">회원 등록 방법</div>
@@ -201,10 +201,10 @@ $(document).ready(function() {
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											로그인&nbsp;&nbsp;-&nbsp;&nbsp;회원가입을 클릭하신 후 이용약관 등의 및 개인정보를 입력하시면 회원으로 등록하실 수 있습니다. 
 										</div>
 									</div>
 								</div>
@@ -212,18 +212,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
-										<div class="category">기능</div>
-										<div class="title">자가진단 안내</div>
+										<div class="category">의약품</div>
+										<div class="title">복용 중인 약 유통기한 및 관련정보 확인</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											 마이페이지&nbsp;&nbsp;-&nbsp;&nbsp;복용 중인 약 메뉴에 들어가시면 복용약 유통기한 및 정보 열람이 가능합니다.
 										</div>
 									</div>
 								</div>
@@ -231,18 +231,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">기능</div>
-										<div class="title">즐겨찾기 목록 확인하는 방법</div>
+										<div class="title">즐겨찾기 목록 확인</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											마이페이지&nbsp;&nbsp;-&nbsp;&nbsp;즐겨찾기 메뉴에 들어가시면 목록 확인이 가능합니다.
 										</div>
 									</div>
 								</div>

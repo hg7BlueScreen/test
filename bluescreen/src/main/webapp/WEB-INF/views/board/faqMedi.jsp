@@ -72,8 +72,8 @@ $(document).ready(function() {
 									<select>
 										<option value="0"/>전체</option>
 										<option value="title" />제목</option>
-										<option value="content" />내용</option>
-										<option value="plus">제목+내용</option>
+										<!-- <option value="content" />내용</option>
+										<option value="plus">제목+내용</option> -->
 									</select>
 								</li>
 								<li><input type="text" class="searchInput" style="margin:1px 0 0 1.5px;" /></li>
@@ -96,18 +96,18 @@ $(document).ready(function() {
 							<!-- list -->
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
-										<div class="blet">Q</div>
+									<div class="question" style="padding: 10px 0;">
+										<div class="blet" >Q</div>
 										<div class="category">의약품</div>
-										<div class="title">복용 중인 의약품 유통기한 확인하는 방법</div>
+										<div class="title">폐의약품 수거함 위치 확인하는 방법</div>
 									</div>
 								</a>
 
 								<div class="faqanswer" style="display: none;">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											메인페이지에 지도 위젯을 클릭하시고 거주 위치 혹은 현재 위치를 입력하시면 주변에 위치한 폐의약품 위치 정보를 확인하실 수 있습니다. 다른 궁금한 점이 있으시면 <strong><u>고객센터(02-000-0000)</u></strong>로 연락 주시면 답변드리겠습니다. 
 										</div>
 									</div>
 								</div>
@@ -115,18 +115,36 @@ $(document).ready(function() {
 							<!-- //list -->
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">의약품</div>
-										<div class="title">의약품 정보를 확인하고 싶어요.</div>
+										<div class="title">의약품 성분 확인</div>
 									</div>
 								</a>
 
 								<div class="faqanswer" style="display: none;">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											메인페이지&nbsp;&nbsp;-&nbsp;&nbsp;사전 메뉴에 들어가서 의약품 정보(제품명, 회사명 등)를 검색하시면 의약품 정보를 확인하실 수 있습니다.
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:;" class="faqbtn">
+									<div class="question" style="padding: 10px 0;">
+										<div class="blet">Q</div>
+										<div class="category">의약품</div>
+										<div class="title">복용 중인 약 유통기한 및 관련정보 확인</div>
+									</div>
+								</a>
+
+								<div class="faqanswer">
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
+										<div class="text">
+											 마이페이지&nbsp;&nbsp;-&nbsp;&nbsp;복용 중인 약 메뉴에 들어가시면 복용약 유통기한 및 정보 열람이 가능합니다.
 										</div>
 									</div>
 								</div>

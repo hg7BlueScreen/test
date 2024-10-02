@@ -60,7 +60,7 @@
 
 		<!-- contents -->
 		<div style="width: 1000px; margin-right: auto; margin-left: auto;">
-			<h2 style="margin-top: 200px; text-align: center;">
+			<h2 style="margin-top: 150px; text-align: center;">
 				<strong style="font-size: 55px; font-weight: 600px; color: #444444;">게시글</strong>
 				<br> <br> <span
 					style="font-size: 15px; color: #888888; font-weight: normal;">게시글 보기</span>
@@ -70,10 +70,11 @@
 
 			<div class="faqList" style="border: none; margin-left: auto; margin-right: auto; margin-top: 80px; margin-bottom: 100px;">
 				<div class="Bread">
-					<a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist" style="margin-left:20px;">신고</button></a>
-					<div colspan="3"
-						style="color: #373f57; font-size: 20px; float: left; font-weight: bold; margin: 20px 0 0 15px; overflow: hidden; bottom: 25px; width: 89%;">${board.btitle }</div>
-					<div colspan="3" class="article" style="font-size: 15px; overflow: hidden; bottom: 40px; display: flex; align-items: center; margin-top:40px;">
+					<c:if test="${sessionId != board.id }">
+						<a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist" style="margin-left:20px;">신고</button></a>
+					</c:if>
+					<div colspan="3" style="color: #373f57; font-size: 20px; float: left; font-weight: bold; margin: 20px 0 17px 15px; bottom: 25px; width: 89%;">${board.btitle }</div>
+					<div colspan="3" class="article" style="font-size: 15px; bottom: 40px;  display: flex; align-items: center; margin-top:40px;">
 						<img src="/image/Uuser.png" style="width: 40px; height: 40px; margin-right: 15px;">
 						<div>${board.id }<br>
 							<div style="font-size: 12px;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
@@ -85,7 +86,7 @@
 						style="overflow: hidden; bottom: 25px; font-size: 16px; word-break: break-all; line-height: 27px;">${board.bcontent }</div>
 					<div colspan="3" class="Aarticle">
 					<c:if test="${board.bfile != null}">
-						<img src="/images/${board.bfile }" style="">
+						<img src="/images/${board.bfile }" style="border-radius: 35px;">
 					</c:if>
 					</div>
 
@@ -106,9 +107,7 @@
 								<tr>
 									<th class="pre"
 										style="border-radius: 12px; border-bottom: none; overflow: hidden; height: 45px;">이전글</th>
-									<td><a
-										href="bread?bno=${prev.bno }&page=${page}&category=${category}&s_word=${s_word}"
-										style="font-size: 13px;">${prev.btitle }</a></td>
+									<td><a href="bread?bno=${prev.bno }&page=${page}&category=${category}&s_word=${s_word}" style="font-size: 13px;">${prev.btitle }</a></td>
 									<td>&nbsp;</td>
 								</tr>
 								<tr>
@@ -116,8 +115,7 @@
 								</tr>
 								<tr>
 
-									<th class="next"
-										style="border-radius: 12px; border-bottom: none; overflow: hidden; height: 45px;">다음글</th>
+									<th class="next" style="border-radius: 12px; border-bottom: none; overflow: hidden; height: 45px;">다음글</th>
 									<td><a href="bread?bno=${next.bno }&page=${page}&category=${category}&s_word=${s_word}" style="font-size: 13px;">${next.btitle }</a></td>
 									<td>&nbsp;</td>
 								</tr>

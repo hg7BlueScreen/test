@@ -73,8 +73,8 @@ $(document).ready(function() {
 									<select>
 										<option value="0"/>전체</option>
 										<option value="title" />제목</option>
-										<option value="content" />내용</option>
-										<option value="plus">제목+내용</option>
+										<!-- <option value="content" />내용</option>
+										<option value="plus">제목+내용</option> -->
 									</select>
 								</li>
 								<li><input type="text" class="searchInput" style="margin:1px 0 0 1.5px;" /></li>
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">기능</div>
 										<div class="title">사전 사용하는 방법</div>
@@ -107,46 +107,28 @@ $(document).ready(function() {
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											메인페이지 - 사전 경로로 들어가셔서 검색하실 의약품 및 질병을 검색하시면 됩니다. 
 										</div>
 									</div>
 								</div>
 							</li>
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">기능</div>
-										<div class="title">자가진단 안내</div>
+										<div class="title">즐겨찾기 목록 확인</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
-										<div class="blet">Q</div>
-										<div class="category">기능</div>
-										<div class="title">즐겨찾기 목록 확인하는 방법</div>
-									</div>
-								</a>
-
-								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
-										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											마이페이지&nbsp;&nbsp;-&nbsp;&nbsp;즐겨찾기 메뉴에 들어가시면 목록 확인이 가능합니다.
 										</div>
 									</div>
 								</div>

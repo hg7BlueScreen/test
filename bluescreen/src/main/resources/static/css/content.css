@@ -636,16 +636,18 @@
 .faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden;}
 .faqList div{position:relative; width:100%; overflow:hidden;}
 .faqList ul li .question{width:100%; padding:2px 0; line-height:1.2; overflow:hidden;}
-.faqList ul li .question .blet{position:absolute; left:25px;   font-size:16px; font-weight:600; color:#666; line-height: 55px;}
-.faqList ul li .question .category{position:absolute; left:65px; font-size:16px; font-weight:600; color:#666;line-height: 58px;}
-.faqList ul li .question .title{font-size:16px; font-weight:600; color:#666; margin:0 0 0 180px;line-height: 55px;}
+.faqList ul li .question .blet{position:absolute; left:25px;   font-size:15px; font-weight:600; color:#666; line-height: 55px;}
+.faqList ul li .question .category{position:absolute; left:65px; font-size:15px; font-weight:600; color:#666;line-height: 58px;}
+.faqList ul li .question .title{font-size:15px; font-weight:600; color:#666; margin:0 0 0 180px;line-height: 55px;}
 
 .faqLists{width:100%; border:none; margin:16px 0 0 0; overflow:hidden; margin-bottom:50px;}
 
 .faqList ul li .question .blets{position:absolute; left:25px; font-size:14px; font-weight:600; color:#666; line-height:600%;}
 .faqList ul li .question .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; margin-top:40px; }
 .faqList ul li .question .titles{font-size:18px; font-weight:600; color:#666; float:left; margin-left:40px; line-height:700%; }
-.faqList ul li .question .bbdate{font-size:12px; font-weight:600; color:#666; text-align:right; position:absolute; bottom:26px;  overflow:hidden; width:630px; left:330px;  }
+.faqList ul li .question .titles a{text-decoration-line:none; }
+.faqList ul li .question .titles a:hover{color:#0a47ff;}
+.faqList ul li .question .bbdate{font-size:12px; font-weight:600; color:#666; text-align:right; position:absolute; bottom:26px;  overflow:hidden; width:630px; left:330px; }
 .faqList ul li .question .bbhit{font-size:12px; font-weight:600; color:#666; float:right; margin-left:160px; bottom:28px; position:absolute;overflow:hidden;}
 .faqList ul li .question .bbchat{font-size:12px; font-weight:600; color:#666; float:right; margin-left:67px; bottom:28px; position:absolute;overflow:hidden;}
 .faqList ul li.hover .question{background: #0a47ff;}
@@ -810,7 +812,7 @@
 /* PAGING */
 .allPageMoving1{margin:30px 0 0 0;}
 .allPageMoving1 *{vertical-align:top;}
-.allPageMoving1 a{display:inline-block;width:25px;height:25px;line-height:23px;color:#888;text-decoration:none; border:1px #c0c0c0 solid; background:#fff; font-size:12px;}
+.allPageMoving1 a{display:inline-block;width:25px;height:25px;line-height:23px;color:#888;text-decoration:none; border:1px #c0c0c0 solid; background:#fff; font-size:12px; border-radius: 5px;}
 .allPageMoving1 a.n{border:0;padding:0;}
 .allPageMoving1 a.pre{border:0;padding:0;margin-top:-1px;}
 .allPageMoving1 a.next{border:0;padding:0;margin-top:-1px;}
@@ -819,7 +821,7 @@
 .allPageMoving1 .faqq:hover{display:inline-block; width:25px; height:25px; line-height:23px; color:#0a47ff; text-decoration:none; border:1px #0a47ff solid; background:#fff; font-size:12px; font-weight:normal;}
 .allPageMoving2 {margin:30px 0 0 0;}
 .allPageMoving2 *{vertical-align:top;}
-.allPageMoving2 {display:inline-block;width:25px;height:25px;line-height:23px;color:#888;text-decoration:none; border:1px #c0c0c0 solid; background:#fff; font-size:14px; font-weight:normal;}
+.allPageMoving2 {display:inline-block;width:25px;height:25px;line-height:23px;color:#888;text-decoration:none; border:1px #c0c0c0 solid; background:#fff; font-size:12px; font-weight:normal; border-radius: 5px;}
 .allPageMoving2:hover{color:#0a47ff; border:1px #0a47ff solid; background:#fff;}
 .allPageMoving2 span.mobile{display:none;}
 .allPageMoving23{display:inline-block; width:25px; height:25px; line-height:23px; color:#fff; text-decoration:none; border:1px #0a47ff solid; background:#0a47ff; font-size:12px; font-weight:normal;}

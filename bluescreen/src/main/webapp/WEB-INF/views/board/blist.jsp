@@ -51,7 +51,7 @@
 		
 	<!-- contents -->
 	<div style="width:1000px; margin-right: auto; margin-left:auto;">					
-   			<h2 style="margin-top:200px; text-align: center;">
+   			<h2 style="margin-top:150px; text-align: center;">
    				<strong style="font-size: 55px; font-weight:600px; color:#444444; ">게시판</strong>
    				<br>
    				<br>
@@ -68,12 +68,12 @@
 									<select style="width:85px;">
 										<option value="0"/>전체</option>
 										<option value="title" />제목</option>
-										<option value="content" />내용</option>
-										<option value="plus">제목+내용</option>
+										<!-- <option value="content" />내용</option>
+										<option value="plus">제목+내용</option> -->
 									</select>
 								</li>
 								<li><input type="text" class="searchInput" style="margin-left:-1px;"/></li>
-								<li class=""><a href="#" ><button class="bllist"style="margin: -14px 0 0 92px; padding-left:1.5px;">검색</button></a></li>
+								<li class=""><a href="#" ><button class="bllist" onclick="bllist" style="margin: -14px 0 0 92px; padding-left:1.5px;">검색</button></a></li>
 							</ul>
 						</div>
 					</div> 
@@ -95,16 +95,26 @@
         <button type="submit"><i class="fas fa-search"></i></button>
       </form>
     </div> -->
-      <div class="faqList" style="margin-top: 40px;">
+      <div style=" padding:80px 0 15px 0; font-size: 22px; /* color:#0a47ff; */ font-weight: bold;">
+       <%-- 전체&nbsp;&nbsp;
+       ${sessionId }
+       개 --%>
+      <a href="bwrite" onclick="writeBBtn()"><button class="write">쓰기</button></a>
+      </div>
+      <div class="faqList" >
       	<c:forEach var="board" items="${list }">
+		    
 		    <ul style="padding-bottom: 10px;">
 		    	<li>
 		    		<a href="javascript:;" class="faqbtn">
 		    		<div class="question">
 				        <%-- <div class="blets"> ${board.bno }  </div> --%>
 				        <div class="categorys" style="width:600px;font-size: 12px;">${board.id } 님</div>				        
-				       	<div class="titles" style="margin-bottom:-40px; font-size: 19px; padding:15px 0 25px 0; font-weight: bold;"><a href="bread?bno=${board.bno }" onclick='count("plus")' id="ddd">${board.btitle } </a></div>
-				        <a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist">신고</button></a>
+				       	<div class="titles" style="margin-bottom:-40px; font-size: 19px; padding:15px 0 25px 0; font-weight: bold;"><a href="bread?bno=${board.bno }" id="ddd">${board.btitle } </a></div>
+				        <c:if test="${sessionId!=board.id }">
+				        	<a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist">신고</button></a>
+				        </c:if>
+				        
 				        <%-- <td class="table-title">
 				       <c:forEach begin="1" end="${board.bindent }" step="1">
 				       	<img src="/image/chat2.png" style="width:17px;">
@@ -115,8 +125,8 @@
 				       </c:if>
 				        </td> --%>
 				       	<div class="bbdate"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
-				        <div style="overflow: hidden; width:20px; height:20px; float:left; left:130px;  margin-top:-15px;"><img src="/image/eye.png"></div>
-				       	<div style="overflow: hidden; width:18px; height:25px; float:left; margin-left:20px;  margin-bottom:20px; margin-top:-15px;"><img src="/image/bubble-chating.png"></div>
+				        <div style="overflow: hidden; width:20px; height:20px; float:left; left:130px;  margin-top:-16px;"><img src="/image/eye.png"></div>
+				       	<div style="overflow: hidden; width:18px; height:25px; float:left; margin-left:20px;  margin-bottom:19px; margin-top:-15px;"><img src="/image/bubble-chating.png"></div>
 						
 						<div class="bbhit" style="display: flex; align-items: center; ">조회&nbsp;&nbsp; <div style="font-weight: bold;">${board.bhit}</div></div>
 				        <div class="bbchat" id="ccnt" style="display: flex; align-items: center;">댓글&nbsp;&nbsp; <div style="font-weight: bold;">${board.comcnt }</div></div>
@@ -130,8 +140,6 @@
       	</c:forEach>
       	
       </div>
-
-
 <div class="btnAreaList" style="margin-bottom:300px;">
     <ul class="page-num">
     <!-- 첫페이지로이동 -->
@@ -148,7 +156,12 @@
       <li class="prev" style="width:19px; height:27px; line-height:23px; vertical-align:top; margin-right:5px;"></li>
     </c:if>
     <c:forEach var="pNum" begin="${startPage }"  end="${endPage }" step="1">
+       <c:if test="${page == pNum }">
+       	<a  class="allPageMoving2" style="color:#0a47ff; border:1px #0a47ff solid; background:#fff;"><li><div style="height:25px;line-height:25px; margin-left:-2px;">${pNum }</div></li></a>
+       </c:if>
+       <c:if test="${page != pNum }">
        <a href="/board/blist?page=${pNum }" class="allPageMoving2"><li><div style="height:25px;line-height:25px; margin-left:-2px;">${pNum }</div></li></a>
+       </c:if>
      </c:forEach> 
    <c:if test="${page < maxPage}">
      <a href="/board/blist?page=${page+1 }"> <li class="next" style="width:19px;height:27px;line-height:23px; vertical-align:top; margin-left:5px;"></li> </a>
@@ -163,7 +176,7 @@
       <li class="last1" style="width:25px;height:25px;line-height:23px; vertical-align:top;"></li>
    </c:if>   
     </ul>
-     <a href="bwrite" onclick="writeBBtn()"><button class="write">쓰기</button></a>
+     <!-- <a href="bwrite" onclick="writeBBtn()"><button class="write">쓰기</button></a> -->
 </div>
 <!-- 	<div class="btnAreaList">
 		페이징이동1

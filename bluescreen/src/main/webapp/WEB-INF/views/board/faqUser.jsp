@@ -73,8 +73,8 @@ $(document).ready(function() {
 									<select>
 										<option value="0"/>전체</option>
 										<option value="title" />제목</option>
-										<option value="content" />내용</option>
-										<option value="plus">제목+내용</option>
+										<!-- <option value="content" />내용</option>
+										<option value="plus">제목+내용</option> -->
 									</select>
 								</li>
 								<li><input type="text" class="searchInput" style="margin:1px 0 0 1.5px;" /></li>
@@ -96,22 +96,20 @@ $(document).ready(function() {
 						<ul>
 							<!-- list -->
 							<!-- //list -->
-
-
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
-										<div class="title">회원가입을 하면 어떤 혜택이 있나요?</div>
+										<div class="title">회원 정보 수정</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											마이페이지 - 회원정보 수정으로 들어가신 뒤 수정을 원하는 정보를 수정하시면 됩니다. 
 										</div>
 									</div>
 								</div>
@@ -119,18 +117,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
-										<div class="title">회원 탈퇴를 하고 싶습니다</div>
+										<div class="title">회원 탈퇴</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											마이페이지&nbsp;&nbsp;-&nbsp;&nbsp;회원탈퇴를 클릭하시면 별도의 과정을 거친 뒤 탈퇴가 가능합니다. 
 										</div>
 									</div>
 								</div>
@@ -138,18 +136,18 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
-										<div class="title">비밀번호를 잊어버렸습니다.</div>
+										<div class="title">비밀번호 찾기</div>
 									</div>
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											로그인&nbsp;&nbsp;-&nbsp;&nbsp;비밀번호 찾기를 클릭하시면 본인 여부 확인 후 찾기가 가능합니다. 
 										</div>
 									</div>
 								</div>
@@ -157,7 +155,7 @@ $(document).ready(function() {
 
 							<li>
 								<a href="javascript:;" class="faqbtn">
-									<div class="question" style="padding: 15px 0;">
+									<div class="question" style="padding: 10px 0;">
 										<div class="blet">Q</div>
 										<div class="category">회원</div>
 										<div class="title">회원 등록 방법</div>
@@ -165,14 +163,16 @@ $(document).ready(function() {
 								</a>
 
 								<div class="faqanswer">
-									<div class="faqbox">
-										<div class="blet">A</div>
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-6959-3647)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											로그인&nbsp;&nbsp;-&nbsp;&nbsp;회원가입을 클릭하신 후 이용약관 등의 및 개인정보를 입력하시면 회원으로 등록하실 수 있습니다. 
 										</div>
 									</div>
 								</div>
 							</li>
+
+							
 						</ul>
 					</div>
 					<!-- //FAQ -->

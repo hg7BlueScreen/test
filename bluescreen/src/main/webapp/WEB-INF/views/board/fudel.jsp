@@ -21,6 +21,7 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript">
 	  $(function(){
 		 if(${sessionId==null}){

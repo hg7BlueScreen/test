@@ -35,11 +35,7 @@
 <body>
 <%@include file = "header.jsp" %>
 	<!-- container -->
-	<div id="" style="margin-top:150px; margin-bottom:200px;">
-		
-	
-			<!-- contents -->
-<div id="left" style="width:250px; height: 250px; overflow: hidden;margin:100px 0 0 100px;">
+	<div id="left" style="width:250px; height: 250px; overflow: hidden;margin:100px 0 0 100px;">
 			<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
 				<ul >	
 					<li style="height:40px;"><a href="myPage" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
@@ -48,6 +44,12 @@
 					<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
 				</ul>				
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
+	
+	<div id="" style="width:1000px;  margin:150px auto 200px auto;">
+		
+	
+			<!-- contents -->
+
 			
 					<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
 					<div class="myTab">
@@ -61,33 +63,33 @@
 					
 					
 					
-					<div style="margin-top:100px; font-size: 25px; width:1000px;display: flex; margin-left: 450px; margin-right:auto; align-items: center;">
+					<div style="margin-top:100px; font-size: 25px; width:100%;display: flex; margin-left: auto; margin-right:auto; align-items: center;">
 						<img src="/image/Uuser.png"style="width:110px; height:110px; margin-right: 40px;">				
 						<div>
-						ddd님
+						${sessionId } 님
 						<br>
 						<div style="font-size: 15px;">aaa@naver.com</div>
 						</div>
 						
 						</div>
-					<div style="width:1000px; height:300px; display: flex; justify-content: space-around; align-items: center; margin-right:auto; margin-left:450px;">
+					<div style="width:100%; height:300px; display: flex; justify-content: space-around; align-items: center; margin:0 auto;">
 					<div class="Mfind" style="width:245px; height:185px; background:none; color:#0a47ff; border-radius: 50px; 
 					 font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold; ">
-						<p style="overflow: hidden; margin:40px 0 0 0; font-size:27px;text-align: center;">
-						5 회
+						<p style=" margin:40px 0 0 0; font-size:27px;text-align: center;">
+						24&nbsp;/&nbsp;10&nbsp;/&nbsp;03
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">수거함 방문 횟수</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">복용약 &nbsp;등록일</span>
 						</p>
 					
 					</div>
 					<div class="Mfind" style="width:245px; height:185px; background:#none; color:#0a47ff; border-radius: 50px; 
 					font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold;">
-						<p style="overflow: hidden; margin:40px 0 0 0; font-size:27px; text-align: center;">
+						<p style=" margin:40px 0 0 0; font-size:27px; text-align: center;">
 						12 개
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">즐겨찾기 항목</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">복용약</span>
 						</p>
 					
 					</div>
@@ -103,17 +105,17 @@
 					</div>
 					<div class="Mfind" style="width:245px; height:185px; background:none; color:#0a47ff; border-radius: 50px; 
 					font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold; " >
-						<p style="overflow: hidden; margin:40px 0 0 0; font-size:27px;text-align: center;">
+						<p style=" margin:40px 0 0 0; font-size:27px;text-align: center;">
 						<!-- <img src="/image/letter.png" style="overflow: hidden; width:20px; height:20px; margin-bottom: 4px;"> -->
-						1,202 p
+						10 개
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">마일리지</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">즐겨찾기 &nbsp;항목</span>
 						</p>
 					
 					</div>
 					</div>
-					<div style="width:1000px; margin-left: auto; margin-right: auto; margin-bottom: 20px;font-size:17px; color:#0a47ff; padding:0 0 0 35px;">최근 수거함 방문 내역</div>
+					<div style="width:1000px; margin-left: auto; margin-right: auto; margin-bottom: 20px;font-size:17px; color:#0a47ff; padding:0 0 0 35px;">최근 수거함 조회 내역</div>
 					<div style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin-right: auto; margin-left:auto; width:1000px;">
 						<table>
 							<colgroup>
@@ -125,52 +127,50 @@
 								<th style="border-bottom: 1px solid #b9c4e8;font-weight: bold; font-size: 15px; background: #f5f5f5;">위치</th>
 							</tr>
 							<tr>
-								<td style="height:80px; font-size: 15px;">2024/09/09</td>
+								<td style="height:80px; font-size: 15px;">24/09/09</td>
 								<td style="font-size: 15px;">서울 강서구</td>
 							</tr>
 							<tr>
-								<td style="height:80px; font-size: 15px;">2024/09/16</td>
+								<td style="height:80px; font-size: 15px;">24/09/16</td>
 								<td style="font-size: 15px;">서울 마포구</td>
 							</tr>
 							<tr>
-								<td style="height:80px; font-size: 15px;">2024/09/23</td>
+								<td style="height:80px; font-size: 15px;">24/09/23</td>
 								<td style="font-size: 15px;">서울 서대문구</td>
 							</tr>
 						</table>
 					</div>
-
-					<div style="border-bottom:1px solid #edeef0; margin-top:100px;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 14px; font-weight: bold;">
+					
+					<div style="border-bottom:1px solid #edeef0; margin-top:100px;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 14px; font-weight: bold;">
 						<p style="color:#999999; margin-left:30px; ">고객센터</p>
 					</div>
-					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 16px;">
+					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
 						<a href="blist"style="color:#444444; margin-left:30px; font-weight: bold;">게시판</a>
 					</div>
-					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 16px;">
+					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
 						<a href="#"style="color:#444444; margin-left:30px; font-weight: bold;">QnA</a>
 					</div>
-					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 16px;">
+					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
 						<a href="faq" style="color:#444444; margin-left:30px; font-weight: bold;">FAQ</a>
 					</div>
-					<div style="border-bottom:1px solid #edeef0; margin-top:40px;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 14px; font-weight: bold;">
+					<div style="border-bottom:1px solid #edeef0; margin-top:40px;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 14px; font-weight: bold;">
 						<p style="color:#999999; margin-left:30px; ">사이트</p>
 					</div>
-					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 16px;">
+					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
 						<a href=""style="color:#444444; margin-left:30px; font-weight: bold;">이용약관</a>
 					</div>
-					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:1000px; margin-right: auto; margin-left: auto; font-size: 16px;">
+					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
 						<a href=""style="color:#444444; margin-left:30px; font-weight: bold;">개인정보처리방침</a>
 					</div>
 					
 
 				</div>
-			</div>
+			
 			<!-- //contents -->
 
-		</div>
-	</div>
+		
 	<!-- //container -->
 <%@include file = "footer.jsp" %>
-</div>
-</div>
+
 </body>
 </html>

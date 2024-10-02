@@ -174,7 +174,8 @@ vertical-align:middle; font-size:12px; padding:10px 0 12px 20px; font-weight:600
 
 .preNext td .nbtnMini{position:absolute; right:20px; top:-11px;}
 
-.preNext td a{color:#666;}
+.preNext td a{color:#666; text-decoration-line: none;}
+.preNext td a:hover{color:#0a47ff;}
 
 .allPageMoving1 a.pre{border:0;padding:0;}
 
