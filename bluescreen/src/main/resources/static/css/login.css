@@ -59,7 +59,8 @@ input[type="text"],input[type="password"] {
 
 #find {
     text-align: center; /* 중앙 정렬 */
-    margin-top: 20px; /* 여백 */
+    margin-top: 10px; /* 여백 */
+    margin-bottom: 10px; /* 여백 */
 }
 
 button {
@@ -160,8 +161,8 @@ button:hover {
   cursor: pointer;
 }
 
-input[type="checkbox"]{
-	
+#save label{
+	 margin-left: 5px; /* 원하는 여백 크기로 조정 */
 }
 
 	
