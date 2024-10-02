@@ -9,4 +9,7 @@
         FROM BMember 
         WHERE id = #{id} AND pw = #{pw}
     </select>
+    <select id="ajaxLogin" resultType="com.java.dto.BMember">
+		select * from BMember where id=#{id} and pw=#{pw}	
+	</select>
 </mapper>

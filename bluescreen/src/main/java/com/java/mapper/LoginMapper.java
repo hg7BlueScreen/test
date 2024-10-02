@@ -9,5 +9,9 @@ public interface LoginMapper {
 
 	BMember selectLogin(String id, String pw);
 
+	BMember ajaxLogin(BMember bm);
+
+
+
 
 }
