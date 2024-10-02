@@ -43,14 +43,17 @@ public class SchedulerServiceImpl implements SchedulerService {
 	
 	private void medicineSendEmail(ArrayList<Drug> dlist, ArrayList<Member> mlist) {
 		SimpleMailMessage message = new SimpleMailMessage();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일");
+		
 		if(!mlist.isEmpty()) {
 			for(int i=0;i<mlist.size();i++) {
+				String formattedDate = formatter.format(dlist.get(i).getDdate());
 				message.setTo(mlist.get(i).getEmail());
 				message.setSubject(mlist.get(i).getName()+"님의 복용중인 약 소비기한이 임박하여 알림을 드립니다.");
 				if(dlist.get(i).getImageURL()!=null) {
-					message.setText(dlist.get(i).getItem_name()+"\n권장 만료기간 : "+dlist.get(i).getDdate()+"\n"+dlist.get(i).getImageURL()+"\n");
+					message.setText(dlist.get(i).getItem_name()+"\n권장 만료기간 : "+dlist.get(i).getDdate()+"\n"+formattedDate+"\n");
 				}else {
-					message.setText("약품명"+dlist.get(i).getItem_name()+"\n권장 만료기간 : "+dlist.get(i).getDdate()+"\n");
+					message.setText("약품명 : "+dlist.get(i).getItem_name()+"\n권장 만료기간 : "+formattedDate+"\n보관방법 : "+dlist.get(i).getStorage_method()+"\n**보관방법에 따라 권장 소비기한이 단축될 수 있습니다.**\n기한이 만료된 약은 저희 웹사이트를 통해 바르게 버려주시길 부탁드립니다.");
 				}
 				message.setFrom("su02552@gmail.com");
 				mailSender.send(message);

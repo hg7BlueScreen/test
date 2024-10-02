@@ -94,7 +94,8 @@ function placesSearchCb(data){ //회원 주소로 길 찾기 검색
 	var userX = data[0].y;
 	var userY = data[0].x;
 	addUserMarker(userX, userY);
-	
+	var usercenter = new kakao.maps.LatLng(userX, userY);
+	map.setCenter(usercenter);
 }
 function boxbtn(){
 	str='';

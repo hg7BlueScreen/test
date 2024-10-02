@@ -11,33 +11,30 @@
 <meta name="description" content="JARDIN SHOP" />
 <meta name="keywords" content="JARDIN SHOP" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/my_medicine.css?" />
+<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/info/member.css">
-<script type="text/javascript" src="../js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="../js/jquery.min.js"></script> -->
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../js/common1.js"></script>
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="../js/html5.js"></script>
-<script type="text/javascript" src="../js/respond.min.js"></script>
-<![endif]-->
+
+
 <script type="text/javascript">
 $(document).ready(function() {
 	
-
-
 });
 </script>
 </head>
 <body>
-<%@include file = "header.jsp" %>
+<%@include file = "header.jsp" %> 
 	<!-- container -->
-	<div id="" style="margin-top:150px; margin-bottom:50px;">
+	<div id="" style="margin-top:150px; ">
 		<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
 		<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
 			<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
@@ -231,7 +228,6 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 }
 
 </script>
-
 			<!-- contents -->
 			<div id="contents">
 				<div>
@@ -290,7 +286,6 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 														${m.useMethodQesitm }
 													</div>
 												</c:if>
-											
 												<div class="blet">주의사항</div>
 												<div class="text">
 											<c:if test="${m.atpnWarnQesitm!=null }">
@@ -319,8 +314,6 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 						</ul>
 					</div>
 					<!-- //FAQ -->
-	
-
 
 					<div class="btnAreaList">
 						<!-- 페이징이동1 -->
@@ -349,11 +342,9 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 							<a class="next"><img src="../images/btn/btn_next1.gif" alt="뒤페이지로"/></a>
 							<a class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
 						</c:if>
-						
 						</div>
 						<!-- //페이징이동1 -->
 					</div>
-
 				</div>
 			</div>
 			<!-- //contents -->
@@ -374,6 +365,5 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 		  </div>
 		</div>
 	<%@include file = "footer.jsp" %>
-
 </body>
 </html>

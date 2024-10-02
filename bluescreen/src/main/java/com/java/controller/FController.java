@@ -171,9 +171,8 @@ public class FController {
 	@PostMapping("/alarmDate")
 	@ResponseBody
 	public String alarmDate(String alDate) {
-		int uno = (int)session.getAttribute("uno");
-		//System.out.println(alDate);
-		//System.out.println(uno);
+		int uno = (int)session.getAttribute("sessionUno");
+		//System.out.println(alDate);//System.out.println(uno);
 		myservice.alarmDate(uno, alDate);
 		
 		return "";

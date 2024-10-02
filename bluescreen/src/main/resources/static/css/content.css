@@ -306,7 +306,7 @@
 .otherTab ul li a.on span{color:#fff;}
 
 .faqTab{width:100%; margin:40px 0 0 0; overflow:hidden; }
-.myTab{width:1000px; margin-left:auto; margin-right:auto; }
+.myTab{width:1000px; margin:0 auto;}
 .faqTabb{width:100%; margin:1px 0 0 0; overflow:hidden;}
 .faqTab ul{width:100%; border-bottom:1px #0a47ff solid; }
 .myTab ul{width:100%;  overflow:hidden; }
