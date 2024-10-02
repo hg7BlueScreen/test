@@ -4,7 +4,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Kakao {
-	public Long id; 
+	public String id; 
 	public String connected_at;
 	public Properties properties;
 	public Kakao_account kakao_account;

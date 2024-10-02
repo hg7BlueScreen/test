@@ -41,6 +41,13 @@ public class MemberServiceImpl implements MemberService {
 	public void deleteReportOne(int cno) {
 		memberMapper.deleteReportOne(cno);
 	}
+
+	@Override
+	public Member selectKey(String id) {
+		Member member = memberMapper.selectKey(id);
+		
+		return member;
+	}
 	
 	
 	

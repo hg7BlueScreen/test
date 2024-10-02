@@ -33,7 +33,7 @@
 					<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
 					<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">즐겨찾기</a></li>
 					<li style="height:40px;"><a href="myPageMedi" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">복용 중인 약</span></a></li>
-					<li class="last" style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
+					<li class="last" style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">회원정보</a></li>
 				</ul>
 			</div>
 			<script type="text/javascript">initSubmenu(3,0);</script>
@@ -43,7 +43,7 @@
 					<li><a href="myPage" >내 정보</a></li>
 					<li class="dep"><a href="myPageFind" >즐겨찾기</a></li>
 					<li><a href="myPageMedi">복용 중인 약</a></li>
-					<li class="last"><a class="on">회원정보수정</a></li>
+					<li class="last"><a class="on">회원정보</a></li>
 				</ul>						
 			</div>	
 		</div>

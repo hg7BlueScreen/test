@@ -11,9 +11,8 @@
 <meta name="description" content="JARDIN SHOP" />
 <meta name="keywords" content="JARDIN SHOP" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
-<link rel="stylesheet" type="text/css" href="../css/my_medicine.css?" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/info/member.css">
+<link rel="stylesheet" type="text/css" href="../css/my_medicine.css?" />
 <!-- <script type="text/javascript" src="../js/jquery.min.js"></script> -->
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
@@ -44,7 +43,8 @@ $(document).ready(function() {
 				<li style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">복용 중인 약</span></a></li>
 				<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
 			</ul>				
-		</div><script type="text/javascript">initSubmenu(3,0);</script>
+		</div> <!-- left -->
+		<script type="text/javascript">initSubmenu(3,0);</script>
 		<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
 		<div class="myTab">
 			<ul>
@@ -53,9 +53,9 @@ $(document).ready(function() {
 				<li><a class="on">복용 중인 약</a></li>
 				<li class="last"><a href="myPageFix">회원정보수정</a></li>
 			</ul>						
-		</div>	
-	</div>
-		<div id="container" style = "margin-bottom: 500px;">
+		</div>	<!-- myTab -->
+	</div> 
+		
 		
 		
 <script type="text/javascript">
@@ -83,7 +83,7 @@ function medicineImage(){//복용약 등록, 사진으로 추가함.
 	            formData.append('file', file); // FormData에 파일 추가
 
 	            $.ajax({
-	                url: "imageToString",
+	                url: "/imageToString",
 	                method: "post",
 	                data: formData,
 	                processData: false, // FormData를 자동으로 변환하지 않도록 설정
@@ -92,6 +92,7 @@ function medicineImage(){//복용약 등록, 사진으로 추가함.
 	                    console.log(data);
 	                    if(data == '' || data == null){
 	                    	alert("약 정보를 찾을 수 없습니다.");
+	                    	location.reload();
 	                    	return false;
 	                    }
 	                    let str = '';
@@ -228,7 +229,9 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 }
 
 </script>
+		<div id="fieldset_class" >
 			<!-- contents -->
+			<section>
 			<div id="contents">
 				<div>
 					<div class="faqList">
@@ -247,7 +250,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 							<input type="file" id="fileInput" style="display: none;">
 							<button id="medicineAdd" onclick="medicineAdd()">사전에서 추가</button>
 							<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
-						</div>
+						</div><!-- myMedicineHd -->
 						<ul>
 							<!-- list -->
 							<li>
@@ -268,7 +271,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 												<div class="ddate"><fmt:formatDate value="${d.ddate }" pattern="yyyy-MM-dd"/></div>
 											</c:if>
 											<div class="image"><img src="${d.imageURL }"></div>
-										</div>
+										</div><!-- list -->
 									</a>
 									<div class="faqanswer" style="display: none;">
 										<div class="faqbox">
@@ -278,36 +281,36 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 													${d.storage_method } 
 												</div>
 											</c:if>
-										<c:forEach var="m" items="${mList }">
-											<c:if test="${d.item_seq==m.itemSeq}">
-												<c:if test="${m.useMethodQesitm != null}">
-													<div class="blet">복용법</div>
+											<c:forEach var="m" items="${mList }">
+												<c:if test="${d.item_seq==m.itemSeq}">
+													<c:if test="${m.useMethodQesitm != null}">
+														<div class="blet">복용법</div>
+														<div class="text">
+															${m.useMethodQesitm }
+														</div>
+													</c:if>
+													<div class="blet">주의사항</div>
 													<div class="text">
-														${m.useMethodQesitm }
+														<c:if test="${m.atpnWarnQesitm!=null }">
+																<strong><u>복용 전 주의</u></strong><p>${m.atpnWarnQesitm}</p>
+														</c:if>
+														<c:if test="${m.atpnQesitm!=null }">
+																<strong><u>복용 중 주의</u></strong><p>${m.atpnQesitm}</p>
+														</c:if>
+														<c:if test="${m.intrcQesitm!=null }">
+																<strong><u>복용 후 주의</u></strong><p>${m.intrcQesitm}</p>
+														</c:if>
+													</div><!-- text -->
+													<c:if test="${m.seQesitm!=null }">
+													<div class="blet">부작용</div>
+													<div class="text">
+														${m.seQesitm } 
 													</div>
 												</c:if>
-												<div class="blet">주의사항</div>
-												<div class="text">
-											<c:if test="${m.atpnWarnQesitm!=null }">
-													<strong><u>복용 전 주의</u></strong><p>${m.atpnWarnQesitm}</p>
-											</c:if>
-											<c:if test="${m.atpnQesitm!=null }">
-													<strong><u>복용 중 주의</u></strong><p>${m.atpnQesitm}</p>
-											</c:if>
-											<c:if test="${m.intrcQesitm!=null }">
-													<strong><u>복용 후 주의</u></strong><p>${m.intrcQesitm}</p>
-											</c:if>
-												</div>
-											<c:if test="${m.seQesitm!=null }">
-												<div class="blet">부작용</div>
-												<div class="text">
-													${m.seQesitm } 
-												</div>
-											</c:if>
-											</c:if>
-										</c:forEach>
-										</div>
-									</div>
+												</c:if>
+											</c:forEach>
+										</div><!-- faqbox -->
+									</div><!-- faqanswer -->
 								</li> 
 							</c:forEach>
 							<!-- //list -->
@@ -342,15 +345,14 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 							<a class="next"><img src="../images/btn/btn_next1.gif" alt="뒤페이지로"/></a>
 							<a class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
 						</c:if>
-						</div>
-						<!-- //페이징이동1 -->
-					</div>
+						</div><!-- allPageMoving1 -->
+					</div><!-- btnAreaList -->
 				</div>
 			</div>
 			<!-- //contents -->
 		 </div>
-	 </div>
-	<!-- //container -->
+	 </div>	<!-- container -->
+	 </section>
 	<div id="modal" class="dialog">
 		  <div class="tb">
 		    <div class="inner" style="max-width:1300px;">
@@ -359,11 +361,11 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 		        <a href="#" id = "close" class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQdJREFUSEvFVdsNgzAMtGUGoRsgwX/LJu0kZZOqk5QBsMQGzSLYbRAgSIEqoY98OvJdfOfYCF8++GV8+C1BlmUHVb0AQBxYmUHEU1VVZZ8/qSBN0xsAHALB+zTDzLslAt0I3qYz8/Bwt4K/EZgZX+Zi/hWo6klESiKy/vTmt2aKyB4RC1dWH4lM0zR5XdcmSZK4I4G+U7rYfQuBzZ2QRFEU2zZcAg81eSCxAGvgwQTjDzSSa/ZD+njQSjTW3AYcT15IvAgQMXc0d43fZrKqFiJyJaIxUEtCROdnhcetXeQ9Pbwk8kb/9yz6xLgumTmfHdfdwrHGhe6E9YUTove7nN/u5HevCbl/AEcnshnv36ogAAAAAElFTkSuQmCC"/></a>
 		      </div>
 		      <div class="ct" id = "modalContent">
-		      로딩 중...
+		      	로딩 중...
 		      </div>
 		    </div>
 		  </div>
-		</div>
+		</div> 
 	<%@include file = "footer.jsp" %>
 </body>
 </html>

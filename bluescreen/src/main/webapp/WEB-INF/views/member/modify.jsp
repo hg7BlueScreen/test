@@ -48,25 +48,29 @@
 			<input type="hidden" id="ck" name="ck" value="agree"/>
 			
 				<div id="subBanner"></div>
-				<div style="width:1000px; margin-left: auto; margin-right: auto; margin-bottom: 20px;font-size:17px; padding:0 0 0 35px;">회원 정보 수정
+				<div style="width:1000px; margin-left: 520px;  margin-bottom: 20px;font-size:17px; padding:0 0 0 35px;">회원 정보 수정
 					<span>(*는 필수 입력사항입니다.)</span>
 				</div>
-				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin-left:550px; width:900px;">
+				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 20px; margin-left:550px; width:900px;">
+				<style type="text/css">	
+					th {vertical-align:middle; }
+					td {vertical-align:middle; text-align:left; padding-left:15px;}
+				</style>
 				<table>
 					<colgroup>
 						<col width="25%">
 						<col width="75%">
 					</colgroup>
 					<tr id="join_name_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*이름</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px; "><label>*이름</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;"><input type="text" id="name" name="name" value="${mem.name }"/></td>
 					</tr>
 					<tr id="join_name_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>아이디</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>아이디</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.id }</td>
 					</tr>
 					<tr id="join_nickname_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*닉네임</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*닉네임</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="text" id="nickname" name="nickname" onchange = "nicknamechange()" value="${mem.nickname }"/>
 							<input type="button" onclick="nicknameOk()" value="중복확인" id="nicBtn" disabled/>
@@ -74,7 +78,7 @@
 						</td>
 					</tr>
 					<tr id="join_pw1_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*비밀번호</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*비밀번호</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="password" id="pw1" name="pw1" class="pw1" onchange="pwChg()" disabled/>
 							<input type="hidden" id="pw" name="pw" value="${mem.pw }"/>
@@ -83,14 +87,14 @@
 						</td>
 					</tr>
 					<tr id="join_pw2_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*비밀번호 확인</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*비밀번호 확인</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="password" id="pwOk" name="pwOk" onkeyup="pwkey()" class="pw" disabled/>
 							<span id="pwCheck"></span>
 						</td>
 					</tr>
 					<tr id="join_mail_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*이메일</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*이메일</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<div>
 							<input type="text" id="emailId" name="emailId" onchange="emailCk()" value="${mem.emailId}"/>
@@ -109,16 +113,16 @@
 						</td>
 					</tr>
 					<tr id="join_address_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>주소</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>주소</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="text" id="addr1" name="addr1" value="${mem.addr1 }"/>
-							<input type="button" onclick="addressBtn()" value="우편번호"/>
-							<input type="text" id="addr2" name="addr2" value="${mem.addr2 }"/>
+							<input type="button" onclick="addressBtn()" value="우편번호"/><br>
+							<input type="text" id="addr2" name="addr2" style="width:50%;" value="${mem.addr2 }"/>
 							<input type="text" id="addr3" name="addr3" value="${mem.addr3 }"/>
 						</td>
 					</tr>
 					<tr id="join_tell_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>전화번호</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>전화번호</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="text" id="phone1" name="phone1" maxlength="3" value="010"/>
 							<span> - </span>
@@ -128,7 +132,7 @@
 						</td>
 					</tr>
 					<tr id="join_name_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>생년월일</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>생년월일</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<select id="year" name="year">
 								<c:forEach var="y" begin="1920" end="2024" step="1">
@@ -221,7 +225,7 @@
 						</td>
 					</tr>
 					<tr id="join_gender_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>성별</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>성별</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="radio" name="gender" id="male" value="남성"<c:if test="${mem.gender == '남성'}">checked</c:if>  />
 							<label for="male">남성</label>
@@ -230,7 +234,7 @@
 						</td>
 					</tr>
 					<tr id="join_job_dl">
-						<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>직업</label></th>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>직업</label></th>
 						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
 							<select id="job" name="job">
 								<option value="" <c:if test="${mem.job == ''}" >selected</c:if>>선택</option>

@@ -21,4 +21,6 @@ public interface MemberMapper {
 
 	void deleteReportOne(int cno);
 
+	Member selectKey(String id);
+
 }

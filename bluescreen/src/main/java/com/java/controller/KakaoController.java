@@ -6,24 +6,29 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.java.dto.Kakao;
+import com.java.dto.Member;
 import com.java.dto.OAuthToken;
+import com.java.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class KakaoController {
 	@Autowired HttpSession session;
+	@Autowired MemberService memberservice;
 	
 	@GetMapping("/kakao/oauth")
-	public String oauth(String code) {
+	public String oauth(String code, Model model, Member join) {
 		System.out.println("kakao code : " + code);
 		// token 키받기. 
 		String tokenUrl = "https://kauth.kakao.com/oauth/token";
@@ -95,14 +100,34 @@ public class KakaoController {
 		System.out.println("카카오 사용자 정보 nickName : " + kdto.getProperties().getNickname());
 		// member table에 kakao_id 컬럼. kdto.getId() 있고. 
 		// db(member)에 사용자 정보가 있는지 확인 후 로그인을 할 수 있게 해줘야함. 
-		
+		Member memK = memberservice.selectKey(kdto.getId());
+		if(memK!=null) {
+			session.setAttribute("sessionId", memK.getId());
+			session.setAttribute("sessionName", memK.getName());
+			session.setAttribute("sessionUno", memK.getUno());
+			session.setAttribute("addr", memK.getAddress());
+			model.addAttribute("loginCk",1);
+			return "redirect:/";
+		}else {
+			
 		session.setAttribute("sessionNicName", kdto.getProperties().getNickname() );
 		System.out.println("카카오 로그인");
-		return "redirect:/";
+		model.addAttribute("userNickName", kdto.getProperties().getNickname());
+		model.addAttribute(kdto);
+		join.setSocialKey(kdto.getId());
+		model.addAttribute("member",join);
+		return "member/kakaoJoin1";
+		}//else
 	}
 	@GetMapping("/kakao/logout")
 	public String kakologout() {
 		session.invalidate();
 		return "redirect:/";
+	}
+	@PostMapping("/kakaoJoin2")
+	public String kakaoJoin2(Member member, Model model) {
+		System.out.println(member.getSocialKey());
+		model.addAttribute("socialKey",member.getSocialKey());
+		return "/member/kakaoJoin2";
 	}
 }

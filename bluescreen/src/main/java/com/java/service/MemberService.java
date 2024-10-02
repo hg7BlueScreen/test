@@ -18,4 +18,6 @@ public interface MemberService {
 
 	void deleteReportOne(int cno);
 
+	Member selectKey(String id);
+
 }

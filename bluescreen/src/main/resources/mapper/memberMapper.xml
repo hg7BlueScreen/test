@@ -63,6 +63,9 @@
 	<delete id="deleteReportOne">
 		delete from complain where cno = #{cno}
 	</delete>
+	<select id="selectKey" resultType="com.java.dto.Member">
+		select*from bmember where socialKey = #{id}
+	</select>
 	
 	
 </mapper>

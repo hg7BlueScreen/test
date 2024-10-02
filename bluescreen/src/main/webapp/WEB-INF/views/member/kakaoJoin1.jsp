@@ -12,8 +12,17 @@
 		<header>
 	<%@ include file="../header.jsp" %>		
 		</header>
+		<script type="text/javascript">
+			console.log("${userNickName}");
+		</script>
+		
+		
 		<section>
-			<form name="agree" method="post" action="join2">
+			<form name="agree" method="post" action="/kakaoJoin2">
+			<input type = "hidden" name = "userNickName" id ="userNickName" value = "${userNickName }" >
+			<input type = "hidden" name = "socialKey" id ="socialKey" value = "${member.socialKey }" >
+			
+			
 				<div id="subBanner"></div>
 				
 				

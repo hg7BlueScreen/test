@@ -17,8 +17,9 @@
 		
 		
 		<section>
-			<form name="agree" method="post" action="join3">
+			<form name="agree" method="post" action="/member/join3">
 			<input type="hidden" id="ck" name="ck" value="agree"/>
+			<input type="hidden" id="socialKey" name="socialKey" value="${socialKey }"/>
 			
 				
 				<div id="subBanner"></div>
