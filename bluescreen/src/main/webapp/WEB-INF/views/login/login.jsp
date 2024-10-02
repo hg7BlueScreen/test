@@ -96,7 +96,7 @@
                       <div id="find">
                           <span>아이디 찾기</span> <span class="separator">|</span> <span>비밀번호 찾기</span>
                       </div>
-                      <button type="submit" id="loginBtn">로그인</button>
+                      <button type="submit" class="loginBtn">로그인</button>
                   </form>
                   <div class="login-box">
                       <h3>카카오 로그인</h3>
