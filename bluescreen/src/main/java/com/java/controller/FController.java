@@ -114,6 +114,36 @@ public class FController {
 		//System.out.println(mList);
 		return "board/myPageMedi";
 	}
+	@RequestMapping("/board/myPageFind2")
+	public String myPageFind2(Page pageDto, Model model) {
+		//System.out.println(user.getUno());	System.out.println(user.getId());
+		Member member = myservice.selectUser((String)session.getAttribute("sessionId"));
+		ArrayList<Medicine> mList = myservice.selectMList(member.getUno()); 
+		HashMap<String, Object> dList = myservice.selectDList(pageDto, member.getUno()); 
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Timestamp tdate = new Timestamp(System.currentTimeMillis());
+		ArrayList<Drug> drlist = (ArrayList<Drug>) dList.get("dList");
+//		System.out.println(drlist.get(0).getDdate());
+//		System.out.println(tdate);
+		// System.out.println(end_dt);
+		//Date todate = format.parse(tdate);
+		for(int i=0;i<drlist.size();i++) {
+			if(drlist.get(i).getDdate().compareTo(tdate) == -1) {
+				drlist.get(i).setDateCh("past");
+			}
+		}
+		
+		model.addAttribute("mList",mList);
+		model.addAttribute("dList",dList.get("dList"));
+		model.addAttribute("page",dList.get("page"));
+		model.addAttribute("member",member);
+		System.out.println(member.getDatealarm());
+		
+		//model.addAttribute("todate",todate);
+		
+		//System.out.println(mList);
+		return "board/myPageFind2";
+	}
 	
 //	@PostMapping("/deleteCk")
 //	@ResponseBody

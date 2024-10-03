@@ -1,5 +1,5 @@
 /*********** LAYOUT **********/
-#container{position:relative; max-width:900px; padding:46px 0 40px 0; margin:0 auto; zoom:1;}
+#container{position:relative; max-width:1000px; padding:46px 0 40px 0; margin:0 auto; zoom:1;}
 #container:after {content:""; display:block; clear:both;}
 #outbox{width:100%; margin:20px 0 0 0; overflow:hidden;}
 
@@ -1456,7 +1456,7 @@ section{
 #left ul li.last{border:0;}
 
 /** CONTENTS **/
-#contents{ width:900px; margin: 50px 0 0 170px;}
+#contents{ width:1000px; margin: 50px 0 0 170px;}
 #contents h2{height:86px; text-align:center; border:none;}
 #contents h2 strong{width:100%; display:block; font-size:40px; font-weight:600; color:#444; margin:0 0 10px 0;}
 #contents h2 span{width:100%; display:block; font-size:14px; color:#888; font-weight:normal; line-height:1.2; word-break:keep-all;}
@@ -1467,20 +1467,23 @@ section{
 .faqList ul li a{text-decoration:none;}
 .faqList div{position:relative; width:100%; overflow:hidden;}
 .faqList ul li .na{position:absolute; left:50px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .date{position:absolute; left:670px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .img{ font-weight:600; color:#666; left:800px; font-size:15px; text-decoration:none;}
+.faqList ul li .date{position:absolute; left:700px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .img{ font-weight:600; color:#666; left:870px; font-size:15px; text-decoration:none;}
 .faqList ul li .list{width:100%; margin:10px 0; padding:2px 0; line-height:1.2; overflow:hidden; }
 .faqList ul li .list .deleteCheck{position:absolute; left:15px;   font-size:14px; font-weight:600; color:#666;}
 .faqList ul li .list .name{position:absolute; width:30%; left:50px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .list .ddate{position:absolute; left:670px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .list .image{font-size:13px; font-weight:200; color:#666; left:800px; font-size:14px; text-decoration:none; width:70px; }
+.faqList ul li .list .ddate{position:absolute; left:700px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .list .image{font-size:13px; font-weight:200; color:#666; left:870px; font-size:14px; text-decoration:none; width:70px; }
 
-#myMedicineHd{width:100%; bottom:10px; margin-top:10px; }
+#myMedicineHd{width:100%; bottom:10px; margin:10px 0 0 30px; }
 
-#medicineAdd, #medicineDel, #medicineImage {background: #0a47ff; color:#fff; border:none; position:absolute; left:700px;}
-#medicineDel{position:absolute; left:800px;}
-#medicineAdd{position:absolute; left:695px;}
-#medicineImage{position:absolute; left:590px;}
+#medicineImage, #medicineAdd, #medicineDel{
+	align-items: center; margin: 0 auto;  border: 1px solid white;  width: 100px; 
+}
+#medicineAdd, #medicineDel, #medicineImage {background: #0a47ff; color:#fff; border:none; position:absolute; left:700px; border-radius: 10px;}
+#medicineDel{position:absolute; left:850px;}
+#medicineAdd{position:absolute; left:745px;}
+#medicineImage{position:absolute; left:640px;}
 
 .faqList ul li .list .blets{position:absolute; left:25px; font-size:14px; font-weight:600; color:#666; line-height:600%;}
 .faqList ul li .list .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; line-height:500%;}

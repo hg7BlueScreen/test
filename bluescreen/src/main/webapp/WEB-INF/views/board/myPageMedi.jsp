@@ -246,14 +246,17 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 								<option value="0"<c:if test="${member.datealarm == '0'}">selected</c:if>>당일</option>
 								<option value="" <c:if test="${member.datealarm == ''}">selected</c:if>>없음</option>
 							</select>
-							<button id="medicineImage" onclick="medicineImage()">사진으로 추가</button>
-							<input type="file" id="fileInput" style="display: none;">
-							<button id="medicineAdd" onclick="medicineAdd()">사전에서 추가</button>
-							<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
+							
+								<button id="medicineImage" onclick="medicineImage()">사진으로 추가</button>
+								<input type="file" id="fileInput" style="display: none;">
+								<button id="medicineAdd" onclick="medicineAdd()">사전에서 추가</button>
+								<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
+							
 						</div><!-- myMedicineHd -->
+						<div style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 0 auto; width: 1000px; min-height: 160px;">
 						<ul>
 							<!-- list -->
-							<li>
+							<li style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 15px; background: #f5f5f5;">
 								<div class="na">이름</div>
 								<div class="date">권장소비기한</div>
 								<div class="img">사진</div>
@@ -315,6 +318,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 							</c:forEach>
 							<!-- //list -->
 						</ul>
+						</div>
 					</div>
 					<!-- //FAQ -->
 

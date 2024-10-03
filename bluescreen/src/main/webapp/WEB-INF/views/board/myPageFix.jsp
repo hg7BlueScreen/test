@@ -51,8 +51,7 @@
 		<section>
 			<form id = "frm" name="agree" method="post" action="/member/modify">
 			
-				<div id="subBanner"></div><div id="sub_top_area"></div>
-				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin-left:550px; width:900px;">
+				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin: 50px 0 0 450px; width:1000px;">
 					<table>
 						<colgroup>
 							<col width="25%">
