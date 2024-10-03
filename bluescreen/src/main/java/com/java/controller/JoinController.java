@@ -77,6 +77,11 @@ public class JoinController {
 		//System.out.println(join);
 		return "member/join3";
 	}
+	
+	@GetMapping("/join3")
+	public String join3test() {
+		return "member/join3";
+	}
 
 	
 	@PostMapping("/emailSend")

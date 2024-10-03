@@ -62,7 +62,7 @@
 	}
 	button:hover {opacity: 50;}
 	#user_info{border-radius: 12px;}
-	#user_info:hover {border-radius: 2px; border: 2px solid #3F80EA; cursor: pointer;}
+	#user_info:hover {border-radius: 2px; border: 3px solid #3F80EA; cursor: pointer;}
   </style>
 </head>
 <body>
@@ -76,7 +76,7 @@
     <ul>
 
       <li>
-        <a href="admin_user">
+        <a href="admin_user" class = "active">
           <i class='bx bx-user'></i>
           <span class="links_name">
             회원정보
@@ -120,12 +120,12 @@
 				 <tr>
 				 <td><span class = "links_name">
 				 	<select id = "userCategory" name = "userCategory">
-				 		<option value = "name" >이름</option>
-				 		<option value = "nickName" >닉네임</option>
-				 		<option value = "ID" >아이디</option>
+				 		<option value = "name" <c:if test = "${userCategory == 'name' }">selected</c:if>>이름</option>
+				 		<option value = "nickName" <c:if test = "${userCategory == 'nickName' }">selected</c:if>>닉네임</option>
+				 		<option value = "ID" <c:if test = "${userCategory == 'ID' }">selected</c:if>>아이디</option>
 				 	</select>
 				 </span></td>
-				 <td><input type = "text" id = "user_sinfo" name = "user_sinfo"></td>
+				 <td><input type = "text" id = "user_sinfo" name = "user_sinfo" value = "${keyword }"></td>
 				 <td><button type = "button" onclick = "searchBtn()" style = "width:80px;"><span class = "links_name">검색</span></button></td>
 				 <td></td>
             </tr>

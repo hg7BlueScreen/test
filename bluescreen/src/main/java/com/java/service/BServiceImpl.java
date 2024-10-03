@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
+import com.java.dto.Complain;
 import com.java.mapper.BMapper;
 
 @Service
@@ -127,6 +128,11 @@ public class BServiceImpl implements BService {
 	public void updateBhitUp(int bno) {
 		bMapper.updateBhitUp(bno);
 		
+	}
+	
+	@Override // 신고 메서드
+	public void insertComplainOne(Complain complain) {
+		bMapper.insertComplainOne(complain);
 	}
 
 

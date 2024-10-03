@@ -105,4 +105,8 @@
 	<update id="updateBhitUp">
 	update board set bhit=bhit+1 where bno=#{bno}
 	</update>
+	
+	<insert id="insertComplainOne"> <!-- 신고 메서드 -->
+	 	insert into complain values(complain_seq.nextval, #{no}, #{cid}, #{sid}, #{creason}, #{division}, sysdate)
+	</insert>
 </mapper>

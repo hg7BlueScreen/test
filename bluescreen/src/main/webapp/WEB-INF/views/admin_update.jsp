@@ -160,7 +160,7 @@ html {
 			<li><a href="admin_report"> <i class='bx bx-error-circle'></i>
 					<span class="links_name"> 신고관리 </span>
 			</a></li>
-			<li><a href="admin_update"> <i class='bx bx-revision'></i> <span
+			<li><a href="admin_update" class = "active"> <i class='bx bx-revision'></i> <span
 					class="links_name"> 업데이트 </span>
 			</a></li>
 		</ul>

@@ -79,7 +79,7 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 									<p>커뮤니티</p>
 									<span class="tit_explan">유저들과의 소통창</span>
 									<div class="add_move_btn"></div>
-									<a href="indexe939.html?flag=interview" class="anchor-link"></a>
+									<a href="/board/blist" class="anchor-link"></a>
 								</li>
 
 <!-- 								<li class="solTab proctor">
@@ -106,13 +106,13 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 			<div class="story-wrap clearfix">
 				<div class="content">
 					<div class="left">
-						<h2>데이터 스토리</h2>
+						<h2>데일리 뉴스</h2>
 						<p>일상생활 중 알아두면 좋은 의학 지식,<br>또는 현재 이슈가 되는 의학 뉴스를 보여드립니다.</p>
 					</div>
 					<div class="right">
 						<div class="wrap">
 							<a>
-								<i style="background-image:url(/image/graph.png);display:block;height:180px; opacity: 0.73"></i>
+								<i style="background-image:url(/image/graph.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
 									<span class="cate" data-platform-name="현황">현황</span>
 									<p>이미지 차트 삽입, 클릭 시 공지사항 중 차트페이지로 이동</p>

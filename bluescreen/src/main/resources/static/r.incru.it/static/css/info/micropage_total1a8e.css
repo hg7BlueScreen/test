@@ -9,7 +9,7 @@
 .section .cnt .title span {display:inline-block; margin-top:22px; color:#666666; line-height:35px; font-size:24px;}
 
 /* 인크루트 뷰 소개 */
-.section.visual {max-width:100%;padding-top:75px; background: linear-gradient(#fff, #DEECFF); position: relative;}
+.section.visual {max-width:100%;padding-top:75px; background: linear-gradient(#fff, #ffffff); position: relative;}
 
 .section.visual::after {content: ""; background: url(http://r.incru.it/static/image/info/ac/micropage/2024/bg_incruit_line.svg) no-repeat; position: fixed; top: 68%; left: 0; width: 100%; height: 135px; z-index: 0;}
 
@@ -377,7 +377,7 @@
 
 .section .select-tab-wrap .select-tab-box {width: 100%; max-width: 1060px; padding: 0; box-sizing: border-box; margin: 30px auto 0;}
 .section .select-tab-wrap .select-tab-box ul {display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; gap: 20px;}
-.section .select-tab-wrap .select-tab-box .solTab {position: relative;height: 220px; background: #F8FBFF; border: 1px solid #C9DEFF; border-radius: 12px; padding: 30px 28px; box-sizing: border-box; box-shadow: 0px 0px 6px 1px rgba(63,128,234, .2);}
+.section .select-tab-wrap .select-tab-box .solTab {position: relative;height: 220px; background: #ffffff; border: 1px solid #ffffff; border-radius: 12px; padding: 30px 28px; box-sizing: border-box; box-shadow: 0px 0px 6px 1px rgba(63,128,234, .2);}
 .section .select-tab-wrap .select-tab-box .solTab.atscrm {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_ats.svg) no-repeat 90% 79%; border-width: 2px;}
 .section .select-tab-wrap .select-tab-box .solTab.assess {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_ass.svg) no-repeat 86% 76%; border-width: 2px;}
 .section .select-tab-wrap .select-tab-box .solTab.interview {background: #F8FBFF url(http://r.incru.it/static/image/info/ac/micropage/2024/solTab_bg_view.svg) no-repeat 89% 76%; border-width: 2px;}

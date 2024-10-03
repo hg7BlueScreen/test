@@ -39,7 +39,7 @@
 				</ul>
 			</div>
 			
-			<div id="join_success_div">
+			<div id="join_success_div" style = "border: 0px;">
 				<p>
 					감사합니다.
 					<strong>회원가입이 완료되었습니다.</strong>

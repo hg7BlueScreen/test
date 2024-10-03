@@ -14,11 +14,12 @@ public class Complain {
 	
 	private int cno;
 	private int no;
-	private int cuno;
-	private int suno;
+	private String cid;
+	private String sid;
 	private int division;
 	private String creason;
 	private Timestamp cdate;
 	private String nickname;
+	private int bno;
 	
 }

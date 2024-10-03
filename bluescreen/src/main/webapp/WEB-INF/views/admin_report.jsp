@@ -63,8 +63,8 @@
 		});
 	}
 	
-	function jumpToBoard(cno) {
-		location.href = "jumpToBoard?cno="+cno;
+	function jumpToBoard(bno) {
+		location.href = "/board/bread?bno="+bno;
 	}
 	
 </script>
@@ -113,7 +113,7 @@
         </a>
       </li>
       <li>
-        <a href="admin_report">
+        <a href="admin_report" class = "active">
           <i class='bx bx-error-circle'></i>
           <span class="links_name">
             신고관리
@@ -223,7 +223,7 @@
               <td>${c.creason }</td>
               <td>
               <button type = "button" onclick = "deleteReportOne(${c.cno})" style = "width: 80px; background-color: #3f80ea; border: 1px white;">삭제</button>
-              <button type = "button" onclick = "jumpToBoard(${c.cno})" style = "width: 80px; background-color: #3f80ea; border: 1px white;">이동</button>
+              <button type = "button" onclick = "jumpToBoard(${c.bno})" style = "width: 80px; background-color: #3f80ea; border: 1px white;">이동</button>
               </td>
             </tr>
           </c:forEach>

@@ -57,7 +57,8 @@
 	</insert>
 	
 	<select id="selectComplainAll" resultType="com.java.dto.Complain">
-		select a.*, b.nickname from complain a, member b where a.cuno = b.uno
+		SELECT a.*, b.nickname, CASE WHEN a.division = 1 THEN cb.bno WHEN a.division = 0 THEN a.no ELSE NULL
+    	END AS bno FROM complain a JOIN member b ON a.cid = b.id LEFT JOIN commentboard cb ON a.no = cb.cno AND a.division = 1
 	</select>
 	
 	<delete id="deleteReportOne">

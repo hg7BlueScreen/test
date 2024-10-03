@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
+import com.java.dto.Complain;
 
 @Mapper
 public interface BMapper {
@@ -25,31 +26,30 @@ public interface BMapper {
 	void updateBstepCount(Board board);
 
 	int selectListCount();
-	
-	// bno번 게시글 가져오기 
-		Board selectOner(int bno);
-		// bno의 이전 글 가져오기 
-		Board selectPrev(int bno, String category, String s_word);
-		// bno의 이후 글 가져오기 
-		Board selectNext(int bno, String category, String s_word);
 
-		ArrayList<Comment> selectComAll(int bno);
+	// bno번 게시글 가져오기
+	Board selectOner(int bno);
 
-		void commentInsert(Comment comdto);
+	// bno의 이전 글 가져오기
+	Board selectPrev(int bno, String category, String s_word);
 
-		void commentDelete(int cno);
+	// bno의 이후 글 가져오기
+	Board selectNext(int bno, String category, String s_word);
 
-		void commentUpdate(Comment cdto);
+	ArrayList<Comment> selectComAll(int bno);
 
-		Comment selectComOne(Comment comdto);
+	void commentInsert(Comment comdto);
 
-		int comCnt(int bno);
+	void commentDelete(int cno);
 
-		void updateBhitUp(int bno);
+	void commentUpdate(Comment cdto);
 
+	Comment selectComOne(Comment comdto);
 
+	int comCnt(int bno);
 
-	
-	
+	void updateBhitUp(int bno);
+
+	void insertComplainOne(Complain complain);
 
 }

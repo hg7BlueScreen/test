@@ -127,6 +127,12 @@
 	    	return false;
 	    }
 	    var uno = "${sessionUno}";
+	    if(confirm(numbers.length+"개의 즐겨찾기를 삭제하시겠습니까?")){
+	    	
+	    }else{
+	    	alert("취소되었습니다.");
+	    	return false;
+	    }
 	    $.ajax({
 			url: "deleteBookMarkListFromMyPage",
 			method: "post",
@@ -262,8 +268,7 @@
 
 	
 	
-	<div style = "padding: 1px;"></div>
-
+	<div style = "padding: 1px; margin-bottom: 150px;"></div>
 	<%@include file = "footer.jsp" %>
 </body>
 </html>

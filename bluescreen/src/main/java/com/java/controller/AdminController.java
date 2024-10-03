@@ -197,6 +197,8 @@ public class AdminController {
 	public String admin_user(@RequestParam(defaultValue = "name") String userCategory, String keyword, Model model) {
 		ArrayList<Member> memberList = memberService.selectAllMember(userCategory, keyword);
 		model.addAttribute("memberList", memberList);
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("userCategory", userCategory);
 		return "admin_user";
 	}
 

@@ -66,7 +66,10 @@
     <hr>
     <form action="fu" id="fu" name="write" method="post" enctype="multipart/form-data">
     
-      <input type="hidden" name="bno" value="${board.bno }">
+      <input type="hidden" name="no" id="no" value="${board.bno }"> <!-- 신고 게시글 / 댓글 번호 -->
+      <input type="hidden" name="sid" id="sid" value="${board.id }"> <!-- 신고 피신고자 아이디 -->
+      <input type="hidden" name="cid" id="cid" value="${sessionId }"> <!-- 신고 신고자 아이디 -->
+      <input type="hidden" name="division" id="division" value="0"> <!-- 신고 카테고리 ( 0이면 게시글 1이면 댓글) -->
       
       <table style="margin: 80px 0 100px 0;">
         <colgroup>
@@ -76,15 +79,15 @@
          <tr>
           <th style=" color: #0a47ff; font-weight: bold; padding-top: 2px; font-size:15px">신고사유</th>
           <td style="float:left;">
-          <select style="width:50px; height: 52px;">
-			<option value="0" />전체</option>
-			<option value="title" />비방/욕설</option>
-			<option value="content" />허위사실</option>
-			<option value="plus">개인정보노출</option>
-			<option value="plus1">음란성</option>
-			<option value="plus2">게시글 도배</option>
-			<option value="plus3">부적절한 홍보</option>
-			<option value="plus4">기타</option>
+          <select style="width:50px; height: 52px;" id = "creason" name = "creason"> <!-- id, name 추가 -->
+			<option value="전체" />전체</option> <!-- value 변경 -->
+			<option value="비방/욕설" />비방/욕설</option> <!-- value 변경 -->
+			<option value="허위사실" />허위사실</option> <!-- value 변경 -->
+			<option value="개인정보노출">개인정보노출</option> <!-- value 변경 -->
+			<option value="음란성">음란성</option> <!-- value 변경 -->
+			<option value="게시글 도배">게시글 도배</option> <!-- value 변경 -->
+			<option value="부적절한 홍보">부적절한 홍보</option> <!-- value 변경 -->
+			<option value="기타">기타</option> <!-- value 변경 -->
 		 </select>
           </td>
         </tr>
@@ -100,14 +103,13 @@
 	function futn(){
 		let bcontent=$("#bcontent").val();
 		if(confirm("신고하시겠습니까?")){
-			
+			 
 		if(bcontent=='' || bcontent==null){
 			alert("내용을 입력하세요");
 			return false;
 		}
 		
 		$("#fu").submit();
-		location.href="blist";
 		}
 	}
 	

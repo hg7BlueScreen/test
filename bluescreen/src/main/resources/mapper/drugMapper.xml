@@ -129,10 +129,22 @@
 			</if>
 			<if test="categoryDetail == 'atpn'">
 					<![CDATA[ 
-						select * from (select rownum rnum, a.* from (select * from drug
-						where item_seq in((select item_seq from (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in(select dno from DRUG_USER_BOOKMARK where uno = #{uno})))
-						where text like '%'|| #{textBox} ||'%') order by dno asc) a) 
-						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						SELECT * FROM (
+    SELECT rownum AS rnum, a.* FROM (
+        SELECT * FROM drug
+        WHERE item_seq IN (
+            SELECT item_seq FROM drug_general_warning
+            WHERE item_seq IN (
+                SELECT item_seq FROM drug
+                WHERE dno IN (
+                    SELECT dno FROM DRUG_USER_BOOKMARK WHERE uno = #{uno}
+                )
+            )
+            AND text LIKE '%' || #{textBox} || '%'
+        )
+        ORDER BY dno ASC
+    ) a
+) WHERE rnum BETWEEN #{pageDto.startRow} AND #{pageDto.endRow}
 					]]>
 			</if>
 		</if>
