@@ -62,6 +62,12 @@ public class MemberServiceImpl implements MemberService {
 		Timestamp Ddate = memberMapper.selectleaveDate(uno);
 		return Ddate;
 	}
+
+	@Override
+	public ArrayList<Caution> selectcList(int uno) {
+		ArrayList<Caution> cList = memberMapper.selectcList(uno);
+		return cList;
+	}
 	
 	
 	

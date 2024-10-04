@@ -56,14 +56,7 @@ nav div {
   display: inline-block;
 }
 
-.logo {
-  background: url(https://www.cjcookit.com/cjkit/web/images/common/ico_set.png) no-repeat -310px -375px;
-  background-size: 800px 800px;
 
-  width: 110px;
-  height: 40px;
-  margin-left: 5px;
-}
 
 #cart,
 #search {

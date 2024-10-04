@@ -73,4 +73,7 @@
 	<select id="selectleaveDate">
 		select leavedate from bmember where uno = #{uno}
 	</select>
+	<select id="selectcList" resultType="com.java.dto.Caution">
+		select*from caution where uno = #{uno}
+	</select>
 </mapper>

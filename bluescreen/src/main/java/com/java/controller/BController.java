@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.java.dto.Board;
+import com.java.dto.Caution;
 import com.java.dto.Comment;
 import com.java.dto.Drug;
 import com.java.dto.Medicine;
@@ -317,7 +318,9 @@ public class BController {
 		int Bcount = drugService.selectBcount(uno);
 		String bEmail = memberservice.selectUseremail(uno);
 		Timestamp Ddate = memberservice.selectLeavedate(uno);
+		ArrayList<Caution> cList = memberservice.selectcList(uno);
 		
+		model.addAttribute("cList", cList);
 		model.addAttribute("Ddate", Ddate);
 		model.addAttribute("bEmail", bEmail);
 		model.addAttribute("Boardcount", Boardcount);

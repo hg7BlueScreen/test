@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -139,7 +140,7 @@
 					
 					</div>
 					</div>
-					<div style="width:1000px; margin-left: auto; margin-right: auto; margin-bottom: 20px;font-size:17px; color:#0a47ff; padding:0 0 0 35px;">최근 수거함 조회 내역</div>
+					<div style="width:1000px; margin-left: auto; margin-right: auto; margin-bottom: 20px;font-size:17px; color:#0a47ff; padding:0 0 0 35px;">최근 경고 내역</div>
 					<div style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin-right: auto; margin-left:auto; width:1000px;">
 						<table>
 							<colgroup>
@@ -148,20 +149,15 @@
 							</colgroup>
 							<tr>
 								<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">일자</th>
-								<th style="border-bottom: 1px solid #b9c4e8;font-weight: bold; font-size: 15px; background: #f5f5f5;">위치</th>
+								<th style="border-bottom: 1px solid #b9c4e8;font-weight: bold; font-size: 15px; background: #f5f5f5;">사유</th>
 							</tr>
+							<c:forEach var="c" items="${cList }">
 							<tr>
-								<td style="height:80px; font-size: 15px;">24/09/09</td>
-								<td style="font-size: 15px;">서울 강서구</td>
+								<td style="height:80px; font-size: 15px;"><fmt:formatDate value="${c.cautionDate }" pattern="yyyy-MM-dd"/></td>
+								<td style="font-size: 15px;">${c.cautionReason }</td>
 							</tr>
-							<tr>
-								<td style="height:80px; font-size: 15px;">24/09/16</td>
-								<td style="font-size: 15px;">서울 마포구</td>
-							</tr>
-							<tr>
-								<td style="height:80px; font-size: 15px;">24/09/23</td>
-								<td style="font-size: 15px;">서울 서대문구</td>
-							</tr>
+							
+							</c:forEach>
 						</table>
 					</div>
 				

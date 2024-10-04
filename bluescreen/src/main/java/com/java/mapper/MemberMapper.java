@@ -28,4 +28,6 @@ public interface MemberMapper {
 
 	Timestamp selectleaveDate(int uno);
 
+	ArrayList<Caution> selectcList(int uno);
+
 }

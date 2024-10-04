@@ -25,4 +25,6 @@ public interface MemberService {
 
 	Timestamp selectLeavedate(int uno);
 
+	ArrayList<Caution> selectcList(int uno);
+
 }
