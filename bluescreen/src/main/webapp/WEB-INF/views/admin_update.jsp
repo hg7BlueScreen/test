@@ -88,11 +88,13 @@ html {
 					$("#img1").attr('src',"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAAAXNSR0IArs4c6QAABOpJREFUeF7tnG1unDAQhjHJQZIbrJb8b3KSZk/S5CTdnKSb/2GVG5TcI+Bm0FqiCDMfHoOJvFKlRpjB8/DOeAw2psg/VQJG1Vo2VmSgyiLIQDNQZQLK5rJCM1BlAsrmklLobre7KcvyJ/hojLkviuLm8q8Z+Q1/N9ba17Ism7e3t5MyF7G5VYE6gBd4AFD6c4BfzufzUWpE47xVgA5APmk4MaHekzHmZQ3lLgoUQF5dXf0uiiJEjZx7cGzb9vn9/X2cMjg2WG0XARpZkZjDkGuPXde9LAE2OtC7u7t7a+0fzOsFjvdgz+fzc8xrRQW63+9/GWNi5Ekpk+hQowGtqgpUKcmVvdNFUXxASfT5+dlAqELaAIrX19c3Xdf1/zfGQInFvoa19imWUqMAFcA8WWtPEicBNEC21gLcR4Z0m7ZtH7TzqjpQJsxT27YHLacEg19T1/Ut4yagTVWBMmBGUYfzllmeHeu6PqCkiA3UgFZVBfUlGnIx89fYZ+qgqNknFaDU0sgY87D07OWi1r+IwBpjzEGjbypAq6qCDvcjr+en1mFi5P3X7AIVqo7ZPmrk02CglLy5hjLH4IlKDc6nQUApoZ4CTAd3v98/GmMg10eLpCCgmDo1k70k1KfOIQxUQSoVAyWo81TX9YMWCE07mBBCokoMFCuTQjqlCW/KFiGfisUQAtTOOB4UNrGBgn1EpeIZlAgoltzbtr3Vmk7GgoupVBphIqBIuCevTneTEJWKwl4K1FvIW2sPa78oo6oaiTRR2LOBfodwHz1E8U5LJWGvDXQz4U4Je0m0SYB6X2ukWMhj4T9X6Ev8YQOdG5AkdxRzOPZxZILCHpgkQL3viiQ5JzYwzD4ClD0wSYB6R/gt1J/Mp1AZKKbIDJRLiNkemTEtotBvlUMzUKYCseYpjPLet5tbLJuQmR97osIe5bULYUxBsY9rP+iRAJ17L8MuhGMDw+xrT1TYQLFXH1urRauq8j4ol/jCBoo97d5SHsWenNV1zebDPgGAIm8ONxP22vkT2IiAYvNfrWUtWP4LOY6lLmmkiYBi72O+FsEmr1LsVbIk3MUKxfJob3iFhWFUxWLq/FoDxa4/3bVFCoWTCSplz4MpQABG13U/JKudKU/poY1kdA8GelGpb9YUZUGtG5UlT9Kdw8kuxfGpNMTZOYUOR2TpNQihHqTOoBw6uONu5hRFlVPLuyVAKTAldsciEOdQZ8htFAjJaT5l+iBwHafAhN3NSSy4pQwkkjZzsxgOUCJMtaokWKESWNg52Mo+KlDCANR3hWoP67dKDqVchNqGuh0GA0C1c+mXuOac8isZhVJDc05RTJBgSn1GlwRQ7KnPWAlDhQZ8FUIdZhIhj+VLT7o4Wmthqw5snGVvng2ZWmLpazWFCsIT84V0HMu/JCMzjVYBysmXoQ4Ozl9k89niQLn5UgFo9I8ODPu4BtDFvvIQO7yTKZuIey+l4lz0oy3qc3mp18pQe4hlWb5q7CiW+rR62ST4AoPz1X2XpFjq80FUyIvn0KmOUefc7tw1cuOmgEJnOSkgAyXeXirUDJQI1CkVPnk59wGtDJQB1DXd6iq/JAYlH29fCsgKFSjUnTIFNQMNADqVVzPQQKDjvJqBKgEdqPU+1S3kSQ9KivdhMVMZqDLqDDQDVSagbC4rNANVJqBsLitUGeg/LNqDgtD2d0QAAAAASUVORK5CYII=");
 				},
 				click: function(){
+					console.log("onclick");
 					$(".home_section").empty();
 					$.ajax({
 						url: '/updateCheckDrug',
 						method: "get",
 						success: function(data){
+							console.log(data);
 							if(data.length != 0){
 								let str = "";
 								str += '<div class="details" style = "height: 400px;" id = "details_drug">';

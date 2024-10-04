@@ -110,7 +110,7 @@
                       <div class="sign-up-info">
                           <p class="sign_p">WDH 회원이 아니신가요?</p>
                           <p class="sign_p2">회원가입하시면 WDH의 다양한 서비스를 이용하실 수 있습니다.</p>
-                          <div class="sign-up"><a href="/join/join1">회원 가입하기</a></div>
+                          <div class="sign-up"><a href="/member/join1">회원 가입하기</a></div>
                       </div>
                   </div>
               </div>

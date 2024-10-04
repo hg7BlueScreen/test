@@ -52,7 +52,6 @@
 			data: {"cno":cno},
 			success: function(data){
 				if(data == '성공'){
-					alert("정상적으로 처리되었습니다.");
 					$("#complainTR"+cno).remove();
 					
 				}

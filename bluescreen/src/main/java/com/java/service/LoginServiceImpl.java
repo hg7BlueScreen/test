@@ -29,6 +29,7 @@ public class LoginServiceImpl implements LoginService {
 			// 세션에 값 넣기
 			session.setAttribute("sessionId", bmdto.getId());
 			session.setAttribute("sessionName", bmdto.getName());
+			session.setAttribute("sessionUno", bmdto.getUno());
 			// result에 값 넣기 
 			result = 1; 
 		}

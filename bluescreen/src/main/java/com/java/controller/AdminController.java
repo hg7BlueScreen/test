@@ -68,7 +68,7 @@ public class AdminController {
 		// 본인이 받은 api키를 추가
 		String key1 = "";
 		int drugCount = drugService.selectDrugCount();
-		drugCount = 46556;
+		System.out.println(drugCount);
 		int page = (drugCount / 100) + 1;
 		try {
 			// pageNo=49&numOfRows=100&type=xml

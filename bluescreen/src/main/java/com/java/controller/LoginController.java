@@ -32,10 +32,14 @@ public class LoginController {
 		System.out.println();
 		System.out.println("id: "+ bmember.getId());
 		System.out.println("pw: " + bmember.getPw());
+		System.out.println("1번");
 		BMember bmem = loginservice.selectLogin(bmember.getId(), bmember.getPw());
+		System.out.println("2번");
 		if(bmem!=null) {
 			session.setAttribute("sessionId", bmem.getId());
 			session.setAttribute("sessionName", bmem.getName());
+			System.out.println("bmem.getUno : "+bmem.getUno());
+			session.setAttribute("sessionUno", bmem.getUno());
 			System.out.println(bmem.getId());
 			model.addAttribute("loginCk",1);
 		}else {

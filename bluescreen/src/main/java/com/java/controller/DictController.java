@@ -36,6 +36,7 @@ public class DictController {
 	@Autowired MyService myservice;
 	@RequestMapping("/dict")
 	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail, @RequestParam(defaultValue = "0") int onlyBookMark) {
+		System.out.println("sessionUno : "+session.getAttribute("sessionUno"));
 		// int uno = (int)session.getAttribute("sessionUno");
 		//session.setAttribute("sessionUno", 0);
 		int uno = -1;
@@ -110,9 +111,7 @@ public class DictController {
 		if(session.getAttribute("sessionId")!=null) {
 			Member user = myservice.selectUser(id);
 			String myMedi = myservice.myMediAll(user.getUno(), dno);
-			System.out.println("myMedi"+myMedi);
 			drug.setDefendOverInsert(myMedi);
-			System.out.println("defendOverInsert"+drug.getDefendOverInsert());
 		}
 		
 		map.put("drug", drug);
