@@ -186,7 +186,7 @@
 				
 				<div id="terms_button">
 					<a href = "/"><input type="reset" value="취소" /></a>
-					<a onclick="joinBtn()"><input type="button" style="color: rgb(255, 255, 255); background: rgb(0, 128, 255);" value="다음" /></a>
+					<a onclick="joinBtn()"><input type="button" style="color: rgb(255, 255, 255); background: #0A47FF;" value="다음" /></a>
 				</div>
 				
 	
