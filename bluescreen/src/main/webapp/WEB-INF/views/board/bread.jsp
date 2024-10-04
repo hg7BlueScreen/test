@@ -137,7 +137,7 @@
 
 		<div style="width: 1000px; margin-right: auto; margin-left: auto; margin-bottom: 100px;">
 			<a href="blist"><div class="list" style="float: right; margin-right:20px;">목록</div></a>
-		<c:if test="${sessionId==board.id }">
+		<c:if test="${sessionId==board.id || sessionUno==0}">
 			<a onclick="delBtn()" style="float: right;"><div class="list">삭제</div></a>
 			<a href="bmodi?bno=${board.bno}" onclick="fixBtn()"><div class="list">수정</div></a>
 		</c:if>
