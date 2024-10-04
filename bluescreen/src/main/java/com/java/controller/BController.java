@@ -24,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
-import com.java.dto.Complain;
 import com.java.dto.Drug;
 import com.java.dto.Medicine;
 import com.java.dto.Member;
@@ -73,9 +72,9 @@ public class BController {
 	}
 	
 	@RequestMapping("/blist")
-	public String blist(@RequestParam(defaultValue = "1")int page,Model model) {
+	public String blist(@RequestParam(defaultValue = "1")int page,Model model, String text) {
 		
-		HashMap<String, Object> map = bservice.selectAll(page);
+		HashMap<String, Object> map = bservice.selectAll(page, text);
 		
 		model.addAttribute("listCount",map.get("listCount"));
 		model.addAttribute("maxPage",map.get("maxPage"));
@@ -86,6 +85,14 @@ public class BController {
 		model.addAttribute("page",map.get("page"));
 		model.addAttribute("list",map.get("list"));
 		
+		System.out.println(map.get("listCount"));
+		System.out.println(map.get("maxPage"));
+		System.out.println(map.get("startPage"));
+		System.out.println(map.get("endPage"));
+		System.out.println(map.get("startRow"));
+		System.out.println(map.get("endRow"));
+		System.out.println(map.get("page"));
+		System.out.println(map.get("list"));
 		return "/board/blist";
 	}
 	@RequestMapping("/bread")
@@ -288,26 +295,14 @@ public class BController {
 	public String faqUser() {
 		return "/board/faqUser";
 	}
-	@GetMapping("/fu") // RequestMapping 에서 GetMapping으로 변경
-	public String fu(Board board, Model model) { // 매개변수 Board, Model 추가
-		model.addAttribute("board",board); // board 값 전송
+	@RequestMapping("/fu")
+	public String fu() {
 		return "/board/fu";
 	}
-	@PostMapping("/fu") // PostMapping 추가
-	public String complainSubmit(Complain complain, String bcontent) {
-		complain.setCreason(complain.getCreason()+"_"+bcontent); // 분류_유저 작성 형식으로 값 저장
-		bservice.insertComplainOne(complain); // DB 저장
-		return "redirect:/board/blist"; // blist로 이동
-	}
-	
-	
-	@GetMapping("/fudel") // RequestMapping에서 GetMapping으로 변경
-	public String fudel(Board board, Model model) { // 매개변수 Board, Model 추가
-		model.addAttribute("board",board); // board 값 전송
+	@RequestMapping("/fudel")
+	public String fudel() {
 		return "/board/fudel";
 	}
-	
-	
 	@RequestMapping("/myPage")
 	public String myPage() {
 		return "/board/myPage";

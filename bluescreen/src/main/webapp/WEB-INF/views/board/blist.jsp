@@ -39,19 +39,19 @@
 	</div> -->
 	
 		<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
-			<div id="title2" style="font-size: 35px;">고객센터<span style="font-size: 13px;">고객지원</span></div>
+			<div id="title2" style="font-size: 35px;">커뮤니티<span style="font-size: 13px;">게시판</span></div>
 				<ul >	
-					<li style="height:40px;"><a href="#" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">게시판</a></li>
-					<li style="height:40px;"><a href="#" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">QnA</a></li>
-					<li style="height:40px;"><a href="faq" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">FAQ</span></a></li>
-					<li class="last" style="height:40px;"><a href="#" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">이용안내</a></li>
+					<li style="height:40px;"><a href="blist" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none; ">게시판</a></li>
+					<li style="height:40px;"><a href="#" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
+					<li class="last" style="height:40px;"><a href="faq" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
+					<!-- <li class="last" style="height:40px;"><a href="#" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">이용안내</a></li> -->
 				</ul>				
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
 			
 		
 	<!-- contents -->
 	<div style="width:1000px; margin-right: auto; margin-left:auto;">					
-   			<h2 style="margin-top:150px; text-align: center;">
+   			<h2 style="margin:150px 0 70px 0; text-align: center;">
    				<strong style="font-size: 55px; font-weight:600px; color:#444444; ">게시판</strong>
    				<br>
    				<br>
@@ -72,13 +72,18 @@
 										<option value="plus">제목+내용</option> -->
 									</select>
 								</li>
-								<li><input type="text" class="searchInput" style="margin-left:-1px;"/></li>
-								<li class=""><a href="#" ><button class="bllist" onclick="bllist" style="margin: -14px 0 0 92px; padding-left:1.5px;">검색</button></a></li>
+								<li><input type="text" id="text" class="searchInput" placeholder="내용을 입력하세요." style="margin-left:-1px; font-size: 11px;"/></li>
+								<li class=""><a href="#" ><button class="bllist" onclick="bllist()" style="margin: -14px 0 0 92px; padding-left:1.5px;">검색</button></a></li>
 							</ul>
 						</div>
 					</div> 
     
-   
+   <script type="text/javascript">
+   	function bllist(){
+   		let text = $("#text").val();
+   		location.href="blist?text="+text;
+   	}
+   </script>
    <!--  <div class="wrapper">
       <form action="/search" name="search" method="post">
         <select name="category" id="category">
@@ -112,7 +117,7 @@
 				        <div class="categorys" style="width:600px;font-size: 12px;">${board.id } 님</div>				        
 				       	<div class="titles" style="margin-bottom:-40px; font-size: 19px; padding:15px 0 25px 0; font-weight: bold;"><a href="bread?bno=${board.bno }" id="ddd">${board.btitle } </a></div>
 				        <c:if test="${sessionId!=board.id }">
-				        	<a href="fu?bno=${board.bno}&id=${board.id}" onclick="ggBtn()"><button class="llist">신고</button></a>
+				        	<a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist">신고</button></a>
 				        </c:if>
 				        
 				        <%-- <td class="table-title">
@@ -157,7 +162,7 @@
     </c:if>
     <c:forEach var="pNum" begin="${startPage }"  end="${endPage }" step="1">
        <c:if test="${page == pNum }">
-       	<a  class="allPageMoving2" style="color:#0a47ff; border:1px #0a47ff solid; background:#fff;"><li><div style="height:25px;line-height:25px; margin-left:-2px;">${pNum }</div></li></a>
+       	<a class="allPageMoving2" style="color:#0a47ff; border:1px #0a47ff solid; background:#fff;"><li><div style="height:25px;line-height:25px; margin-left:-2px;">${pNum }</div></li></a>
        </c:if>
        <c:if test="${page != pNum }">
        <a href="/board/blist?page=${pNum }" class="allPageMoving2"><li><div style="height:25px;line-height:25px; margin-left:-2px;">${pNum }</div></li></a>

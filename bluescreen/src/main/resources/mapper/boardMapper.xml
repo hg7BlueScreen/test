@@ -5,15 +5,33 @@
 <mapper namespace="com.java.mapper.BMapper">
 	<!--  게시글 전체의 숫자 -->
 	 <select id="selectListCount" resultType="int">
+	 	<if test="(text != null and !text.equals(''))">
+	 	select count(*) from board where btitle like
+				'%'|| #{text} ||'%'
+	 	</if>
+	 	<if test="(text == null or text.equals(''))">
 	 	select count(*) from board
+	 	</if>
 	 </select>
    <!--  게시글 전체 -->
 	<select id="selectAll" resultType="com.java.dto.Board">
-	   <![CDATA[
+	   
+		<if test="(text != null and !text.equals(''))">
+	 	 <![CDATA[
+		select * from (select rownum rnum, a.* from 
+		(select * from board where btitle like
+				'%'|| #{text} ||'%' order by bgroup desc, bstep asc) a)
+		where rnum>=#{startRow} and rnum<=#{endRow}	
+		]]>
+	 	</if>
+	 	<if test="(text == null or text.equals(''))">
+	 	 <![CDATA[
 		select * from (select rownum rnum, a.* from 
 		(select * from board order by bgroup desc, bstep asc) a)
 		where rnum>=#{startRow} and rnum<=#{endRow}	
 		]]>
+	 
+	 	</if>
 	</select>
 	<select id="selectOne" resultType="com.java.dto.Board">
 		select * from board where bno=#{bno}
@@ -105,8 +123,4 @@
 	<update id="updateBhitUp">
 	update board set bhit=bhit+1 where bno=#{bno}
 	</update>
-	
-	<insert id="insertComplainOne"> <!-- 신고 메서드 -->
-	 	insert into complain values(complain_seq.nextval, #{no}, #{cid}, #{sid}, #{creason}, #{division}, sysdate)
-	</insert>
 </mapper>

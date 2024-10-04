@@ -27,7 +27,7 @@
    <script type="text/javascript">
 	  $(function(){
 		 if(${sessionId==null}){
-			 alert("로그인을 하셔야 글쓰기가 가능합니다. ");
+			 alert("로그인이 필요한 서비스입니다.");
 			 location.href="/login";
 		 }
 	  }); //jquery
@@ -46,19 +46,16 @@
 	</div> -->
 		<!-- <div id="outbox">	 -->
 		<div id="left" style="float: left; width: 250px; height: 250px; margin: 100px 0 0 100px;">
-			<div id="title2" style="font-size: 35px;">
-				고객센터<span style="font-size: 13px;">고객지원</span>
-			</div>
+			<div id="title2" style="font-size: 35px;">커뮤니티<span style="font-size: 13px;">게시판</span></div>
+			
 			<ul>
 				<li style="height: 40px;"><a href="blist" id="leftNavi3"
-					style="height: 40px; font-size: 15px; line-height: 270%;">게시판</a></li>
+					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">게시판</a></li>
 				<li style="height: 40px;"><a href="#" id="leftNavi2"
-					style="height: 40px; font-size: 15px; line-height: 270%;">QnA</a></li>
-				<li style="height: 40px;"><a href="faq" id="leftNavi1"
-					style="height: 40px; font-size: 15px; line-height: 270%;">FAQ</span></a></li>
-				<li class="last" style="height: 40px;"><a href="#"
-					id="leftNavi4"
-					style="height: 40px; font-size: 15px; line-height: 270%;">이용안내</a></li>
+					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
+				<li  class="last" style="height: 40px;"><a href="faq" id="leftNavi1"
+					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
+				
 			</ul>
 		</div>
 		<script type="text/javascript">initSubmenu(3,0);</script>

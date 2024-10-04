@@ -323,7 +323,7 @@
 .myTab ul li a{display:block; width:250px; height:40px; line-height:40px; background:#fff; font-weight:bold; font-size:19px; text-align:center;}
 .myTab ul li a span{color:#0a47ff;}
 .myTab ul li a.on{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff;}
-.myTab ul li a:hover{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff; }
+.myTab ul li a:hover{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff; text-decoration-line:none; }
 .myTab ul li a.on span{color:#fff;}
 .myTab ul li.last{padding:0;}
 .myTab ul li.last a{width:250px;}
@@ -827,14 +827,14 @@
 .allPageMoving23{display:inline-block; width:25px; height:25px; line-height:23px; color:#fff; text-decoration:none; border:1px #0a47ff solid; background:#0a47ff; font-size:12px; font-weight:normal;}
 
 /* SEARCH */
-.searchWrap{width:100%; height:50px; background:#f1f1f1; padding:12px 0 13px 0; margin:80px 0 0 0;}
+.searchWrap{width:100%; height:50px; background:#f1f1f1; padding:12px 0 13px 0; margin:40px 0 0 0;}
 .search{width:380px; margin:0 auto; text-align:center; overflow:hidden;}
 .search ul li{float:left; }
 .search ul li.se{margin:0 12px 0 0; line-height: 25px;}
 
 
 /* SELECT CHANGE */
-span.searchStyleSelectBox{width:85px; height:24px; font-size:10px;padding:3px 20px 0 6px; border-left:1px #dfdfdf solid; border-radius: 12px; background-color: white; border: 1px #edeef0 solid; line-height: 10px;}
+span.searchStyleSelectBox{width:85px; height:24px; font-size:10px;padding:3px 20px 0 4px; border-left:1px #dfdfdf solid; border-radius: 12px; background-color: white; border: 1px #edeef0 solid; line-height: 10px;}
 /**/
 span.searchStyleSelectBox.changed{background-color: #fff;}
 .searchStyleSelectBoxInner{font-size:12px;white-space:nowrap; line-height:1.4; padding:0 40px 0 4px;  }

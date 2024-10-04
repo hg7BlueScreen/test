@@ -20,17 +20,20 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="../js/html5.js"></script>
 <script type="text/javascript" src="../js/respond.min.js"></script>
 <![endif]-->
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
 	  $(function(){
 		 if(${sessionId==null}){	 
+			 alert("로그인이 필요한 서비스입니다.");
 			 location.href="/login";
+			 
 		 }
 	  }); //jquery
-  </script> -->
+  </script>  
 </head>
 <body>
 <%@include file = "header.jsp" %>
@@ -45,7 +48,7 @@
 				</ul>				
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
 	
-	<div id="" style="width:1000px;  margin:150px auto 200px auto;">
+	<div id="mmypage" style="width:1000px;  margin:150px auto 200px auto;">
 		
 	
 			<!-- contents -->
@@ -99,7 +102,7 @@
 						5 개
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">알림</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">게시글 &nbsp;수</span>
 						</p>
 					
 					</div>
@@ -140,28 +143,29 @@
 							</tr>
 						</table>
 					</div>
-					
+				
 					<div style="border-bottom:1px solid #edeef0; margin-top:100px;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 14px; font-weight: bold;">
 						<p style="color:#999999; margin-left:30px; ">고객센터</p>
 					</div>
 					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
-						<a href="blist"style="color:#444444; margin-left:30px; font-weight: bold;">게시판</a>
+						<a href="blist" class="myMenus"style="color:#444444; margin-left:30px; font-weight: bold;  text-decoration-line:none;">게시판</a>
 					</div>
 					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
-						<a href="#"style="color:#444444; margin-left:30px; font-weight: bold;">QnA</a>
+						<a href="#"style="color:#444444; margin-left:30px; font-weight: bold; text-decoration-line:none;">QnA</a>
 					</div>
 					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
-						<a href="faq" style="color:#444444; margin-left:30px; font-weight: bold;">FAQ</a>
+						<a href="faq" style="color:#444444; margin-left:30px; font-weight: bold; text-decoration-line:none;">FAQ</a>
 					</div>
 					<div style="border-bottom:1px solid #edeef0; margin-top:40px;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 14px; font-weight: bold;">
 						<p style="color:#999999; margin-left:30px; ">사이트</p>
 					</div>
 					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
-						<a href=""style="color:#444444; margin-left:30px; font-weight: bold;">이용약관</a>
+						<a href=""style="color:#444444; margin-left:30px; font-weight: bold; text-decoration-line:none;">이용약관</a>
 					</div>
 					<div style="border-bottom:1px solid #edeef0;padding:30px 0;width:100%; margin-right: auto; margin-left: auto; font-size: 16px;">
-						<a href=""style="color:#444444; margin-left:30px; font-weight: bold;">개인정보처리방침</a>
+						<a href=""style="color:#444444; margin-left:30px; font-weight: bold; text-decoration-line:none;">개인정보처리방침</a>
 					</div>
+					
 					
 
 				</div>

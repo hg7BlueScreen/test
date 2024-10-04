@@ -46,25 +46,25 @@ $(document).ready(function() {
 		</div> -->
 		
 		<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
-			<div id="title2" style="font-size: 35px;">고객센터<span style="font-size: 13px;">고객지원</span></div>
+			<div id="title2" style="font-size: 35px;">커뮤니티<span style="font-size: 13px;">FAQ</span></div>
 				<ul >	
-					<li style="height:40px;"><a href="blist" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">게시판</a></li>
-					<li style="height:40px;"><a href="#" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">QnA</a></li>
-					<li style="height:40px;"><a href="faq" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">FAQ</span></a></li>
-					<li class="last" style="height:40px;"><a href="#" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">이용안내</a></li>
+					<li style="height:40px;"><a href="blist" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">게시판</a></li>
+					<li style="height:40px;"><a href="#" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
+					<li  class="last" style="height:40px;"><a href="faq" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
+					
 				</ul>				
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
 
 
 			<!-- contents -->
 	<div style="width:1000px; margin-right: auto; margin-left:auto;">					
-   			<h2 style="margin-top:200px; text-align: center;">
+   			<h2 style="margin:150px 0 70px 0; text-align: center;">
    				<strong style="font-size: 55px; font-weight:600px; color:#444444; ">FAQ</strong>
    				<br>
    				<br>
    				<span style="font-size: 15px; color: #888888; font-weight: normal;">자주묻는질문</span>
    			</h2>
-				 <div class="searchWrap">
+				 <!-- <div class="searchWrap">
 								
 						<div class="search" style="margin-left: 340px;">
 							<ul>
@@ -73,21 +73,24 @@ $(document).ready(function() {
 									<select>
 										<option value="0"/>전체</option>
 										<option value="title" />제목</option>
-										<!-- <option value="content" />내용</option>
-										<option value="plus">제목+내용</option> -->
+										<option value="content" />내용</option>
+										<option value="plus">제목+내용</option>
 									</select>
 								</li>
-								<li><input type="text" class="searchInput" style="margin:1px 0 0 1.5px;" /></li>
-								<li class=""><a href="#" ><button class="bllist" style="margin:1px 0 0 9px;">검색</button></a></li>
+								<li><input type="text" id="text" class="searchInput" style="margin:1px 0 0 1.5px;" /></li>
+								<li class=""><a href="#" ><button class="bllist" onclick="bllist()" style="margin:1px 0 0 9px;">검색</button></a></li>
 							</ul>
 						</div>
-					</div> 
+					</div> --> 
+					
+					
+					
 					<div class="faqTab">
 						<ul>
-							<li><a href="#" class="on">전체</a></li>
-							<li class="dep"><a href="faqUser">회원</a></li>
-							<li><a href="faqMedi">의약품</a></li>
-							<li class="last"><a href="faqTec">기능</a></li>
+							<li><a class="on" style=" text-decoration-line:none;">전체</a></li>
+							<li class="dep"><a href="faqUser" style=" text-decoration-line:none;">회원</a></li>
+							<li><a href="faqMedi" style=" text-decoration-line:none;">의약품</a></li>
+							<li class="last"><a href="faqTec" style=" text-decoration-line:none;">기능</a></li>
 						</ul>						
 					</div>	
 					

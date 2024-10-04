@@ -5,11 +5,10 @@ import java.util.HashMap;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
-import com.java.dto.Complain;
 
 public interface BService {
 
-	HashMap<String, Object> selectAll(int page);
+	HashMap<String, Object> selectAll(int page, String text);
 
 	Board selectOne(int bno);
 
@@ -34,8 +33,6 @@ public interface BService {
 	int comCnt(int bno);
 
 	void updateBhitUp(int bno);
-
-	void insertComplainOne(Complain complain); // 신고 메서드
 
 
 	

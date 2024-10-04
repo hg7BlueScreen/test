@@ -40,19 +40,16 @@
 	</div>	 -->
 		<div id="left"
 			style="float: left; width: 250px; height: 250px; margin: 100px 0 0 100px;">
-			<div id="title2" style="font-size: 35px;">
-				고객센터<span style="font-size: 13px;">고객지원</span>
-			</div>
+			<div id="title2" style="font-size: 35px;">커뮤니티<span style="font-size: 13px;">게시판</span></div>
+			
 			<ul>
 				<li style="height: 40px;"><a href="blist" id="leftNavi3"
-					style="height: 40px; font-size: 15px; line-height: 270%;">게시판</a></li>
+					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">게시판</a></li>
 				<li style="height: 40px;"><a href="#" id="leftNavi2"
-					style="height: 40px; font-size: 15px; line-height: 270%;">QnA</a></li>
-				<li style="height: 40px;"><a href="faq" id="leftNavi1"
-					style="height: 40px; font-size: 15px; line-height: 270%;">FAQ</span></a></li>
-				<li class="last" style="height: 40px;"><a href="#"
-					id="leftNavi4"
-					style="height: 40px; font-size: 15px; line-height: 270%;">이용안내</a></li>
+					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
+				<li  class="last" style="height: 40px;"><a href="faq" id="leftNavi1"
+					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
+				
 			</ul>
 		</div>
 		<script type="text/javascript">initSubmenu(3,0);</script>
@@ -203,7 +200,7 @@
 		
 		// 로그인 하지 않으면 글을 쓸수 없게 막아놓음 
 		if(${sessionId==null}){
-			alert("로그인하셔야 댓글을 다실 수 있습니다");
+			alert("로그인이 필요한 서비스입니다.");
 			location.href="/login";
 			return false;
 		}
@@ -353,13 +350,21 @@
 			
 			<ul id="${cdto.cno }">
 
-				<li class="name"><img src="/image/Uuser.png"
-					style="width: 35px; height: 35px; margin-right: 15px; display: flex; align-items: center;">
+				<li class="name"><img src="/image/Uuser.png" style="width: 35px; height: 35px; margin-right: 15px; display: flex; align-items: center;">
+				
 					<div style="font-family: Pretendard;">${cdto.id }
 						님<br>
-						<div
-							style="font-family: Pretendard; font-size: 11px; color: #888888;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
+						<div style="font-family: Pretendard; font-size: 11px; color: #888888;"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성
+						<c:if test="${ sessionId == cdto.id && cdto.cpw !=null }">
+							&nbsp;&nbsp;&nbsp;※ 비밀글
+						</c:if>
+						</div>
 					</div></li>
+
+
+
+
+				
 
 				<!-- 비밀글일때 아이디와 세션아이디가 같을때만 보여야함. 비밀번호가 있을때만 비밀글-->
 				<c:if test="${ sessionId != cdto.id && cdto.cpw !=null }">
@@ -367,8 +372,7 @@
 				</c:if>
 				<!-- 비밀글이 아닐때  -->
 				<c:if test="${ !(sessionId != cdto.id && cdto.cpw !=null) }">
-					<a href="fudel?bno=${cdto.cno }&id=${board.id}" onclick="ggBtn()"
-						style="float: right; margin-top: 4px;"><button class="llist" onclick="llistBtn()">신고</button></a>
+					<a href="fudel" onclick="ggBtn()" style="float: right; margin-top: 4px;"><button class="llist" onclick="llistBtn()">신고</button></a>
 					<li class="txt">${cdto.ccontent }</li>
 				</c:if>
 				<!-- 댓글쓴 아이디와 로그인한 아이디(세션아이디)가 같을경우만 버튼을 노출함  -->

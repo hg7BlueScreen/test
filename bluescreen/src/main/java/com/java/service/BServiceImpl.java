@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
-import com.java.dto.Complain;
 import com.java.mapper.BMapper;
 
 @Service
@@ -17,10 +16,10 @@ public class BServiceImpl implements BService {
 
 	@Autowired BMapper bMapper;
 	@Override
-	public HashMap<String, Object> selectAll(int page) {
+	public HashMap<String, Object> selectAll(int page, String text) {
 		HashMap<String, Object> map = new HashMap<>();
 		// 1. 총 게시글의 수 
-		int listCount = bMapper.selectListCount();
+		int listCount = bMapper.selectListCount(text);
 		// 2. 최대페이지 
 		int maxPage = (int)Math.ceil(listCount/10.0);
 		// 3. startPage, endPage 
@@ -31,7 +30,7 @@ public class BServiceImpl implements BService {
 		int endRow = startRow+10-1;
 		if(endPage > maxPage) endPage=maxPage;
 		
-		ArrayList<Board> list = bMapper.selectAll(startRow,endRow);
+		ArrayList<Board> list = bMapper.selectAll(startRow,endRow, text);
 		
 		for(int i = 0 ; i <list.size(); i++) {
 			list.get(i).setComcnt(bMapper.comCnt(list.get(i).getBno()));	
@@ -128,11 +127,6 @@ public class BServiceImpl implements BService {
 	public void updateBhitUp(int bno) {
 		bMapper.updateBhitUp(bno);
 		
-	}
-	
-	@Override // 신고 메서드
-	public void insertComplainOne(Complain complain) {
-		bMapper.insertComplainOne(complain);
 	}
 
 
