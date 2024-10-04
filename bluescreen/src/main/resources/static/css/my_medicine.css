@@ -320,7 +320,7 @@
 .faqTab ul li.last{padding:0;}
 .faqTab ul li.last a{width:250px;}
 .myTab ul li{float:left; padding:0 0px 0 0;}
-.myTab ul li a{display:block; width:250px; height:40px; line-height:40px; background:#fff; font-weight:bold; font-size:19px; text-align:center;}
+.myTab ul li a{display:block; width:250px; height:40px; line-height:40px; background:#fff; font-weight:bold; font-size:19px; text-align:center; text-decoration-line:none; }
 .myTab ul li a span{color:#0a47ff;}
 .myTab ul li a.on{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff;}
 .myTab ul li a:hover{background:#fff; color:#0a47ff;border-bottom: 1px solid #0a47ff; }
@@ -633,7 +633,7 @@
 
 /* FAQ */
 .faqList{width:100%; border-bottom:1px #d9d9d9 solid; overflow:hidden; text-align:left; }
-.faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden;}
+.faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden; }
 .faqList div{position:relative; width:100%; overflow:hidden;}
 .faqList ul li .question{width:100%; padding:2px 0; line-height:1.2; overflow:hidden;}
 .faqList ul li .question .blet{position:absolute; left:25px;   font-size:15px; font-weight:600; color:#666; line-height: 55px;}
@@ -1451,39 +1451,39 @@ section{
 #left #title2 span{display:block; font-size:14px; color:#888; font-weight:600; line-height:2;}
 #left ul li{width:100%; height:29px; border-bottom:1px #d9d9d9 solid;}
 #left ul li a{display:block; height:29px; line-height:29px; padding:0 0 0 10px; color:#666; font-size:15px; font-weight:600;}
-#left ul li a.hover{background:163px 8px #0a47ff no-repeat; color:#fff;}
+#left ul li a.hover{background: 163px 8px #0a47ff no-repeat; color:#fff;}
 #left ul li a:hover{background:163px 8px #0a47ff no-repeat; color:#fff;}
 #left ul li.last{border:0;}
 
 /** CONTENTS **/
-#contents{ width:1000px; margin: 50px 0 0 170px;}
+#contents{ width:1000px; margin:60px auto 0 auto; /* 50px 0 0 170px; */}
 #contents h2{height:86px; text-align:center; border:none;}
 #contents h2 strong{width:100%; display:block; font-size:40px; font-weight:600; color:#444; margin:0 0 10px 0;}
 #contents h2 span{width:100%; display:block; font-size:14px; color:#888; font-weight:normal; line-height:1.2; word-break:keep-all;}
 
 /* FAQ */
-.faqList{width:100%; border-bottom:1px #d9d9d9 solid; margin:16px 0 0 0;  margin-bottom:50px; text-align:left;}
+.faqList{width:100%; border:none; margin:16px 0 0 0;  margin-bottom:50px; text-align:left;}
 .faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden; }
 .faqList ul li a{text-decoration:none;}
 .faqList div{position:relative; width:100%; overflow:hidden;}
-.faqList ul li .na{position:absolute; left:50px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .date{position:absolute; left:700px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .img{ font-weight:600; color:#666; left:870px; font-size:15px; text-decoration:none;}
-.faqList ul li .list{width:100%; margin:10px 0; padding:2px 0; line-height:1.2; overflow:hidden; }
-.faqList ul li .list .deleteCheck{position:absolute; left:15px;   font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .list .name{position:absolute; width:30%; left:50px; font-size:15px; font-weight:600; color:#666;}
-.faqList ul li .list .ddate{position:absolute; left:700px; font-size:15px; font-weight:600; color:#666;}
+.faqList ul li .na{position:absolute; left:300px; font-size:14px; font-weight:600; color:#666; width:50px; text-align: center; line-height: 45px;}
+.faqList ul li .date{position:absolute; left:700px; font-size:14px; font-weight:600; color:#666;line-height: 45px;}
+.faqList ul li .img{ font-weight:600; color:#666; left:870px; font-size:14px; text-decoration:none;line-height: 45px;}
+.faqList ul li .list{width:100%;padding:2px 0; line-height:1.2; overflow:hidden;height: 45px; }
+.faqList ul li .list .deleteCheck{position:absolute; top:16px; left:15px;   font-size:14px; font-weight:600; color:#666;}
+.faqList ul li .list .name{position:absolute; width:65%; left:50px; font-size:14px; font-weight:600; color:#666; line-height: 43px;}
+.faqList ul li .list .ddate{position:absolute; left:700px; font-size:14px; font-weight:600; color:#666; line-height: 45px;}
 .faqList ul li .list .image{font-size:13px; font-weight:200; color:#666; left:870px; font-size:14px; text-decoration:none; width:70px; }
 
-#myMedicineHd{width:100%; bottom:10px; margin:10px 0 0 30px; }
+#myMedicineHd{width:100%; height:40px; bottom:10px; margin:10px 0 10px 0; font-weight: bold; font-size:17px; padding-left:20px;}
 
 #medicineImage, #medicineAdd, #medicineDel{
-	align-items: center; margin: 0 auto;  border: 1px solid white;  width: 100px; 
+	align-items: center; margin:0 10px 30px 10px;  border: 1px solid white;  width: 95px; height:40px;
 }
-#medicineAdd, #medicineDel, #medicineImage {background: #0a47ff; color:#fff; border:none; position:absolute; left:700px; border-radius: 10px;}
-#medicineDel{position:absolute; left:850px;}
-#medicineAdd{position:absolute; left:745px;}
-#medicineImage{position:absolute; left:640px;}
+#medicineAdd, #medicineDel, #medicineImage {background: #0a47ff; color:#fff; border:none; position:absolute; left:700px; border-radius: 10px; font-size: 11px;}
+#medicineDel{position:absolute; left:880px;}
+#medicineAdd{position:absolute; left:775px;}
+#medicineImage{position:absolute; left:670px;}
 
 .faqList ul li .list .blets{position:absolute; left:25px; font-size:14px; font-weight:600; color:#666; line-height:600%;}
 .faqList ul li .list .categorys{position:absolute; float:left; margin-left:40px; font-size:12px; font-weight:600; color:#666; line-height:500%;}
@@ -1491,7 +1491,8 @@ section{
 .faqList ul li .list .bbdate{font-size:12px; font-weight:600; color:#666; text-align:right; position:absolute; bottom:20px; overflow:hidden; width:630px;}
 .faqList ul li .list .bbhit{font-size:12px; font-weight:600; color:#666; float:right; margin-left:160px; bottom:20px; position:absolute; overflow:hidden;}
 .faqList ul li .list .bbchat{font-size:12px; font-weight:600; color:#666; float:right; margin-left:67px; bottom:20px; position:absolute; overflow:hidden;}
-.faqList ul li.hover .list{background: #0a47ff; color:#fff; }
+.faqList ul li.hover .list{background: #0a47ff; height: 45px; }
+.faqList ul li.hover .list div{color:#fff;}
 .faqList ul li.hover .list .number{color:#fff;}
 .faqList ul li.hover .list .blets{color:#fff;}
 .faqList ul li.hover .list .name{color:#fff;}
@@ -1508,8 +1509,8 @@ section{
 .faqanswer{display:none; width:100%; background:#f9f9f9; overflow:hidden; clear:both;}
 .faqanswer .faqbox{position:relative; border-top:1px #eaeaea solid; padding:10px 20px 10px 22px;}
 .faqanswer .faqbox:after {content:""; display:block; clear:both;}
-.faqanswer .faqbox .blet{position:relative; font-size:14px; font-weight:600; color:rgb(0, 128, 255); }
-.faqanswer .faqbox .text{position:relative; font-size:13px; color:#888; line-height:1.4; left: 10px; margin-left:10px;}
+.faqanswer .faqbox .blet{position:relative; font-size:14px; font-weight:600; color:#0a47ff; }
+.faqanswer .faqbox .text{position:relative; font-size:13px; color:#888; line-height:1.4; }
 .faqanswer .faqbox .text strong{color:#444;}
 
 /* BTN AREA */
@@ -1585,3 +1586,6 @@ section{
 .modalTable > tbody > tr:hover {
 	background-color: #cccccc; 
 }
+
+
+

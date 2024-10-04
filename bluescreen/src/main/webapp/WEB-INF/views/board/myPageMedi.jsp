@@ -33,19 +33,20 @@ $(document).ready(function() {
 <body>
 <%@include file = "header.jsp" %> 
 	<!-- container -->
-	<div id="" style="margin-top:150px; ">
+	<div id="" style="/* margin-top:150px;  */">
 		<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
 		<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
 			<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
 			<ul >	
-				<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
-				<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">즐겨찾기</a></li>
-				<li style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">복용 중인 약</span></a></li>
-				<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
+				<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">내 정보</a></li>
+				<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">즐겨찾기</a></li>
+				<li style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">복용 중인 약</span></a></li>
+				<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">회원정보수정</a></li>
 			</ul>				
 		</div> <!-- left -->
 		<script type="text/javascript">initSubmenu(3,0);</script>
 		<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
+		<div id="mmypage" style="width:1000px;  margin:150px auto 200px auto;">
 		<div class="myTab">
 			<ul>
 				<li><a href="myPage" >내 정보</a></li>
@@ -54,7 +55,6 @@ $(document).ready(function() {
 				<li class="last"><a href="myPageFix">회원정보수정</a></li>
 			</ul>						
 		</div>	<!-- myTab -->
-	</div> 
 		
 		
 		
@@ -235,9 +235,9 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 			<div id="contents">
 				<div>
 					<div class="faqList">
-						<div id="myMedicineHd">
-							<label for="alarm">복용약 소비기한 임박알림 받기</label>
-							<select id="alram" onchange="alarm()" >
+						<div id="myMedicineHd" >
+							<label for="alarm" style="line-height: 55px;">알림 주기</label>&nbsp;&nbsp;&nbsp;&nbsp;
+							<select id="alram" onchange="alarm()" style="font-size: 14px; border-radius: 5px;">
 								<option value="90" <c:if test="${member.datealarm == '90'}">selected</c:if>>3개월 전</option>
 								<option value="30" <c:if test="${member.datealarm == '30'}">selected</c:if>>1개월 전</option>
 								<option value="15"<c:if test="${member.datealarm == '15'}">selected</c:if>>15일 전</option>
@@ -250,13 +250,13 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 								<button id="medicineImage" onclick="medicineImage()">사진으로 추가</button>
 								<input type="file" id="fileInput" style="display: none;">
 								<button id="medicineAdd" onclick="medicineAdd()">사전에서 추가</button>
-								<button id="medicineDel" onclick="medicineDel()">복용약 삭제</button>
+								<button id="medicineDel" onclick="medicineDel()" >복용약 삭제</button>
 							
 						</div><!-- myMedicineHd -->
 						<div style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 0 auto; width: 1000px; min-height: 160px;">
 						<ul>
 							<!-- list -->
-							<li style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 15px; background: #f5f5f5;">
+							<li style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 15px; background: #f5f5f5; height:45px;">
 								<div class="na">이름</div>
 								<div class="date">권장소비기한</div>
 								<div class="img">사진</div>
@@ -353,9 +353,11 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 					</div><!-- btnAreaList -->
 				</div>
 			</div>
+			</div>
 			<!-- //contents -->
 		 </div>
 	 </div>	<!-- container -->
+	</div> 
 	 </section>
 	<div id="modal" class="dialog">
 		  <div class="tb">
