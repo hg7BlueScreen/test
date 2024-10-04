@@ -150,8 +150,8 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							<a href="board/faqMedi">
 								<i style="background-image:url(/image/dump.png); background-repeat:no-repeat; background-position:center;  background-size:contain; display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
-									<span class="cate" data-platform-name="생황팁">생활팁</span>
-									<p>올바른 폐의약품 폐기방법 관련 FAQ 링크로 보냄</p>
+									<span class="cate" data-platform-name="생황팁">의약품 버리기</span>
+									<p>올바른 폐의약품 폐기방법</p>
 								</div>
 							</a>
 						</div>
