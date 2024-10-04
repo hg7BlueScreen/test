@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.java.dto.BMember;
 import com.java.dto.M_box;
 import com.java.service.MService;
 
@@ -20,18 +21,19 @@ public class MapController {
 	@Autowired MService mservice;
 	@RequestMapping("/Mmap")
 	public String Mmap(Model model) {
-		 if(session.getAttribute("addr")!=null) { 	//회원 주소값이 있을 때 
-			 String addr = (String)session.getAttribute("addr"); 
-			 String[] user_addr = addr.split(" "); //회원 주소 시 / 자치구 분리
-			 String userAddr = addr.substring(8);
-			 String[] useraddr = userAddr.split(",");
-			 //System.out.println(userAddr); System.out.println(useraddr[0]);
-			 model.addAttribute("addrA",useraddr[0]); 
-			 model.addAttribute("addrs",user_addr[1]);	//시
-			 model.addAttribute("addrg",user_addr[2]);	//구
-			 //System.out.println(user_addr[1]);
-			 //System.out.println(user_addr[2]);
-		 }
+		
+		if(session.getAttribute("addr")!=null) { 	//회원 주소값이 있을 때 
+			String addr = (String)session.getAttribute("addr"); 
+			String[] user_addr = addr.split(" "); //회원 주소 시 / 자치구 분리
+			String userAddr = addr.substring(8);
+			String[] useraddr = userAddr.split(",");
+			//System.out.println(userAddr); System.out.println(useraddr[0]);
+			model.addAttribute("addrA",useraddr[0]); 
+			model.addAttribute("addrs",user_addr[1]);	//시
+			model.addAttribute("addrg",user_addr[2]);	//구
+			//System.out.println(user_addr[1]);
+			//System.out.println(user_addr[2]);
+		}
 		return "Mmap";
 	}
 	@PostMapping("/mBoxgu")

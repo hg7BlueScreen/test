@@ -28,6 +28,9 @@ public class JoinServiceImpl implements JoinService {
 	@Override
 	public void insertMember(Member join) {
 		//System.out.println(join.getId());
+		if(join.getSocialKey()==null) {
+			join.setSocialKey("");
+		}
 		jmapper.insertMember(join);
 		
 	}

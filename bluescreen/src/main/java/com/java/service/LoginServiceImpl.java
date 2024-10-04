@@ -30,6 +30,7 @@ public class LoginServiceImpl implements LoginService {
 			session.setAttribute("sessionId", bmdto.getId());
 			session.setAttribute("sessionName", bmdto.getName());
 			session.setAttribute("sessionUno", bmdto.getUno());
+			session.setAttribute("addr", bmdto.getAddress());
 			// result에 값 넣기 
 			result = 1; 
 		}
