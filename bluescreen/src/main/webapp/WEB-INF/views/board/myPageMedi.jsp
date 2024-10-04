@@ -168,7 +168,7 @@ function myMediUp(uno, dno){
 
 function insertDrugModi(){
 	$("#modal").css("display","none");
-	location.href = "my_medicine";
+	location.href = "myPageMedi";
 }
 
 function modalUp() {

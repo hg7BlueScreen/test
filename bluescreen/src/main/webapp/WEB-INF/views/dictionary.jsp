@@ -122,7 +122,7 @@ function modalUp(dno){
 				if((data.drug.defendOverInsert>=1 &&data.drug.defendOverInsert<=99999) || "${sessionId}"=="" ){
 					$("#modalTitle").text(data.drug.item_name);
 				}else{
-					$("#modalTitle").html(data.drug.item_name+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${sessionUno}','"+dno+"')\" value='등록' style='background:rgb(0,128,255); color:#fff; border:none; margin-top:-10px;'/>");
+					$("#modalTitle").html(data.drug.item_name+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' onclick=\"myMediUp('${sessionUno}','"+dno+"')\" value='등록' style='background:#0A47FF; color:#fff; border:none; margin-top:-10px;'/>");
 				}
 					
 					let mContent = "<table class = 'modalTable'>";
@@ -321,7 +321,7 @@ function modalUp(dno){
 		
 		<label class="switch">
   			<input type="checkbox"  id = "onlyBookMark" name = "onlyBookMark" onclick = "onlyBookMark()" <c:if test="${onlyBookMark == 1 }">checked</c:if>>
-  			<span class="slider round"></span>
+  			<span class="slider round" ></span>
 		</label>
 		<label for = "switch">즐겨찾기만 보기</label>
 		
