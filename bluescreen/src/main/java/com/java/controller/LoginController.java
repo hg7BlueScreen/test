@@ -52,6 +52,7 @@ public class LoginController {
 		public String ajaxlogin(BMember bm) {
 			// 1은 성공, 0은 실패 
 			int result = loginservice.ajaxLogin(bm);
+			
 			return ""+result;
 		}
 	

@@ -38,8 +38,10 @@
               success: function(data){
                   if(data == "1"){
                       alert("로그인되었습니다");
-                      location.href = "/";	
-                  } else {
+	                  location.href = "/";	
+                  } else if(data=="2"){
+                      location.href = "admin_user";	
+                  }else {
                       alert("아이디 또는 패스워드가 일치하지 않습니다.");
                       $("#pw").val(""); // 패스워드 삭제
                       $("#pw").focus(); 

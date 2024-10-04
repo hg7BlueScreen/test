@@ -25,16 +25,22 @@ public class LoginServiceImpl implements LoginService {
 		int result = 0; 
 		BMember bmdto = loginmapper.ajaxLogin(bm);
 		// 로그인에 성공하면
-		if(bmdto!=null) {
-			// 세션에 값 넣기
+		if(bmdto.getId().equals("admin")) {
 			session.setAttribute("sessionId", bmdto.getId());
+			System.out.println(bmdto.getId());
+			session.setAttribute("sessionName", bmdto.getName());
+			session.setAttribute("sessionUno", bmdto.getUno());
+			session.setAttribute("addr", bmdto.getAddress());
+			result = 2;
+		}else if(bmdto!=null) {
+			session.setAttribute("sessionId", bmdto.getId());
+			System.out.println(bmdto.getId());
 			session.setAttribute("sessionName", bmdto.getName());
 			session.setAttribute("sessionUno", bmdto.getUno());
 			session.setAttribute("addr", bmdto.getAddress());
 			// result에 값 넣기 
 			result = 1; 
 		}
-		System.out.println(result);
 		return result;
 	}
 	
