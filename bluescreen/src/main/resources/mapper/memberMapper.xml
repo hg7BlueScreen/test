@@ -67,6 +67,10 @@
 	<select id="selectKey" resultType="com.java.dto.Member">
 		select*from bmember where socialKey = #{id}
 	</select>
-	
-	
+	<select id="selectuseremail">
+		select email from bmember where uno = #{uno}
+	</select>
+	<select id="selectleaveDate">
+		select leavedate from bmember where uno = #{uno}
+	</select>
 </mapper>

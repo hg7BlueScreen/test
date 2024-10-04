@@ -10,6 +10,7 @@
   <title>게시판</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/notice_list2.css">
   
@@ -73,7 +74,7 @@
 									</select>
 								</li>
 								<li><input type="text" id="text" class="searchInput" placeholder="내용을 입력하세요." style="margin-left:-1px; font-size: 11px;"/></li>
-								<li class=""><a href="#" ><button class="bllist" onclick="bllist()" style="margin: -14px 0 0 92px; padding-left:1.5px;">검색</button></a></li>
+								<li class=""><a href="#" ><button class="bllist" onclick="bllist()" style="margin: -14px 0 0 92px; padding-left:1.5px; ">검색</button></a></li>
 							</ul>
 						</div>
 					</div> 
@@ -114,7 +115,7 @@
 		    		<a href="javascript:;" class="faqbtn">
 		    		<div class="question">
 				        <%-- <div class="blets"> ${board.bno }  </div> --%>
-				        <div class="categorys" style="width:600px;font-size: 12px;">${board.id } 님</div>				        
+				        <div class="categorys" style="width:600px;font-size: 12px;">${board.id } 님</div>			       
 				       	<div class="titles" style="margin-bottom:-40px; font-size: 19px; padding:15px 0 25px 0; font-weight: bold;"><a href="bread?bno=${board.bno }" id="ddd">${board.btitle } </a></div>
 				        <c:if test="${sessionId!=board.id }">
 				        	<a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist">신고</button></a>

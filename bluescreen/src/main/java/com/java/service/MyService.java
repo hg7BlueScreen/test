@@ -1,5 +1,6 @@
 package com.java.service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +26,8 @@ public interface MyService {
 	void alarmDate(int uno, String alDate);
 
 	ArrayList<Medicine> selectMList(int uno);
+
+	Timestamp selectDate();
 
 	
 

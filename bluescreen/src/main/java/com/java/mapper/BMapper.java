@@ -47,6 +47,10 @@ public interface BMapper {
 
 		void updateBhitUp(int bno);
 
+		int selectBoardcount(String id);
+
+		
+
 
 
 	

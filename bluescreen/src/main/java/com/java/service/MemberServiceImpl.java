@@ -1,5 +1,6 @@
 package com.java.service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,19 @@ public class MemberServiceImpl implements MemberService {
 		Member member = memberMapper.selectKey(id);
 		
 		return member;
+	}
+
+	@Override
+	public String selectUseremail(int uno) {
+		String bEmail = memberMapper.selectuseremail(uno);
+		
+		return bEmail;
+	}
+
+	@Override
+	public Timestamp selectLeavedate(int uno) {
+		Timestamp Ddate = memberMapper.selectleaveDate(uno);
+		return Ddate;
 	}
 	
 	

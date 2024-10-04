@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 <script type="text/javascript" src="../js/html5.js"></script>
 <script type="text/javascript" src="../js/respond.min.js"></script>
 <![endif]-->
- <script type="text/javascript">
+  <script type="text/javascript">
 	  $(function(){
 		 if(${sessionId==null}){	 
 			 alert("로그인이 필요한 서비스입니다.");
@@ -41,10 +42,10 @@
 	<div id="left" style="width:250px; height: 250px; overflow: hidden;margin:100px 0 0 100px;">
 			<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
 				<ul >	
-					<li style="height:40px;"><a href="myPage" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
-					<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">즐겨찾기</a></li>
-					<li style="height:40px;"><a href="myPageMedi" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">복용 중인 약</span></a></li>
-					<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
+					<li style="height:40px;"><a href="myPage" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">내 정보</a></li>
+					<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">즐겨찾기</a></li>
+					<li style="height:40px;"><a href="myPageMedi" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">복용 중인 약</span></a></li>
+					<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">회원정보</a></li>
 				</ul>				
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
 	
@@ -65,13 +66,13 @@
 					</div>	
 					
 					
-					
+				
 					<div style="margin-top:100px; font-size: 25px; width:100%;display: flex; margin-left: auto; margin-right:auto; align-items: center;">
 						<img src="/image/Uuser.png"style="width:110px; height:110px; margin-right: 40px;">				
 						<div>
-						${sessionId } 님
+						${sessionId} 님
 						<br>
-						<div style="font-size: 15px;">aaa@naver.com</div>
+						<div style="font-size: 15px;">${bEmail }</div>
 						</div>
 						
 						</div>
@@ -79,17 +80,27 @@
 					<div class="Mfind" style="width:245px; height:185px; background:none; color:#0a47ff; border-radius: 50px; 
 					 font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold; ">
 						<p style=" margin:40px 0 0 0; font-size:27px;text-align: center;">
-						24&nbsp;/&nbsp;10&nbsp;/&nbsp;03
+					<c:if test="${Ddate != null}">
+						<fmt:formatDate value="${Ddate }" pattern="yyyy-MM-dd"/>
+					</c:if>
+					<c:if test="${Ddate == null}">
+						0 회
+					</c:if>
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">복용약 &nbsp;등록일</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">최근 &nbsp;복용약 &nbsp;등록</span>
 						</p>
 					
 					</div>
 					<div class="Mfind" style="width:245px; height:185px; background:#none; color:#0a47ff; border-radius: 50px; 
 					font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold;">
 						<p style=" margin:40px 0 0 0; font-size:27px; text-align: center;">
-						12 개
+					<c:if test="${Mcount != null}">
+						${Mcount } 개
+					</c:if>
+					<c:if test="${Mcount == null}">
+						0 개
+					</c:if>
 						<br>
 						<br>
 						<span style="color:#888888; font-weight:normal; font-size:17px;">복용약</span>
@@ -98,11 +109,16 @@
 					</div>
 					<div class="Mfind" style="width:245px; height:185px; background:none; color:#0a47ff; border-radius: 50px; 
 					font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold; ">
-						<p style="overflow: hidden; margin:40px 0 0 0; font-size:27px;text-align: center;">
-						5 개
+						<p id="" style="overflow: hidden; margin:40px 0 0 0; font-size:27px;text-align: center;">
+					<c:if test="${Bcount != null}">
+						${Bcount } 개
+					</c:if>
+					<c:if test="${Bcount == null}">
+						0 개
+					</c:if>
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">게시글 &nbsp;수</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">즐겨찾기</span>
 						</p>
 					
 					</div>
@@ -110,10 +126,15 @@
 					font-family: MinSansVF, Min Sans, sans-serif; font-weight: bold; " >
 						<p style=" margin:40px 0 0 0; font-size:27px;text-align: center;">
 						<!-- <img src="/image/letter.png" style="overflow: hidden; width:20px; height:20px; margin-bottom: 4px;"> -->
-						10 개
+					<c:if test="${Boardcount != null}">
+						${Boardcount } 개
+					</c:if>
+					<c:if test="${Boardcount == null}">
+						0 개
+					</c:if>
 						<br>
 						<br>
-						<span style="color:#888888; font-weight:normal; font-size:17px;">즐겨찾기 &nbsp;항목</span>
+						<span style="color:#888888; font-weight:normal; font-size:17px;">게시글</span>
 						</p>
 					
 					</div>

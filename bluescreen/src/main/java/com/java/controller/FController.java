@@ -181,6 +181,7 @@ public class FController {
 		
 		if(result==null) {
 			myservice.myMediUp(uno, dno, ddate);
+			Timestamp Ddate = myservice.selectDate();
 			return "성공";
 		}else {
 			return "실패";

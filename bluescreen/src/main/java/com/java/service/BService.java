@@ -34,6 +34,10 @@ public interface BService {
 
 	void updateBhitUp(int bno);
 
+	int selectBoardcount(String id);
+
+	
+
 
 	
 

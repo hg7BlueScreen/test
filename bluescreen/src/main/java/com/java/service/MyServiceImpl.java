@@ -1,5 +1,6 @@
 package com.java.service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,9 +13,12 @@ import com.java.dto.Medicine;
 import com.java.dto.Page;
 import com.java.mapper.MyMapper;
 
+import jakarta.servlet.http.HttpSession;
+
 @Service
 public class MyServiceImpl implements MyService {
 	@Autowired MyMapper mymapper;
+	@Autowired HttpSession session;
 	@Override
 	public Member selectUser(String attribute) {
 		Member selectaddr = mymapper.selectUser(attribute);
@@ -75,6 +79,13 @@ public class MyServiceImpl implements MyService {
 	public ArrayList<Medicine> selectMList(int uno) {
 		ArrayList<Medicine> mList = mymapper.selectMList(uno);
 		return mList;
+	}
+	@Override
+	public Timestamp selectDate() {
+		Timestamp Ddate = mymapper.selectDate();
+		int uno = (int)session.getAttribute("sessionUno");
+		mymapper.updateDdate(Ddate, uno);
+		return Ddate;
 	}
 	
 

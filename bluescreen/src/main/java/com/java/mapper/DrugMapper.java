@@ -39,5 +39,9 @@ public interface DrugMapper {
 
 	void deleteBookMarkListFromMyPage(String dno, String uno);
 
+	int selectMcount(int uno);
+
+	int selectBcount(int uno);
+
 
 }

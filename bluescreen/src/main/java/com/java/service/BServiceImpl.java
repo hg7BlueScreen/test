@@ -128,6 +128,17 @@ public class BServiceImpl implements BService {
 		bMapper.updateBhitUp(bno);
 		
 	}
+	@Override
+	public int selectBoardcount(String id) {
+		int Boardcount = bMapper.selectBoardcount(id);
+		if(Boardcount != 0) {
+			return Boardcount;
+			
+		}else {
+			return 0;
+		}
+	}
+	
 
 
 }

@@ -1,5 +1,6 @@
 package com.java.service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import com.java.dto.Caution;
@@ -19,5 +20,9 @@ public interface MemberService {
 	void deleteReportOne(int cno);
 
 	Member selectKey(String id);
+
+	String selectUseremail(int uno);
+
+	Timestamp selectLeavedate(int uno);
 
 }

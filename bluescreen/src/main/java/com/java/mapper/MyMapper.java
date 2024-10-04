@@ -1,5 +1,6 @@
 package com.java.mapper;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -31,6 +32,10 @@ public interface MyMapper {
 	int selectListCount(int uno);
 
 	void alarm_date(int uno, String alDate);
+
+	Timestamp selectDate();
+
+	void updateDdate(Timestamp ddate, int uno);
 
 	
 

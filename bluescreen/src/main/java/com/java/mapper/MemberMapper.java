@@ -1,5 +1,6 @@
 package com.java.mapper;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -22,5 +23,9 @@ public interface MemberMapper {
 	void deleteReportOne(int cno);
 
 	Member selectKey(String id);
+
+	String selectuseremail(int uno);
+
+	Timestamp selectleaveDate(int uno);
 
 }

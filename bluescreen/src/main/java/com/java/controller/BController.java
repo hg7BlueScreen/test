@@ -31,6 +31,7 @@ import com.java.dto.Page;
 import com.java.service.BService;
 import com.java.service.DrugService;
 import com.java.service.JoinService;
+import com.java.service.MemberService;
 import com.java.service.MyService;
 
 import jakarta.servlet.http.HttpSession;
@@ -43,6 +44,7 @@ public class BController {
 	@Autowired JoinService jservice;
 	@Autowired MyService myservice;
 	@Autowired DrugService drugService;
+	@Autowired MemberService memberservice;
 	
 	@PostMapping("/commentInsert")
 	@ResponseBody
@@ -304,8 +306,25 @@ public class BController {
 		return "/board/fudel";
 	}
 	@RequestMapping("/myPage")
-	public String myPage() {
+	public String myPage(Model model) {
+		if(session.getAttribute("sessionUno")==null) {
+			return "/board/myPage";
+		}
+		int uno = (int)session.getAttribute("sessionUno");
+		String id = (String)session.getAttribute("sessionId");
+		int Boardcount = bservice.selectBoardcount(id);
+		int Mcount = drugService.selectMcount(uno);
+		int Bcount = drugService.selectBcount(uno);
+		String bEmail = memberservice.selectUseremail(uno);
+		Timestamp Ddate = memberservice.selectLeavedate(uno);
+		
+		model.addAttribute("Ddate", Ddate);
+		model.addAttribute("bEmail", bEmail);
+		model.addAttribute("Boardcount", Boardcount);
+		model.addAttribute("Bcount", Bcount);
+		model.addAttribute("Mcount", Mcount);
 		return "/board/myPage";
+		
 	}
 	@RequestMapping("/myPageFind")
 	public String myPageFind(Model model, Page pageDto) {

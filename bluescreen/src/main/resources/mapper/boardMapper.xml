@@ -123,4 +123,8 @@
 	<update id="updateBhitUp">
 	update board set bhit=bhit+1 where bno=#{bno}
 	</update>
+	<select id="selectBoardcount">
+		select count(*) from board where id=#{id}
+	</select>
+	
 </mapper>

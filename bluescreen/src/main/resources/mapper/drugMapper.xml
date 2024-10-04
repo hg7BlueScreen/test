@@ -213,4 +213,10 @@
 	<delete id="deleteBookMarkListFromMyPage">
 		delete from drug_user_bookmark where dno = #{dno} and uno = #{uno}
 	</delete>
+	<select id="selectMcount">
+		select count(*) from drug_user where uno = #{uno}
+	</select>
+	<select id="selectBcount">
+		select count(*) from drug_user_bookmark where uno = #{uno}
+	</select>
 </mapper>

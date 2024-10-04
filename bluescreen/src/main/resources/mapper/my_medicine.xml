@@ -43,5 +43,10 @@
 	<update id="alarm_date"> <!-- 복용약 소비기한 만료 알림 설정 -->
 		update bmember set datealarm = #{alDate} where uno=#{uno} 
 	</update>
-
+	<select id="selectDate">
+		select sysdate from dual
+	</select>
+	<update id="updateDdate">
+		update bmember set leavedate = #{ddate} where uno = #{uno}
+	</update>
 </mapper>

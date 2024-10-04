@@ -144,4 +144,27 @@ public class DrugServiceImpl implements DrugService {
 		}
 	}
 
+	@Override
+	public int selectMcount(int uno) {
+		int Mcount = drugMapper.selectMcount(uno);
+		if(Mcount != 0) {
+			return Mcount;
+			
+		}else {
+			return 0;
+		}
+	}
+
+	@Override
+	public int selectBcount(int uno) {
+		int Bcount = drugMapper.selectBcount(uno);
+		if(Bcount != 0) {
+			return Bcount;
+			
+		}else {
+			return 0;
+		}
+	}
+
+	
 }
