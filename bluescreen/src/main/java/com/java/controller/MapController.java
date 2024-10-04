@@ -29,10 +29,13 @@ public class MapController {
 			String[] useraddr = userAddr.split(",");
 			//System.out.println(userAddr); System.out.println(useraddr[0]);
 			model.addAttribute("addrA",useraddr[0]); 
-			model.addAttribute("addrs",user_addr[1]);	//시
-			model.addAttribute("addrg",user_addr[2]);	//구
-			//System.out.println(user_addr[1]);
-			//System.out.println(user_addr[2]);
+			model.addAttribute("addrs",user_addr[1].substring(0,2));	//시
+			if(user_addr[1].substring(0,2).equals("세종")) {
+				model.addAttribute("addrg","특별자치시");	//구
+			}else {
+				model.addAttribute("addrg",user_addr[2]);	//구
+			}
+			//System.out.println(user_addr[1]); System.out.println(user_addr[2]);
 		}
 		return "Mmap";
 	}

@@ -259,6 +259,7 @@ public class BController {
 		String email = member.getEmailId()+"@"+member.getEmailTail();
 		String birthday = member.getYear()+"-"+member.getMonth()+"-"+member.getDay();
 		Date date = Date.valueOf(birthday);
+		session.setAttribute("addr", address);
 		member.setPhone(phone);
 		member.setAddress(address);
 		member.setEmail(email);
@@ -267,7 +268,6 @@ public class BController {
 			member.setPw(pw1);
 		}
 		jservice.updateUser(member);
-		System.out.println(member.getUno());
 		String id = (String)session.getAttribute("sessionId"); 
 		Member mem = jservice.selectAll(id);
 		model.addAttribute("mem",mem);

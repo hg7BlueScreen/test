@@ -364,6 +364,7 @@ function addressBtn(){
             console.log(data);
             $("#addr1").val(data.zonecode);
 			$("#addr2").val(data.address);
+			$("#addr3").val("");
         }
     }).open();
 }

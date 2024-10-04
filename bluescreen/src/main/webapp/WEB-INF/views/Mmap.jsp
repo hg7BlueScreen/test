@@ -28,8 +28,8 @@
 						지역&nbsp;:&nbsp; 
 						<select name="box" id = "city" onchange="cbtn()" style="width:100px;font-size:20px;">
 							<option value="" >시</option>
-							<option value="서울" >서울</option>
-							<option value="세종" >세종</option>
+							<option value="서울">서울</option>
+							<option value="세종">세종</option>
 							<option value="인천">인천</option>
 						</select>
 						<select name="box" id="gu" onchange="sbtn()" style="width:150px;font-size:20px;">
@@ -81,10 +81,15 @@ if(user_loc==null || user_loc==""){
 	//alert("없음");
 }else{
 	//alert("있음"); alert(user_loc);
+	console.log($("#city").val());
+	console.log("${addrs}");
+	console.log()
 	$("#city").val("${addrs}").prop("selected",true);
 	cbtn();
 	$("#gu").val("${addrg}").prop("selected",true);
 	sbtn();
+	console.log(userSearch); console.log(placesSearchCb);
+	
 	ps.keywordSearch(userSearch, placesSearchCb);
 	
 }

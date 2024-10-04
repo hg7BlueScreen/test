@@ -96,6 +96,34 @@ $(document).ready(function() {
 									</div>
 								</div>
 							</li>
+							<li>
+								<a href="javascript:;" class="faqbtn">
+									<div class="question" style="padding: 10px 0;">
+										<div class="blet">Q</div>
+										<div class="category">의약품</div>
+										<div class="title">의약품 버리는 방법</div>
+									</div>
+								</a>
+
+								<div class="faqanswer" style="display: none;">
+									<div class="faqbox" style="display: flex; align-items: center; font-size: 15px;">
+										<div class="blet" style="color:#0a47ff; width:40px;">A</div>
+										<div class="text">
+											<h3>수거함</h3>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가루약&nbsp;&nbsp;-&nbsp;&nbsp;포장지를 개봉하지 말고 그대로 배출</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;알약(조제약)&nbsp;&nbsp;-&nbsp;&nbsp;포장지를 개봉하지 말고 그대로 배출</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;알약(정제형)&nbsp;&nbsp;-&nbsp;&nbsp;겉 포장지(종이)만 제거 후 플라스틱 등으로 포장된 알약은 개봉하지 말고 배출</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;물약&nbsp;&nbsp;-&nbsp;&nbsp;마개를 잘 잠그고 용기 그대로 배출</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;연고 등 특수 용기&nbsp;&nbsp;-&nbsp;&nbsp;겉포장(종이)박스만 제거 후 마개를 잠v그고 용기 그대로 배출</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;폐의약품 수거함에 버리면 안되는 물품&nbsp;&nbsp;-&nbsp;&nbsp;폐의약품 외 물품(홍삼, 자양강장제 등 건강보조식품)</p>
+											<h3>우체통</h3>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 우체통 폐의약품 회수봉투를 사용하여 버려 주세요</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 일반 봉투에소 폐의약품이라고 표시하고 버릴수 있어요</p>
+												<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 물약은 우체통에 버리면 안돼요</p>
+										</div>
+									</div>
+								</div>
+							</li>
 							</ul>
 						</div>
 							<!-- //list -->

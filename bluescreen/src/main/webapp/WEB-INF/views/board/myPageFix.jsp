@@ -49,8 +49,7 @@
 		</div>
 		
 		<section>
-			<form id = "frm" name="agree" method="post" action="/member/modify">
-			
+			<form id = "frm" name="agree" method="post" action="/board/modify">
 				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin: 50px 0 0 450px; width:1000px;">
 					<table>
 						<colgroup>
@@ -107,10 +106,11 @@ function modifyBtn(){
 	str += '<div style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin-left: 700px; width:600px;">'
 	str += '<table><colgroup><col width="20%"><col width="60%"><col width="20%"></colgroup>'
 	str += '<tr><td style="border-right: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">비밀번호 확인</th>'
-	str += '<td><input type="text" id="pw3" name="pw3" style="width:360px; height:50px; font-size: 15px; border:0px;"></td><td>&nbsp;&nbsp;<input type="button" onclick="pwCk()" style="width:50px; height:50px; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px; border:0px;" value="확인"/></td></tr></table></div>'
+	str += '<td><input type="password" id="pw3" name="pw3" style="width:360px; height:50px; font-size: 15px; border:0px;"></td><td>&nbsp;&nbsp;<input type="button" onclick="pwCk()" style="width:50px; height:50px; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px; border:0px;" value="확인"/></td></tr></table></div>'
 	 
 	$("#frm").html(str);
 }
+
 function pwCk(){
 	if("${mem.pw}"==$("#pw3").val()){
 		location.href="/board/modify";
@@ -118,6 +118,7 @@ function pwCk(){
 		alert("비밀번호가 일치하지 않습니다.");
 	}
 }
+
 </script>
 		<footer>
 			<%@ include file="../footer.jsp" %>
