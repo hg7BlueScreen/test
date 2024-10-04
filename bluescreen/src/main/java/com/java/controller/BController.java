@@ -245,7 +245,6 @@ public class BController {
 		String[] bday = bhday.split("-");
 		String year = bday[0];String month = bday[1];String day = bday[2];
 		member.setYear(year);member.setMonth(month);member.setDay(day);
-		
 		model.addAttribute("mem",member);
 		return "member/modify";
 	}

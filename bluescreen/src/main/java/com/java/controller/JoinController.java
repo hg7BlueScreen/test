@@ -33,8 +33,9 @@ public class JoinController {
 	
 	
 	@PostMapping("/join2")
-	public String join2(Member join) {
+	public String join2(Member join, Model model) {
 		//System.out.println(join.getCk());
+		model.addAttribute("member", join);
 		return "member/join2";
 	}
 	

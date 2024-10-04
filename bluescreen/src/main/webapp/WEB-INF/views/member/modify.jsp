@@ -45,7 +45,7 @@
 		</div>
 			<form name="agree" method="post" action="/board/myPageFix">
 			<input type="hidden" id="uno" name="uno" value="${mem.uno }"/>
-			<input type="hidden" id="ck" name="ck" value="agree"/>
+			
 			
 				<div id="subBanner"></div>
 				<div style="width:1000px; margin-left: 520px;  margin-bottom: 20px;font-size:17px; padding:0 0 0 35px;">회원 정보 수정
@@ -245,6 +245,31 @@
 								<option value="학생"<c:if test="${mem.job == '학생'}" >selected</c:if>>학생</option>
 								<option value="기타"<c:if test="${mem.job == '기타'}" >selected</c:if>>기타</option>						
 							</select>
+						</td>
+					</tr>
+					<tr id="join_job_dl">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">이메일 발송 동의</th>
+						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+							<div class="agreeRadio">
+								<input type="radio" name="ck" id="p_agree" class="p_agree" value="agree" <c:if test="${mem.ck == 'agree'}" >checked</c:if>/>
+								<label for="p_agree">개인정보 취급위탁에 동의합니다.</label>
+								<input type="radio" name="ck" id="p_disagree" class="p_disagree" value="disagree" <c:if test="${mem.ck == 'disagree'}" >checked</c:if>/>
+								<label for="p_disagree">동의하지 않습니다.</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='2' style="font-size:14px;">
+							<p>[개인정보 수집, 이용 동의 안내]</p>
+							<ul>
+								<li>이 약관은 주식회사 WDH(이하"회사"라 표기합니다)가 제공하는 사이버 회원에 대한 서비스 제공 및 이용조건, 회원가입에 관련된 사항 및 절차 그리고 기타 필요한 사항의 규정을 목적으로 합니다.</li>
+							</ul>
+							<ul>
+								<li><strong>1) WDH 웹사이트는 다음과 같은 목적을 위하여 개인정보를 수집하고 있습니다.</strong></li>
+								<li>가. 성명, 생년월일, ID, 비밀번호, 이동전화번호, 건강상태 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용</li>
+								<li>나. 주소, e-mail 주소, 의료정보 : 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 복용약 소비기한 임박 알림, 지도 검색, 새로운 서비스 안내</li>
+								<li>다. 생년월일, 주소, 성별 : 인구통계학적 분석 자료(회원의 연령별, 성별, 지역별 통계분석)</li>
+							</ul>
 						</td>
 					</tr>
 				</table>

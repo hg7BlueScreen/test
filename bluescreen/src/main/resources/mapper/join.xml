@@ -31,7 +31,7 @@
 </select>
 <update id="updateUser">
 	update bmember set name=#{name}, nickname=#{nickname}, pw=#{pw}, email=#{email}, address=#{address}, 
-		phone=#{phone}, birthday=#{birthday},job=#{job},gender=#{gender} where uno=#{uno}
+		phone=#{phone}, birthday=#{birthday},job=#{job},gender=#{gender},ck=#{ck} where uno=#{uno}
 </update>
 
 

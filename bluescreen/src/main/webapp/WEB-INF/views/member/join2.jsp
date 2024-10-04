@@ -18,7 +18,7 @@
 		
 		<section>
 			<form name="agree" method="post" action="join3">
-			<input type="hidden" id="ck" name="ck" value="agree"/>
+			<input type="hidden" id="ck" name="ck" value="${member.ck }"/>
 			
 				
 				<div id="subBanner"></div>

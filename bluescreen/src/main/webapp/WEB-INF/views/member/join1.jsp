@@ -169,7 +169,7 @@
 				</div>
 				<div class="agreeRadio">
 					<input type="radio" name="ck" id="p_agree" class="p_agree" value="agree" />
-					<label for="p_agree">개인정보 취급위탁에 동의합니다.</label>
+					<label for="p_agree">개인정보 취급에 동의합니다.</label>
 					<input type="radio" name="ck" id="p_disagree" class="p_disagree" value="disagree" />
 					<label for="p_disagree">동의하지 않습니다.</label>
 				</div>
