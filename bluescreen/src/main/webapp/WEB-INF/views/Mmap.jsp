@@ -531,7 +531,7 @@ $(function(){ //모달창 닫기
   <div class="tb">
     <div class="inner" style="max-width:1300px;">
       <div class="top">
-        <div class="title" id = "modalTitle">모달창 제목</div>
+        <div class="title" id = "modalTitle"></div>
         <a href="#" id = "close" class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQdJREFUSEvFVdsNgzAMtGUGoRsgwX/LJu0kZZOqk5QBsMQGzSLYbRAgSIEqoY98OvJdfOfYCF8++GV8+C1BlmUHVb0AQBxYmUHEU1VVZZ8/qSBN0xsAHALB+zTDzLslAt0I3qYz8/Bwt4K/EZgZX+Zi/hWo6klESiKy/vTmt2aKyB4RC1dWH4lM0zR5XdcmSZK4I4G+U7rYfQuBzZ2QRFEU2zZcAg81eSCxAGvgwQTjDzSSa/ZD+njQSjTW3AYcT15IvAgQMXc0d43fZrKqFiJyJaIxUEtCROdnhcetXeQ9Pbwk8kb/9yz6xLgumTmfHdfdwrHGhe6E9YUTove7nN/u5HevCbl/AEcnshnv36ogAAAAAElFTkSuQmCC"/></a>
       </div>
       <div class="ct" id = "modalContent">
