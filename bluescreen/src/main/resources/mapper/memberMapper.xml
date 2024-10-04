@@ -7,7 +7,7 @@
 		<if test="keyword == null or keyword.equals('')">
 			SELECT m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, 
 			m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM,
-			COALESCE(SUM(c.CAUTIONSCORE), 0) AS CAUCOUNT FROM SCOTT.MEMBER m LEFT JOIN CAUTION c ON m.UNO = c.UNO
+			COALESCE(SUM(c.CAUTIONSCORE), 0) AS CAUCOUNT FROM bMEMBER m LEFT JOIN CAUTION c ON m.UNO = c.UNO
 			GROUP BY m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM 
 			ORDER BY m.UNO
 		</if>
@@ -15,7 +15,7 @@
 			<if test="userCategory == 'name' or userCategory.equals('name')">
 				SELECT m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM,
 				COALESCE(SUM(c.CAUTIONSCORE), 0) AS CAUCOUNT 
-				FROM SCOTT.MEMBER m 
+				FROM bMEMBER m 
 				LEFT JOIN CAUTION c ON m.UNO = c.UNO
 				WHERE m.NAME LIKE '%'|| #{keyword} ||'%'
 				GROUP BY m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM 
@@ -24,7 +24,7 @@
 			<if test="userCategory == 'nickName' or userCategory.equals('nickName')">
 				SELECT m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM,
 				COALESCE(SUM(c.CAUTIONSCORE), 0) AS CAUCOUNT 
-				FROM SCOTT.MEMBER m 
+				FROM bMEMBER m 
 				LEFT JOIN CAUTION c ON m.UNO = c.UNO
 				WHERE m.NICKNAME LIKE '%'|| #{keyword} ||'%'
 				GROUP BY m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM 
@@ -33,7 +33,7 @@
 			<if test="userCategory == 'ID' or userCategory.equals('ID')">
 				SELECT m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM,
 				COALESCE(SUM(c.CAUTIONSCORE), 0) AS CAUCOUNT 
-				FROM SCOTT.MEMBER m 
+				FROM bMEMBER m 
 				LEFT JOIN CAUTION c ON m.UNO = c.UNO
 				WHERE m.ID LIKE '%'|| #{keyword} ||'%'
 				GROUP BY m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM 
@@ -45,7 +45,7 @@
 	<select id="selectOneMember" resultType="com.java.dto.Member">
 		SELECT m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM,
 				COALESCE(SUM(c.CAUTIONSCORE), 0) AS CAUCOUNT 
-				FROM SCOTT.MEMBER m 
+				FROM bMEMBER m 
 				LEFT JOIN CAUTION c ON m.UNO = c.UNO
 				WHERE m.uno = #{uno}
 				GROUP BY m.UNO, m.ID, m.PW, m.NAME, m.NICKNAME, m.GENDER, m.ADDRESS, m.EMAIL, m.PHONE, m.BIRTHDAY, m.SOCIALNUM, m.SOCIALKEY, m.JOB, m.LEAVEREASON, m.LEAVEDATE, m.CK, m.DATEALARM 
@@ -58,7 +58,7 @@
 	
 	<select id="selectComplainAll" resultType="com.java.dto.Complain">
 		SELECT a.*, b.nickname, CASE WHEN a.division = 1 THEN cb.bno WHEN a.division = 0 THEN a.no ELSE NULL
-    	END AS bno FROM complain a JOIN member b ON a.cid = b.id LEFT JOIN commentboard cb ON a.no = cb.cno AND a.division = 1
+    	END AS bno FROM complain a JOIN bmember b ON a.cid = b.id LEFT JOIN commentboard cb ON a.no = cb.cno AND a.division = 1
 	</select>
 	
 	<delete id="deleteReportOne">

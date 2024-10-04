@@ -36,7 +36,6 @@ public class DictController {
 	@Autowired MyService myservice;
 	@RequestMapping("/dict")
 	public String dict(Page pageDto, Model model, String category, String textBox, String categoryDetail, @RequestParam(defaultValue = "0") int onlyBookMark) {
-		System.out.println("sessionUno : "+session.getAttribute("sessionUno"));
 		// int uno = (int)session.getAttribute("sessionUno");
 		//session.setAttribute("sessionUno", 0);
 		int uno = -1;
@@ -123,8 +122,6 @@ public class DictController {
 	@PostMapping("/enableBookMarkDrug")
 	@ResponseBody
 	public String enableBookMarkDrug(int uno, int dno) {
-		
-		System.out.println();
 		drugService.enableBookMarkDrug(uno,dno);
 		return "성공";
 	}
