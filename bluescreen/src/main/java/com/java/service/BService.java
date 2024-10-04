@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
+import com.java.dto.Complain;
 
 public interface BService {
 
@@ -35,6 +36,8 @@ public interface BService {
 	void updateBhitUp(int bno);
 
 	int selectBoardcount(String id);
+
+	void insertComplainOne(Complain complain); // 신고 메서드
 
 	
 

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.java.dto.Board;
 import com.java.dto.Comment;
+import com.java.dto.Complain;
 
 @Mapper
 public interface BMapper {
@@ -48,6 +49,8 @@ public interface BMapper {
 		void updateBhitUp(int bno);
 
 		int selectBoardcount(String id);
+
+		void insertComplainOne(Complain complain); // 신고 메서드
 
 		
 

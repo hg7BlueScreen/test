@@ -372,7 +372,8 @@
 				</c:if>
 				<!-- 비밀글이 아닐때  -->
 				<c:if test="${ !(sessionId != cdto.id && cdto.cpw !=null) }">
-					<a href="fudel" onclick="ggBtn()" style="float: right; margin-top: 4px;"><button class="llist" onclick="llistBtn()">신고</button></a>
+					<a href="fudel?bno=${cdto.cno }&id=${board.id}" onclick="ggBtn()"
+						style="float: right; margin-top: 4px;"><button class="llist" onclick="llistBtn()">신고</button></a>
 					<li class="txt">${cdto.ccontent }</li>
 				</c:if>
 				<!-- 댓글쓴 아이디와 로그인한 아이디(세션아이디)가 같을경우만 버튼을 노출함  -->

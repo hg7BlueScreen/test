@@ -118,7 +118,7 @@
 				        <div class="categorys" style="width:600px;font-size: 12px;">${board.id } 님</div>			       
 				       	<div class="titles" style="margin-bottom:-40px; font-size: 19px; padding:15px 0 25px 0; font-weight: bold;"><a href="bread?bno=${board.bno }" id="ddd">${board.btitle } </a></div>
 				        <c:if test="${sessionId!=board.id }">
-				        	<a href="fu?bno=${board.bno}" onclick="ggBtn()"><button class="llist">신고</button></a>
+				        	<a href="fu?bno=${board.bno}&id=${board.id}" onclick="ggBtn()"><button class="llist">신고</button></a>
 				        </c:if>
 				        
 				        <%-- <td class="table-title">

@@ -127,4 +127,8 @@
 		select count(*) from board where id=#{id}
 	</select>
 	
+	<insert id="insertComplainOne"> <!-- 신고 메서드 -->
+	 	insert into complain values(complain_seq.nextval, #{no}, #{cid}, #{sid}, #{creason}, #{division}, sysdate)
+	</insert>
+	
 </mapper>
