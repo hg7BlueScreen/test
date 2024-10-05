@@ -138,11 +138,11 @@ window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(argumen
 							</a>
 						</div>
 						<div class="wrap">
-							<a href="datastory/new/story_33.html">
+							<a href="/announceList">
 								<i style="background-image:url(/image/notice.png);display:block;height:180px; opacity: 0.73;"></i>
 								<div class="text">
 									<span class="cate" data-platform-name="공지사항">공지사항</span>
-									<p>클릭 시 공지사항 페이지로 이동하도록</p>
+									<p>MedMaps에서 알립니다.</p>
 								</div>
 							</a>
 						</div>

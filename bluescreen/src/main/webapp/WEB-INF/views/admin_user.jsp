@@ -75,10 +75,10 @@
     </div>
     <ul>
 	<li>
-        <a href="#">
+        <a href="announceWrite">
           <i class='bx bx-bar-chart'></i>
           <span class="links_name">
-            통계
+            공지사항 작성
           </span>
         </a>
       </li>

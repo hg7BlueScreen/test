@@ -30,6 +30,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import com.java.dto.Announce;
 import com.java.dto.Caution;
 import com.java.dto.Complain;
 import com.java.dto.Disease;
@@ -250,7 +251,7 @@ public class AdminController {
 		
 		model.addAttribute("list", map.get("list"));
 		ArrayList<Drug> list = (ArrayList<Drug>) map.get("list");
-		System.out.println(list.size());
+		//System.out.println(list.size());
 		model.addAttribute("pageDto", pageDto);
 		model.addAttribute("textBox", textBox);
 		model.addAttribute("onlyBookMark", onlyBookMark);
@@ -258,5 +259,44 @@ public class AdminController {
 
 		return "/board/myPageFind";
 	}
-
+	
+	@RequestMapping("/announceList")
+	public String announceList(Page page, Model model) {
+		HashMap<String, Object> map = myservice.selectAllAnnounce(page);
+		
+		model.addAttribute("list", map.get("list"));
+		model.addAttribute("page", map.get("page"));
+		return "/board/announceList";
+	}
+	
+	@RequestMapping("/announceRead")
+	public String announceRead(int ano, Model model, Page page) {
+		Announce announce = myservice.selectOneAnnounce(ano);
+		//System.out.println(session.getAttribute("sessionUno"));
+		session.setAttribute("sessionUno", session.getAttribute("sessionUno"));
+		model.addAttribute("announce",announce);
+		
+		HashMap<String, Object> map = myservice.selectAnnounceOne(ano);
+		model.addAttribute("prev",map.get("prev"));	//이전글
+		model.addAttribute("next",map.get("next")); //다음글
+		
+		return "/board/announceRead";
+	}
+	
+	@GetMapping("/announceWrite")
+	public String announceWrite_Get() {
+		return "/board/announceWrite";
+	}
+	
+	@PostMapping("/announceWrite")
+	public String announceWrite_Post(Announce announce) {
+		myservice.insertAnnounce(announce);
+		return "redirect:/announceList";
+	}
+	@RequestMapping("/adelete")
+	public String adelete(int ano) {
+		myservice.adelete(ano);
+		return "redirect:/announceList";
+	}
+	
 }

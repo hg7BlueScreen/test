@@ -41,7 +41,8 @@
 	
 		<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
 			<div id="title2" style="font-size: 35px;">커뮤니티<span style="font-size: 13px;">게시판</span></div>
-				<ul >	
+				<ul >
+					<li style="height: 40px;"><a href="../announceList" id="leftNavi4"style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line: none;">공지사항</a></li>	
 					<li style="height:40px;"><a href="blist" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none; ">게시판</a></li>
 					<li style="height:40px;"><a href="#" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
 					<li class="last" style="height:40px;"><a href="faq" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
@@ -130,7 +131,7 @@
 				       	<!-- <img src="/images/image.png" style="width:17px;"> -->
 				       </c:if>
 				        </td> --%>
-				       	<div class="bbdate"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 작성</div>
+				       	<div class="bbdate"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/></div>
 				        <div style="overflow: hidden; width:20px; height:20px; float:left; left:130px;  margin-top:-16px;"><img src="/image/eye.png"></div>
 				       	<div style="overflow: hidden; width:18px; height:25px; float:left; margin-left:20px;  margin-bottom:19px; margin-top:-15px;"><img src="/image/bubble-chating.png"></div>
 						

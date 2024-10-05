@@ -49,4 +49,36 @@
 	<update id="updateDdate">
 		update bmember set leavedate = #{ddate} where uno = #{uno}
 	</update>
+	
+	<insert id="insertAnnounce">
+		insert into announce values(announce_seq.nextval, #{atitle}, #{acontent}, sysdate)
+	</insert>
+	
+	<select id="selectListCountAnnounce" resultType="int">
+		select count(*) from announce
+	</select>
+	
+	<select id="selectAllAnnounce" resultType="com.java.dto.Announce">
+		<![CDATA[ 
+			select * from (select rownum rnum, a.* from 
+			(select * from announce order by ano desc) a)
+			where rnum>=#{startRow} and rnum<=#{endRow}
+		]]>
+	</select>
+	
+	<select id="selectOneAnnounce" resultType="com.java.dto.Announce">
+		select * from announce where ano = #{ano}
+	</select>
+	<delete id="adelete">
+		delete announce where ano=#{ano}
+	</delete>
+	<select id="selectAnnouncePrev" resultType="com.java.dto.Announce">
+		select*from announce where ano=(select prevDto from
+		(select ano, atitle, acontent, lag(ano,1,-1) over(order by ano desc)as prevDto from announce)where ano=#{ano})
+	</select>
+	<select id="selectAnnounceNext" resultType="com.java.dto.Announce">
+		select*from announce where ano=(select nextDto from
+		(select ano, atitle, acontent, lead(ano,1,-1) over(order by ano desc)as nextDto from announce)where ano=#{ano})
+	</select>
+	
 </mapper>

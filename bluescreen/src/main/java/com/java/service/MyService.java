@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.java.dto.Announce;
 import com.java.dto.Drug;
 import com.java.dto.Member;
 import com.java.dto.Medicine;
@@ -29,9 +30,14 @@ public interface MyService {
 
 	Timestamp selectDate();
 
-	
+	void insertAnnounce(Announce announce);
 
+	HashMap<String, Object> selectAllAnnounce(Page page);
 
-	
+	Announce selectOneAnnounce(int ano);
+
+	void adelete(int ano);
+
+	HashMap<String, Object> selectAnnounceOne(int ano);
 
 }

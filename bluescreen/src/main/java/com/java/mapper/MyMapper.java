@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.java.dto.Announce;
 import com.java.dto.Drug;
 import com.java.dto.Member;
 import com.java.dto.Medicine;
@@ -36,6 +37,22 @@ public interface MyMapper {
 	Timestamp selectDate();
 
 	void updateDdate(Timestamp ddate, int uno);
+
+	void insertAnnounce(Announce announce);
+
+	int selectListCountAnnounce();
+
+	ArrayList<Announce> selectAllAnnounce(Page page);
+
+	Announce selectOneAnnounce(int ano);
+
+	void adelete(int ano);
+
+	
+
+	Announce selectAnnouncePrev(int ano);
+
+	Announce selectAnnounceNext(int ano);
 
 	
 
