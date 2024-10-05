@@ -27,12 +27,13 @@
 			<div id="left" style="float:left; width:250px; height: 250px; margin: 100px 0 0 100px;">
 				<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
 				<ul >	
-					<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
-					<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%;">즐겨찾기</a></li>
-					<li style="height:40px;"><a href="myPageMedi" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%;">복용 중인 약</span></a></li>
-					<li class="last" style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
+					<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">내 정보</a></li>
+					<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">즐겨찾기</a></li>
+					<li style="height:40px;"><a href="myPageMedi" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">복용 중인 약</span></a></li>
+					<li class="last" style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">회원정보수정</a></li>
 				</ul>				
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
+		<div id="mmypage" style="width:1000px;  margin:150px auto 200px auto;">
 			<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
 			<div class="myTab">
 				<ul>
@@ -42,19 +43,19 @@
 					<li class="last"><a class="on">회원정보수정</a></li>
 				</ul>						
 			</div>	
-		</div>
-			<form name="agree" method="post" action="/board/myPageFix">
+		
+			<form name="agree" method="post" action="/board/myPageFix" style="margin-top:70px;">
 			<input type="hidden" id="uno" name="uno" value="${mem.uno }"/>
 			
 			
 				<div id="subBanner"></div>
-				<div style="width:1000px; margin-left: 520px;  margin-bottom: 20px;font-size:17px; padding:0 0 0 35px;">회원 정보 수정
-					<span>(*는 필수 입력사항입니다.)</span>
+				<div style="width:1000px; margin:0 auto;  margin-bottom: 20px;font-size:17px; padding:0 0 0 30px; color:#0a47ff; ">회원 정보 수정&nbsp;
+					<span>(&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;는 필수 입력사항입니다.&nbsp;&nbsp;&nbsp;&nbsp;)</span>
 				</div>
-				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 20px; margin-left:550px; width:900px;">
+				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 20px; margin:0 auto; width:1000px;">
 				<style type="text/css">	
 					th {vertical-align:middle; }
-					td {vertical-align:middle; text-align:left; padding-left:15px;}
+					td {vertical-align:middle; text-align:left; padding:15px;}
 				</style>
 				<table>
 					<colgroup>
@@ -62,68 +63,68 @@
 						<col width="75%">
 					</colgroup>
 					<tr id="join_name_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px; "><label>*이름</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;"><input type="text" id="name" name="name" value="${mem.name }"/></td>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px; "><label>이름</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">${mem.name }</td>
 					</tr>
 					<tr id="join_name_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>아이디</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.id }</td>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>아이디</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">${mem.id }</td>
 					</tr>
 					<tr id="join_nickname_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*닉네임</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>*닉네임</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8; padding-bottom: 12px;">
 							<input type="text" id="nickname" name="nickname" onchange = "nicknamechange()" value="${mem.nickname }"/>
-							<input type="button" onclick="nicknameOk()" value="중복확인" id="nicBtn" disabled/>
-							<span>3~16자리의 한글, 영문, 숫자만 사용하실 수 있습니다.</span>
+							<input type="button" onclick="nicknameOk()" value="중복확인" id="nicBtn" style="line-height: 28px;"disabled/>
+							<span style="color:#0a47ff; font-size: 13px;">3~16자리의 한글, 영문, 숫자만 사용하실 수 있습니다.</span>
 						</td>
 					</tr>
 					<tr id="join_pw1_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*비밀번호</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>*비밀번호</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8; padding-bottom: 12px;">
 							<input type="password" id="pw1" name="pw1" class="pw1" onchange="pwChg()" disabled/>
 							<input type="hidden" id="pw" name="pw" value="${mem.pw }"/>
-							<input type="button" class="buttons" onclick="pwBtn()" value="비밀번호 변경"/>
-							<span id="pwCon"></span>
+							<input type="button" class="buttons" onclick="pwBtn()" style="line-height: 28px; " value="비밀번호 변경"/>
+							<span id="pwCon" style="color:#0a47ff; font-size: 13px;"></span>
 						</td>
 					</tr>
 					<tr id="join_pw2_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*비밀번호 확인</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>*비밀번호 확인</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="password" id="pwOk" name="pwOk" onkeyup="pwkey()" class="pw" disabled/>
 							<span id="pwCheck"></span>
 						</td>
 					</tr>
 					<tr id="join_mail_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>*이메일</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>*이메일</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8; padding-bottom: 10px;">
 							<div>
 							<input type="text" id="emailId" name="emailId" onchange="emailCk()" value="${mem.emailId}"/>
 							<span>@</span>
 							<input type="text" id="emailTail" name="emailTail"  value="${mem.emailTail }"/>
-							<select id="emailList" onchange="emailCk()">
+							<select id="emailList" onchange="emailCk()" style="height:26px; font-size: 13px;">
 								<option value="txt" selected="selected">직접입력</option>
 								<option value="gmail.com">구글</option>
 								<option value="naver.com">네이버</option>
 								<option value="nate.com">네이트</option>
 								<option value="daum.net">다음</option>
 							</select>
-							<input type="button" id="email_send" class="buttons" onclick="emailSend()" value="인증번호 발송"/>
+							<input type="button" id="email_send" class="buttons" onclick="emailSend()" style="line-height: 28px;" value="인증번호 발송"/>
 							</div>
 							<div id="emailCk"></div>
 						</td>
 					</tr>
 					<tr id="join_address_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>주소</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
-							<input type="text" id="addr1" name="addr1" value="${mem.addr1 }"/>
-							<input type="button" onclick="addressBtn()" value="우편번호"/><br>
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>주소</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
+							<input type="text" id="addr1" name="addr1" value="${mem.addr1 }" style="margin-bottom: 10px;"/>
+							<input type="button" onclick="addressBtn()" style="line-height: 28px;" value="우편번호"/><br>
 							<input type="text" id="addr2" name="addr2" style="width:50%;" value="${mem.addr2 }"/>
 							<input type="text" id="addr3" name="addr3" value="${mem.addr3 }"/>
 						</td>
 					</tr>
 					<tr id="join_tell_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>전화번호</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>전화번호</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="text" id="phone1" name="phone1" maxlength="3" value="010"/>
 							<span> - </span>
 							<input type="text" id="phone2" name="phone2" maxlength="4"  value="${mem.phone2 }"/>
@@ -132,8 +133,8 @@
 						</td>
 					</tr>
 					<tr id="join_name_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>생년월일</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>생년월일</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
 							<select id="year" name="year">
 								<c:forEach var="y" begin="1920" end="2024" step="1">
 									<c:if test="${y == mem.year}">
@@ -225,8 +226,8 @@
 						</td>
 					</tr>
 					<tr id="join_gender_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>성별</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>성별</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
 							<input type="radio" name="gender" id="male" value="남성"<c:if test="${mem.gender == '남성'}">checked</c:if>  />
 							<label for="male">남성</label>
 							<input type="radio" name="gender" id="female" value="여성" <c:if test="${mem.gender == '여성'}">checked</c:if>/>
@@ -234,8 +235,8 @@
 						</td>
 					</tr>
 					<tr id="join_job_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;"><label>직업</label></th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>직업</label></th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
 							<select id="job" name="job">
 								<option value="" <c:if test="${mem.job == ''}" >selected</c:if>>선택</option>
 								<option value="회사원"<c:if test="${mem.job == '회사원'}" >selected</c:if>>회사원</option>
@@ -248,8 +249,8 @@
 						</td>
 					</tr>
 					<tr id="join_job_dl">
-						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">이메일 발송 동의</th>
-						<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">
+						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;">이메일 발송 동의</th>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">
 							<div class="agreeRadio">
 								<input type="radio" name="ck" id="p_agree" class="p_agree" value="agree" <c:if test="${mem.ck == 'agree'}" >checked</c:if>/>
 								<label for="p_agree">개인정보 취급위탁에 동의합니다.</label>
@@ -258,26 +259,28 @@
 							</div>
 						</td>
 					</tr>
-					<tr>
-						<td colspan='2' style="font-size:14px;">
-							<p>[개인정보 수집, 이용 동의 안내]</p>
+					<tr style="">
+						<td colspan='2' style="font-size:14px; padding:30px; line-height: 22px;">
+							<p style="font-weight: bold;">[개인정보 수집, 이용 동의 안내]</p>
 							<ul>
 								<li>이 약관은 주식회사 WDH(이하"회사"라 표기합니다)가 제공하는 사이버 회원에 대한 서비스 제공 및 이용조건, 회원가입에 관련된 사항 및 절차 그리고 기타 필요한 사항의 규정을 목적으로 합니다.</li>
 							</ul>
 							<ul>
-								<li><strong>1) WDH 웹사이트는 다음과 같은 목적을 위하여 개인정보를 수집하고 있습니다.</strong></li>
-								<li>가. 성명, 생년월일, ID, 비밀번호, 이동전화번호, 건강상태 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용</li>
-								<li>나. 주소, e-mail 주소, 의료정보 : 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 복용약 소비기한 임박 알림, 지도 검색, 새로운 서비스 안내</li>
-								<li>다. 생년월일, 주소, 성별 : 인구통계학적 분석 자료(회원의 연령별, 성별, 지역별 통계분석)</li>
+								<li><strong style="color:#0a47ff;">1) &nbsp;&nbsp;&nbsp;WDH 웹사이트는 다음과 같은 목적을 위하여 개인정보를 수집하고 있습니다.</strong></li>
+								<li>가. &nbsp;&nbsp;성명, 생년월일, ID, 비밀번호, 이동전화번호, 건강상태 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용</li>
+								<li>나. &nbsp;&nbsp;주소, e-mail 주소, 의료정보 : 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 복용약 소비기한 임박 알림, 지도 검색, 새로운 서비스 안내</li>
+								<li>다. &nbsp;&nbsp;생년월일, 주소, 성별 : 인구통계학적 분석 자료(회원의 연령별, 성별, 지역별 통계분석)</li>
 							</ul>
 						</td>
 					</tr>
 				</table>
 			</div>
 			</form>
-		<div id="info_input_button">
-			<a href = "/"><input type="reset" value="취소" /></a>
-			<a onclick="saveBtn()"><input type="button" style="color: rgb(255, 255, 255); background: rgb(0, 128, 255);" value="저장" /></a>
+		<div id="info_input_button" style="margin-bottom: 350px;">
+			<a href = "/"><input type="reset" style="position:absolute; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px; margin-left:210px;;" value="취소" /></a>
+			<a onclick="saveBtn()"><input type="button" style="position:absolute; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px; margin-left:360px;" value="저장" /></a>
+		</div>
+		</div>
 		</div>
 		
 <script type="text/javascript">

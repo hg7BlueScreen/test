@@ -35,7 +35,9 @@
 			 
 		 }
 	  }); //jquery
-  </script>  
+  console.log("${cList}");
+	  </script>  
+  
 </head>
 <body>
 <%@include file = "header.jsp" %>
@@ -151,13 +153,24 @@
 								<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">일자</th>
 								<th style="border-bottom: 1px solid #b9c4e8;font-weight: bold; font-size: 15px; background: #f5f5f5;">사유</th>
 							</tr>
+						<c:if test="${cList != null }">
 							<c:forEach var="c" items="${cList }">
 							<tr>
-								<td style="height:80px; font-size: 15px;"><fmt:formatDate value="${c.cautionDate }" pattern="yyyy-MM-dd"/></td>
-								<td style="font-size: 15px;">${c.cautionReason }</td>
+								<c:if test="${c.cautionDate != null}">
+									<td style="height:80px; font-size: 15px;"><fmt:formatDate value="${c.cautionDate }" pattern="yyyy-MM-dd"/></td>
+								</c:if>
+								<c:if test="${c.cautionReason != null}">
+									<td style="font-size: 15px;">${c.cautionReason }</td>
+								</c:if>
 							</tr>
-							
 							</c:forEach>
+						</c:if>
+						<c:if test="${cList.size() == 0 }">
+								<tr>
+									<td style="height:80px; font-size: 15px;">-</td>
+									<td style="font-size: 15px;">경고 내역이 없습니다.</td>
+								</tr>
+						</c:if>
 						</table>
 					</div>
 				

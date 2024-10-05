@@ -41,7 +41,7 @@ $(document).ready(function() {
 				<li style="height:40px;"><a href="myPage" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">내 정보</a></li>
 				<li style="height:40px;"><a href="myPageFind" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">즐겨찾기</a></li>
 				<li style="height:40px;"><a id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">복용 중인 약</span></a></li>
-				<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">회원정보수정</a></li>
+				<li class="last" style="height:40px;"><a href="myPageFix" id="leftNavi4" style="height:40px; font-size: 15px; line-height: 270%; text-decoration: none;">회원정보</a></li>
 			</ul>				
 		</div> <!-- left -->
 		<script type="text/javascript">initSubmenu(3,0);</script>
@@ -52,7 +52,7 @@ $(document).ready(function() {
 				<li><a href="myPage" >내 정보</a></li>
 				<li class="dep"><a href="myPageFind" >즐겨찾기</a></li>
 				<li><a class="on">복용 중인 약</a></li>
-				<li class="last"><a href="myPageFix">회원정보수정</a></li>
+				<li class="last"><a href="myPageFix">회원정보</a></li>
 			</ul>						
 		</div>	<!-- myTab -->
 		
@@ -235,9 +235,10 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 			<div id="contents">
 				<div>
 					<div class="faqList">
+					<div style="padding-left: 25px; font-size: 20px; color:#0a47ff; margin-bottom:30px;">복용약 리스트</div>
 						<div id="myMedicineHd" >
-							<label for="alarm" style="line-height: 55px;">알림 주기</label>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="alram" onchange="alarm()" style="font-size: 14px; border-radius: 5px;">
+							<label for="alarm" style="line-height: 55px; font-weight: normal; ">알림 주기</label>&nbsp;&nbsp;&nbsp;&nbsp;
+							<select id="alram" onchange="alarm()" style="font-size: 14px; border-radius: 5px; font-weight: normal;">
 								<option value="90" <c:if test="${member.datealarm == '90'}">selected</c:if>>3개월 전</option>
 								<option value="30" <c:if test="${member.datealarm == '30'}">selected</c:if>>1개월 전</option>
 								<option value="15"<c:if test="${member.datealarm == '15'}">selected</c:if>>15일 전</option>
@@ -256,7 +257,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 						<div style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 0 auto; width: 1000px; min-height: 160px;">
 						<ul>
 							<!-- list -->
-							<li style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 15px; background: #f5f5f5; height:45px;">
+							<li style=" font-weight: bold; font-size: 15px; background: #f5f5f5; height:45px;">
 								<div class="na">이름</div>
 								<div class="date">권장소비기한</div>
 								<div class="img">사진</div>

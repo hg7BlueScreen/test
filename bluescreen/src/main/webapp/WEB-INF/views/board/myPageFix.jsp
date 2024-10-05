@@ -38,6 +38,7 @@
 			</div>
 			<script type="text/javascript">initSubmenu(3,0);</script>
 			<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
+			<div id="mmypage" style="width:1000px;  margin:150px auto 200px auto;">
 			<div class="myTab">
 				<ul>
 					<li><a href="myPage" >내 정보</a></li>
@@ -46,11 +47,11 @@
 					<li class="last"><a class="on">회원정보</a></li>
 				</ul>						
 			</div>	
-		</div>
 		
 		<section>
 			<form id = "frm" name="agree" method="post" action="/board/modify">
-				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin: 50px 0 0 450px; width:1000px;">
+				<div style="margin:80px 0 0 40px; font-size: 20px; color:#0a47ff;">회원정보</div>
+				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; width:100%; margin:20px auto 0 auto;">
 					<table>
 						<colgroup>
 							<col width="25%">
@@ -58,55 +59,58 @@
 						</colgroup>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">이름</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.name }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8; padding-left:30px; text-align: left;">${mem.name }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">아이디</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.id }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.id }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">닉네임</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.nickname }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.nickname }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">이메일</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.email }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.email }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">주소</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.address }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.address }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">전화번호</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.phone }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.phone }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">생년월일</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.birthday }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.birthday }</td>
 						</tr>
 						<tr>
 							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">성별</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.gender }</td>
+							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;padding-left:30px; text-align: left;">${mem.gender }</td>
 						</tr>
 						<tr>
-							<td style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">직업</th>
-							<td style="font-size: 15px;  border-bottom: 1px solid #b9c4e8;">${mem.job }</td>
+							<td style="border-right: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">직업</th>
+							<td style="font-size: 15px; padding-left:30px; text-align: left;">${mem.job }</td>
 						</tr>
 					</table>
 				</div>
 				
 				<div id="info_input_button">
-					<a onclick="modifyBtn()"><input type="button" style="position:absolute; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px;" value="수정" /></a>
+					<a onclick="modifyBtn()"><input type="button" style="position:absolute; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px; margin:70px 0 0 200px; margin-bottom: 200px;margin-left:360px;" value="수정" /></a>
 				</div>
 			</form>
 		</section>
+		</div>
+			</div>
 <script type="text/javascript">
 function modifyBtn(){
 	let str ="<div id='subBanner'></div><div id='sub_top_area'></div>"
-	str += '<div style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; margin-left: 700px; width:600px;">'
+	str += '<div style="padding:0 0 0 220px; font-size: 20px; color:#0a47ff;">비밀번호 확인</div>'
+	str += '<div style="overflow:hidden; border: 1px solid #8497d3;border-radius: 30px; margin: 0 auto; margin-top:40px; width:600px;">'
 	str += '<table><colgroup><col width="20%"><col width="60%"><col width="20%"></colgroup>'
-	str += '<tr><td style="border-right: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 15px;">비밀번호 확인</th>'
-	str += '<td><input type="password" id="pw3" name="pw3" style="width:360px; height:50px; font-size: 15px; border:0px;"></td><td>&nbsp;&nbsp;<input type="button" onclick="pwCk()" style="width:50px; height:50px; color: rgb(255, 255, 255); background: #0a47ff; border-radius:15px; border:0px;" value="확인"/></td></tr></table></div>'
+	str += '<tr><td style="border-right: 1px solid #b9c4e8; background-color: #F5F5F5; height:60px; font-weight: bold; font-size:13px;;">비밀번호</th>'
+	str += '<td><input type="password" id="pw3" name="pw3" placeholder="비밀번호를 입력해주세요." style="width:360px; height:50px; font-size: 13px; border:0px; padding:15px;"></td><td>&nbsp;&nbsp;<input type="button" onclick="pwCk()" style="width:45px; height:45px; color: rgb(255, 255, 255); background: #0a47ff; border-radius:22.5px; border:0px; font-size:11px; font-weight:bold; margin-left:53px;" value="확인"/></td></tr></table></div>'
 	 
 	$("#frm").html(str);
 }
