@@ -202,11 +202,16 @@ public class AdminController {
 		return "admin_user";
 	}
 
-	@RequestMapping("/adminpage")
-	public String adminpage() {
-		return "adminpage";
+	@GetMapping("/admin_announce")
+	public String admin_announce() {
+		return "admin_announce";
 	}
-
+	
+	@PostMapping("/admin_announce")
+	public String admin_announce_insert() {
+		return "/board/blist";
+	}
+	
 	@PostMapping("/applyCaution")
 	@ResponseBody
 	public String applyCaution(Caution caution) {
