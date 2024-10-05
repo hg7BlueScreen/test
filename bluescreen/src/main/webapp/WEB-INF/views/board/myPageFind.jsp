@@ -204,6 +204,7 @@
 					<th
 						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #f5f5f5;">제품명</th>
 				</tr>
+				<c:if test="${list.size() != 0}">
 				<c:forEach var = "d" items = "${list }">
 					<tr class = "drugTR" onclick = "drugOnClick(${d.dno})" id = "drugTR${d.dno }" style="line-height: 1.2; height:45px;">
 						<td style="height: 32px; font-size: 15px;">${d.item_seq }</td>
@@ -211,8 +212,18 @@
 						<td style="font-size: 15px;">${d.item_name }</td>
 					</tr>
 				</c:forEach>
+				</c:if>
+				<c:if test="${list.size() == 0}">				
+				<tr>
+					<td>-</td>				
+					<td>-</td>				
+					<td>없음</td>
+				</tr>				
+				</c:if>
 			</table>
+			
 			<div class="page-num" id="pageBtns" style="display: flex; align-items: center; margin: 0 auto; text-align: center; justify-content: center; margin-top:30px;">
+			
 			
 			
 			<!-- 시작페이지 이동 시작 -->
@@ -260,7 +271,9 @@
 				<div class="lastBtn"></div>
 			</c:if>
 			</div>
+			
 		</div>
+		
 			<button type="button" onclick="bookMarkDeleteBtn()" style="position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; 
     bottom: 50px; left: 430px; border-radius: 15px; border: 1px solid white; background-color: #0A47FF; color: #ffffff; width: 125px; height: 60px;">삭제</button>
 

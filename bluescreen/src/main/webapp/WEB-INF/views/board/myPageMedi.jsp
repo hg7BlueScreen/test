@@ -235,7 +235,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 			<div id="contents">
 				<div>
 					<div class="faqList">
-					<div style="padding-left: 25px; font-size: 20px; color:#0a47ff; margin-bottom:30px;">복용약 리스트</div>
+					<div style="padding-left: 25px; font-size: 20px; color:#0a47ff; margin-bottom:30px;">나의 복용약 리스트</div>
 						<div id="myMedicineHd" >
 							<label for="alarm" style="line-height: 55px; font-weight: normal; ">알림 주기</label>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select id="alram" onchange="alarm()" style="font-size: 14px; border-radius: 5px; font-weight: normal;">
@@ -262,6 +262,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 								<div class="date">권장소비기한</div>
 								<div class="img">사진</div>
 							</li>
+							<c:if test="${dList.size() != 0 }">
 							<c:forEach var="d" items="${dList }">
 								<li>
 									<a href="javascript:;" class="faqbtn">
@@ -317,6 +318,18 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 									</div><!-- faqanswer -->
 								</li> 
 							</c:forEach>
+							</c:if>
+							<c:if test="${dList.size() == 0 }">								
+							<li>
+							<div class="list">
+								
+								<div class="name">없음</div>
+								<div class="ddate">-</div>
+								<div class="image">-</div>
+							</div>
+								
+							</li>
+							</c:if>
 							<!-- //list -->
 						</ul>
 						</div>
