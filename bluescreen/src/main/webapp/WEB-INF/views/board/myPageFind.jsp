@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>마이페이지-즐겨찾기</title>
+<title>마이페이지 | 즐겨찾기</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="마이페이지-즐겨찾기" />
@@ -54,38 +54,42 @@
 }
 
 .firstBtn {
-  background: url(/image/paging_first.png) no-repeat;
+  background: url(/images/btn/btn_pre2.gif) no-repeat;
   width:40px;
   height: 40px;
 }
 
 .prevBtn {
-  background: url(/image/paging_prev.png) no-repeat;
+  background: url(/images/btn/btn_pre1.gif) no-repeat;
   width:40px;
   height: 40px;
 }
 
 .numBtn {
+  color: #0a47ff;
+  border: 1px #0a47ff solid;
+  background: #fff;
   position: relative;
   top: -3px;
-  height: 33px !important;
-  margin-left: 15px;
-  margin-right: 15px;
+  width:30px;
+  height: 30px !important;
+  margin:0 20px 7px 0;
+  border-radius: 7px;
 }
 
 .numBtn > div {
   position: relative;
-  top: 2px;
+  
 }
 
 .nextBtn {
-  background: url(/image/paging_next.png) no-repeat;
+  background: url(/images/btn/btn_next1.gif) no-repeat;
   width:40px;
   height: 40px;
 }
 
 .lastBtn {
-  background: url(/image/paging_last.png) no-repeat;
+  background: url(/images/btn/btn_next2.gif) no-repeat;
   width:40px;
   height: 40px;
 }
@@ -93,12 +97,12 @@
   margin-top: 15px;
 }
 
-.page-num li {
+/* .page-num li {
   width: 36px;
   height: 35px;
   padding: 0;
 
-}
+} */
 
 .firstBtn .prevBtn .numBtn .nextBtn .lastBtn {
 	 margin: 0 auto;
@@ -163,22 +167,17 @@
 				마이페이지<span style="font-size: 13px;">내 정보</span>
 			</div>
 			<ul>
-				<li style="height: 40px;"><a href="myPage" id="leftNavi2"
-					style="height: 40px; font-size: 15px; line-height: 270%;">내 정보</a></li>
-				<li style="height: 40px;"><a href="" id="leftNavi3"
-					style="height: 40px; font-size: 15px; line-height: 270%;">즐겨찾기</a></li>
-				<li style="height: 40px;"><a href="myPageMedi" id="leftNavi1"
-					style="height: 40px; font-size: 15px; line-height: 270%;">복용 중인
-						약</a></li>
-				<li class="last" style="height: 40px;"><a href="myPageFix"
-					id="leftNavi4"
-					style="height: 40px; font-size: 15px; line-height: 270%;">회원정보수정</a></li>
+				<li style="height: 40px;"><a href="myPage" id="leftNavi2" style="height: 40px; font-size: 15px; line-height: 270%; text-decoration: none;">내 정보</a></li>
+				<li style="height: 40px;"><a href="" id="leftNavi3" style="height: 40px; font-size: 15px; line-height: 270%; text-decoration: none;">즐겨찾기</a></li>
+				<li style="height: 40px;"><a href="myPageMedi" id="leftNavi1" style="height: 40px; font-size: 15px; line-height: 270%; text-decoration: none;">복용 중인 약</a></li>
+				<li class="last" style="height: 40px;"><a href="myPageFix" id="leftNavi4" style="height: 40px; font-size: 15px; line-height: 270%; text-decoration: none;">회원정보수정</a></li>
 			</ul>
 		</div>
 		<script type="text/javascript">
 			initSubmenu(3, 0);
 		</script>
 
+	<div id="mmypage" style="width:1000px;  margin:150px auto 200px auto;">
 		<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
 		<div class="myTab">
 			<ul>
@@ -189,9 +188,8 @@
 			</ul>
 		</div>
 
-
-		<div
-			style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 50px 550px 100px 450px; width: 1000px; min-height: 160px; ">
+		<div style="padding-left: 25px; font-size: 20px; color:#0a47ff; margin:80px 0 0 0; ">나의 즐겨찾기 리스트</div>
+		<div style="overflow: hidden; border: 1px solid #8497d3; border-radius: 12px; margin: 30px auto 100px auto; width: 1000px; min-height: 160px; ">
 			<table>
 				<colgroup>
 					<col width="20%">
@@ -200,21 +198,21 @@
 				</colgroup>
 				<tr>
 					<th
-						style="border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height: 34px; font-weight: bold; font-size: 15px;">품목코드</th>
+						style="border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height: 45px; font-weight: bold; font-size: 14px;">품목코드</th>
 					<th
-						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 15px; background: #f5f5f5;">회사명</th>
+						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #f5f5f5;">회사명</th>
 					<th
-						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 15px; background: #f5f5f5;">제품명</th>
+						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #f5f5f5;">제품명</th>
 				</tr>
 				<c:forEach var = "d" items = "${list }">
-					<tr class = "drugTR" onclick = "drugOnClick(${d.dno})" id = "drugTR${d.dno }">
+					<tr class = "drugTR" onclick = "drugOnClick(${d.dno})" id = "drugTR${d.dno }" style="line-height: 1.2; height:45px;">
 						<td style="height: 32px; font-size: 15px;">${d.item_seq }</td>
 						<td style="font-size: 15px;">${d.entp_name }</td>
 						<td style="font-size: 15px;">${d.item_name }</td>
 					</tr>
 				</c:forEach>
 			</table>
-			<div class="page-num" id="pageBtns" style="display: flex; align-items: center; margin: 0 auto; text-align: center; justify-content: center;">
+			<div class="page-num" id="pageBtns" style="display: flex; align-items: center; margin: 0 auto; text-align: center; justify-content: center; margin-top:30px;">
 			
 			
 			<!-- 시작페이지 이동 시작 -->
@@ -236,11 +234,11 @@
 				<c:forEach begin = "${pageDto.startPage }" end = "${pageDto.endPage }" step = "1" var = "pNum">
 					<c:if test="${pNum <= pageDto.maxPage }">
 						<c:if test="${pageDto.page == pNum }">
-						<li class="numBtn"><div style = "margin-top:5px; font-size:16px;">
+						<li class="numBtn"><div style = "margin-top:5px; font-size:13px; ">
 							<strong>${pNum }</strong>
 						</c:if>
 						<c:if test="${pageDto.page != pNum }">
-						<li class="numBtn"><a href = "/board/myPageFind?page=${pNum }"><div style = "margin-top:5px; font-size:16px;">
+						<li class="numBtn"><a href = "/board/myPageFind?page=${pNum }"><div style = "margin-top:5px; font-size:14px;">
 							${pNum }
 						</c:if>
 						</div></a></li>
@@ -264,11 +262,12 @@
 			</div>
 		</div>
 			<button type="button" onclick="bookMarkDeleteBtn()" style="position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; 
-    bottom: 90px; left: 450px; border-radius: 20px; border: 1px solid white; background-color: #0A47FF; color: #ffffff; width: 100px; height: 40px;">삭제</button>
+    bottom: 50px; left: 430px; border-radius: 15px; border: 1px solid white; background-color: #0A47FF; color: #ffffff; width: 125px; height: 60px;">삭제</button>
 
 	
 	
 	<div style = "padding: 1px; margin-bottom: 150px;"></div>
+	</div>
 	<%@include file = "footer.jsp" %>
 </body>
 </html>

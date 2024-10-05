@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>  MYPAGE-MEDI </title>
+<title>마이페이지 | 복용 중인 약</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="JARDIN SHOP" />

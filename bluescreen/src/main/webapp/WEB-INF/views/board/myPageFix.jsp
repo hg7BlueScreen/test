@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="../js/jquery.anchor.js"></script>
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-		<title>MYPAGE-Information</title>
+		<title>마이페이지 | 회원정보</title>
 	</head>
 	<body id="body">
 		<header>
@@ -50,7 +50,7 @@
 		
 		<section>
 			<form id = "frm" name="agree" method="post" action="/board/modify">
-				<div style="margin:80px 0 0 40px; font-size: 20px; color:#0a47ff;">회원정보</div>
+				<div style="margin:80px 0 0 40px; font-size: 20px; color:#0a47ff;">나의 회원정보</div>
 				<div id="fieldset_class" style="overflow:hidden; border: 1px solid #8497d3;border-radius: 40px; width:100%; margin:20px auto 0 auto;">
 					<table>
 						<colgroup>

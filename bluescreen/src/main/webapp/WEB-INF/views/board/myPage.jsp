@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> 마이페이지 </title>
+<title> 마이페이지 | 내 정보 </title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="마이페이지" />
@@ -64,7 +64,7 @@
 							<li><a href="" class="on">내 정보</a></li>
 							<li class="dep"><a href="myPageFind">즐겨찾기</a></li>
 							<li><a href="myPageMedi">복용 중인 약</a></li>
-							<li class="last"><a href="myPageFix">회원정보수정</a></li>
+							<li class="last"><a href="myPageFix">회원정보</a></li>
 						</ul>						
 					</div>	
 					
