@@ -131,7 +131,7 @@
 				       	<!-- <img src="/images/image.png" style="width:17px;"> -->
 				       </c:if>
 				        </td> --%>
-				       	<div class="bbdate"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/></div>
+				       	<div class="bbdate"><fmt:formatDate value="${board.bdate }" pattern="yyyy-MM-dd"/>&nbsp;에 &nbsp;작성</div>
 				        <div style="overflow: hidden; width:20px; height:20px; float:left; left:130px;  margin-top:-16px;"><img src="/image/eye.png"></div>
 				       	<div style="overflow: hidden; width:18px; height:25px; float:left; margin-left:20px;  margin-bottom:19px; margin-top:-15px;"><img src="/image/bubble-chating.png"></div>
 						

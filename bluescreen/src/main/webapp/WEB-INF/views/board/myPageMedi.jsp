@@ -323,7 +323,7 @@ function alarm(){ // 소비기한 만료 알람 기간 선택 보내기
 							<li>
 							<div class="list">
 								
-								<div class="name" style="font-size: 15px; text-align: center; padding-right: 95px; font-weight: normal;">복용 중인 약이 없습니다.</div>
+								<div class="name" style="font-size: 15px; text-align: center; padding-right: 95px; font-weight: normal; color:#333333;">복용 중인 약이 없습니다.</div>
 								<div class="ddate" style="font-size: 15px; padding-left: 30px; font-weight: 500;">-</div>
 								<div class="image" style="font-size: 15px; width:43px; font-weight: 500; line-height: 45px; padding-left: 8px;">-</div>
 							</div>
