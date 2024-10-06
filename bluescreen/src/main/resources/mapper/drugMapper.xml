@@ -18,13 +18,12 @@
 				</if>
 			</if>
 			<if test="categoryDetail == 'efcyQesitm'">
-				select count(*) from drug_effect where article_title like
-				'%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox}
-				||'%'
+				select count(*) from drug where dno in (select dno from drug where item_seq in(select item_seq from drug_effect where article_title like
+				'%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%'))
 			</if>
 			<if test="categoryDetail == 'atpn'">
-				select count(*) from drug_banned_warning where text like
-				'%'|| #{textBox} ||'%'
+				select count(*) from drug where item_seq in (select item_seq from drug_general_warning where text like
+				'%'|| #{textBox} ||'%')
 			</if>
 		</if>
 		<!-- (끝)검색어가 있으면서 즐겨찾기만 보기가 비활성화일 때 -->
@@ -44,18 +43,17 @@
 				</if>
 			</if>
 			<if test="categoryDetail == 'efcyQesitm'">
-				select count(*) from (select * from drug_effect where
-				item_seq in (select item_seq from drug where dno in (select dno from
-				DRUG_USER_BOOKMARK where uno = #{uno})))
-				where article_title like '%'|| #{textBox} ||'%' or article_content like
-				'%'|| #{textBox} ||'%'
+				select count(*) from drug where item_seq in (
+				select item_seq from drug_effect where item_seq in (
+				select item_seq from drug where dno in(
+				select dno from drug_user_bookmark where uno = #{uno}))
+				and (article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%'))
 			</if>
 			<if test="categoryDetail == 'atpn'">
-				select count(*) from (select * from drug_banned_warning
-				where item_seq in (select item_seq from drug where dno in (select
-				dno from DRUG_USER_BOOKMARK where uno = #{uno})))
-				where text like '%'||
-				#{textBox} ||'%'
+				select count(*) from drug where item_seq in (
+				select item_seq from drug_general_warning where item_seq in (
+				select item_seq from drug where dno in (
+				select dno from drug_user_bookmark where uno = #{uno})) and text like '%'|| #{textBox} ||'%' )
 			</if>
 		</if>
 
@@ -86,18 +84,20 @@
 			</if>
 			<if test="categoryDetail == 'efcyQesitm'">
 					<![CDATA[ 
-						select * from (select rownum rnum, a.* from (select * from drug
-						where item_seq in(select item_seq from drug_effect 
-						where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%') order by dno asc) a) 
-						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						select * from (select rownum rnum, a.* from (select * from (
+						
+						select * from drug where item_seq in (select item_seq from drug_effect where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%')
+						
+						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
 			</if>
 			<if test="categoryDetail == 'atpn'">
 					<![CDATA[ 
-						select * from (select rownum rnum, a.* from (select * from drug
-						where item_seq in(select item_seq from drug_general_warning 
-						where text like '%'|| #{textBox} ||'%') order by dno asc) a) 
-						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+						select * from (select rownum rnum, a.* from (select * from (
+						
+						select * from drug where item_seq in (select item_seq from drug_general_warning where text like '%'|| #{textBox} ||'%')
+						
+						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
 			</if>
 		</if>
@@ -120,31 +120,21 @@
 				</if>
 			</if>
 			<if test="categoryDetail == 'efcyQesitm'">
-					<![CDATA[ 
-						select * from (select rownum rnum, a.* from (select * from drug
-						where item_seq in(select item_seq from (select item_seq from drug_effect where item_seq in (select item_seq from drug where dno in(select dno from drug_user where uno = #{uno}))) 
-						where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%') order by dno asc) a) 
-						where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
+					<![CDATA[
+						select * from (select rownum rnum, a.* from (select * from (
+						
+						select * from drug where item_seq in (select item_seq from drug_effect where item_seq in (select item_seq from drug where dno in (select dno from drug_user_bookmark where uno = #{uno})) and (article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%'))
+						
+						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
 			</if>
 			<if test="categoryDetail == 'atpn'">
 					<![CDATA[ 
-						SELECT * FROM (
-    SELECT rownum AS rnum, a.* FROM (
-        SELECT * FROM drug
-        WHERE item_seq IN (
-            SELECT item_seq FROM drug_general_warning
-            WHERE item_seq IN (
-                SELECT item_seq FROM drug
-                WHERE dno IN (
-                    SELECT dno FROM DRUG_USER_BOOKMARK WHERE uno = #{uno}
-                )
-            )
-            AND text LIKE '%' || #{textBox} || '%'
-        )
-        ORDER BY dno ASC
-    ) a
-) WHERE rnum BETWEEN #{pageDto.startRow} AND #{pageDto.endRow}
+						select * from (select rownum rnum, a.* from (select * from (
+						
+						select * from drug where item_seq in (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in (select dno from drug_user_bookmark where uno = #{uno})) and (text like '%'|| #{textBox} ||'%'))
+						
+						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
 			</if>
 		</if>
