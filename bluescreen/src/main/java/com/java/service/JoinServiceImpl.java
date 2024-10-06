@@ -57,9 +57,9 @@ public class JoinServiceImpl implements JoinService {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(email); //-에게
 		message.setFrom("su02552@gmail.com"); //-로부터   인증코드 받은 이메일
-		message.setSubject(name+"님에게 이메일 인증 임시번호를 발송합니다.");//제목
-		message.setText("안녕하세요. 회원가입 이메일 인증을 위한 임시번호를 안내해드립니다.\n"+
-						"["+name+"님의 임시 번호는 '"+pwcode+"' 입니다.]\n");
+		message.setSubject(name+"님에게 이메일 인증 코드를 발송합니다.");//제목
+		message.setText("안녕하세요. 회원가입 이메일 인증을 위한 코드를 안내해드립니다.\n"+
+						"["+name+"님의 인증 코드는 '"+pwcode+"' 입니다.]\n");
 		mailSender.send(message);
 		System.out.println("메일이 발송되었습니다.");
 	}
