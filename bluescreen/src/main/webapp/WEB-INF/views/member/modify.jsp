@@ -64,7 +64,7 @@
 					</colgroup>
 					<tr id="join_name_dl">
 						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px; "><label>이름</label></th>
-						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;">${mem.name }</td>
+						<td style="font-size: 14px;  border-bottom: 1px solid #b9c4e8;"><input type="text" id="name" name="name" value="${mem.name }"/></td>
 					</tr>
 					<tr id="join_name_dl">
 						<th style="border-right: 1px solid #b9c4e8; border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height:56px; font-weight: bold; font-size: 14px;"><label>아이디</label></th>

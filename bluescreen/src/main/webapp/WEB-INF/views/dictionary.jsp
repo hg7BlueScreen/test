@@ -70,7 +70,7 @@
 			}); // jquery
 		}else{
 			if(confirm("로그인 하셔야 이용할 수 있습니다.\n로그인 하시겠습니까?")){
-				location.href = "/";		
+				location.href = "/login";		
 			}
 		} // else
 	} // enableBookMarkMedicine
