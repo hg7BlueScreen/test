@@ -161,11 +161,8 @@
 		<!-- contents -->
 
 		<!-- <h2><strong>마이페이지</strong><span>내 정보</span></h2> -->
-		<div id="left"
-			style="float: left; width: 250px; height: 250px; margin: 100px 0 0 100px;">
-			<div id="title2" style="font-size: 35px;">
-				마이페이지<span style="font-size: 13px;">내 정보</span>
-			</div>
+		<div id="left" style="float: left; width: 250px; height: 250px; margin: 100px 0 0 100px;">
+			<div id="title2" style="font-size: 35px;">마이페이지<span style="font-size: 13px;">내 정보</span></div>
 			<ul>
 				<li style="height: 40px;"><a href="myPage" id="leftNavi2" style="height: 40px; font-size: 15px; line-height: 270%; text-decoration: none;">내 정보</a></li>
 				<li style="height: 40px;"><a href="" id="leftNavi3" style="height: 40px; font-size: 15px; line-height: 270%; text-decoration: none;">즐겨찾기</a></li>
@@ -215,9 +212,9 @@
 				</c:if>
 				<c:if test="${list.size() == 0}">				
 				<tr>
-					<td>-</td>				
-					<td>-</td>				
-					<td>없음</td>
+					<td style="height: 45px; font-size: 15px;">-</td>				
+					<td style="font-size: 15px;">-</td>				
+					<td style="font-size: 15px;">즐겨찾기 항목이 없습니다.</td>
 				</tr>				
 				</c:if>
 			</table>
