@@ -25,6 +25,9 @@ public class LoginServiceImpl implements LoginService {
 		int result = 0; 
 		BMember bmdto = loginmapper.ajaxLogin(bm);
 		// 로그인에 성공하면
+		if(bmdto == null) {
+			return 0;
+		}
 		if(bmdto.getId().equals("admin")) {
 			session.setAttribute("sessionId", bmdto.getId());
 			System.out.println(bmdto.getId());

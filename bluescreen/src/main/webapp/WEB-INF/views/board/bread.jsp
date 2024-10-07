@@ -378,7 +378,7 @@
 					<li class="txt">${cdto.ccontent }</li>
 				</c:if>
 				<!-- 댓글쓴 아이디와 로그인한 아이디(세션아이디)가 같을경우만 버튼을 노출함  -->
-				<c:if test="${sessionId == cdto.id}">
+				<c:if test="${sessionId == cdto.id || sessionUno == 0}">
 				<%-- <c:if test="${cdto.id == cdto.id }"> --%>
 					<li style="position: relative; width: 100%;">
 						<a onclick="updateBtn(${cdto.cno }, '${cdto.id }', '${cdto.cdate }', '${cdto.ccontent }')"class="rebtn">수정</a>

@@ -116,7 +116,6 @@
 				        <%-- <div class="blets"> ${board.bno }  </div> --%>
 				        <div class="categorys" style="width:600px;font-size: 12px;">${q.id } 님</div>			       
 				       	<div class="titles" style="margin-bottom:-40px; font-size: 19px; padding:15px 0 25px 0; font-weight: bold;"><a href = "/qnaRead?qno=${q.qno }" id="ddd">${q.qtitle }</a></div>
-				        <a href="" onclick="ggBtn()"><button class="llist">신고</button></a>
 				        
 				        <%-- <td class="table-title">
 				       <c:forEach begin="1" end="${board.bindent }" step="1">
