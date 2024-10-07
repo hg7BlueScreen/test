@@ -22,7 +22,6 @@ public class QnAServiceImpl implements QnAService {
 		ArrayList<Questions> list = qnaMapper.selectAllQnA(page,text);
 		map.put("page", page);
 		map.put("list", list);
-		System.out.println(list.get(0).getId());
 		return map;
 	}
 	
