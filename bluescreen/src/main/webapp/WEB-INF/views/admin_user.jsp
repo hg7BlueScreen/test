@@ -76,7 +76,7 @@
     <ul>
 	<li>
         <a href="announceWrite">
-          <i class='bx bx-bar-chart'></i>
+          <i class='bx bx-edit-alt'></i>
           <span class="links_name">
             공지사항 작성
           </span>
