@@ -86,7 +86,7 @@
 					<![CDATA[ 
 						select * from (select rownum rnum, a.* from (select * from (
 						
-						select * from drug where item_seq in (select item_seq from drug_effect where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%')
+						select * from drug where item_seq in (select item_seq from drug_effect where article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%') order by dno asc
 						
 						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
@@ -95,7 +95,7 @@
 					<![CDATA[ 
 						select * from (select rownum rnum, a.* from (select * from (
 						
-						select * from drug where item_seq in (select item_seq from drug_general_warning where text like '%'|| #{textBox} ||'%')
+						select * from drug where item_seq in (select item_seq from drug_general_warning where text like '%'|| #{textBox} ||'%') order by dno asc
 						
 						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
@@ -123,7 +123,7 @@
 					<![CDATA[
 						select * from (select rownum rnum, a.* from (select * from (
 						
-						select * from drug where item_seq in (select item_seq from drug_effect where item_seq in (select item_seq from drug where dno in (select dno from drug_user_bookmark where uno = #{uno})) and (article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%'))
+						select * from drug where item_seq in (select item_seq from drug_effect where item_seq in (select item_seq from drug where dno in (select dno from drug_user_bookmark where uno = #{uno})) and (article_title like '%'|| #{textBox} ||'%' or article_content like '%'|| #{textBox} ||'%')) order by dno asc
 						
 						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>
@@ -132,7 +132,7 @@
 					<![CDATA[ 
 						select * from (select rownum rnum, a.* from (select * from (
 						
-						select * from drug where item_seq in (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in (select dno from drug_user_bookmark where uno = #{uno})) and (text like '%'|| #{textBox} ||'%'))
+						select * from drug where item_seq in (select item_seq from drug_general_warning where item_seq in (select item_seq from drug where dno in (select dno from drug_user_bookmark where uno = #{uno})) and (text like '%'|| #{textBox} ||'%')) order by dno asc
 						
 						)) a) where rnum >=#{pageDto.startRow} and rnum<=#{pageDto.endRow}
 					]]>

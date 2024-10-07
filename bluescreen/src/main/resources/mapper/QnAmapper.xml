@@ -1,0 +1,74 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.QnAMapper">
+	
+	<select id="selectListCount" resultType="int">
+		<if test="(text == null or text.equals(''))">
+			select count(*) from questions
+		</if>
+		<if test="(text != null and !text.equals(''))">
+			select count(*) from questions where qtitle like '%'||#{text}||'%'
+		</if>
+	</select>
+	
+	<select id="selectAllQnA" resultType="com.java.dto.Questions">
+		<if test="(text == null or text.equals(''))">
+			<![CDATA[	
+				SELECT * FROM ( SELECT ROWNUM rnum, q.*, m.id, NVL(c.qComCount, 0) AS qComCount FROM questions q LEFT JOIN bmember m ON q.uno = m.uno
+				LEFT JOIN (SELECT qno, COUNT(*) AS qComCount FROM qnacomment GROUP BY qno) c ON q.qno = c.qno ORDER BY q.qno DESC) WHERE rnum >= #{page.startRow} AND rnum <= #{page.endRow}
+			]]>
+		</if>
+		<if test="(text != null and !text.equals(''))">
+			<![CDATA[
+				SELECT * FROM (SELECT ROWNUM rnum, q.*, m.id, NVL(c.qComCount, 0) AS qComCount FROM questions q LEFT JOIN bmember m ON q.uno = m.uno LEFT JOIN (SELECT qno, COUNT(*) AS qComCount
+				FROM qnacomment GROUP BY qno) c ON q.qno = c.qno WHERE q.qtitle LIKE '%' || #{text} || '%' ORDER BY q.qno DESC) WHERE rnum >= #{page.startRow} AND rnum <= #{page.endRow}
+			]]>
+		</if>
+	</select>
+	
+	<select id="selectOneQnA" resultType="com.java.dto.Questions">
+		SELECT q.*, m.id FROM questions q LEFT JOIN bmember m ON q.uno = m.uno WHERE q.qno = #{qno}
+	</select>
+	
+	<select id="selectPrevQnA" resultType="com.java.dto.Questions">
+		select * from questions where qno = (select  prevDto from (select  qno, uno, lag(qno,1 ,-1) over(order by qno desc) as prevDto from questions order by qno desc) where qno= #{qno})
+	</select>
+	
+	<select id="selectNextQnA" resultType="com.java.dto.Questions">
+		select * from questions where qno = (select  nextDto from (select  qno, uno, lead(qno,1 ,-1) over(order by qno desc) as nextDto from questions order by qno desc) where qno= #{qno})
+	</select>
+	
+	<select id="selectAllQnaComment" resultType="com.java.dto.QnAComment">
+		select * from qnacomment where qno = #{qno} order by qno asc
+	</select>
+	
+	<insert id="qnaCommentInsert">
+		insert into qnacomment values (qnacomment_seq.nextval, #{qccontent}, sysdate, #{qno})
+	</insert>
+	
+	<delete id="qnaCommentDelete">
+		delete from qnacomment where qcno = #{qcno}
+	</delete>
+	
+	<update id="updateQnAOne">
+		update questions set qcontent = #{qcontent},  qtitle = #{qtitle}, qfile = #{qfile} where qno = #{qno}
+	</update>
+	
+	<insert id="insertQnA">
+		insert into questions values(qna_seq.nextval, 0, #{qfile}, #{qcontent}, #{qtitle}, sysdate, #{uno}, 0, 0)
+	</insert>
+	
+	<update id="updateQhitOne">
+		update questions set qhit = qhit+1 where qno = #{qno}
+	</update>
+	
+	<update id="qnaCommentCountUp">
+		update questions set comcount = comcount + 1 where qno = #{qno}
+	</update>
+	
+	<update id="qnaCommentCountDown">
+		update questions set comcount = comcount-1 where qno = (select qno from qnacomment where qcno = #{qcno})
+	</update>
+</mapper>
