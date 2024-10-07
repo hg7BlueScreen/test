@@ -42,11 +42,11 @@
 }
 
 .drugTR:hover { /* 마우스를 올리면 transition발동해서 적용될 상태 */
-	background-color: #F5F5F5; 
+	background-color: #a3a2a2; 
 }
 
 .drugGrayClass {
-	background-color: #F5F5F5; 
+	background-color: #a3a2a2; 
 }
 
 .drugWhiteClass {
@@ -195,11 +195,11 @@
 				</colgroup>
 				<tr>
 					<th
-						style="border-bottom: 1px solid #b9c4e8; background-color: #F5F5F5; height: 45px; font-weight: bold; font-size: 14px;">품목코드</th>
+						style="border-bottom: 1px solid #b9c4e8; background-color: #a3a2a2; height: 45px; font-weight: bold; font-size: 14px;">품목코드</th>
 					<th
-						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #f5f5f5;">회사명</th>
+						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #a3a2a2;">회사명</th>
 					<th
-						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #f5f5f5;">제품명</th>
+						style="border-bottom: 1px solid #b9c4e8; font-weight: bold; font-size: 14px; background: #a3a2a2;">제품명</th>
 				</tr>
 				<c:if test="${list.size() != 0}">
 				<c:forEach var = "d" items = "${list }">
