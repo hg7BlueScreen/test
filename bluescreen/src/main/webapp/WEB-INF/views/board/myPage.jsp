@@ -155,21 +155,21 @@
 							</tr>
 						<c:if test="${cList != null }">
 							<c:forEach var="c" items="${cList }">
-							<tr>
-								<c:if test="${c.cautionDate != null}">
-									<td style="height:80px; font-size: 15px;"><fmt:formatDate value="${c.cautionDate }" pattern="yyyy-MM-dd"/></td>
-								</c:if>
-								<c:if test="${c.cautionReason != null}">
-									<td style="font-size: 15px;">${c.cautionReason }</td>
-								</c:if>
-							</tr>
+								<tr>
+									<c:if test="${c.cautionDate != null}">
+										<td style="height:80px; font-size: 15px;"><fmt:formatDate value="${c.cautionDate }" pattern="yyyy-MM-dd"/></td>
+									</c:if>
+									<c:if test="${c.cautionReason != null}">
+										<td style="font-size: 15px;">${c.cautionReason }</td>
+									</c:if>
+								</tr>
 							</c:forEach>
 						</c:if>
 						<c:if test="${cList.size() == 0 }">
-								<tr>
-									<td style="height:80px; font-size: 15px;">-</td>
-									<td style="font-size: 15px;">경고 내역이 없습니다.</td>
-								</tr>
+							<tr>
+								<td style="height:80px; font-size: 15px;">-</td>
+								<td style="font-size: 15px;">경고 내역이 없습니다.</td>
+							</tr>
 						</c:if>
 						</table>
 					</div>

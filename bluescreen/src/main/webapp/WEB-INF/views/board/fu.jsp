@@ -47,7 +47,7 @@
 				<ul >	
 					<li style="height: 40px;"><a href="../announceList" id="leftNavi4"style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line: none;">공지사항</a></li>
 					<li style="height:40px;"><a href="blist" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">게시판</a></li>
-					<li style="height:40px;"><a href="#" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
+					<li style="height:40px;"><a href="/qnaList" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
 					<li  class="last" style="height:40px;"><a href="faq" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
 					
 				</ul>				
@@ -78,21 +78,21 @@
           <col width="85%">
         </colgroup>
          <tr>
-          <th style=" color: #0a47ff; font-weight: bold; padding-top: 2px; font-size:15px">신고사유</th>
-          <td style="float:left;">
-          <select style="width:50px; height: 52px;" id = "creason" name = "creason"> <!-- id, name 추가 -->
-			<option value="전체" />전체</option> <!-- value 변경 -->
-			<option value="비방/욕설" />비방/욕설</option> <!-- value 변경 -->
-			<option value="허위사실" />허위사실</option> <!-- value 변경 -->
-			<option value="개인정보노출">개인정보노출</option> <!-- value 변경 -->
-			<option value="음란성">음란성</option> <!-- value 변경 -->
-			<option value="게시글 도배">게시글 도배</option> <!-- value 변경 -->
-			<option value="부적절한 홍보">부적절한 홍보</option> <!-- value 변경 -->
-			<option value="기타">기타</option> <!-- value 변경 -->
-		 </select>
-          </td>
+         	<th style=" color: #0a47ff; font-weight: bold; padding-top: 2px; font-size:15px">신고사유</th>
+		        <td style="float:left;">
+		        	<select style="width:50px; height: 52px;" id = "creason" name = "creason"> 
+						<option value="전체" />전체</option> 
+						<option value="비방/욕설" />비방/욕설</option> 
+						<option value="허위사실" />허위사실</option> 
+						<option value="개인정보노출">개인정보노출</option> 
+						<option value="음란성">음란성</option> 
+						<option value="게시글 도배">게시글 도배</option> 
+						<option value="부적절한 홍보">부적절한 홍보</option> 
+						<option value="기타">기타</option> 
+					</select>
+		        </td>
         </tr>
-        <tr>
+         <tr>
           <th style="font-size:15px;color: #0a47ff; font-weight: bold;">신고내용</th>
           <td>
             <textarea name="bcontent" id= "bcontent" cols="50" rows="15" placeholder="내용을 작성해주세요." style="margin-top:14px; font-size:15px;border-radius: 20px;border-color: #edeef0; padding:20px;"></textarea>

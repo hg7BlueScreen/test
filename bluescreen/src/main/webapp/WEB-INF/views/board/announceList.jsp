@@ -44,7 +44,7 @@
 					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line: none;">공지사항</a></li>
 				<li style="height: 40px;"><a href="board/blist" id="leftNavi4"
 					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line: none;">게시판</a></li>
-				<li style="height: 40px;"><a href="#" id="leftNavi2"
+				<li style="height: 40px;"><a href="/qnaList" id="leftNavi2"
 					style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line: none;">QnA</a></li>
 				<li class="last" style="height: 40px;"><a href="board/faq"
 					id="leftNavi1"
