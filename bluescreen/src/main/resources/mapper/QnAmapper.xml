@@ -71,4 +71,7 @@
 	<update id="qnaCommentCountDown">
 		update questions set comcount = comcount-1 where qno = (select qno from qnacomment where qcno = #{qcno})
 	</update>
+	<delete id="deleteOneQnA">
+		delete from questions where qno = #{qno}
+	</delete>
 </mapper>

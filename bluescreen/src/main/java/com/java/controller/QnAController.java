@@ -19,9 +19,12 @@ import com.java.dto.QnAComment;
 import com.java.dto.Questions;
 import com.java.service.QnAService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class QnAController {
 	@Autowired QnAService qnaService;
+	@Autowired HttpSession session;
 	
 	@RequestMapping("/qnaList")
 	public String qnaList(Model model, Page page, String text) {
@@ -84,6 +87,8 @@ public class QnAController {
 	@RequestMapping("/qnaWrite")
 	public String doQnaWrite(Questions qna, @RequestPart MultipartFile file) {
 		String fileName ="";
+		int uno = (int)session.getAttribute("sessionUno");
+		qna.setUno(uno);
 		if(!file.isEmpty()) {
 			String ori_file = file.getOriginalFilename();// 실제파일이름
 			UUID uuid = UUID.randomUUID();// 랜덤숫자생성
@@ -111,5 +116,10 @@ public class QnAController {
 		return "redirect:/qnaRead?qno="+qno;
 	}
 	
+	@RequestMapping("/qnaDelete")
+	public String qnaDelete(int qno) {
+		qnaService.deleteOneQnA(qno);
+		return "redirect:/qnaList";
+	}
 	
 }

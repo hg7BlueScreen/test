@@ -50,7 +50,7 @@
 			<ul>
 				<li style="height: 40px;"><a href="../announceList" id="leftNavi4"style="height: 40px; font-size: 15px; line-height: 270%; text-decoration-line: none;">공지사항</a></li>	
 				<li style="height:40px;"><a href="/board/blist" id="leftNavi2" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none; ">게시판</a></li>
-				<li style="height:40px;"><a href="#" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
+				<li style="height:40px;"><a href="../qnaList" id="leftNavi3" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">QnA</a></li>
 				<li class="last" style="height:40px;"><a href="/board/faq" id="leftNavi1" style="height:40px; font-size: 15px; line-height: 270%; text-decoration-line:none;">FAQ</span></a></li>
 			</ul>
 		</div>
@@ -149,9 +149,9 @@
 
 		<div
 			style="width: 1000px; margin-right: auto; margin-left: auto;">
-			<a href="blist"><div class="list"
+			<a href="/qna/qnaList"><div class="list"
 					style="float: right; margin-right: 20px;">목록</div></a>
-			<c:if test="${sessionId==qna.id || sessionUno==0}">
+			<c:if test="${sessionUno==qna.uno || sessionUno==0}">
 				<a onclick="delBtn()" style="float: right;"><div class="list">삭제</div></a>
 				<a href="qnaModi?qno=${qna.qno}" onclick="fixBtn()"><div
 						class="list" style="margin-bottom: 30px;">수정</div></a>

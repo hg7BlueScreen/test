@@ -22,6 +22,7 @@ public class QnAServiceImpl implements QnAService {
 		ArrayList<Questions> list = qnaMapper.selectAllQnA(page,text);
 		map.put("page", page);
 		map.put("list", list);
+		System.out.println(list.get(0).getId());
 		return map;
 	}
 	
@@ -93,6 +94,11 @@ public class QnAServiceImpl implements QnAService {
 	public void updateQhitOne(int qno) {
 		qnaMapper.updateQhitOne(qno);
 		
+	}
+
+	@Override
+	public void deleteOneQnA(int qno) {
+		qnaMapper.deleteOneQnA(qno);
 	}
 	
 

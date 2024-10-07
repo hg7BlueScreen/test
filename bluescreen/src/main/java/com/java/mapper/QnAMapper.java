@@ -37,4 +37,6 @@ public interface QnAMapper {
 
 	void qnaCommentCountDown(int qcno);
 
+	void deleteOneQnA(int qno);
+
 }

@@ -29,4 +29,6 @@ public interface QnAService {
 
 	void updateQhitOne(int qno);
 
+	void deleteOneQnA(int qno);
+
 }
