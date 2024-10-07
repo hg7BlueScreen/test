@@ -77,6 +77,8 @@
        		</c:if>
 			</div>
 			<div class="faqList">
+			<div style="padding:15px;"></div>
+			
 				<c:forEach var="list" items = "${list }" step="1">
 
 					<ul style="padding-bottom: 10px;">
